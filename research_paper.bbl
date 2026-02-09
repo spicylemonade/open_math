@@ -1,0 +1,131 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allouche and Shallit(2003)]{AlloucheShallit2003}
+Jean-Paul Allouche and Jeffrey Shallit.
+\newblock \emph{Automatic Sequences: Theory, Applications, Generalizations}.
+\newblock Cambridge University Press, 2003.
+\newblock ISBN 978-0-521-82332-2.
+
+\bibitem[Ballot(2017)]{Ballot2017}
+Christian Ballot.
+\newblock On functions expressible as words on a pair of {B}eatty sequences.
+\newblock \emph{Journal of Integer Sequences}, 20:\penalty0 Article 17.4.2,
+  2017.
+\newblock URL
+  \url{https://cs.uwaterloo.ca/journals/JIS/VOL20/Ballot/ballot22.pdf}.
+
+\bibitem[Baranwal et~al.(2021)Baranwal, Schaeffer, and
+  Shallit]{BaranwalSchaefferShallit2021}
+Aseem Baranwal, Luke Schaeffer, and Jeffrey Shallit.
+\newblock Ostrowski-automatic sequences: Theory and applications.
+\newblock \emph{Theoretical Computer Science}, 858:\penalty0 122--142, 2021.
+\newblock \doi{10.1016/j.tcs.2021.01.018}.
+
+\bibitem[Beatty(1926)]{Beatty1926}
+Samuel Beatty.
+\newblock Problem 3173.
+\newblock \emph{American Mathematical Monthly}, 33:\penalty0 159, 1926.
+
+\bibitem[Berstel and S\'{e}\'{e}bold(1993)]{BerstelSeebold1993}
+Jean Berstel and Patrice S\'{e}\'{e}bold.
+\newblock A characterization of {S}turmian morphisms.
+\newblock In \emph{Mathematical Foundations of Computer Science (MFCS 1993)},
+  volume 711 of \emph{LNCS}, pages 281--290. Springer, 1993.
+
+\bibitem[Cassaigne(1999)]{Cassaigne1999}
+Julien Cassaigne.
+\newblock Limit values of the recurrence quotient of {S}turmian sequences.
+\newblock \emph{Theoretical Computer Science}, 218:\penalty0 3--12, 1999.
+
+\bibitem[Cassaigne(2001)]{Cassaigne2001}
+Julien Cassaigne.
+\newblock Recurrence in infinite words.
+\newblock In \emph{STACS 2001}, volume 2010 of \emph{Lecture Notes in Computer
+  Science}, pages 1--11. Springer, 2001.
+
+\bibitem[Durand(2003)]{Durand2003}
+Fabien Durand.
+\newblock Corrigendum and addendum to ``{L}inearly recurrent subshifts have a
+  finite number of non-periodic subshift factors''.
+\newblock \emph{Ergodic Theory and Dynamical Systems}, 23:\penalty0 663--669,
+  2003.
+
+\bibitem[Fraenkel(1973)]{Fraenkel1973}
+Aviezri~S. Fraenkel.
+\newblock Complementing and exactly covering sequences.
+\newblock \emph{Journal of Combinatorial Theory, Series A}, 14:\penalty0 8--20,
+  1973.
+
+\bibitem[Fraenkel(1976)]{Fraenkel1976}
+Aviezri~S. Fraenkel.
+\newblock {B}eatty sequences, continued fractions, and certain shift operators.
+\newblock \emph{Canadian Mathematical Bulletin}, 19\penalty0 (4), 1976.
+
+\bibitem[Fraenkel(1994)]{Fraenkel1994}
+Aviezri~S. Fraenkel.
+\newblock Iterated floor function, algebraic numbers, discrete chaos, {B}eatty
+  subsequences, semigroups.
+\newblock \emph{Transactions of the American Mathematical Society},
+  341\penalty0 (2):\penalty0 639--664, 1994.
+\newblock \doi{10.1090/S0002-9947-1994-1138949-9}.
+
+\bibitem[Hieronymi and Jr.(2018)]{HieronymiTerry2018}
+Philipp Hieronymi and Alonza~Terry Jr.
+\newblock Ostrowski numeration systems, addition, and finite automata.
+\newblock \emph{Notre Dame Journal of Formal Logic}, 59\penalty0 (2):\penalty0
+  215--232, 2018.
+\newblock \doi{10.1215/00294527-2017-0027}.
+
+\bibitem[Hieronymi et~al.(2022)Hieronymi, Ma, Oei, Schaeffer, Schulz, and
+  Shallit]{HieronymiEtAl2022}
+Philipp Hieronymi, Dun Ma, Reed Oei, Luke Schaeffer, Christian Schulz, and
+  Jeffrey Shallit.
+\newblock Decidability for {S}turmian words.
+\newblock In \emph{CSL 2022}, volume 216 of \emph{LIPIcs}, pages 24:1--24:23,
+  2022.
+\newblock \doi{10.4230/LIPIcs.CSL.2022.24}.
+
+\bibitem[Kimberling(2011)]{Kimberling2011}
+Clark Kimberling.
+\newblock {B}eatty sequences and {W}ythoff sequences, generalized.
+\newblock \emph{Fibonacci Quarterly}, 49\penalty0 (3):\penalty0 195--200, 2011.
+\newblock URL
+  \url{https://www.fq.math.ca/Papers1/49-3/KimberlingGeneralized.pdf}.
+
+\bibitem[Morrison(1980)]{Morrison1980}
+D.~R. Morrison.
+\newblock A {S}tolarsky array of {W}ythoff pairs.
+\newblock \emph{A Collection of Manuscripts Related to the Fibonacci Sequence},
+  pages 134--136, 1980.
+
+\bibitem[Russo and Schwiebert(2011)]{RussoSchwiebert2011}
+Vincent Russo and Loren Schwiebert.
+\newblock {B}eatty sequences, {F}ibonacci numbers, and the golden ratio.
+\newblock \emph{Fibonacci Quarterly}, 49\penalty0 (2):\penalty0 151--154, 2011.
+
+\bibitem[Schaeffer et~al.(2024)Schaeffer, Shallit, and
+  Zorcic]{SchaefferShallitZorcic2024}
+Luke Schaeffer, Jeffrey Shallit, and Stefan Zorcic.
+\newblock {B}eatty sequences for a quadratic irrational: Decidability and
+  applications.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Skolem et~al.(1953)Skolem, Mahler, and Lech]{SkolemMahlerLech}
+Thoralf Skolem, Kurt Mahler, and Christer Lech.
+\newblock The {S}kolem--{M}ahler--{L}ech theorem.
+\newblock 1953.
+\newblock Skolem (1934), Mahler (1935), Lech (1953). The zero set of a C-finite
+  sequence is the union of a finite set and finitely many arithmetic
+  progressions.
+
+\bibitem[Zantema(2023)]{Zantema2023}
+Hans Zantema.
+\newblock Characterizing morphic sequences.
+\newblock \emph{arXiv preprint}, 2023.
+
+\end{thebibliography}
