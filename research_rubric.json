@@ -55,32 +55,32 @@
           "id": "item_003",
           "description": "Conduct comprehensive literature search via web for Beatty sequences, Sturmian words, C-finite sequences, and their intersections",
           "acceptance_criteria": "Web searches performed for at least the following topics: (a) 'Beatty sequence linear recurrence', (b) 'Sturmian word C-finite subsequence', (c) 'Fraenkel iterated floor function algebraic', (d) 'Wythoff array Fibonacci recurrence', (e) 'Ostrowski numeration automatic sequence', (f) 'Skolem-Mahler-Lech theorem floor sequences', (g) 'Ballot Beatty compositions linear recurrence 2017', (h) 'Schaeffer Shallit Zorcic decidability quadratic 2024'. Results documented in literature_review.md with paper titles, authors, years, key theorems, and relevance assessment.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 8 searches performed plus 3 additional. Created literature_review.md with 16 paper reviews and taxonomy.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "File sources.bib in the repo root contains valid BibTeX entries for at least 15 relevant papers. Must include entries for: Fraenkel 1994 (iterated floor functions), Ballot 2017 (JIS paper on Beatty compositions), Schaeffer-Shallit-Zorcic 2024 (arXiv:2402.08331), Allouche-Shallit 2003 (Automatic Sequences book), Hieronymi-Terry 2018 (Ostrowski numeration), Cassaigne (recurrence in infinite words), Russo-Schwiebert 2011 (Fibonacci Quarterly), Kimberling 2011 (generalized Wythoff), Tijdeman 2000 (Fraenkel conjecture), and at least 6 additional relevant sources found during the search.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib populated with 21 BibTeX entries covering all required papers plus additional references.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Synthesize literature into a taxonomy: classify known results by type of r (rational, quadratic irrational, higher-degree algebraic, transcendental with bounded CF, general irrational)",
           "acceptance_criteria": "A section in literature_review.md with a table/matrix summarizing for each class of r: (a) whether floor(n*r) is itself C-finite, (b) whether it is known to contain a C-finite subsequence, (c) key references, (d) whether a complete characterization exists. Must identify gaps in the literature and explicitly state which cases remain open.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Taxonomy table included in literature_review.md with 6 classes of r, gap analysis, and revised conjectures A and B.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Identify the conjectured characterization and key proof strategies from the literature",
           "acceptance_criteria": "A file proof_strategy.md outlining: (1) the conjectured answer (floor(n*r) contains an infinite homogeneous C-finite subsequence if and only if r is rational or a quadratic irrational -- or a broader/narrower conjecture if evidence warrants), (2) proof strategies for the 'if' direction (constructive, using Wythoff-type arrays, iterated compositions, or Ostrowski automata), (3) proof strategies for the 'only if' direction (using equidistribution, transcendence properties, or non-automaticity arguments), (4) identification of Ballot's open Problems 36-37 and Fraenkel's related conjectures as key obstacles.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created proof_strategy.md with conjectured characterization, proof strategies for both directions, and discussion of Ballot's open problems and the cubic obstruction.",
           "error": null
         }
       ]
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 2,
-    "in_progress": 1,
+    "completed": 6,
+    "in_progress": 0,
     "failed": 0,
-    "pending": 23
+    "pending": 20
   }
 }
