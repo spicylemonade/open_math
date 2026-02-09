@@ -47,15 +47,15 @@
           "id": "item_002",
           "description": "Formalize the research problem: define Beatty sequences, homogeneous linear recurrences (C-finite sequences), and state the precise characterization question",
           "acceptance_criteria": "A file problem_statement.md containing: (1) rigorous definition of floor(n*r) for real r>0, (2) definition of a homogeneous linearly recurrent sequence (a(n) = c_1*a(n-1)+...+c_k*a(n-k)), (3) precise formulation distinguishing 'the full sequence is C-finite' from 'contains an infinite C-finite subsequence', (4) clarification of whether 'subsequence' means indexed by an increasing sequence of natural numbers or a contiguous block.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created problem_statement.md with rigorous definitions, formal problem statement, and conjectured answer.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Conduct comprehensive literature search via web for Beatty sequences, Sturmian words, C-finite sequences, and their intersections",
           "acceptance_criteria": "Web searches performed for at least the following topics: (a) 'Beatty sequence linear recurrence', (b) 'Sturmian word C-finite subsequence', (c) 'Fraenkel iterated floor function algebraic', (d) 'Wythoff array Fibonacci recurrence', (e) 'Ostrowski numeration automatic sequence', (f) 'Skolem-Mahler-Lech theorem floor sequences', (g) 'Ballot Beatty compositions linear recurrence 2017', (h) 'Schaeffer Shallit Zorcic decidability quadratic 2024'. Results documented in literature_review.md with paper titles, authors, years, key theorems, and relevance assessment.",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         },
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 1,
+    "completed": 2,
     "in_progress": 1,
     "failed": 0,
-    "pending": 24
+    "pending": 23
   }
 }
