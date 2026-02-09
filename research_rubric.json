@@ -94,40 +94,40 @@
           "id": "item_007",
           "description": "Implement a Python module to compute Beatty sequences floor(n*r) for arbitrary real r, supporting exact arithmetic for rationals and quadratic irrationals",
           "acceptance_criteria": "A file beatty.py that: (1) computes floor(n*r) for n=1..N given r as a rational (Fraction), a quadratic irrational (a+b*sqrt(d) form), or a float, (2) returns a list/array of integers, (3) includes unit tests verifying known values (e.g., floor(n*phi) for n=1..20 matches OEIS A000201), (4) handles N up to 10^6 efficiently (< 5 seconds).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "beatty.py implemented with QuadraticIrrational class, exact isqrt arithmetic, numpy float path. All tests pass, N=10^6 in 0.57s.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Implement a module to detect and fit homogeneous linear recurrences from integer sequences using the Berlekamp-Massey algorithm",
           "acceptance_criteria": "A file recurrence_detector.py that: (1) given a finite integer sequence, finds the minimal-order homogeneous linear recurrence satisfied by the sequence (if one exists up to a given order bound), (2) uses Berlekamp-Massey or equivalent algorithm, (3) validates the recurrence on held-out terms, (4) unit tests pass on known C-finite sequences (Fibonacci, tribonacci, geometric) and correctly reports 'no recurrence found' for random/non-recurrent input.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "recurrence_detector.py with Berlekamp-Massey algorithm using exact Fraction arithmetic. 28/28 tests pass.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Implement subsequence extraction: given a Beatty sequence and a selection rule (arithmetic progression of indices, iterated composition, etc.), extract and return the subsequence",
           "acceptance_criteria": "A file subsequence_extractor.py that: (1) extracts subsequences of floor(n*r) indexed by arithmetic progressions a+b*k for k=0,1,..., (2) extracts iterated compositions (e.g., floor(floor(floor(n*r)*r)*r)...), (3) extracts subsequences along Wythoff-type paths, (4) unit tests verify that for r=phi, the Wythoff row starting at 1 produces Fibonacci numbers.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "subsequence_extractor.py with 4 strategies (AP, iterated comp, iterated a-comp, Wythoff rows). All tests pass. Wythoff row 1 for phi = [1,2,3,5,8,13,21].",
           "error": null
         },
         {
           "id": "item_010",
           "description": "Build baseline experimental pipeline: for a given r, systematically search for C-finite subsequences within floor(n*r) across multiple extraction strategies",
           "acceptance_criteria": "A file baseline_pipeline.py that: (1) takes r as input, (2) computes floor(n*r) for n=1..N, (3) applies all extraction strategies from item_009, (4) runs recurrence_detector on each extracted subsequence, (5) reports all discovered recurrences with their orders, characteristic polynomials, and the extraction method used, (6) outputs results as JSON to results/ directory. Tested on r=3/2 (rational), r=phi (quadratic), r=pi (transcendental).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Pipeline finds 41 recurrences for rational, 16 for phi (including order-2 Fibonacci in all Wythoff rows), 2 trivial for pi.",
           "error": null
         },
         {
           "id": "item_011",
           "description": "Define quantitative metrics for measuring recurrence quality and subsequence density",
           "acceptance_criteria": "Document metrics.md defining: (1) recurrence order (lower is stronger), (2) length of verified prefix before recurrence breaks (if it does), (3) density of the subsequence within the original sequence (proportion of indices used), (4) spectral radius of the companion matrix (growth rate). Implement metric computation in metrics.py with unit tests.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "metrics.md defines 4 metrics. metrics.py implements all with 6 passing tests including Fibonacci and Pell spectral radii.",
           "error": null
         }
       ]
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 6,
+    "completed": 11,
     "in_progress": 0,
     "failed": 0,
-    "pending": 20
+    "pending": 15
   }
 }

@@ -1,0 +1,1156 @@
+{
+  "r_name": "3/2",
+  "r_float": 1.5,
+  "r_type": "Fraction",
+  "N": 5000,
+  "total_strategies_searched": 55,
+  "recurrences_found": 41,
+  "recurrences": [
+    {
+      "strategy": "arith_start0_step1",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        15
+      ]
+    },
+    {
+      "strategy": "arith_start0_step2",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28
+      ]
+    },
+    {
+      "strategy": "arith_start0_step3",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        6,
+        10,
+        15,
+        19,
+        24,
+        28,
+        33,
+        37,
+        42
+      ]
+    },
+    {
+      "strategy": "arith_start0_step4",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        7,
+        13,
+        19,
+        25,
+        31,
+        37,
+        43,
+        49,
+        55
+      ]
+    },
+    {
+      "strategy": "arith_start0_step5",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        9,
+        16,
+        24,
+        31,
+        39,
+        46,
+        54,
+        61,
+        69
+      ]
+    },
+    {
+      "strategy": "arith_start0_step6",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        10,
+        19,
+        28,
+        37,
+        46,
+        55,
+        64,
+        73,
+        82
+      ]
+    },
+    {
+      "strategy": "arith_start0_step7",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        12,
+        22,
+        33,
+        43,
+        54,
+        64,
+        75,
+        85,
+        96
+      ]
+    },
+    {
+      "strategy": "arith_start0_step8",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        13,
+        25,
+        37,
+        49,
+        61,
+        73,
+        85,
+        97,
+        109
+      ]
+    },
+    {
+      "strategy": "arith_start0_step9",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        15,
+        28,
+        42,
+        55,
+        69,
+        82,
+        96,
+        109,
+        123
+      ]
+    },
+    {
+      "strategy": "arith_start0_step10",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        16,
+        31,
+        46,
+        61,
+        76,
+        91,
+        106,
+        121,
+        136
+      ]
+    },
+    {
+      "strategy": "arith_start0_step11",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        18,
+        34,
+        51,
+        67,
+        84,
+        100,
+        117,
+        133,
+        150
+      ]
+    },
+    {
+      "strategy": "arith_start0_step12",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        19,
+        37,
+        55,
+        73,
+        91,
+        109,
+        127,
+        145,
+        163
+      ]
+    },
+    {
+      "strategy": "arith_start0_step13",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        21,
+        40,
+        60,
+        79,
+        99,
+        118,
+        138,
+        157,
+        177
+      ]
+    },
+    {
+      "strategy": "arith_start0_step14",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        22,
+        43,
+        64,
+        85,
+        106,
+        127,
+        148,
+        169,
+        190
+      ]
+    },
+    {
+      "strategy": "arith_start0_step15",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        24,
+        46,
+        69,
+        91,
+        114,
+        136,
+        159,
+        181,
+        204
+      ]
+    },
+    {
+      "strategy": "arith_start0_step16",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        25,
+        49,
+        73,
+        97,
+        121,
+        145,
+        169,
+        193,
+        217
+      ]
+    },
+    {
+      "strategy": "arith_start0_step17",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        27,
+        52,
+        78,
+        103,
+        129,
+        154,
+        180,
+        205,
+        231
+      ]
+    },
+    {
+      "strategy": "arith_start0_step18",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        28,
+        55,
+        82,
+        109,
+        136,
+        163,
+        190,
+        217,
+        244
+      ]
+    },
+    {
+      "strategy": "arith_start0_step19",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        30,
+        58,
+        87,
+        115,
+        144,
+        172,
+        201,
+        229,
+        258
+      ]
+    },
+    {
+      "strategy": "arith_start0_step20",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        1,
+        31,
+        61,
+        91,
+        121,
+        151,
+        181,
+        211,
+        241,
+        271
+      ]
+    },
+    {
+      "strategy": "arith_start1_step1",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        15,
+        16
+      ]
+    },
+    {
+      "strategy": "arith_start1_step2",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30
+      ]
+    },
+    {
+      "strategy": "arith_start1_step3",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        7,
+        12,
+        16,
+        21,
+        25,
+        30,
+        34,
+        39,
+        43
+      ]
+    },
+    {
+      "strategy": "arith_start1_step4",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        9,
+        15,
+        21,
+        27,
+        33,
+        39,
+        45,
+        51,
+        57
+      ]
+    },
+    {
+      "strategy": "arith_start1_step5",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        10,
+        18,
+        25,
+        33,
+        40,
+        48,
+        55,
+        63,
+        70
+      ]
+    },
+    {
+      "strategy": "arith_start1_step6",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        12,
+        21,
+        30,
+        39,
+        48,
+        57,
+        66,
+        75,
+        84
+      ]
+    },
+    {
+      "strategy": "arith_start1_step7",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        13,
+        24,
+        34,
+        45,
+        55,
+        66,
+        76,
+        87,
+        97
+      ]
+    },
+    {
+      "strategy": "arith_start1_step8",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        15,
+        27,
+        39,
+        51,
+        63,
+        75,
+        87,
+        99,
+        111
+      ]
+    },
+    {
+      "strategy": "arith_start1_step9",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        16,
+        30,
+        43,
+        57,
+        70,
+        84,
+        97,
+        111,
+        124
+      ]
+    },
+    {
+      "strategy": "arith_start1_step10",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        18,
+        33,
+        48,
+        63,
+        78,
+        93,
+        108,
+        123,
+        138
+      ]
+    },
+    {
+      "strategy": "arith_start1_step11",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        19,
+        36,
+        52,
+        69,
+        85,
+        102,
+        118,
+        135,
+        151
+      ]
+    },
+    {
+      "strategy": "arith_start1_step12",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        21,
+        39,
+        57,
+        75,
+        93,
+        111,
+        129,
+        147,
+        165
+      ]
+    },
+    {
+      "strategy": "arith_start1_step13",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        22,
+        42,
+        61,
+        81,
+        100,
+        120,
+        139,
+        159,
+        178
+      ]
+    },
+    {
+      "strategy": "arith_start1_step14",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        24,
+        45,
+        66,
+        87,
+        108,
+        129,
+        150,
+        171,
+        192
+      ]
+    },
+    {
+      "strategy": "arith_start1_step15",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        25,
+        48,
+        70,
+        93,
+        115,
+        138,
+        160,
+        183,
+        205
+      ]
+    },
+    {
+      "strategy": "arith_start1_step16",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        27,
+        51,
+        75,
+        99,
+        123,
+        147,
+        171,
+        195,
+        219
+      ]
+    },
+    {
+      "strategy": "arith_start1_step17",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        28,
+        54,
+        79,
+        105,
+        130,
+        156,
+        181,
+        207,
+        232
+      ]
+    },
+    {
+      "strategy": "arith_start1_step18",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        30,
+        57,
+        84,
+        111,
+        138,
+        165,
+        192,
+        219,
+        246
+      ]
+    },
+    {
+      "strategy": "arith_start1_step19",
+      "order": 3,
+      "coefficients": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "verified_length": 194,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        31,
+        60,
+        88,
+        117,
+        145,
+        174,
+        202,
+        231,
+        259
+      ]
+    },
+    {
+      "strategy": "arith_start1_step20",
+      "order": 2,
+      "coefficients": [
+        "2",
+        "-1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "verified_length": 196,
+      "subsequence_length": 200,
+      "first_terms": [
+        3,
+        33,
+        63,
+        93,
+        123,
+        153,
+        183,
+        213,
+        243,
+        273
+      ]
+    },
+    {
+      "strategy": "iter_a_n1",
+      "order": 1,
+      "coefficients": [
+        "1"
+      ],
+      "characteristic_poly": [
+        "1",
+        "-1"
+      ],
+      "verified_length": 99,
+      "subsequence_length": 101,
+      "first_terms": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.365
+}
