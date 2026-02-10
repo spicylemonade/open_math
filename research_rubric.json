@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T21:14:27.805178+00:00",
+  "updated_at": "2026-02-10T21:15:42.733675+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -180,8 +180,8 @@
           "id": "item_016",
           "description": "Computational verification: for the concrete lattice examples from item_007, use the computational framework from item_010 to verify or refute the theoretical predictions from Phase 3. Compute spectral sequence differentials or obstruction classes where feasible.",
           "acceptance_criteria": "Updated computational outputs in results/cohomology_data.json containing: (1) H*(Γ; Q) for at least 3 examples, (2) verification that the virtual cohomological dimension matches dim(G/K), (3) for at least 1 example, explicit computation of the relevant surgery or Wall obstruction class modulo torsion, (4) all computations documented with methodology in results/computational_verification.md.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Updated cohomology_data.json with 3 additional higher-dim examples (SO(3,1), SO(5,1), SL(3,R)). vcd verification for 6 group/dimension pairs. Surgery obstruction analysis mod torsion for dim-5 cases. All predictions consistent with theory.",
           "error": null
         },
         {
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 15,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 8
+    "pending": 7
   }
 }

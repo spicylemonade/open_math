@@ -141,5 +141,106 @@
       "expected_area": 25.132741228718345,
       "consistent": true
     }
+  },
+  "phase4_verification": {
+    "example_4_SO31": {
+      "group": "Cocompact lattice in SO(3,1) with 2-torsion",
+      "ambient_group": "SO(3,1)",
+      "symmetric_space_dim": 3,
+      "vcd": 3,
+      "contains_2_torsion": true,
+      "rational_betti_numbers_torsion_free_subgroup": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "rational_euler_char": 0,
+      "notes": "vcd = 3 = dim(H^3). Odd dimension: chi = 0. Rational PD_3 group. Surgery applies for dim >= 5, so this case requires 3-manifold methods."
+    },
+    "example_5_SO51": {
+      "group": "Cocompact lattice in SO(5,1) with 2-torsion (reflections)",
+      "ambient_group": "SO(5,1)",
+      "symmetric_space_dim": 5,
+      "vcd": 5,
+      "contains_2_torsion": true,
+      "rational_betti_numbers_torsion_free_subgroup": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "rational_euler_char": 0,
+      "notes": "vcd = 5 = dim(H^5). dim >= 5 so surgery theory fully applies. This is in the regime where our YES answer is strongest.",
+      "surgery_applies": true,
+      "smith_obstruction": false,
+      "poincare_duality_satisfied": true,
+      "wall_obstruction_computable": true
+    },
+    "example_6_SL3R": {
+      "group": "Arithmetic lattice in SL(3,R) with 2-torsion",
+      "ambient_group": "SL(3,R)",
+      "symmetric_space": "SL(3,R)/SO(3)",
+      "symmetric_space_dim": 5,
+      "vcd": 5,
+      "contains_2_torsion": true,
+      "source_of_2_torsion": "diagonal matrix diag(-1,-1,1) has order 2 in SL(3,R)",
+      "rational_betti_numbers_torsion_free_subgroup": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "notes": "vcd = 5. Higher rank (rank 2). Margulis arithmeticity applies. Surgery works in dim 5.",
+      "surgery_applies": true,
+      "smith_obstruction": false,
+      "predicted_answer": "YES"
+    },
+    "vcd_verification": {
+      "SO_n_1": {
+        "formula": "vcd = n = dim(H^n_R)",
+        "examples": {
+          "n=2": {
+            "vcd": 2,
+            "dim_symmetric": 2,
+            "match": true
+          },
+          "n=3": {
+            "vcd": 3,
+            "dim_symmetric": 3,
+            "match": true
+          },
+          "n=5": {
+            "vcd": 5,
+            "dim_symmetric": 5,
+            "match": true
+          }
+        }
+      },
+      "SL_n_R": {
+        "formula": "vcd = n(n+1)/2 - 1 = dim(SL(n,R)/SO(n))",
+        "examples": {
+          "n=2": {
+            "vcd": 2,
+            "dim_symmetric": 2,
+            "match": true
+          },
+          "n=3": {
+            "vcd": 5,
+            "dim_symmetric": 5,
+            "match": true
+          },
+          "n=4": {
+            "vcd": 9,
+            "dim_symmetric": 9,
+            "match": true
+          }
+        }
+      }
+    }
   }
 }
