@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T21:16:51.498598+00:00",
+  "updated_at": "2026-02-10T21:17:49.766648+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -196,8 +196,8 @@
           "id": "item_018",
           "description": "Compare results with prior work: systematically compare findings against the key papers identified in Phase 1, identifying agreements, disagreements, and novel contributions.",
           "acceptance_criteria": "Document (results/prior_work_comparison.md) with a comparison table referencing at least 10 entries from sources.bib. For each cited work: (1) what it proves relevant to our question, (2) how our analysis agrees or extends it, (3) any gaps our work fills. Must identify at least 2 points where our analysis provides genuinely new insight beyond the existing literature.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table with 15 cited works. 2 novel insights identified: (1) Q/F_p gap as enabler for torsion, (2) surgery feasibility extending Davis-Luck beyond odd-order case. All findings consistent with prior work.",
           "error": null
         }
       ]
@@ -252,8 +252,8 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 17,
-    "in_progress": 1,
+    "completed": 18,
+    "in_progress": 0,
     "failed": 0,
     "pending": 5
   }
