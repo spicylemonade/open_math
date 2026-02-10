@@ -1,0 +1,455 @@
+{
+  "obstructions": {
+    "3": {
+      "modulus": 3,
+      "allowed_residues": [
+        0,
+        1
+      ],
+      "excluded_residues": [
+        2
+      ],
+      "num_allowed": 2,
+      "num_excluded": 1,
+      "density": 0.6666666666666666
+    },
+    "4": {
+      "modulus": 4,
+      "allowed_residues": [
+        0,
+        1,
+        2
+      ],
+      "excluded_residues": [
+        3
+      ],
+      "num_allowed": 3,
+      "num_excluded": 1,
+      "density": 0.75
+    },
+    "5": {
+      "modulus": 5,
+      "allowed_residues": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "excluded_residues": [],
+      "num_allowed": 5,
+      "num_excluded": 0,
+      "density": 1.0
+    },
+    "7": {
+      "modulus": 7,
+      "allowed_residues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "excluded_residues": [],
+      "num_allowed": 7,
+      "num_excluded": 0,
+      "density": 1.0
+    },
+    "8": {
+      "modulus": 8,
+      "allowed_residues": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "excluded_residues": [
+        3,
+        5,
+        7
+      ],
+      "num_allowed": 5,
+      "num_excluded": 3,
+      "density": 0.625
+    },
+    "9": {
+      "modulus": 9,
+      "allowed_residues": [
+        0,
+        1,
+        4,
+        6,
+        7
+      ],
+      "excluded_residues": [
+        2,
+        3,
+        5,
+        8
+      ],
+      "num_allowed": 5,
+      "num_excluded": 4,
+      "density": 0.5555555555555556
+    },
+    "11": {
+      "modulus": 11,
+      "allowed_residues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "excluded_residues": [],
+      "num_allowed": 11,
+      "num_excluded": 0,
+      "density": 1.0
+    },
+    "13": {
+      "modulus": 13,
+      "allowed_residues": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "excluded_residues": [],
+      "num_allowed": 13,
+      "num_excluded": 0,
+      "density": 1.0
+    },
+    "16": {
+      "modulus": 16,
+      "allowed_residues": [
+        0,
+        1,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "excluded_residues": [
+        2,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15
+      ],
+      "num_allowed": 7,
+      "num_excluded": 9,
+      "density": 0.4375
+    }
+  },
+  "known_upn_verification": {
+    "6": {
+      "3": {
+        "residue": 0,
+        "passes": true
+      },
+      "4": {
+        "residue": 2,
+        "passes": true
+      },
+      "5": {
+        "residue": 1,
+        "passes": true
+      },
+      "7": {
+        "residue": 6,
+        "passes": true
+      },
+      "8": {
+        "residue": 6,
+        "passes": true
+      },
+      "9": {
+        "residue": 6,
+        "passes": true
+      },
+      "11": {
+        "residue": 6,
+        "passes": true
+      },
+      "13": {
+        "residue": 6,
+        "passes": true
+      },
+      "16": {
+        "residue": 6,
+        "passes": true
+      }
+    },
+    "60": {
+      "3": {
+        "residue": 0,
+        "passes": true
+      },
+      "4": {
+        "residue": 0,
+        "passes": true
+      },
+      "5": {
+        "residue": 0,
+        "passes": true
+      },
+      "7": {
+        "residue": 4,
+        "passes": true
+      },
+      "8": {
+        "residue": 4,
+        "passes": true
+      },
+      "9": {
+        "residue": 6,
+        "passes": true
+      },
+      "11": {
+        "residue": 5,
+        "passes": true
+      },
+      "13": {
+        "residue": 8,
+        "passes": true
+      },
+      "16": {
+        "residue": 12,
+        "passes": true
+      }
+    },
+    "90": {
+      "3": {
+        "residue": 0,
+        "passes": true
+      },
+      "4": {
+        "residue": 2,
+        "passes": true
+      },
+      "5": {
+        "residue": 0,
+        "passes": true
+      },
+      "7": {
+        "residue": 6,
+        "passes": true
+      },
+      "8": {
+        "residue": 2,
+        "passes": true
+      },
+      "9": {
+        "residue": 0,
+        "passes": true
+      },
+      "11": {
+        "residue": 2,
+        "passes": true
+      },
+      "13": {
+        "residue": 12,
+        "passes": true
+      },
+      "16": {
+        "residue": 10,
+        "passes": true
+      }
+    },
+    "87360": {
+      "3": {
+        "residue": 0,
+        "passes": true
+      },
+      "4": {
+        "residue": 0,
+        "passes": true
+      },
+      "5": {
+        "residue": 0,
+        "passes": true
+      },
+      "7": {
+        "residue": 0,
+        "passes": true
+      },
+      "8": {
+        "residue": 0,
+        "passes": true
+      },
+      "9": {
+        "residue": 6,
+        "passes": true
+      },
+      "11": {
+        "residue": 9,
+        "passes": true
+      },
+      "13": {
+        "residue": 0,
+        "passes": true
+      },
+      "16": {
+        "residue": 0,
+        "passes": true
+      }
+    },
+    "146361946186458562560000": {
+      "3": {
+        "residue": 0,
+        "passes": true
+      },
+      "4": {
+        "residue": 0,
+        "passes": true
+      },
+      "5": {
+        "residue": 0,
+        "passes": true
+      },
+      "7": {
+        "residue": 0,
+        "passes": true
+      },
+      "8": {
+        "residue": 0,
+        "passes": true
+      },
+      "9": {
+        "residue": 6,
+        "passes": true
+      },
+      "11": {
+        "residue": 0,
+        "passes": true
+      },
+      "13": {
+        "residue": 0,
+        "passes": true
+      },
+      "16": {
+        "residue": 0,
+        "passes": true
+      }
+    }
+  },
+  "sieve_density": {
+    "individual": {
+      "3": {
+        "allowed": 2,
+        "total": 3,
+        "density": 0.6666666666666666,
+        "excluded_residues": [
+          2
+        ]
+      },
+      "5": {
+        "allowed": 5,
+        "total": 5,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "7": {
+        "allowed": 7,
+        "total": 7,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "11": {
+        "allowed": 11,
+        "total": 11,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "13": {
+        "allowed": 13,
+        "total": 13,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "17": {
+        "allowed": 17,
+        "total": 17,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "19": {
+        "allowed": 19,
+        "total": 19,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "23": {
+        "allowed": 22,
+        "total": 23,
+        "density": 0.9565217391304348,
+        "excluded_residues": [
+          0
+        ]
+      },
+      "29": {
+        "allowed": 29,
+        "total": 29,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "31": {
+        "allowed": 31,
+        "total": 31,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "37": {
+        "allowed": 37,
+        "total": 37,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "41": {
+        "allowed": 41,
+        "total": 41,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "43": {
+        "allowed": 43,
+        "total": 43,
+        "density": 1.0,
+        "excluded_residues": []
+      },
+      "47": {
+        "allowed": 46,
+        "total": 47,
+        "density": 0.9787234042553191,
+        "excluded_residues": [
+          0
+        ]
+      }
+    },
+    "combined_density": 0.6241134751773049,
+    "num_primes_checked": 14,
+    "max_modulus": 50
+  }
+}
