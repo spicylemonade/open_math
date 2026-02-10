@@ -71,16 +71,16 @@
           "id": "item_005",
           "description": "Catalog all known partial results and proof techniques for finiteness of unitary perfect numbers",
           "acceptance_criteria": "A document results/known_results.md cataloging: (1) Subbarao-Warren theorem: for fixed m, finitely many UPNs divisible by 2^m (with proof sketch via limiting argument on sigma*(D_i)/D_i -> 1), (2) Goto's upper bound: N < 2^{2^k} for omega(N)=k, (3) Wall's result: any new UPN has >= 9 odd prime factors, (4) Frei's result: UPN not divisible by 3 requires 2^m with m>=144 and >= 144 odd primes and N > 10^440, (5) Graham's result on squarefree odd part, (6) the Dirichlet generating function zeta(s)zeta(s-1)/zeta(2s-1). Each result must include the precise statement, the paper reference, and how it constrains the search space.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive catalog in results/known_results.md covering all 6 required results with proofs, references, and constraint analysis",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Identify gaps in existing approaches and formulate novel research directions",
           "acceptance_criteria": "A document results/research_gaps.md identifying at least 5 specific gaps or unexplored directions, including: (1) whether the Subbarao-Warren fixed-2-adic-valuation argument can be made uniform across all valuations, (2) whether analytic methods (mean value theorems for sigma*/n) can bound the density of solutions, (3) whether the product equation prod(1 + 1/p^a) = 2 over prime powers admits only finitely many solutions via Diophantine approximation, (4) whether modular arithmetic constraints (e.g., sigma*(n) mod small primes) can eliminate large classes of candidates, (5) computational feasibility of extending the search beyond the five known examples. Each gap must reference the prior work it extends.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "7 research gaps identified in results/research_gaps.md with detailed analysis and concrete proposed directions",
           "error": null
         }
       ]
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 4,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 22
+    "pending": 20
   }
 }
