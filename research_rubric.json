@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T20:49:11.065726+00:00",
-  "current_agent": "orchestrator",
+  "updated_at": "2026-02-10T20:51:56.797627+00:00",
+  "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,8 +11,8 @@
       "error": null
     },
     "researcher": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-02-10T20:49:12.101704+00:00",
       "completed_at": null,
       "error": null
     },
@@ -38,9 +38,9 @@
         {
           "id": "item_001",
           "description": "Decompose the core mathematical problem into its constituent concepts: uniform lattices in real semisimple Lie groups, 2-torsion elements, compact manifolds without boundary, fundamental groups, universal covers, and rational acyclicity. Produce a structured concept map.",
-          "acceptance_criteria": "A document (results/concept_map.md) listing at least 8 distinct mathematical concepts with precise definitions, their logical dependencies, and how they relate to the central question. Must distinguish between rational acyclicity (vanishing of reduced H_*(X; Q)) and integral acyclicity, and clarify the role of B\u0393 vs. the manifold M.",
-          "status": "pending",
-          "notes": null,
+          "acceptance_criteria": "A document (results/concept_map.md) listing at least 8 distinct mathematical concepts with precise definitions, their logical dependencies, and how they relate to the central question. Must distinguish between rational acyclicity (vanishing of reduced H_*(X; Q)) and integral acyclicity, and clarify the role of BΓ vs. the manifold M.",
+          "status": "completed",
+          "notes": "Concept map created with 12 concepts covering: semisimple Lie groups, symmetric spaces, uniform lattices, 2-torsion, closed manifolds, fundamental groups/universal covers, rational acyclicity (distinguished from integral), BΓ vs M, Selberg lemma, vcd, Smith theory, Poincaré duality. Logical dependency map included.",
           "error": null
         },
         {
@@ -77,7 +77,7 @@
         },
         {
           "id": "item_006",
-          "description": "Identify the precise mathematical obstructions: determine which known theorems constrain or enable the existence of such a manifold M with \u03c0\u2081(M) = \u0393 and rationally acyclic universal cover. Classify obstructions as algebraic, topological, or geometric.",
+          "description": "Identify the precise mathematical obstructions: determine which known theorems constrain or enable the existence of such a manifold M with π₁(M) = Γ and rationally acyclic universal cover. Classify obstructions as algebraic, topological, or geometric.",
           "acceptance_criteria": "A structured analysis document (results/obstructions.md) identifying at least 4 distinct obstructions or enabling results, each with: (1) precise theorem statement, (2) citation to sources.bib, (3) whether it obstructs or enables the construction, (4) which hypotheses of the problem it engages (uniform lattice, semisimple, 2-torsion, compact, no boundary, rational acyclicity).",
           "status": "pending",
           "notes": null,
@@ -92,32 +92,32 @@
       "items": [
         {
           "id": "item_007",
-          "description": "Establish baseline: catalog all known examples of uniform lattices in real semisimple groups that contain 2-torsion. For each, determine the ambient group G, the rank, whether \u0393 is arithmetic, and known topological models for B\u0393.",
-          "acceptance_criteria": "A table (results/lattice_examples.md) with at least 6 explicit examples of uniform lattices with 2-torsion (e.g., in SO(n,1), SU(n,1), Sp(n,1), and higher-rank groups). Each entry specifies: ambient group G, whether \u0393 is arithmetic or non-arithmetic, source of 2-torsion (e.g., reflections, involutions), and known classifying space models. All entries cite sources.bib.",
+          "description": "Establish baseline: catalog all known examples of uniform lattices in real semisimple groups that contain 2-torsion. For each, determine the ambient group G, the rank, whether Γ is arithmetic, and known topological models for BΓ.",
+          "acceptance_criteria": "A table (results/lattice_examples.md) with at least 6 explicit examples of uniform lattices with 2-torsion (e.g., in SO(n,1), SU(n,1), Sp(n,1), and higher-rank groups). Each entry specifies: ambient group G, whether Γ is arithmetic or non-arithmetic, source of 2-torsion (e.g., reflections, involutions), and known classifying space models. All entries cite sources.bib.",
           "status": "pending",
           "notes": null,
           "error": null
         },
         {
           "id": "item_008",
-          "description": "Analyze the standard topological model: for \u0393 a uniform lattice in G, the symmetric space G/K is contractible and \u0393\\G/K is a compact orbifold. Compute or describe H_*(\u0393\\G/K; Q) for the examples from item_007 and characterize when the orbifold is a manifold.",
-          "acceptance_criteria": "Document (results/orbifold_analysis.md) containing: (1) proof that \u0393\\G/K is a manifold iff \u0393 is torsion-free, (2) description of the rational cohomology of \u0393\\G/K as an orbifold via the Cartan-Leray spectral sequence, (3) explicit computation for at least 2 examples showing that 2-torsion creates orbifold singularities, (4) comparison of H_*(B\u0393; Q) with H_*(\u0393\\G/K; Q).",
+          "description": "Analyze the standard topological model: for Γ a uniform lattice in G, the symmetric space G/K is contractible and Γ\\G/K is a compact orbifold. Compute or describe H_*(Γ\\G/K; Q) for the examples from item_007 and characterize when the orbifold is a manifold.",
+          "acceptance_criteria": "Document (results/orbifold_analysis.md) containing: (1) proof that Γ\\G/K is a manifold iff Γ is torsion-free, (2) description of the rational cohomology of Γ\\G/K as an orbifold via the Cartan-Leray spectral sequence, (3) explicit computation for at least 2 examples showing that 2-torsion creates orbifold singularities, (4) comparison of H_*(BΓ; Q) with H_*(Γ\\G/K; Q).",
           "status": "pending",
           "notes": null,
           "error": null
         },
         {
           "id": "item_009",
-          "description": "Establish evaluation metrics: define precisely what 'success' and 'failure' mean for the research question. Formulate the question in terms of group cohomology: does there exist a compact closed n-manifold M with \u03c0\u2081(M) \u2245 \u0393 and H\u0303_*(M\u0303; Q) = 0?",
-          "acceptance_criteria": "Document (results/evaluation_framework.md) containing: (1) reformulation of the problem in terms of rational Poincar\u00e9 duality and the Euler characteristic, (2) necessary conditions on \u0393 derived from Poincar\u00e9 duality (e.g., virtual cohomological dimension constraints), (3) a decision tree: if vcd(\u0393) = n, what are the constraints from rational Poincar\u00e9 duality on a closed n-manifold with \u03c0\u2081 = \u0393, (4) statement of the Wall finiteness obstruction and its relevance.",
+          "description": "Establish evaluation metrics: define precisely what 'success' and 'failure' mean for the research question. Formulate the question in terms of group cohomology: does there exist a compact closed n-manifold M with π₁(M) ≅ Γ and H̃_*(M̃; Q) = 0?",
+          "acceptance_criteria": "Document (results/evaluation_framework.md) containing: (1) reformulation of the problem in terms of rational Poincaré duality and the Euler characteristic, (2) necessary conditions on Γ derived from Poincaré duality (e.g., virtual cohomological dimension constraints), (3) a decision tree: if vcd(Γ) = n, what are the constraints from rational Poincaré duality on a closed n-manifold with π₁ = Γ, (4) statement of the Wall finiteness obstruction and its relevance.",
           "status": "pending",
           "notes": null,
           "error": null
         },
         {
           "id": "item_010",
-          "description": "Implement a computational framework (using SageMath, GAP, or Python) to compute group cohomology H*(\u0393; Q) for small lattice examples, and verify rational Euler characteristic computations against known formulae (e.g., Harder-Gauss-Bonnet).",
-          "acceptance_criteria": "A script (results/cohomology_computations.py or .sage) that: (1) computes H*(\u0393; Q) for at least 2 small explicit lattice examples with 2-torsion, (2) computes the rational Euler characteristic \u03c7(\u0393) using the Gauss-Bonnet formula and verifies consistency, (3) outputs results to results/cohomology_data.json. Script runs without errors and results match known values from the literature (cited in sources.bib).",
+          "description": "Implement a computational framework (using SageMath, GAP, or Python) to compute group cohomology H*(Γ; Q) for small lattice examples, and verify rational Euler characteristic computations against known formulae (e.g., Harder-Gauss-Bonnet).",
+          "acceptance_criteria": "A script (results/cohomology_computations.py or .sage) that: (1) computes H*(Γ; Q) for at least 2 small explicit lattice examples with 2-torsion, (2) computes the rational Euler characteristic χ(Γ) using the Gauss-Bonnet formula and verifies consistency, (3) outputs results to results/cohomology_data.json. Script runs without errors and results match known values from the literature (cited in sources.bib).",
           "status": "pending",
           "notes": null,
           "error": null
@@ -131,15 +131,15 @@
       "items": [
         {
           "id": "item_011",
-          "description": "Investigate Approach A (Surgery-theoretic): Apply surgery theory to determine whether a finite Poincar\u00e9 complex X with \u03c0\u2081(X) = \u0393 and rationally acyclic universal cover can be realized as a closed manifold. Analyze the surgery exact sequence and the role of L-groups L_*(Z\u0393).",
-          "acceptance_criteria": "A technical document (results/surgery_approach.md) containing: (1) setup of the surgery exact sequence for the problem, (2) identification of the relevant L-groups L_n(Z\u0393) and what is known about them for lattices in semisimple groups, (3) analysis of whether the surgery obstruction vanishes rationally (using Ranicki's algebraic surgery), (4) explicit consideration of how 2-torsion in \u0393 affects the L-groups (2-local complications), (5) conclusion on feasibility with at least 3 citations to sources.bib.",
+          "description": "Investigate Approach A (Surgery-theoretic): Apply surgery theory to determine whether a finite Poincaré complex X with π₁(X) = Γ and rationally acyclic universal cover can be realized as a closed manifold. Analyze the surgery exact sequence and the role of L-groups L_*(ZΓ).",
+          "acceptance_criteria": "A technical document (results/surgery_approach.md) containing: (1) setup of the surgery exact sequence for the problem, (2) identification of the relevant L-groups L_n(ZΓ) and what is known about them for lattices in semisimple groups, (3) analysis of whether the surgery obstruction vanishes rationally (using Ranicki's algebraic surgery), (4) explicit consideration of how 2-torsion in Γ affects the L-groups (2-local complications), (5) conclusion on feasibility with at least 3 citations to sources.bib.",
           "status": "pending",
           "notes": null,
           "error": null
         },
         {
           "id": "item_012",
-          "description": "Investigate Approach B (Davis-type constructions): Examine whether Davis's reflection group trick or related hyperbolization procedures can produce a closed manifold M with \u03c0\u2081(M) = \u0393 (containing 2-torsion) and rationally acyclic universal cover.",
+          "description": "Investigate Approach B (Davis-type constructions): Examine whether Davis's reflection group trick or related hyperbolization procedures can produce a closed manifold M with π₁(M) = Γ (containing 2-torsion) and rationally acyclic universal cover.",
           "acceptance_criteria": "A technical document (results/davis_approach.md) containing: (1) review of Davis's construction of aspherical manifolds not covered by Euclidean space, (2) analysis of whether the construction can be adapted to produce rationally-acyclic-but-not-contractible universal covers, (3) explicit examination of the role of the nerve of the right-angled Coxeter group and how 2-torsion interacts, (4) identification of at least 2 specific obstacles or modifications needed, (5) comparison with the Bestvina-Brady examples of groups that are FP but not finitely presented.",
           "status": "pending",
           "notes": null,
@@ -147,8 +147,8 @@
         },
         {
           "id": "item_013",
-          "description": "Investigate Approach C (Smith theory and fixed-point obstructions): Apply Smith theory to determine whether 2-torsion elements acting on a rationally acyclic universal cover create obstructions. Specifically, if g \u2208 \u0393 has order 2 and acts on the rationally acyclic universal cover M\u0303, what does Smith theory say about Fix(g)?",
-          "acceptance_criteria": "A technical document (results/smith_theory_approach.md) containing: (1) precise statement of P.A. Smith's theorem for Z/2-actions on Q-acyclic spaces, (2) derivation of constraints on the fixed-point set of any order-2 element of \u0393 acting on M\u0303, (3) analysis of whether these constraints are compatible with M\u0303 being a manifold universal cover, (4) comparison of the Q-acyclic case with the Z-acyclic (contractible) case, (5) explicit example or counterexample showing the Smith-theoretic constraint in action. At least 4 citations to sources.bib.",
+          "description": "Investigate Approach C (Smith theory and fixed-point obstructions): Apply Smith theory to determine whether 2-torsion elements acting on a rationally acyclic universal cover create obstructions. Specifically, if g ∈ Γ has order 2 and acts on the rationally acyclic universal cover M̃, what does Smith theory say about Fix(g)?",
+          "acceptance_criteria": "A technical document (results/smith_theory_approach.md) containing: (1) precise statement of P.A. Smith's theorem for Z/2-actions on Q-acyclic spaces, (2) derivation of constraints on the fixed-point set of any order-2 element of Γ acting on M̃, (3) analysis of whether these constraints are compatible with M̃ being a manifold universal cover, (4) comparison of the Q-acyclic case with the Z-acyclic (contractible) case, (5) explicit example or counterexample showing the Smith-theoretic constraint in action. At least 4 citations to sources.bib.",
           "status": "pending",
           "notes": null,
           "error": null
@@ -156,7 +156,7 @@
         {
           "id": "item_014",
           "description": "Synthesize approaches: determine whether the combination of surgery theory, Davis constructions, and Smith theory yields a definitive answer (positive construction or impossibility proof) or identifies the precise remaining gap.",
-          "acceptance_criteria": "A synthesis document (results/synthesis.md) containing: (1) a clear YES/NO/OPEN verdict on the original question with supporting argument, (2) if YES: outline of the construction (which G, which \u0393, which manifold M), (3) if NO: the complete chain of obstructions, (4) if OPEN: precise identification of the gap between known obstructions and known constructions, (5) comparison of findings with at least 5 specific results from the literature review.",
+          "acceptance_criteria": "A synthesis document (results/synthesis.md) containing: (1) a clear YES/NO/OPEN verdict on the original question with supporting argument, (2) if YES: outline of the construction (which G, which Γ, which manifold M), (3) if NO: the complete chain of obstructions, (4) if OPEN: precise identification of the gap between known obstructions and known constructions, (5) comparison of findings with at least 5 specific results from the literature review.",
           "status": "pending",
           "notes": null,
           "error": null
@@ -179,14 +179,14 @@
         {
           "id": "item_016",
           "description": "Computational verification: for the concrete lattice examples from item_007, use the computational framework from item_010 to verify or refute the theoretical predictions from Phase 3. Compute spectral sequence differentials or obstruction classes where feasible.",
-          "acceptance_criteria": "Updated computational outputs in results/cohomology_data.json containing: (1) H*(\u0393; Q) for at least 3 examples, (2) verification that the virtual cohomological dimension matches dim(G/K), (3) for at least 1 example, explicit computation of the relevant surgery or Wall obstruction class modulo torsion, (4) all computations documented with methodology in results/computational_verification.md.",
+          "acceptance_criteria": "Updated computational outputs in results/cohomology_data.json containing: (1) H*(Γ; Q) for at least 3 examples, (2) verification that the virtual cohomological dimension matches dim(G/K), (3) for at least 1 example, explicit computation of the relevant surgery or Wall obstruction class modulo torsion, (4) all computations documented with methodology in results/computational_verification.md.",
           "status": "pending",
           "notes": null,
           "error": null
         },
         {
           "id": "item_017",
-          "description": "Edge case analysis: investigate whether the answer changes if we relax hypotheses \u2014 e.g., replace 2-torsion with p-torsion for odd p, replace Q-acyclicity with Z/p-acyclicity, or allow manifolds with boundary.",
+          "description": "Edge case analysis: investigate whether the answer changes if we relax hypotheses — e.g., replace 2-torsion with p-torsion for odd p, replace Q-acyclicity with Z/p-acyclicity, or allow manifolds with boundary.",
           "acceptance_criteria": "Document (results/edge_cases.md) analyzing at least 4 variations of the original problem: (1) p-torsion for odd primes (does Smith theory obstruction weaken?), (2) Z-acyclicity vs Q-acyclicity, (3) manifolds with boundary allowed, (4) non-uniform (but still cofinite-volume) lattices. Each variation has a clear verdict or status relative to the original problem.",
           "status": "pending",
           "notes": null,
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 0,
+    "completed": 1,
     "in_progress": 0,
     "failed": 0,
-    "pending": 23
+    "pending": 22
   }
 }
