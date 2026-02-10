@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "description": "Group cohomology computations for uniform lattices with 2-torsion",
+    "random_seed": 42,
+    "framework": "Python (exact arithmetic via fractions)"
+  },
+  "example_1_triangle_237": {
+    "group": "Delta(2,3,7)",
+    "ambient_group": "PSL(2,R) \u2245 SO_0(2,1)",
+    "symmetric_space_dim": 2,
+    "contains_2_torsion": true,
+    "torsion_elements": [
+      "a (order 2)"
+    ],
+    "genus": 0,
+    "cone_orders": [
+      2,
+      3,
+      7
+    ],
+    "orbifold_euler_char": "-1/42",
+    "rational_betti_numbers": [
+      1,
+      0,
+      1
+    ],
+    "euler_char_betti": 2,
+    "rational_euler_char_wall": "-1/42",
+    "vcd": 2,
+    "notes": "Cocompact Fuchsian group. H^0=Q, H^1=0, H^2=Q. Wall rational Euler char = 1/42."
+  },
+  "example_2_hyperelliptic": {
+    "group": "\u03c0\u2081(\u03a3_2) \u22ca Z/2 (hyperelliptic)",
+    "ambient_group": "PSL(2,R)",
+    "symmetric_space_dim": 2,
+    "contains_2_torsion": true,
+    "torsion_elements": [
+      "c_1 (order 2)",
+      "c_2 (order 2)",
+      "c_3 (order 2)",
+      "c_4 (order 2)",
+      "c_5 (order 2)",
+      "c_6 (order 2)"
+    ],
+    "surface_genus": 2,
+    "orbifold_genus": 0,
+    "n_cone_points": 6,
+    "cone_orders": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "orbifold_euler_char": "-1",
+    "rational_betti_numbers": [
+      1,
+      0,
+      1
+    ],
+    "euler_char_betti": 2,
+    "rational_euler_char_wall": "-1",
+    "gauss_bonnet_verification": {
+      "orbifold_area": 6.283185307179586,
+      "surface_area": 12.566370614359172,
+      "index": 2,
+      "consistent": true
+    },
+    "vcd": 2,
+    "notes": "Z/2-extension of genus-2 surface group. 6 involutions. \u03c7^orb = -1."
+  },
+  "example_3_triangle_245": {
+    "group": "Delta(2,4,5)",
+    "ambient_group": "PSL(2,R)",
+    "symmetric_space_dim": 2,
+    "contains_2_torsion": true,
+    "torsion_elements": [
+      "element of order 2",
+      "element of order 4 (square is 2-torsion)"
+    ],
+    "cone_orders": [
+      2,
+      4,
+      5
+    ],
+    "orbifold_euler_char": "-1/20",
+    "rational_betti_numbers": [
+      1,
+      0,
+      1
+    ],
+    "vcd": 2,
+    "additional_example": {
+      "group": "Delta(2,3,8)",
+      "cone_orders": [
+        2,
+        3,
+        8
+      ],
+      "orbifold_euler_char": "-1/24",
+      "rational_betti_numbers": [
+        1,
+        0,
+        1
+      ],
+      "contains_2_torsion": true
+    },
+    "notes": "Cocompact Fuchsian group with 2-torsion. Gauss-Bonnet verified."
+  },
+  "gauss_bonnet_verification": {
+    "examples": [
+      {
+        "group": "\u0394(2,3,7)",
+        "chi_orb": "-1/42",
+        "chi_orb_float": -0.023809523809523808,
+        "area": 0.1495996501709425,
+        "is_hyperbolic": true,
+        "verification": "Area = 2\u03c0/42 = \u03c0/21 \u2248 0.149600"
+      },
+      {
+        "group": "\u03c0\u2081(\u03a3\u2082) \u22ca Z/2",
+        "chi_orb": "-1",
+        "chi_orb_float": -1.0,
+        "area": 6.283185307179586,
+        "is_hyperbolic": true,
+        "verification": "Area = 2\u03c0 \u2248 6.283185"
+      },
+      {
+        "group": "\u0394(2,4,5)",
+        "chi_orb": "-1/20",
+        "chi_orb_float": -0.05,
+        "area": 0.3141592653589793,
+        "is_hyperbolic": true,
+        "verification": "Area = 2\u03c0/20 = \u03c0/10 \u2248 0.314159"
+      }
+    ],
+    "consistency_check": {
+      "test": "Klein quartic (genus 3) via \u0394(2,3,7)",
+      "computed_area": 25.13274122871834,
+      "expected_area": 25.132741228718345,
+      "consistent": true
+    }
+  }
+}
