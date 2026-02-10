@@ -1,0 +1,260 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-10T20:50:00Z",
+  "updated_at": "2026-02-10T20:49:11.065726+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-10T20:45:00Z",
+      "completed_at": "2026-02-10T20:49:11.065693+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Decompose the core mathematical problem into its constituent concepts: uniform lattices in real semisimple Lie groups, 2-torsion elements, compact manifolds without boundary, fundamental groups, universal covers, and rational acyclicity. Produce a structured concept map.",
+          "acceptance_criteria": "A document (results/concept_map.md) listing at least 8 distinct mathematical concepts with precise definitions, their logical dependencies, and how they relate to the central question. Must distinguish between rational acyclicity (vanishing of reduced H_*(X; Q)) and integral acyclicity, and clarify the role of B\u0393 vs. the manifold M.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct a comprehensive literature search on uniform lattices in semisimple Lie groups with torsion, focusing on Selberg's lemma, Borel's work on compact Clifford-Klein forms, and the existence of torsion-free finite-index subgroups.",
+          "acceptance_criteria": "Web search performed for at least 5 queries covering: 'uniform lattice semisimple Lie group torsion', 'Selberg lemma torsion-free subgroup', 'Borel compact Clifford-Klein form', 'arithmetic lattice 2-torsion', 'cocompact lattice manifold model'. Summaries of at least 8 relevant papers added to results/literature_notes.md.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Search for literature on rational acyclicity of universal covers, aspherical manifolds, and the Borel conjecture. Investigate Smith theory, P.A. Smith's theorem on fixed sets of cyclic p-group actions, and their obstructions to group actions on acyclic spaces.",
+          "acceptance_criteria": "Web search performed for at least 5 queries covering: 'rationally acyclic universal cover manifold', 'aspherical manifold fundamental group torsion', 'Smith theory finite group action acyclic space', 'Davis aspherical manifold', 'Bestvina-Brady Morse theory acyclicity'. At least 6 additional papers identified and summarized.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Search for related results on the realization problem: which groups can be fundamental groups of closed manifolds with prescribed universal cover homological properties? Survey results of Davis, Januszkiewicz, Weinberger, Luck, and others.",
+          "acceptance_criteria": "Web search performed for: 'fundamental group realization closed manifold', 'Davis Januszkiewicz aspherical manifold', 'Weinberger surgery group actions', 'Luck rational homology lattice', 'hyperbolization procedure torsion'. At least 5 papers identified. Document in results/literature_notes.md must total at least 20 distinct references across items 002-004.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted papers, books, and preprints from the literature review.",
+          "acceptance_criteria": "File sources.bib exists in the repo root with valid BibTeX format. Contains at least 15 entries. Each entry has author, title, year, and either journal/booktitle or eprint fields. Entries cover: Selberg, Borel, Davis, Luck, Smith theory, surgery theory, and lattice theory references.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Identify the precise mathematical obstructions: determine which known theorems constrain or enable the existence of such a manifold M with \u03c0\u2081(M) = \u0393 and rationally acyclic universal cover. Classify obstructions as algebraic, topological, or geometric.",
+          "acceptance_criteria": "A structured analysis document (results/obstructions.md) identifying at least 4 distinct obstructions or enabling results, each with: (1) precise theorem statement, (2) citation to sources.bib, (3) whether it obstructs or enables the construction, (4) which hypotheses of the problem it engages (uniform lattice, semisimple, 2-torsion, compact, no boundary, rational acyclicity).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Establish baseline: catalog all known examples of uniform lattices in real semisimple groups that contain 2-torsion. For each, determine the ambient group G, the rank, whether \u0393 is arithmetic, and known topological models for B\u0393.",
+          "acceptance_criteria": "A table (results/lattice_examples.md) with at least 6 explicit examples of uniform lattices with 2-torsion (e.g., in SO(n,1), SU(n,1), Sp(n,1), and higher-rank groups). Each entry specifies: ambient group G, whether \u0393 is arithmetic or non-arithmetic, source of 2-torsion (e.g., reflections, involutions), and known classifying space models. All entries cite sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Analyze the standard topological model: for \u0393 a uniform lattice in G, the symmetric space G/K is contractible and \u0393\\G/K is a compact orbifold. Compute or describe H_*(\u0393\\G/K; Q) for the examples from item_007 and characterize when the orbifold is a manifold.",
+          "acceptance_criteria": "Document (results/orbifold_analysis.md) containing: (1) proof that \u0393\\G/K is a manifold iff \u0393 is torsion-free, (2) description of the rational cohomology of \u0393\\G/K as an orbifold via the Cartan-Leray spectral sequence, (3) explicit computation for at least 2 examples showing that 2-torsion creates orbifold singularities, (4) comparison of H_*(B\u0393; Q) with H_*(\u0393\\G/K; Q).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Establish evaluation metrics: define precisely what 'success' and 'failure' mean for the research question. Formulate the question in terms of group cohomology: does there exist a compact closed n-manifold M with \u03c0\u2081(M) \u2245 \u0393 and H\u0303_*(M\u0303; Q) = 0?",
+          "acceptance_criteria": "Document (results/evaluation_framework.md) containing: (1) reformulation of the problem in terms of rational Poincar\u00e9 duality and the Euler characteristic, (2) necessary conditions on \u0393 derived from Poincar\u00e9 duality (e.g., virtual cohomological dimension constraints), (3) a decision tree: if vcd(\u0393) = n, what are the constraints from rational Poincar\u00e9 duality on a closed n-manifold with \u03c0\u2081 = \u0393, (4) statement of the Wall finiteness obstruction and its relevance.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement a computational framework (using SageMath, GAP, or Python) to compute group cohomology H*(\u0393; Q) for small lattice examples, and verify rational Euler characteristic computations against known formulae (e.g., Harder-Gauss-Bonnet).",
+          "acceptance_criteria": "A script (results/cohomology_computations.py or .sage) that: (1) computes H*(\u0393; Q) for at least 2 small explicit lattice examples with 2-torsion, (2) computes the rational Euler characteristic \u03c7(\u0393) using the Gauss-Bonnet formula and verifies consistency, (3) outputs results to results/cohomology_data.json. Script runs without errors and results match known values from the literature (cited in sources.bib).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_011",
+          "description": "Investigate Approach A (Surgery-theoretic): Apply surgery theory to determine whether a finite Poincar\u00e9 complex X with \u03c0\u2081(X) = \u0393 and rationally acyclic universal cover can be realized as a closed manifold. Analyze the surgery exact sequence and the role of L-groups L_*(Z\u0393).",
+          "acceptance_criteria": "A technical document (results/surgery_approach.md) containing: (1) setup of the surgery exact sequence for the problem, (2) identification of the relevant L-groups L_n(Z\u0393) and what is known about them for lattices in semisimple groups, (3) analysis of whether the surgery obstruction vanishes rationally (using Ranicki's algebraic surgery), (4) explicit consideration of how 2-torsion in \u0393 affects the L-groups (2-local complications), (5) conclusion on feasibility with at least 3 citations to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Investigate Approach B (Davis-type constructions): Examine whether Davis's reflection group trick or related hyperbolization procedures can produce a closed manifold M with \u03c0\u2081(M) = \u0393 (containing 2-torsion) and rationally acyclic universal cover.",
+          "acceptance_criteria": "A technical document (results/davis_approach.md) containing: (1) review of Davis's construction of aspherical manifolds not covered by Euclidean space, (2) analysis of whether the construction can be adapted to produce rationally-acyclic-but-not-contractible universal covers, (3) explicit examination of the role of the nerve of the right-angled Coxeter group and how 2-torsion interacts, (4) identification of at least 2 specific obstacles or modifications needed, (5) comparison with the Bestvina-Brady examples of groups that are FP but not finitely presented.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Investigate Approach C (Smith theory and fixed-point obstructions): Apply Smith theory to determine whether 2-torsion elements acting on a rationally acyclic universal cover create obstructions. Specifically, if g \u2208 \u0393 has order 2 and acts on the rationally acyclic universal cover M\u0303, what does Smith theory say about Fix(g)?",
+          "acceptance_criteria": "A technical document (results/smith_theory_approach.md) containing: (1) precise statement of P.A. Smith's theorem for Z/2-actions on Q-acyclic spaces, (2) derivation of constraints on the fixed-point set of any order-2 element of \u0393 acting on M\u0303, (3) analysis of whether these constraints are compatible with M\u0303 being a manifold universal cover, (4) comparison of the Q-acyclic case with the Z-acyclic (contractible) case, (5) explicit example or counterexample showing the Smith-theoretic constraint in action. At least 4 citations to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Synthesize approaches: determine whether the combination of surgery theory, Davis constructions, and Smith theory yields a definitive answer (positive construction or impossibility proof) or identifies the precise remaining gap.",
+          "acceptance_criteria": "A synthesis document (results/synthesis.md) containing: (1) a clear YES/NO/OPEN verdict on the original question with supporting argument, (2) if YES: outline of the construction (which G, which \u0393, which manifold M), (3) if NO: the complete chain of obstructions, (4) if OPEN: precise identification of the gap between known obstructions and known constructions, (5) comparison of findings with at least 5 specific results from the literature review.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_015",
+          "description": "Test the synthesis against specific families: for each rank-1 semisimple group G = SO(n,1), SU(n,1), Sp(n,1), and at least one higher-rank group, determine whether the answer to the question depends on the ambient group.",
+          "acceptance_criteria": "A systematic table (results/family_analysis.md) covering at least 5 families of semisimple groups, with for each: (1) existence/non-existence of uniform lattices with 2-torsion, (2) dimension of symmetric space, (3) whether Smith-theoretic obstructions apply, (4) whether surgery-theoretic approach succeeds or fails, (5) overall verdict for that family. Results must be consistent with the synthesis from item_014.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Computational verification: for the concrete lattice examples from item_007, use the computational framework from item_010 to verify or refute the theoretical predictions from Phase 3. Compute spectral sequence differentials or obstruction classes where feasible.",
+          "acceptance_criteria": "Updated computational outputs in results/cohomology_data.json containing: (1) H*(\u0393; Q) for at least 3 examples, (2) verification that the virtual cohomological dimension matches dim(G/K), (3) for at least 1 example, explicit computation of the relevant surgery or Wall obstruction class modulo torsion, (4) all computations documented with methodology in results/computational_verification.md.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Edge case analysis: investigate whether the answer changes if we relax hypotheses \u2014 e.g., replace 2-torsion with p-torsion for odd p, replace Q-acyclicity with Z/p-acyclicity, or allow manifolds with boundary.",
+          "acceptance_criteria": "Document (results/edge_cases.md) analyzing at least 4 variations of the original problem: (1) p-torsion for odd primes (does Smith theory obstruction weaken?), (2) Z-acyclicity vs Q-acyclicity, (3) manifolds with boundary allowed, (4) non-uniform (but still cofinite-volume) lattices. Each variation has a clear verdict or status relative to the original problem.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Compare results with prior work: systematically compare findings against the key papers identified in Phase 1, identifying agreements, disagreements, and novel contributions.",
+          "acceptance_criteria": "Document (results/prior_work_comparison.md) with a comparison table referencing at least 10 entries from sources.bib. For each cited work: (1) what it proves relevant to our question, (2) how our analysis agrees or extends it, (3) any gaps our work fills. Must identify at least 2 points where our analysis provides genuinely new insight beyond the existing literature.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_019",
+          "description": "Write a self-contained mathematical exposition of the main result or analysis, suitable for inclusion in a research paper. Include all definitions, theorem statements, and proof sketches.",
+          "acceptance_criteria": "Document (results/main_exposition.md) of at least 3000 words containing: (1) precise problem statement with all definitions, (2) statement of main result/analysis, (3) proof sketch or argument outline with all logical steps, (4) discussion of the role of each hypothesis (uniform, semisimple, 2-torsion, compact, no boundary, Q-acyclic), (5) at least 10 citations to sources.bib using BibTeX keys.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Create a diagram illustrating the logical structure of the argument: which theorems feed into which conclusions, and where the key mathematical difficulties lie.",
+          "acceptance_criteria": "A figure (figures/argument_structure.md or figures/argument_structure.tex) showing: (1) at least 8 nodes representing key theorems/lemmas/constructions, (2) directed edges showing logical dependencies, (3) clear indication of which steps are established results vs. novel contributions, (4) annotation of where 2-torsion creates the critical difficulty.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Document all open questions and future directions identified during the research.",
+          "acceptance_criteria": "Document (results/open_questions.md) listing at least 5 precisely stated open questions that emerge from the analysis, each with: (1) formal mathematical statement, (2) why it is interesting, (3) which techniques from this research might apply, (4) relationship to existing conjectures in the literature (cited via sources.bib).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Compile a final research report integrating all phases, with executive summary, methodology, results, and conclusions.",
+          "acceptance_criteria": "Document (results/final_report.md) containing: (1) executive summary (500 words) stating the problem, approach, and main findings, (2) methodology section describing all three approaches investigated, (3) results section with the definitive analysis for each family of groups, (4) conclusions with the overall answer to the question (YES/NO/OPEN with precise characterization), (5) complete bibliography via sources.bib with at least 15 cited works, (6) all computational results summarized.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Final validation: verify internal consistency of all documents, ensure all cross-references are valid, all citations exist in sources.bib, and all computational results are reproducible.",
+          "acceptance_criteria": "A checklist (results/validation_checklist.md) confirming: (1) all .md files in results/ are internally consistent, (2) every citation key used in any document exists in sources.bib, (3) all computational scripts run without errors, (4) the main exposition's proof sketch has no logical gaps, (5) the final report's conclusions follow from the documented analysis. Any issues found are listed with resolutions.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 23,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 23
+  }
+}
