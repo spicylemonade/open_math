@@ -55,16 +55,16 @@
           "id": "item_003",
           "description": "Conduct comprehensive web-based literature review of unitary perfect numbers",
           "acceptance_criteria": "Search the web for all relevant papers, preprints (arXiv), encyclopedia entries (MathWorld, OEIS A002827, Wikipedia), and textbook references (Guy's Unsolved Problems in Number Theory, problem B3). Must cover at minimum: Subbarao & Warren (1966), Wall (1975, 1987, 1988), Goto (2007), Graham (1989), Hagis (1984), Frei's result on non-3-divisible UPNs, Pollack & Shevelev (2012), and Erdos Problem #1052. Produce results/literature_review.md summarizing each source's main result and relevance.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive literature review covering 15+ sources in results/literature_review.md",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Create and maintain sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "A valid BibTeX file sources.bib in the repo root containing at least 12 entries covering: Subbarao & Warren 1966, Wall 1975, Wall 1988, Goto 2007, Graham 1989, Hagis 1984, Pollack & Shevelev 2012, Guy (Unsolved Problems in Number Theory), Vaidyanathaswamy 1931, Cohen (unitary convolution), the OEIS A002827 entry, and at least one additional relevant reference. Each entry must have author, title, journal/book, year, and pages/DOI where available.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "15 BibTeX entries in sources.bib covering all required references",
           "error": null
         },
         {
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 2,
+    "completed": 4,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 22
   }
 }
