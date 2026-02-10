@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T20:59:40.996638+00:00",
+  "updated_at": "2026-02-10T21:00:10.052940+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -71,8 +71,8 @@
           "id": "item_005",
           "description": "Create and populate sources.bib with BibTeX entries for all consulted papers, books, and preprints from the literature review.",
           "acceptance_criteria": "File sources.bib exists in the repo root with valid BibTeX format. Contains at least 15 entries. Each entry has author, title, year, and either journal/booktitle or eprint fields. Entries cover: Selberg, Borel, Davis, Luck, Smith theory, surgery theory, and lattice theory references.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib contains 26 valid BibTeX entries covering all required topics: Selberg, Borel, Davis, Luck, Smith theory, surgery theory, lattice theory. Each entry has author, title, year, and journal/booktitle/eprint.",
           "error": null
         },
         {
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 4,
+    "completed": 5,
     "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 18
   }
 }
