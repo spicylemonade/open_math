@@ -1,0 +1,284 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-10T12:00:00Z",
+  "updated_at": "2026-02-10T22:23:13.698009+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-10T12:00:00Z",
+      "completed_at": "2026-02-10T22:23:13.697982+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and set up research infrastructure",
+          "acceptance_criteria": "Document listing all repository modules (figures/, results/, .archivara/, config files) and their purposes written to results/repo_analysis.md. Create src/ directory with __init__.py for computational code and a utils/ subdirectory for shared helpers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the definition of unitary perfect numbers and the core conjecture mathematically",
+          "acceptance_criteria": "A document results/problem_formalization.md containing: (1) precise definition of unitary divisor d|n with gcd(d,n/d)=1, (2) the multiplicative formula sigma*(n) = prod_{p^a || n} (1 + p^a), (3) the equation sigma*(n) = 2n defining unitary perfect numbers, (4) Subbarao's finiteness conjecture statement, (5) proof that no odd unitary perfect numbers exist (since each factor p^a+1 is even for odd p, so 2^{omega(n)} | sigma*(n) but 2 does not divide n), (6) the known five examples with their full prime factorizations verified.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct comprehensive web-based literature review of unitary perfect numbers",
+          "acceptance_criteria": "Search the web for all relevant papers, preprints (arXiv), encyclopedia entries (MathWorld, OEIS A002827, Wikipedia), and textbook references (Guy's Unsolved Problems in Number Theory, problem B3). Must cover at minimum: Subbarao & Warren (1966), Wall (1975, 1987, 1988), Goto (2007), Graham (1989), Hagis (1984), Frei's result on non-3-divisible UPNs, Pollack & Shevelev (2012), and Erdos Problem #1052. Produce results/literature_review.md summarizing each source's main result and relevance.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Create and maintain sources.bib with BibTeX entries for all consulted sources",
+          "acceptance_criteria": "A valid BibTeX file sources.bib in the repo root containing at least 12 entries covering: Subbarao & Warren 1966, Wall 1975, Wall 1988, Goto 2007, Graham 1989, Hagis 1984, Pollack & Shevelev 2012, Guy (Unsolved Problems in Number Theory), Vaidyanathaswamy 1931, Cohen (unitary convolution), the OEIS A002827 entry, and at least one additional relevant reference. Each entry must have author, title, journal/book, year, and pages/DOI where available.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Catalog all known partial results and proof techniques for finiteness of unitary perfect numbers",
+          "acceptance_criteria": "A document results/known_results.md cataloging: (1) Subbarao-Warren theorem: for fixed m, finitely many UPNs divisible by 2^m (with proof sketch via limiting argument on sigma*(D_i)/D_i -> 1), (2) Goto's upper bound: N < 2^{2^k} for omega(N)=k, (3) Wall's result: any new UPN has >= 9 odd prime factors, (4) Frei's result: UPN not divisible by 3 requires 2^m with m>=144 and >= 144 odd primes and N > 10^440, (5) Graham's result on squarefree odd part, (6) the Dirichlet generating function zeta(s)zeta(s-1)/zeta(2s-1). Each result must include the precise statement, the paper reference, and how it constrains the search space.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Identify gaps in existing approaches and formulate novel research directions",
+          "acceptance_criteria": "A document results/research_gaps.md identifying at least 5 specific gaps or unexplored directions, including: (1) whether the Subbarao-Warren fixed-2-adic-valuation argument can be made uniform across all valuations, (2) whether analytic methods (mean value theorems for sigma*/n) can bound the density of solutions, (3) whether the product equation prod(1 + 1/p^a) = 2 over prime powers admits only finitely many solutions via Diophantine approximation, (4) whether modular arithmetic constraints (e.g., sigma*(n) mod small primes) can eliminate large classes of candidates, (5) computational feasibility of extending the search beyond the five known examples. Each gap must reference the prior work it extends.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement core unitary divisor and sigma* computation functions",
+          "acceptance_criteria": "Python module src/unitary.py implementing: (1) is_unitary_divisor(d, n) -> bool, (2) unitary_divisors(n) -> list, (3) sigma_star(n) -> int using the multiplicative formula prod(1 + p^a), (4) is_unitary_perfect(n) -> bool. All functions must have unit tests in tests/test_unitary.py verifying correctness on the five known UPNs (6, 60, 90, 87360, and the fifth UPN) and at least 10 non-UPN integers. Tests must pass.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement the abundance ratio sigma*(n)/n analysis toolkit",
+          "acceptance_criteria": "Python module src/abundance.py implementing: (1) unitary_abundance_ratio(n) -> float computing sigma*(n)/(2n), (2) prime_power_contribution(p, a) -> float computing (1 + p^a)/p^a = 1 + 1/p^a, (3) required_product_from_factorization(factorization) -> float computing prod(1 + 1/p_i^{a_i}), (4) a function that given a partial factorization returns the remaining product needed to reach 2. Unit tests must verify that the abundance ratio equals exactly 1.0 for all five known UPNs.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement brute-force search and reproduce known results",
+          "acceptance_criteria": "Python script src/search_brute.py that: (1) enumerates integers up to a given bound and checks is_unitary_perfect, (2) successfully finds {6, 60, 90, 87360} when run up to 10^5, (3) logs runtime metrics to results/brute_search_metrics.json including integers_checked, time_elapsed, and UPNs_found. The script must confirm no UPNs exist between 87361 and at least 10^6 (verifiable in under 5 minutes).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement structured factorization-based search exploiting multiplicativity of sigma*",
+          "acceptance_criteria": "Python module src/search_structured.py that searches for UPNs by: (1) enumerating candidate prime factorizations n = 2^m * prod(p_i^{a_i}) and checking prod(1 + p_i^{a_i}) = 2n, (2) implementing the constraint that for UPN n with omega(n) = k, n < 2^{2^k} (Goto bound) to prune search, (3) implementing Wall's constraint that new UPNs need >= 9 odd prime factors, (4) correctly recovering all five known UPNs from the structured search. Results logged to results/structured_search_metrics.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Establish baseline metrics comparing brute-force vs. structured search",
+          "acceptance_criteria": "A document results/baseline_comparison.md with: (1) table comparing brute-force vs structured search in terms of candidates evaluated, time, and UPNs found for matched ranges, (2) analysis of how the Goto upper bound and Wall's odd-component bound reduce the search space, (3) identification of which constraints are most effective at pruning. Must reference Goto (2007) and Wall (1988) from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Analyze the product equation prod(1 + 1/p_i^{a_i}) = 2 as a Diophantine constraint",
+          "acceptance_criteria": "Python module src/product_analysis.py and document results/product_equation_analysis.md containing: (1) enumeration of all solutions to prod(1 + 1/p_i^{a_i}) = 2 for k <= 14 prime factors (covering all known UPNs since the fifth has 12 distinct primes), (2) proof or strong computational evidence that for k >= some threshold, no solutions exist (the product of maximal terms (1+1/2)(1+1/3)(1+1/5)...(1+1/p_k) eventually falls below 2 for sufficiently many primes), (3) analysis of how quickly the maximal achievable product decreases as k grows, with a table of max prod(1+1/p_i) for the first k primes for k=1..50, (4) comparison with the known UPN factorizations to show how close they are to the theoretical maximum.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Develop and test a uniform finiteness argument extending Subbarao-Warren across all 2-adic valuations",
+          "acceptance_criteria": "Document results/uniform_finiteness.md presenting: (1) formalization of the Subbarao-Warren argument that for fixed m, finitely many UPNs have v_2(n)=m, (2) analysis of whether the finite bound B(m) on UPNs with v_2(n)=m can be made effective and explicit for each m, (3) investigation of whether B(m) is uniformly bounded or grows with m, (4) if B(m) grows: computation of B(m) for m=1..30 and analysis of the growth rate, (5) if B(m) is bounded: a proof sketch that this implies overall finiteness. Must cite Subbarao & Warren (1966).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Investigate analytic density bounds for the set of unitary perfect numbers",
+          "acceptance_criteria": "Document results/density_analysis.md containing: (1) computation of the mean value of sigma*(n)/n over [1,X] using the Dirichlet series zeta(s)zeta(s-1)/zeta(2s-1) and Perron's formula or elementary estimates, (2) derivation of upper bounds on #{n <= X : sigma*(n) = 2n} using the variance of sigma*(n)/n, (3) comparison with Pollack-Shevelev techniques for near-perfect numbers, (4) assessment of whether these analytic bounds can yield finiteness or only density-zero results. Must cite Pollack & Shevelev (2012) and the Dirichlet series representation.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Develop modular arithmetic obstruction analysis for candidate UPNs",
+          "acceptance_criteria": "Python module src/modular_obstructions.py and document results/modular_analysis.md containing: (1) for each small modulus q in {3,4,5,7,8,9,11,13,16}, analysis of which residue classes mod q can contain a UPN (using sigma*(n) = 2n mod q and multiplicativity), (2) proof that certain residue classes are excluded, (3) combined sieve density: what fraction of integers survive all modular obstructions for q <= 100, (4) analysis of whether these obstructions alone can prove finiteness (likely not, but quantify the sieve density). Must produce a table of excluded residues for each modulus.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Investigate the growth constraint: can the required number of prime factors grow fast enough to sustain infinitely many UPNs?",
+          "acceptance_criteria": "Document results/growth_constraint.md containing: (1) derivation showing that if n is a UPN with v_2(n)=m, then omega(n) >= f(m) for an explicit increasing function f (since (1+2^m)/2^m is close to 1 for large m, requiring many odd prime power factors to bring the product to 2), (2) explicit computation of f(m) for m=1..50, (3) combined with Goto's bound n < 2^{2^{omega(n)}}, derive that any UPN with v_2(n)=m must satisfy m < 2^{f(m)} (verify this becomes increasingly constraining), (4) analysis of whether these combined constraints rule out all sufficiently large m, which would prove finiteness.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Attempt a novel proof of finiteness via the interaction of multiplicative constraints and prime number theorem",
+          "acceptance_criteria": "Document results/finiteness_attempt.md containing: (1) a rigorous attempt to prove that only finitely many UPNs exist by combining: the product equation prod(1+1/p_i^{a_i})=2, the constraint that all prime powers are distinct, Goto's bound, the growth constraint from item_016, and Mertens' theorem (prod_{p<=x}(1+1/p) ~ C*log(x)), (2) either a complete proof of finiteness with all steps verified, or (3) a precise identification of which step fails and what additional input would be needed to complete the proof. The document must be self-contained and mathematically rigorous, with all claims either proved or clearly marked as conjectural.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Run exhaustive structured search for UPNs with omega(n) <= 15 and v_2(n) <= 30",
+          "acceptance_criteria": "Script src/exhaustive_search.py that systematically searches for UPNs by: (1) for each (m, k) with m=1..30 and k=2..15, enumerating candidate factorizations 2^m * prod(p_i^{a_i}) with k distinct primes, subject to Goto's bound and the product equation, (2) results saved to results/exhaustive_search_results.json listing all solutions found (should recover all five known UPNs), (3) a proof-by-exhaustion certificate for the searched region: for each (m,k) pair, log the number of candidates evaluated and confirm no new UPNs found, (4) runtime under 2 hours total.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Validate the growth constraint function f(m) computationally",
+          "acceptance_criteria": "Script src/validate_growth.py that: (1) computes f(m) for m=1..100 (minimum omega(n) for a UPN with v_2(n)=m), (2) verifies that f(m) is monotonically increasing, (3) plots f(m) vs m and saves to figures/growth_constraint.png, (4) computes and plots the combined constraint region {(m, k) : k >= f(m) and m < 2^{2^k}} and shows it becomes empty for sufficiently large m, (5) determines the exact threshold m_0 beyond which no (m,k) pair is feasible, (6) saves numerical results to results/growth_validation.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Empirically verify the modular obstruction analysis against known UPNs and random integers",
+          "acceptance_criteria": "Script src/validate_modular.py that: (1) confirms all five known UPNs pass all modular obstruction tests, (2) tests 10^6 random integers and reports what fraction pass all obstructions for q <= 100, (3) compares the sieve density with the density of actual UPNs (which is 5/N for N tested), (4) saves results to results/modular_validation.json with sieve_density, random_pass_rate, and known_UPN_verification fields.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Evaluate the novel finiteness proof attempt: verify each logical step computationally",
+          "acceptance_criteria": "Script src/verify_proof.py that: (1) for each numbered claim in results/finiteness_attempt.md, implements a computational verification (e.g., checking inequalities, verifying bounds hold for stated ranges), (2) produces results/proof_verification.json listing each claim, whether it was verified, and the computational evidence, (3) identifies any claims that fail verification or require adjustment. All verifiable claims must be checked; non-verifiable claims (e.g., asymptotic statements) must be flagged with the reason.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Compare all results against prior work from the literature review",
+          "acceptance_criteria": "Document results/comparison_with_prior_work.md containing: (1) for each key result from Subbarao-Warren, Goto, Wall, Graham, Hagis, and Frei, verify that our computational results are consistent, (2) identify any results that extend or improve upon prior bounds, (3) a table showing our bounds vs. prior bounds for key parameters (minimum omega, minimum v_2, maximum n for fixed omega, sieve density), (4) assessment of the novelty of our finiteness attempt relative to prior approaches. Must reference sources.bib entries throughout.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Synthesize all results into a coherent assessment of the finiteness question",
+          "acceptance_criteria": "Document results/synthesis.md containing: (1) summary of the strongest evidence for finiteness (product equation constraints, growth constraints, modular obstructions, exhaustive search results), (2) honest assessment of whether we achieved an unconditional proof or fell short (and if so, exactly what is missing), (3) if proof incomplete: a precise statement of the minimal additional lemma or result that would close the gap, (4) comparison of our approach with the $10 prize problem status (Erdos Problem #1052), (5) at least 2000 words of rigorous mathematical exposition.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Generate publication-quality figures summarizing key results",
+          "acceptance_criteria": "At least 4 figures saved in figures/ directory: (1) figures/known_upn_factorizations.png showing the prime factorization structure of all five known UPNs, (2) figures/product_equation_solutions.png visualizing the solution space of the product equation for different k, (3) figures/growth_constraint.png (from item_019), (4) figures/modular_sieve_density.png showing cumulative sieve density as modulus increases. All figures must have proper axis labels, titles, and legends.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Write final research report with complete mathematical exposition",
+          "acceptance_criteria": "Document results/final_report.md containing: (1) Abstract (200 words), (2) Introduction with problem history citing sources.bib, (3) Preliminaries section defining all notation, (4) Results section presenting our findings organized by approach (product equation, growth constraint, modular obstructions, computational search, finiteness attempt), (5) Discussion section comparing with prior work and assessing the status of Subbarao's conjecture, (6) Conclusion with concrete open problems and suggested next steps, (7) Bibliography section referencing sources.bib. Must be at least 5000 words and cite at least 10 distinct references from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Ensure all code is documented, tested, and reproducible",
+          "acceptance_criteria": "All Python files in src/ have docstrings on every public function. All tests in tests/ pass when run with pytest. A file results/reproducibility.md documents: (1) how to run each script, (2) expected outputs and where they are saved, (3) hardware requirements and estimated runtimes, (4) Python version and dependencies (requirements.txt created if needed). Running the full test suite completes without errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 26,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 26
+  }
+}
