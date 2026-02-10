@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: research_paper.aux
+The style file: plainnat.bst
+Database file #1: sources.bib
+Warning--empty journal in davisluck2023
+You've used 20 entries,
+            2773 wiz_defined-function locations,
+            728 strings with 7725 characters,
+and the built_in function-call counts, 7972 in all, are:
+= -- 770
+> -- 288
+< -- 22
++ -- 104
+- -- 84
+* -- 558
+:= -- 1227
+add.period$ -- 73
+call.type$ -- 20
+change.case$ -- 86
+chr.to.int$ -- 20
+cite$ -- 41
+duplicate$ -- 398
+empty$ -- 740
+format.name$ -- 120
+if$ -- 1681
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 20
+newline$ -- 120
+num.names$ -- 80
+pop$ -- 163
+preamble$ -- 1
+purify$ -- 68
+quote$ -- 0
+skip$ -- 295
+stack$ -- 0
+substring$ -- 373
+swap$ -- 30
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 210
+warning$ -- 1
+while$ -- 89
+width$ -- 0
+write$ -- 286
+(There was 1 warning)
