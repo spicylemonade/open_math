@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T21:15:42.733675+00:00",
+  "updated_at": "2026-02-10T21:16:51.498598+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -188,15 +188,15 @@
           "id": "item_017",
           "description": "Edge case analysis: investigate whether the answer changes if we relax hypotheses — e.g., replace 2-torsion with p-torsion for odd p, replace Q-acyclicity with Z/p-acyclicity, or allow manifolds with boundary.",
           "acceptance_criteria": "Document (results/edge_cases.md) analyzing at least 4 variations of the original problem: (1) p-torsion for odd primes (does Smith theory obstruction weaken?), (2) Z-acyclicity vs Q-acyclicity, (3) manifolds with boundary allowed, (4) non-uniform (but still cofinite-volume) lattices. Each variation has a clear verdict or status relative to the original problem.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 variations analyzed: (1) p-torsion odd primes: YES same argument, (2) Z-acyclicity: NO by Smith+Hurewicz, (3) manifolds with boundary: YES easily, (4) non-uniform lattices: generally NO (not virtual PD). Summary table.",
           "error": null
         },
         {
           "id": "item_018",
           "description": "Compare results with prior work: systematically compare findings against the key papers identified in Phase 1, identifying agreements, disagreements, and novel contributions.",
           "acceptance_criteria": "Document (results/prior_work_comparison.md) with a comparison table referencing at least 10 entries from sources.bib. For each cited work: (1) what it proves relevant to our question, (2) how our analysis agrees or extends it, (3) any gaps our work fills. Must identify at least 2 points where our analysis provides genuinely new insight beyond the existing literature.",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         }
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 16,
-    "in_progress": 0,
+    "completed": 17,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 7
+    "pending": 5
   }
 }
