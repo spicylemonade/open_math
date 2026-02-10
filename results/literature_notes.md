@@ -182,6 +182,92 @@
 
 ---
 
-## Part C: Realization Problem (Item 004)
+## Part C: Realization Problem and Related Constructions (Item 004)
 
-*(To be completed in item_004)*
+### Reference 18: Davis and Januszkiewicz (1991) — Hyperbolization of Polyhedra
+**Key:** `davisjanuszkiewicz1991`
+
+**Result.** Davis and Januszkiewicz introduce the hyperbolization procedure: a systematic method for converting any polyhedron into an aspherical polyhedron while preserving local structure (in particular, manifolds map to manifolds). The resulting spaces have fundamental groups that are Gromov hyperbolic (in the strict case).
+
+**Relevance.** Hyperbolization produces aspherical manifolds with torsion-free fundamental groups (after strict hyperbolization). The procedure preserves the manifold property but destroys any torsion in π₁. Not directly applicable to our problem of realizing groups WITH torsion.
+
+---
+
+### Reference 19: Charney and Davis (1995) — Strict Hyperbolization
+**Key:** `charneydavis1995`
+
+**Result.** Charney and Davis refine the hyperbolization procedure to produce locally CAT(−1) spaces (strict hyperbolization). The resulting aspherical manifolds have Gromov hyperbolic, residually finite, and linear fundamental groups (by recent work of Lafont–Ruffoni).
+
+---
+
+### Reference 20: Wall (1965) — Finiteness Conditions for CW Complexes
+**Key:** `wall1965`
+
+**Result.** Wall introduces the finiteness obstruction: an element in K̃₀(ℤ[π₁(X)]) that vanishes iff a finitely dominated space X has the homotopy type of a finite CW-complex.
+
+**Relevance.** For our problem: if we construct a finite Poincaré complex X with π₁(X) = Γ and rationally acyclic universal cover, the Wall obstruction determines whether X can be realized as a finite CW-complex (a necessary step toward realizing it as a manifold).
+
+---
+
+### Reference 21: Ferry and Ranicki (2000) — A Survey of Wall's Finiteness Obstruction
+**Key:** `ferryranicki2000`
+
+**Result.** Comprehensive survey of Wall's finiteness obstruction and its applications to surgery theory and manifold classification.
+
+---
+
+### Reference 22: Davis and Lück (2003/2023) — Nielsen Realization and Manifold Models for Classifying Spaces
+**Key:** `davisluck2023`
+
+**Result.** Davis and Lück study when the classifying space for proper actions E̲Γ admits a cocompact manifold model. They solve this when Γ contains a normal torsion-free subgroup π that is hyperbolic and π = π₁(M) for an aspherical closed manifold M of dimension ≥ 5, and Γ/π is finite cyclic of odd order.
+
+**Relevance.** Directly related to our question. The restriction to ODD order quotient Γ/π (excluding 2-torsion in the extension) is suggestive. The case of 2-torsion may have additional complications from Smith theory or surgery obstructions at the prime 2.
+
+---
+
+### Reference 23: Leary and Petrosyan (2017) — On Dimensions of Groups with Cocompact Classifying Spaces for Proper Actions
+**Key:** `learypetrosyan2017`
+
+**Result.** Construct examples where vcd(G) < min dim of any cocompact model for E̲G. Shows that the virtual cohomological dimension can be strictly less than the geometric dimension for proper classifying spaces.
+
+**Relevance.** Demonstrates that dimensional constraints for groups with torsion acting on spaces can be more subtle than the torsion-free case.
+
+---
+
+### Reference 24: Fisher and Zimmer (2002) — Geometric Lattice Actions, Entropy and Fundamental Groups
+**Key:** `fisherzimmer2002`
+
+**Result.** For a lattice Γ in a higher-rank simple Lie group acting on a compact manifold M, the fundamental group π₁(M) must be "large" in a precise sense (contains large-image linear representations).
+
+**Relevance.** Provides constraints on actions of lattices on manifolds, relevant to understanding when Γ can be π₁(M).
+
+---
+
+### Reference 25: Weinberger (1994) — The Topological Classification of Stratified Spaces
+**Key:** `weinberger1994`
+
+**Result.** Weinberger develops the surgery-theoretic framework for classifying stratified spaces, including orbifolds. Relevant to understanding the relationship between orbifold quotients Γ\G/K and manifolds.
+
+---
+
+### Reference 26: Ranicki (1992) — Algebraic L-Theory and Topological Manifolds
+**Key:** `ranicki1992`
+
+**Result.** Comprehensive development of algebraic surgery theory. The L-groups L_n(ℤ[Γ]) classify surgery obstructions for realizing Poincaré complexes as manifolds.
+
+**Relevance.** The key algebraic framework for determining whether a Poincaré complex with π₁ = Γ can be realized as a closed manifold.
+
+---
+
+## Summary of References (Items 002–004)
+
+Total distinct references identified: **26** (exceeds the requirement of 20)
+
+**By topic:**
+- Lattice theory: Selberg, Borel, Borel–Serre, Raghunathan, Gelander, Benoist, Gelander–Slutsky, Margulis, Bergeron–Venkatesh, Kobayashi–Yoshino
+- Smith theory: Smith, Oliver
+- Aspherical manifolds: Davis, Davis (book), Bestvina–Brady, Manifold Atlas
+- Classifying spaces: Lück, Leary–Petrosyan, Davis–Lück
+- Hyperbolization: Davis–Januszkiewicz, Charney–Davis
+- Surgery theory: Wall, Ferry–Ranicki, Ranicki, Weinberger
+- Lattice actions: Fisher–Zimmer
