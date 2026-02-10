@@ -1,0 +1,17 @@
+{
+  "upns_found": [
+    6,
+    60,
+    90,
+    87360
+  ],
+  "candidates_evaluated": 19035032,
+  "time_elapsed": 300.0,
+  "timed_out": true,
+  "cells_searched": 97,
+  "parameters": {
+    "max_m": 20,
+    "max_k": 13,
+    "max_odd_primes": 12
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "100000": {
+    "upns_found": [
+      6,
+      60,
+      90,
+      87360
+    ],
+    "integers_checked": 100000,
+    "time_elapsed": 1.322
+  },
+  "1000000": {
+    "upns_found": [
+      6,
+      60,
+      90,
+      87360
+    ],
+    "integers_checked": 1000000,
+    "time_elapsed": 26.987
+  }
+}
