@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-10T20:50:00Z",
-  "updated_at": "2026-02-10T21:10:43.212196+00:00",
+  "updated_at": "2026-02-10T21:12:04.309989+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -149,8 +149,8 @@
           "id": "item_013",
           "description": "Investigate Approach C (Smith theory and fixed-point obstructions): Apply Smith theory to determine whether 2-torsion elements acting on a rationally acyclic universal cover create obstructions. Specifically, if g ∈ Γ has order 2 and acts on the rationally acyclic universal cover M̃, what does Smith theory say about Fix(g)?",
           "acceptance_criteria": "A technical document (results/smith_theory_approach.md) containing: (1) precise statement of P.A. Smith's theorem for Z/2-actions on Q-acyclic spaces, (2) derivation of constraints on the fixed-point set of any order-2 element of Γ acting on M̃, (3) analysis of whether these constraints are compatible with M̃ being a manifold universal cover, (4) comparison of the Q-acyclic case with the Z-acyclic (contractible) case, (5) explicit example or counterexample showing the Smith-theoretic constraint in action. At least 4 citations to sources.bib.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Smith theory analyzed in detail. Key finding: Smith obstruction applies to F_2-acyclic spaces, NOT Q-acyclic. Since M~ can be Q-acyclic with non-trivial F_2-homology, Smith does NOT obstruct free Z/2 actions. Comparison table Q vs Z acyclic. Explicit example with Delta(2,3,7).",
           "error": null
         },
         {
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 12,
+    "completed": 13,
     "in_progress": 0,
     "failed": 0,
-    "pending": 11
+    "pending": 10
   }
 }
