@@ -1,0 +1,114 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cohen(1960)]{cohen1960unitary}
+Eckford Cohen.
+\newblock Arithmetical functions associated with the unitary divisors of an
+  integer.
+\newblock \emph{Mathematische Zeitschrift}, 74:\penalty0 66--80, 1960.
+\newblock Systematic study of arithmetic functions on unitary divisors.
+
+\bibitem[Erd\H{o}s(2024)]{erdos1052}
+Paul Erd\H{o}s.
+\newblock Problem \#1052: Unitary perfect numbers.
+\newblock Erd\H{o}s Problems, 2024.
+\newblock URL \url{https://www.erdosproblems.com/1052}.
+\newblock Open problem with \$10 prize. Asks whether there are finitely many
+  UPNs.
+
+\bibitem[Goto(2007)]{goto2007upper}
+Takeshi Goto.
+\newblock Upper bounds for unitary perfect numbers and unitary harmonic
+  numbers.
+\newblock \emph{Rocky Mountain Journal of Mathematics}, 37\penalty0
+  (5):\penalty0 1557--1576, 2007.
+\newblock \doi{10.1216/rmjm/1194275935}.
+\newblock Proved $N < 2^{2^k}$ for UPN $N$ with $\omega(N) = k$.
+
+\bibitem[Guy(2004)]{guy2004unsolved}
+Richard~K. Guy.
+\newblock \emph{Unsolved Problems in Number Theory}.
+\newblock Springer, 3rd edition, 2004.
+\newblock Problem B3: Unitary perfect numbers and Subbarao's conjecture.
+
+\bibitem[{OEIS Foundation Inc.}(2024)]{oeis_A002827}
+{OEIS Foundation Inc.}
+\newblock Sequence {A002827}: Unitary perfect numbers.
+\newblock The On-Line Encyclopedia of Integer Sequences, 2024.
+\newblock URL \url{https://oeis.org/A002827}.
+\newblock Lists 6, 60, 90, 87360, 146361946186458562560000.
+
+\bibitem[Pollack and Shevelev(2012)]{pollack2012near}
+Paul Pollack and Vladimir Shevelev.
+\newblock On perfect and near-perfect numbers.
+\newblock \emph{Journal of Number Theory}, 132\penalty0 (12):\penalty0
+  3037--3046, 2012.
+\newblock \doi{10.1016/j.jnt.2012.06.008}.
+\newblock Density bounds for near-perfect numbers using unitary divisor
+  techniques.
+
+\bibitem[Subbarao(1970)]{subbarao1970infinity}
+M.~V. Subbarao.
+\newblock Are there an infinity of unitary perfect numbers?
+\newblock \emph{American Mathematical Monthly}, 77:\penalty0 389--390, 1970.
+\newblock Posed the finiteness conjecture for unitary perfect numbers.
+
+\bibitem[Subbarao and Warren(1966)]{subbarao1966unitary}
+M.~V. Subbarao and L.~J. Warren.
+\newblock Unitary perfect numbers.
+\newblock \emph{Canadian Mathematical Bulletin}, 9\penalty0 (2):\penalty0
+  147--153, 1966.
+\newblock \doi{10.4153/CMB-1966-018-4}.
+\newblock Introduced unitary perfect numbers; found first four (6, 60, 90,
+  87360); proved no odd UPN exists; proved finitely many for each fixed 2-adic
+  valuation.
+
+\bibitem[Subbarao et~al.(1972)Subbarao, Cook, Newberry, and
+  Weber]{subbarao1972unitary}
+M.~V. Subbarao, T.~J. Cook, R.~S. Newberry, and J.~M. Weber.
+\newblock On unitary perfect numbers.
+\newblock \emph{Delta}, 3\penalty0 (1):\penalty0 22--26, 1972.
+\newblock Extended investigation of unitary perfect numbers.
+
+\bibitem[Vaidyanathaswamy(1931)]{vaidyanathaswamy1931multiplicative}
+R.~Vaidyanathaswamy.
+\newblock The theory of multiplicative arithmetic functions.
+\newblock \emph{Transactions of the American Mathematical Society}, 33\penalty0
+  (2):\penalty0 579--662, 1931.
+\newblock Foundational theory of multiplicative functions and convolutions.
+
+\bibitem[Wall(1975)]{wall1975fifth}
+Charles~R. Wall.
+\newblock The fifth unitary perfect number.
+\newblock \emph{Canadian Mathematical Bulletin}, 18\penalty0 (1):\penalty0
+  115--122, 1975.
+\newblock \doi{10.4153/CMB-1975-021-9}.
+\newblock Proved $n_5 = 2^{18} \cdot 3 \cdot 5^4 \cdot 7 \cdot 11 \cdot 13
+  \cdot 19 \cdot 37 \cdot 79 \cdot 109 \cdot 157 \cdot 313$ is the fifth UPN
+  and is the next after 87360.
+
+\bibitem[Wall(1987)]{wall1987largest}
+Charles~R. Wall.
+\newblock On the largest odd component of a unitary perfect number.
+\newblock \emph{The Fibonacci Quarterly}, 25:\penalty0 312--316, 1987.
+\newblock Bounds on the largest odd prime power component of UPNs.
+
+\bibitem[Wall(1988)]{wall1988nine}
+Charles~R. Wall.
+\newblock New unitary perfect numbers have at least nine odd components.
+\newblock \emph{The Fibonacci Quarterly}, 26\penalty0 (4):\penalty0 312, 1988.
+\newblock Any new UPN beyond the five known must have $\omega_{\text{odd}}(n)
+  \geq 9$.
+
+\bibitem[Weisstein(2024)]{mathworld_unitary_perfect}
+Eric~W. Weisstein.
+\newblock Unitary perfect number.
+\newblock MathWorld--A Wolfram Web Resource, 2024.
+\newblock URL \url{https://mathworld.wolfram.com/UnitaryPerfectNumber.html}.
+\newblock Encyclopedia entry on unitary perfect numbers.
+
+\end{thebibliography}
