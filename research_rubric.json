@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Generate publication-quality figures summarizing key results",
           "acceptance_criteria": "At least 4 figures saved in figures/ directory: (1) figures/known_upn_factorizations.png showing the prime factorization structure of all five known UPNs, (2) figures/product_equation_solutions.png visualizing the solution space of the product equation for different k, (3) figures/growth_constraint.png (from item_019), (4) figures/modular_sieve_density.png showing cumulative sieve density as modulus increases. All figures must have proper axis labels, titles, and legends.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 figures generated (PNG + PDF): known_upn_factorizations, product_equation_solutions, growth_constraint, modular_sieve_density. All with proper labels, titles, legends.",
           "error": null
         },
         {
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 3
+    "pending": 2
   }
 }
