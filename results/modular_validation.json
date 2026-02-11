@@ -1,0 +1,691 @@
+{
+  "known_UPN_verification": {
+    "6": {
+      "all_pass": true,
+      "details": {
+        "3": {
+          "residue": 0,
+          "passes": true
+        },
+        "5": {
+          "residue": 1,
+          "passes": true
+        },
+        "7": {
+          "residue": 6,
+          "passes": true
+        },
+        "11": {
+          "residue": 6,
+          "passes": true
+        },
+        "13": {
+          "residue": 6,
+          "passes": true
+        },
+        "17": {
+          "residue": 6,
+          "passes": true
+        },
+        "19": {
+          "residue": 6,
+          "passes": true
+        },
+        "23": {
+          "residue": 6,
+          "passes": true
+        },
+        "29": {
+          "residue": 6,
+          "passes": true
+        },
+        "31": {
+          "residue": 6,
+          "passes": true
+        },
+        "37": {
+          "residue": 6,
+          "passes": true
+        },
+        "41": {
+          "residue": 6,
+          "passes": true
+        },
+        "43": {
+          "residue": 6,
+          "passes": true
+        },
+        "47": {
+          "residue": 6,
+          "passes": true
+        },
+        "53": {
+          "residue": 6,
+          "passes": true
+        },
+        "59": {
+          "residue": 6,
+          "passes": true
+        },
+        "61": {
+          "residue": 6,
+          "passes": true
+        },
+        "67": {
+          "residue": 6,
+          "passes": true
+        },
+        "71": {
+          "residue": 6,
+          "passes": true
+        },
+        "73": {
+          "residue": 6,
+          "passes": true
+        },
+        "79": {
+          "residue": 6,
+          "passes": true
+        },
+        "83": {
+          "residue": 6,
+          "passes": true
+        },
+        "89": {
+          "residue": 6,
+          "passes": true
+        },
+        "97": {
+          "residue": 6,
+          "passes": true
+        }
+      }
+    },
+    "60": {
+      "all_pass": true,
+      "details": {
+        "3": {
+          "residue": 0,
+          "passes": true
+        },
+        "5": {
+          "residue": 0,
+          "passes": true
+        },
+        "7": {
+          "residue": 4,
+          "passes": true
+        },
+        "11": {
+          "residue": 5,
+          "passes": true
+        },
+        "13": {
+          "residue": 8,
+          "passes": true
+        },
+        "17": {
+          "residue": 9,
+          "passes": true
+        },
+        "19": {
+          "residue": 3,
+          "passes": true
+        },
+        "23": {
+          "residue": 14,
+          "passes": true
+        },
+        "29": {
+          "residue": 2,
+          "passes": true
+        },
+        "31": {
+          "residue": 29,
+          "passes": true
+        },
+        "37": {
+          "residue": 23,
+          "passes": true
+        },
+        "41": {
+          "residue": 19,
+          "passes": true
+        },
+        "43": {
+          "residue": 17,
+          "passes": true
+        },
+        "47": {
+          "residue": 13,
+          "passes": true
+        },
+        "53": {
+          "residue": 7,
+          "passes": true
+        },
+        "59": {
+          "residue": 1,
+          "passes": true
+        },
+        "61": {
+          "residue": 60,
+          "passes": true
+        },
+        "67": {
+          "residue": 60,
+          "passes": true
+        },
+        "71": {
+          "residue": 60,
+          "passes": true
+        },
+        "73": {
+          "residue": 60,
+          "passes": true
+        },
+        "79": {
+          "residue": 60,
+          "passes": true
+        },
+        "83": {
+          "residue": 60,
+          "passes": true
+        },
+        "89": {
+          "residue": 60,
+          "passes": true
+        },
+        "97": {
+          "residue": 60,
+          "passes": true
+        }
+      }
+    },
+    "90": {
+      "all_pass": true,
+      "details": {
+        "3": {
+          "residue": 0,
+          "passes": true
+        },
+        "5": {
+          "residue": 0,
+          "passes": true
+        },
+        "7": {
+          "residue": 6,
+          "passes": true
+        },
+        "11": {
+          "residue": 2,
+          "passes": true
+        },
+        "13": {
+          "residue": 12,
+          "passes": true
+        },
+        "17": {
+          "residue": 5,
+          "passes": true
+        },
+        "19": {
+          "residue": 14,
+          "passes": true
+        },
+        "23": {
+          "residue": 21,
+          "passes": true
+        },
+        "29": {
+          "residue": 3,
+          "passes": true
+        },
+        "31": {
+          "residue": 28,
+          "passes": true
+        },
+        "37": {
+          "residue": 16,
+          "passes": true
+        },
+        "41": {
+          "residue": 8,
+          "passes": true
+        },
+        "43": {
+          "residue": 4,
+          "passes": true
+        },
+        "47": {
+          "residue": 43,
+          "passes": true
+        },
+        "53": {
+          "residue": 37,
+          "passes": true
+        },
+        "59": {
+          "residue": 31,
+          "passes": true
+        },
+        "61": {
+          "residue": 29,
+          "passes": true
+        },
+        "67": {
+          "residue": 23,
+          "passes": true
+        },
+        "71": {
+          "residue": 19,
+          "passes": true
+        },
+        "73": {
+          "residue": 17,
+          "passes": true
+        },
+        "79": {
+          "residue": 11,
+          "passes": true
+        },
+        "83": {
+          "residue": 7,
+          "passes": true
+        },
+        "89": {
+          "residue": 1,
+          "passes": true
+        },
+        "97": {
+          "residue": 90,
+          "passes": true
+        }
+      }
+    },
+    "87360": {
+      "all_pass": true,
+      "details": {
+        "3": {
+          "residue": 0,
+          "passes": true
+        },
+        "5": {
+          "residue": 0,
+          "passes": true
+        },
+        "7": {
+          "residue": 0,
+          "passes": true
+        },
+        "11": {
+          "residue": 9,
+          "passes": true
+        },
+        "13": {
+          "residue": 0,
+          "passes": true
+        },
+        "17": {
+          "residue": 14,
+          "passes": true
+        },
+        "19": {
+          "residue": 17,
+          "passes": true
+        },
+        "23": {
+          "residue": 6,
+          "passes": true
+        },
+        "29": {
+          "residue": 12,
+          "passes": true
+        },
+        "31": {
+          "residue": 2,
+          "passes": true
+        },
+        "37": {
+          "residue": 3,
+          "passes": true
+        },
+        "41": {
+          "residue": 30,
+          "passes": true
+        },
+        "43": {
+          "residue": 27,
+          "passes": true
+        },
+        "47": {
+          "residue": 34,
+          "passes": true
+        },
+        "53": {
+          "residue": 16,
+          "passes": true
+        },
+        "59": {
+          "residue": 40,
+          "passes": true
+        },
+        "61": {
+          "residue": 8,
+          "passes": true
+        },
+        "67": {
+          "residue": 59,
+          "passes": true
+        },
+        "71": {
+          "residue": 30,
+          "passes": true
+        },
+        "73": {
+          "residue": 52,
+          "passes": true
+        },
+        "79": {
+          "residue": 65,
+          "passes": true
+        },
+        "83": {
+          "residue": 44,
+          "passes": true
+        },
+        "89": {
+          "residue": 51,
+          "passes": true
+        },
+        "97": {
+          "residue": 60,
+          "passes": true
+        }
+      }
+    },
+    "146361946186458562560000": {
+      "all_pass": true,
+      "details": {
+        "3": {
+          "residue": 0,
+          "passes": true
+        },
+        "5": {
+          "residue": 0,
+          "passes": true
+        },
+        "7": {
+          "residue": 0,
+          "passes": true
+        },
+        "11": {
+          "residue": 0,
+          "passes": true
+        },
+        "13": {
+          "residue": 0,
+          "passes": true
+        },
+        "17": {
+          "residue": 6,
+          "passes": true
+        },
+        "19": {
+          "residue": 0,
+          "passes": true
+        },
+        "23": {
+          "residue": 4,
+          "passes": true
+        },
+        "29": {
+          "residue": 20,
+          "passes": true
+        },
+        "31": {
+          "residue": 8,
+          "passes": true
+        },
+        "37": {
+          "residue": 0,
+          "passes": true
+        },
+        "41": {
+          "residue": 6,
+          "passes": true
+        },
+        "43": {
+          "residue": 9,
+          "passes": true
+        },
+        "47": {
+          "residue": 33,
+          "passes": true
+        },
+        "53": {
+          "residue": 44,
+          "passes": true
+        },
+        "59": {
+          "residue": 22,
+          "passes": true
+        },
+        "61": {
+          "residue": 27,
+          "passes": true
+        },
+        "67": {
+          "residue": 18,
+          "passes": true
+        },
+        "71": {
+          "residue": 41,
+          "passes": true
+        },
+        "73": {
+          "residue": 13,
+          "passes": true
+        },
+        "79": {
+          "residue": 0,
+          "passes": true
+        },
+        "83": {
+          "residue": 40,
+          "passes": true
+        },
+        "89": {
+          "residue": 9,
+          "passes": true
+        },
+        "97": {
+          "residue": 87,
+          "passes": true
+        }
+      }
+    }
+  },
+  "random_pass_rate": 0.606059,
+  "sieve_density": 0.6061432893492469,
+  "random_test_details": {
+    "total_tested": 1000000,
+    "pass_count": 606059,
+    "pass_rate": 0.606059,
+    "max_modulus": 100,
+    "num_primes_checked": 24
+  },
+  "sieve_details": {
+    "final_sieve_density": 0.6061432893492469,
+    "by_modulus": [
+      {
+        "modulus": 3,
+        "density": 0.6666666666666666,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 2,
+        "num_excluded": 1
+      },
+      {
+        "modulus": 5,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 5,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 7,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 7,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 11,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 11,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 13,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 13,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 17,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 17,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 19,
+        "density": 1.0,
+        "cumulative_density": 0.6666666666666666,
+        "num_allowed": 19,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 23,
+        "density": 0.9565217391304348,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 22,
+        "num_excluded": 1
+      },
+      {
+        "modulus": 29,
+        "density": 1.0,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 29,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 31,
+        "density": 1.0,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 31,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 37,
+        "density": 1.0,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 37,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 41,
+        "density": 1.0,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 41,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 43,
+        "density": 1.0,
+        "cumulative_density": 0.6376811594202898,
+        "num_allowed": 43,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 47,
+        "density": 0.9787234042553191,
+        "cumulative_density": 0.6241134751773049,
+        "num_allowed": 46,
+        "num_excluded": 1
+      },
+      {
+        "modulus": 53,
+        "density": 1.0,
+        "cumulative_density": 0.6241134751773049,
+        "num_allowed": 53,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 59,
+        "density": 0.9830508474576272,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 58,
+        "num_excluded": 1
+      },
+      {
+        "modulus": 61,
+        "density": 1.0,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 61,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 67,
+        "density": 1.0,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 67,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 71,
+        "density": 1.0,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 71,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 73,
+        "density": 1.0,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 73,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 79,
+        "density": 1.0,
+        "cumulative_density": 0.6135352806827743,
+        "num_allowed": 79,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 83,
+        "density": 0.9879518072289156,
+        "cumulative_density": 0.6061432893492469,
+        "num_allowed": 82,
+        "num_excluded": 1
+      },
+      {
+        "modulus": 89,
+        "density": 1.0,
+        "cumulative_density": 0.6061432893492469,
+        "num_allowed": 89,
+        "num_excluded": 0
+      },
+      {
+        "modulus": 97,
+        "density": 1.0,
+        "cumulative_density": 0.6061432893492469,
+        "num_allowed": 97,
+        "num_excluded": 0
+      }
+    ]
+  }
+}
