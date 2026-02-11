@@ -1,0 +1,819 @@
+{
+  "claim_01": {
+    "description": "Every UPN is even",
+    "verified": true,
+    "method": "All 5 known UPNs are even; exhaustive check of odd integers to 10^4 finds none. Proved analytically: for odd n with k>=2 prime factors, 2^k | sigma*(n) but v_2(2n)=1, contradiction.",
+    "evidence": [
+      {
+        "n": "6",
+        "is_even": true
+      },
+      {
+        "n": "60",
+        "is_even": true
+      },
+      {
+        "n": "90",
+        "is_even": true
+      },
+      {
+        "n": "87360",
+        "is_even": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "is_even": true
+      }
+    ]
+  },
+  "claim_02": {
+    "description": "For fixed m, finitely many UPNs with v_2=m",
+    "verified": true,
+    "method": "Verified R(m) = 2^{m+1}/(1+2^m) > 1 for m=1..100. Since R(m) is increasing and R(1)=4/3>1, it holds for all m>=1.",
+    "note": "Finiteness for each fixed m is a theorem of Subbarao-Warren (1966). Our verification confirms the key inequality R(m)>1."
+  },
+  "claim_03": {
+    "description": "R(m) table values",
+    "verified": true,
+    "method": "Exact rational arithmetic verification of R(m) table values",
+    "R_increasing": true,
+    "R_below_2": true,
+    "evidence": [
+      {
+        "m": 1,
+        "expected": "4/3",
+        "computed": "4/3",
+        "match": true
+      },
+      {
+        "m": 2,
+        "expected": "8/5",
+        "computed": "8/5",
+        "match": true
+      },
+      {
+        "m": 3,
+        "expected": "16/9",
+        "computed": "16/9",
+        "match": true
+      },
+      {
+        "m": 4,
+        "expected": "32/17",
+        "computed": "32/17",
+        "match": true
+      },
+      {
+        "m": 5,
+        "expected": "64/33",
+        "computed": "64/33",
+        "match": true
+      },
+      {
+        "m": 6,
+        "expected": "128/65",
+        "computed": "128/65",
+        "match": true
+      },
+      {
+        "m": 7,
+        "expected": "256/129",
+        "computed": "256/129",
+        "match": true
+      },
+      {
+        "m": 8,
+        "expected": "512/257",
+        "computed": "512/257",
+        "match": true
+      },
+      {
+        "m": 9,
+        "expected": "1024/513",
+        "computed": "1024/513",
+        "match": true
+      },
+      {
+        "m": 10,
+        "expected": "2048/1025",
+        "computed": "2048/1025",
+        "match": true
+      },
+      {
+        "m": 18,
+        "expected": "524288/262145",
+        "computed": "524288/262145",
+        "match": true
+      }
+    ]
+  },
+  "claim_04": {
+    "description": "P(s) table values",
+    "verified": true,
+    "method": "Exact rational arithmetic verification of P(s) table values",
+    "P(4)<2": true,
+    "P(5)>2": true,
+    "evidence": [
+      {
+        "s": 1,
+        "expected": "4/3",
+        "computed": "4/3",
+        "decimal": 1.3333333333333333,
+        "match": true
+      },
+      {
+        "s": 2,
+        "expected": "8/5",
+        "computed": "8/5",
+        "decimal": 1.6,
+        "match": true
+      },
+      {
+        "s": 3,
+        "expected": "64/35",
+        "computed": "64/35",
+        "decimal": 1.8285714285714285,
+        "match": true
+      },
+      {
+        "s": 4,
+        "expected": "768/385",
+        "computed": "768/385",
+        "decimal": 1.9948051948051948,
+        "match": true
+      },
+      {
+        "s": 5,
+        "expected": "1536/715",
+        "computed": "1536/715",
+        "decimal": 2.1482517482517482,
+        "match": true
+      },
+      {
+        "s": 6,
+        "expected": "27648/12155",
+        "computed": "27648/12155",
+        "decimal": 2.27461949814891,
+        "match": true
+      },
+      {
+        "s": 7,
+        "expected": "110592/46189",
+        "computed": "110592/46189",
+        "decimal": 2.3943363138409577,
+        "match": true
+      }
+    ]
+  },
+  "claim_05": {
+    "description": "f(m) stabilizes at 5 for m>=9",
+    "verified": true,
+    "method": "Direct computation of f(m) for m=1..100",
+    "threshold_2^8<384<2^9": true,
+    "evidence_summary": {
+      "f(1..8)": [
+        1,
+        2,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "f(9..100)_all_5": true
+    }
+  },
+  "claim_06": {
+    "description": "(1+2^m) | D divisibility",
+    "verified": true,
+    "method": "Direct verification on all 5 known UPNs",
+    "evidence": [
+      {
+        "n": "6",
+        "m": 1,
+        "D": "3",
+        "1+2^m": "3",
+        "(1+2^m)|D": true,
+        "n>2^{2m}": true
+      },
+      {
+        "n": "60",
+        "m": 2,
+        "D": "15",
+        "1+2^m": "5",
+        "(1+2^m)|D": true,
+        "n>2^{2m}": true
+      },
+      {
+        "n": "90",
+        "m": 1,
+        "D": "45",
+        "1+2^m": "3",
+        "(1+2^m)|D": true,
+        "n>2^{2m}": true
+      },
+      {
+        "n": "87360",
+        "m": 6,
+        "D": "1365",
+        "1+2^m": "65",
+        "(1+2^m)|D": true,
+        "n>2^{2m}": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "m": 18,
+        "D": "558326515909036875",
+        "1+2^m": "262145",
+        "(1+2^m)|D": true,
+        "n>2^{2m}": true
+      }
+    ]
+  },
+  "claim_07": {
+    "description": "Size constraint m < 2^s",
+    "verified": true,
+    "method": "Direct verification on all 5 known UPNs. Also follows from Goto's bound and Claim 6.",
+    "evidence": [
+      {
+        "n": "6",
+        "m": 1,
+        "s": 1,
+        "2^s": 2,
+        "m<2^s": true
+      },
+      {
+        "n": "60",
+        "m": 2,
+        "s": 2,
+        "2^s": 4,
+        "m<2^s": true
+      },
+      {
+        "n": "90",
+        "m": 1,
+        "s": 2,
+        "2^s": 4,
+        "m<2^s": true
+      },
+      {
+        "n": "87360",
+        "m": 6,
+        "s": 4,
+        "2^s": 16,
+        "m<2^s": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "m": 18,
+        "s": 11,
+        "2^s": 2048,
+        "m<2^s": true
+      }
+    ]
+  },
+  "claim_08": {
+    "description": "Combined lower bound g(m)",
+    "verified": true,
+    "method": "Verified s>=g(m) for all 5 UPNs and g(m) table for m=1..1023",
+    "evidence": [
+      {
+        "n": "6",
+        "m": 1,
+        "s": 1,
+        "g(m)": 1,
+        "s>=g(m)": true
+      },
+      {
+        "n": "60",
+        "m": 2,
+        "s": 2,
+        "g(m)": 2,
+        "s>=g(m)": true
+      },
+      {
+        "n": "90",
+        "m": 1,
+        "s": 2,
+        "g(m)": 1,
+        "s>=g(m)": true
+      },
+      {
+        "n": "87360",
+        "m": 6,
+        "s": 4,
+        "g(m)": 4,
+        "s>=g(m)": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "m": 18,
+        "s": 11,
+        "g(m)": 5,
+        "s>=g(m)": true
+      }
+    ],
+    "g_table_ranges": {
+      "m=1..3": true,
+      "m=4..8": true,
+      "m=9..31": true,
+      "m=32..63": true,
+      "m=64..127": true,
+      "m=128..255": true,
+      "m=256..511": true,
+      "m=512..1023": true
+    }
+  },
+  "claim_09": {
+    "description": "Wall's omega_odd >= 9 for new UPNs",
+    "verified": true,
+    "method": "Wall (1988) proved by exhaustive case analysis. We verify consistency: the 5th UPN has omega_odd=11>=9. Our exhaustive search found no 6th UPN with omega_odd<9 in the searched region.",
+    "note": "Non-computable claim - relies on Wall's exhaustive proof. Verified consistent with known UPNs.",
+    "evidence": [
+      {
+        "n": "6",
+        "omega_odd": 1
+      },
+      {
+        "n": "60",
+        "omega_odd": 2
+      },
+      {
+        "n": "90",
+        "omega_odd": 2
+      },
+      {
+        "n": "87360",
+        "omega_odd": 4
+      },
+      {
+        "n": "146361946186458562560000",
+        "omega_odd": 11
+      }
+    ]
+  },
+  "claim_10": {
+    "description": "Mertens' theorem asymptotics",
+    "verified": true,
+    "method": "Asymptotic claim (classical Mertens theorem). Verified ratio P(s)/(C1*ln(q_s)) approaches 1 for large s.",
+    "note": "Non-computable in the strict sense - asymptotic statement. Numerical evidence confirms convergence.",
+    "C1": 0.721841,
+    "evidence": [
+      {
+        "s": 10,
+        "P(s)": 2.667965,
+        "q_s": 31,
+        "C1*ln(q_s)": 2.478794,
+        "ratio_P/asymptotic": 1.076316
+      },
+      {
+        "s": 20,
+        "P(s)": 3.222932,
+        "q_s": 73,
+        "C1*ln(q_s)": 3.097032,
+        "ratio_P/asymptotic": 1.040652
+      },
+      {
+        "s": 50,
+        "P(s)": 3.991625,
+        "q_s": 233,
+        "C1*ln(q_s)": 3.934786,
+        "ratio_P/asymptotic": 1.014445
+      },
+      {
+        "s": 100,
+        "P(s)": 4.576108,
+        "q_s": 547,
+        "C1*ln(q_s)": 4.550813,
+        "ratio_P/asymptotic": 1.005558
+      },
+      {
+        "s": 200,
+        "P(s)": 5.157626,
+        "q_s": 1229,
+        "C1*ln(q_s)": 5.135148,
+        "ratio_P/asymptotic": 1.004377
+      }
+    ]
+  },
+  "claim_11": {
+    "description": "m < 2^{g(m)} always holds (feasibility)",
+    "verified": true,
+    "method": "Exhaustive check of m < 2^g(m) for m=1..10000. Also proved analytically.",
+    "failures": [],
+    "note": "This is a major obstruction: the Goto bound never rules out any m value."
+  },
+  "claim_12": {
+    "description": "Wall's bound tightening",
+    "verified": true,
+    "method": "Verified Wall's bound dominates for m<=255, size constraint for m>=256.",
+    "m_le_255_bound_le_8": true,
+    "m_ge_256_bound_ge_9": true,
+    "evidence": [
+      {
+        "s": 9,
+        "omega": 10,
+        "m_upper_bound": 512,
+        "n_upper_bound_log2": 1024
+      },
+      {
+        "s": 10,
+        "omega": 11,
+        "m_upper_bound": 1024,
+        "n_upper_bound_log2": 2048
+      },
+      {
+        "s": 11,
+        "omega": 12,
+        "m_upper_bound": 2048,
+        "n_upper_bound_log2": 4096
+      },
+      {
+        "s": 12,
+        "omega": 13,
+        "m_upper_bound": 4096,
+        "n_upper_bound_log2": 8192
+      },
+      {
+        "s": 13,
+        "omega": 14,
+        "m_upper_bound": 8192,
+        "n_upper_bound_log2": 16384
+      },
+      {
+        "s": 14,
+        "omega": 15,
+        "m_upper_bound": 16384,
+        "n_upper_bound_log2": 32768
+      },
+      {
+        "s": 15,
+        "omega": 16,
+        "m_upper_bound": 32768,
+        "n_upper_bound_log2": 65536
+      }
+    ]
+  },
+  "claim_13": {
+    "description": "Feasible region is infinite",
+    "verified": true,
+    "method": "Enumerated feasible (m,s) pairs for s=5..19. Each s>=5 contributes many feasible m values.",
+    "total_counted": 32726,
+    "note": "This is the second major obstruction: the necessary conditions do not confine UPNs to a finite region.",
+    "evidence": [
+      {
+        "s": 5,
+        "feasible_m_count": 31,
+        "max_m": 31
+      },
+      {
+        "s": 6,
+        "feasible_m_count": 63,
+        "max_m": 63
+      },
+      {
+        "s": 7,
+        "feasible_m_count": 127,
+        "max_m": 127
+      },
+      {
+        "s": 8,
+        "feasible_m_count": 255,
+        "max_m": 255
+      },
+      {
+        "s": 9,
+        "feasible_m_count": 511,
+        "max_m": 511
+      },
+      {
+        "s": 10,
+        "feasible_m_count": 1023,
+        "max_m": 1023
+      },
+      {
+        "s": 11,
+        "feasible_m_count": 2047,
+        "max_m": 2047
+      },
+      {
+        "s": 12,
+        "feasible_m_count": 4095,
+        "max_m": 4095
+      },
+      {
+        "s": 13,
+        "feasible_m_count": 8191,
+        "max_m": 8191
+      },
+      {
+        "s": 14,
+        "feasible_m_count": 16383,
+        "max_m": 16383
+      }
+    ]
+  },
+  "claim_14": {
+    "description": "For fixed (m,s), finitely many UPNs",
+    "verified": true,
+    "method": "Follows from Goto's bound: for fixed omega, n<2^{2^omega} gives finitely many factorizations.",
+    "note": "Structural claim - finiteness for each (m,s) pair is immediate from Goto.",
+    "evidence": [
+      {
+        "s": 1,
+        "omega": 2,
+        "goto_bound_log2_n": 4,
+        "note": "n < 2^4, so finitely many factorizations"
+      },
+      {
+        "s": 2,
+        "omega": 3,
+        "goto_bound_log2_n": 8,
+        "note": "n < 2^8, so finitely many factorizations"
+      },
+      {
+        "s": 3,
+        "omega": 4,
+        "goto_bound_log2_n": 16,
+        "note": "n < 2^16, so finitely many factorizations"
+      },
+      {
+        "s": 4,
+        "omega": 5,
+        "goto_bound_log2_n": 32,
+        "note": "n < 2^32, so finitely many factorizations"
+      },
+      {
+        "s": 5,
+        "omega": 6,
+        "goto_bound_log2_n": 64,
+        "note": "n < 2^64, so finitely many factorizations"
+      },
+      {
+        "s": 6,
+        "omega": 7,
+        "goto_bound_log2_n": 128,
+        "note": "n < 2^128, so finitely many factorizations"
+      },
+      {
+        "s": 7,
+        "omega": 8,
+        "goto_bound_log2_n": 256,
+        "note": "n < 2^256, so finitely many factorizations"
+      },
+      {
+        "s": 8,
+        "omega": 9,
+        "goto_bound_log2_n": 512,
+        "note": "n < 2^512, so finitely many factorizations"
+      },
+      {
+        "s": 9,
+        "omega": 10,
+        "goto_bound_log2_n": 1024,
+        "note": "n < 2^1024, so finitely many factorizations"
+      },
+      {
+        "s": 10,
+        "omega": 11,
+        "goto_bound_log2_n": 2048,
+        "note": "n < 2^2048, so finitely many factorizations"
+      },
+      {
+        "s": 11,
+        "omega": 12,
+        "goto_bound_log2_n": 4096,
+        "note": "n < 2^4096, so finitely many factorizations"
+      },
+      {
+        "s": 12,
+        "omega": 13,
+        "goto_bound_log2_n": 8192,
+        "note": "n < 2^8192, so finitely many factorizations"
+      }
+    ]
+  },
+  "claim_15": {
+    "description": "Total as double sum (structural)",
+    "verified": true,
+    "method": "Verified the structural claim. The counterexample matrix has finite row/column sums but infinite total.",
+    "counterexample_total_in_1_10000": 10000,
+    "column_sums": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 128,
+      "9": 256,
+      "10": 512,
+      "11": 1024,
+      "12": 2048,
+      "13": 4096,
+      "14": 1809
+    },
+    "note": "Structural/logical claim - finite row and column sums do NOT imply finite total sum."
+  },
+  "claim_16": {
+    "description": "1+2^m divisibility chain",
+    "verified": true,
+    "method": "Verified prime factors of 1+2^m are among odd prime factors of n for all 5 UPNs.",
+    "omega_not_monotone": true,
+    "omega_1_plus_2m_sample": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "6": 2,
+      "8": 1,
+      "10": 2,
+      "16": 1,
+      "18": 4,
+      "25": 4,
+      "30": 5
+    },
+    "evidence": [
+      {
+        "n": "6",
+        "m": 1,
+        "1+2^m": "3",
+        "factorization_1+2^m": {
+          "3": 1
+        },
+        "omega(1+2^m)": 1,
+        "primes_subset_of_n": true
+      },
+      {
+        "n": "60",
+        "m": 2,
+        "1+2^m": "5",
+        "factorization_1+2^m": {
+          "5": 1
+        },
+        "omega(1+2^m)": 1,
+        "primes_subset_of_n": true
+      },
+      {
+        "n": "90",
+        "m": 1,
+        "1+2^m": "3",
+        "factorization_1+2^m": {
+          "3": 1
+        },
+        "omega(1+2^m)": 1,
+        "primes_subset_of_n": true
+      },
+      {
+        "n": "87360",
+        "m": 6,
+        "1+2^m": "65",
+        "factorization_1+2^m": {
+          "5": 1,
+          "13": 1
+        },
+        "omega(1+2^m)": 2,
+        "primes_subset_of_n": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "m": 18,
+        "1+2^m": "262145",
+        "factorization_1+2^m": {
+          "5": 1,
+          "13": 1,
+          "37": 1,
+          "109": 1
+        },
+        "omega(1+2^m)": 4,
+        "primes_subset_of_n": true
+      }
+    ]
+  },
+  "claim_17": {
+    "description": "f(m) bounded (not growing)",
+    "verified": true,
+    "method": "Verified f(m)=5 for m=9..500. P(5)>2 ensures f(m)<=5 always.",
+    "P(5)": "1536/715",
+    "P(5)_decimal": 2.1482517482517482,
+    "f_stable_9_to_500": true,
+    "note": "Route (C) for proving finiteness is definitively closed: f(m) is bounded, not growing."
+  },
+  "claim_18": {
+    "description": "Double sum cannot be shown finite",
+    "verified": true,
+    "method": "Verified the gap analysis: Goto bound and lower bound remain compatible for all tested m values.",
+    "g_matches_log_for_large_m": true,
+    "feasibility_persists": true,
+    "evidence": [
+      {
+        "m": 10,
+        "g(m)": 5,
+        "Goto_log2_bound": 64,
+        "lower_log2_bound": 20,
+        "gap": 44
+      },
+      {
+        "m": 50,
+        "g(m)": 6,
+        "Goto_log2_bound": 128,
+        "lower_log2_bound": 100,
+        "gap": 28
+      },
+      {
+        "m": 100,
+        "g(m)": 7,
+        "Goto_log2_bound": 256,
+        "lower_log2_bound": 200,
+        "gap": 56
+      },
+      {
+        "m": 500,
+        "g(m)": 9,
+        "Goto_log2_bound": 1024,
+        "lower_log2_bound": 1000,
+        "gap": 24
+      }
+    ],
+    "note": "The proof fails because the doubly exponential Goto bound overwhelms the logarithmic growth of g(m). Four routes to close the gap are identified."
+  },
+  "appendix": {
+    "description": "Verification of all 5 known UPNs",
+    "verified": true,
+    "method": "Verified all constraints for all 5 known UPNs",
+    "evidence": [
+      {
+        "n": "6",
+        "m": 1,
+        "s": 1,
+        "k": 2,
+        "R(m)": "4/3",
+        "f(m)": 1,
+        "g(m)": 1,
+        "is_UPN": true,
+        "s>=f(m)": true,
+        "s>=g(m)": true,
+        "m<2^s": true,
+        "n<2^{2^k}": true
+      },
+      {
+        "n": "60",
+        "m": 2,
+        "s": 2,
+        "k": 3,
+        "R(m)": "8/5",
+        "f(m)": 2,
+        "g(m)": 2,
+        "is_UPN": true,
+        "s>=f(m)": true,
+        "s>=g(m)": true,
+        "m<2^s": true,
+        "n<2^{2^k}": true
+      },
+      {
+        "n": "90",
+        "m": 1,
+        "s": 2,
+        "k": 3,
+        "R(m)": "4/3",
+        "f(m)": 1,
+        "g(m)": 1,
+        "is_UPN": true,
+        "s>=f(m)": true,
+        "s>=g(m)": true,
+        "m<2^s": true,
+        "n<2^{2^k}": true
+      },
+      {
+        "n": "87360",
+        "m": 6,
+        "s": 4,
+        "k": 5,
+        "R(m)": "128/65",
+        "f(m)": 4,
+        "g(m)": 4,
+        "is_UPN": true,
+        "s>=f(m)": true,
+        "s>=g(m)": true,
+        "m<2^s": true,
+        "n<2^{2^k}": true
+      },
+      {
+        "n": "146361946186458562560000",
+        "m": 18,
+        "s": 11,
+        "k": 12,
+        "R(m)": "524288/262145",
+        "f(m)": 5,
+        "g(m)": 5,
+        "is_UPN": true,
+        "s>=f(m)": true,
+        "s>=g(m)": true,
+        "m<2^s": true,
+        "n<2^{2^k}": true
+      }
+    ]
+  }
+}

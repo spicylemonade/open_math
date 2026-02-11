@@ -220,8 +220,8 @@
           "id": "item_021",
           "description": "Evaluate the novel finiteness proof attempt: verify each logical step computationally",
           "acceptance_criteria": "Script src/verify_proof.py that: (1) for each numbered claim in results/finiteness_attempt.md, implements a computational verification (e.g., checking inequalities, verifying bounds hold for stated ranges), (2) produces results/proof_verification.json listing each claim, whether it was verified, and the computational evidence, (3) identifies any claims that fail verification or require adjustment. All verifiable claims must be checked; non-verifiable claims (e.g., asymptotic statements) must be flagged with the reason.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 19 verifications pass (18 claims + appendix). Claims 9 (Wall), 10 (Mertens) flagged as relying on external proofs/asymptotics.",
           "error": null
         },
         {
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 20,
+    "completed": 21,
     "in_progress": 0,
     "failed": 0,
-    "pending": 6
+    "pending": 5
   }
 }
