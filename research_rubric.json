@@ -228,8 +228,8 @@
           "id": "item_022",
           "description": "Compare all results against prior work from the literature review",
           "acceptance_criteria": "Document results/comparison_with_prior_work.md containing: (1) for each key result from Subbarao-Warren, Goto, Wall, Graham, Hagis, and Frei, verify that our computational results are consistent, (2) identify any results that extend or improve upon prior bounds, (3) a table showing our bounds vs. prior bounds for key parameters (minimum omega, minimum v_2, maximum n for fixed omega, sieve density), (4) assessment of the novelty of our finiteness attempt relative to prior approaches. Must reference sources.bib entries throughout.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive comparison with all 6 key prior works. 10-row bounds table. 4 novel contributions identified. 12 references cited.",
           "error": null
         }
       ]
@@ -276,9 +276,9 @@
   ],
   "summary": {
     "total_items": 26,
-    "completed": 21,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 5
+    "pending": 4
   }
 }
