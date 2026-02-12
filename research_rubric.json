@@ -84,16 +84,16 @@
           "id": "item_005",
           "description": "Document the statistical prediction formula and search space analysis",
           "acceptance_criteria": "Write a detailed analysis documenting: (a) Doucette's formula: Expected Max Delay = 14.256 * digit_length - 17.320 with std_dev = 11.088, (b) compute predicted max delays for 25-35 digit numbers, (c) estimate the search space size and required computation for each digit length, (d) determine optimal digit ranges to search for a >293 iteration record. Save as results/search_space_analysis.md.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/search_space_analysis.md with full predictions table (25-35 digits), pruned search space estimates, throughput analysis, and optimal strategy recommendation.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Document Doucette's digit-pair symmetry pruning optimization",
           "acceptance_criteria": "Write a technical description of the key optimization: examining corresponding digit pairs (first+last, second+second-to-last, etc.) to eliminate equivalent numbers. Document how this reduced the 17-digit search from 10^17 candidates to ~187 billion. Explain the 'seed' vs 'kin' distinction for Lychrel candidates. Save as results/pruning_analysis.md.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/pruning_analysis.md with full technical description of digit-pair equivalence, reduction factors (480,000x for 17-digit, 280M× for 25-digit), seed/kin terminology, and implementation pseudocode.",
           "error": null
         }
       ]
@@ -281,9 +281,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 4,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 21
+    "pending": 19
   }
 }
