@@ -107,32 +107,32 @@
           "id": "item_007",
           "description": "Implement baseline reverse-and-add algorithm in Python with verification",
           "acceptance_criteria": "Python script src/reverse_add.py that: (a) takes integer N as input, (b) iteratively applies reverse-and-add, (c) checks palindrome at each step, (d) returns (is_palindrome, iteration_count, final_value). Verify against known values: 89 -> 24 iterations, 10911 -> 55 iterations, 1186060307891929990 -> 261 iterations. All tests pass.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 3 known values verified: 89->24, 10911->55, 1186060307891929990->261.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Verify the current world record number",
           "acceptance_criteria": "Run the baseline implementation on N=1000206827388999999095750 and confirm it reaches a palindrome in exactly 293 iterations. Record the resulting palindrome value and its digit count (should be 132 digits). Log the wall-clock time. Save verification output to results/record_verification.txt.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Verified: 293 iterations, 132-digit palindrome, 0.5ms wall-clock time. Saved to results/record_verification.txt.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Benchmark baseline performance and identify bottlenecks",
           "acceptance_criteria": "Profile the baseline Python implementation: (a) measure time per iteration for numbers of 25, 50, 100, 200 digits, (b) identify whether string conversion, addition, or palindrome check dominates, (c) estimate throughput in candidates/second for the target search range. Document results in results/baseline_benchmarks.md with timing tables.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "String conversion dominates at ~60%. ~2.9us/iter for 25-digit, ~1714 candidates/sec single core. Documented in results/baseline_benchmarks.md.",
           "error": null
         },
         {
           "id": "item_010",
           "description": "Implement verification test suite",
           "acceptance_criteria": "Create tests/test_reverse_add.py with pytest tests covering: (a) known palindrome delays for small numbers (89->24, 10911->55, 1186060307891929990->261), (b) edge cases (single digit, already palindromic), (c) the current record number (293 iterations), (d) Lychrel candidate 196 runs for 500 iterations without palindrome. All tests pass with pytest.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "12 tests all pass covering known delays, edge cases, and Lychrel candidate 196.",
           "error": null
         }
       ]
@@ -281,9 +281,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
+    "completed": 10,
     "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 15
   }
 }
