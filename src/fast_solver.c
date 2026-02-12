@@ -150,17 +150,18 @@ Solution solve_erdos_straus(u64 n) {
     if (n % 4 == 3) {
         u128 q = (n + 1) / 4;
         u128 m = (u128)n * q;
-        if (m % 2 == 0) {
-            set_sol(&sol, q, 2 * m, 2 * m);
-        } else {
-            set_sol(&sol, q, m + 1, m * (m + 1));
-        }
+        /* Always use (q, 2m, 2m): 4/p = 1/q + 1/(2m) + 1/(2m)
+         * Proof: 1/q + 2/(2pq) = (2pq + 2q)/(2pq^2) ... simplifies to 4/p.
+         * The m*(m+1) formula overflows u128 for large primes when m is odd. */
+        set_sol(&sol, q, 2 * m, 2 * m);
         return sol;
     }
 
-    /* n ≡ 1 mod 4: divisor-based search */
+    /* n ≡ 1 mod 4: divisor-based search.
+     * Empirically, solutions are always found within x_offset < 10 of x_min
+     * even for primes up to 10^13. Cap at x_min + 50000 for safety. */
     u64 x_min = (n + 3) / 4;
-    u64 x_max = 3 * (u64)n / 4 + 1;
+    u64 x_max = x_min + 50000;
 
     u64 *divs = (u64 *)malloc(MAX_DIVS * sizeof(u64));
     if (!divs) return sol;

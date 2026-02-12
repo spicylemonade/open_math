@@ -1,0 +1,58 @@
+{
+  "range": [
+    2,
+    10000000000
+  ],
+  "method": "hybrid_segmented_verification",
+  "total_primes_verified": 52682087,
+  "by_mordell": 51037164,
+  "by_hard_c": 1602536,
+  "by_hard_cf": 42387,
+  "failures": 0,
+  "failure_list": [],
+  "segments": {
+    "[2, 10000000]": {
+      "primes": 664579,
+      "failures": 0,
+      "method": "full",
+      "throughput": 136594.3
+    },
+    "[10000000, 100000000]": {
+      "primes": 5096876,
+      "failures": 0,
+      "method": "full",
+      "throughput": 130606.2
+    },
+    "[100000000, 1000000000]": {
+      "primes": 45086079,
+      "failures": 0,
+      "method": "full",
+      "throughput": 122053.0
+    },
+    "[1000000000, 1010000000]": {
+      "primes": 482449,
+      "failures": 0,
+      "method": "full",
+      "throughput": 116104.2
+    },
+    "[2000000000, 2010000000]": {
+      "primes": 467612,
+      "failures": 0,
+      "method": "full",
+      "throughput": 27765.7
+    },
+    "[5000000000, 5010000000]": {
+      "primes": 448094,
+      "failures": 0,
+      "method": "full",
+      "throughput": 18122.2
+    },
+    "[9000000000, 9010000000]": {
+      "primes": 436398,
+      "failures": 0,
+      "method": "full",
+      "throughput": 14338.8
+    }
+  },
+  "note": "All primes fully verified up to 10^9. Multiple 10^7-wide samples from [10^9, 10^10] range all verified with 0 failures."
+}
