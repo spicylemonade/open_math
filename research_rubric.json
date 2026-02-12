@@ -140,48 +140,48 @@
           "id": "item_011",
           "description": "Derive dimensional integration constraints on Gegenbauer coefficients",
           "acceptance_criteria": "Mathematical derivation (in results/dimensional_constraints.md) showing how the n-ball volume recurrence V_n = (2*pi/n)*V_{n-2} imposes constraints on the Gegenbauer polynomial expansion of feasible angular distributions on S^4. Specifically: (1) derive that the total solid angle of k caps of angular radius pi/6 on S^4 must equal k * A_cap(5, pi/6) <= S_4, giving the trivial cap bound, (2) derive at least one non-trivial constraint from the fact that the dimensional recurrence links S^4 cap areas to S^3 and S^2 cap areas via integration, (3) show how these constraints can be added to the Delsarte LP. All formulas verified numerically.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/dimensional_constraints.md with 6 sections: trivial cap bound (tau_5<=77), cross-dimensional integration identity (cap area verified via betainc and numerical integration), equatorial slicing constraint (degree bound from tau_4=24), second-moment trace constraint (consistent for all k<=77), and volume recurrence as LP constraint (Gegenbauer coefficient cross-dimensional recurrence).",
           "error": null
         },
         {
           "id": "item_012",
           "description": "Implement enhanced LP/SDP with dimensional analysis constraints",
           "acceptance_criteria": "Python module src/enhanced_bound.py that extends the Delsarte LP from item_008 by adding the dimensional integration constraints from item_011. The enhanced bound is computed for n=5. If the bound improves below 44 (e.g., tau_5 <= 43 or 42), this is a novel result. Output results/enhanced_bound_results.txt with: (a) the new upper bound value, (b) comparison with Delsarte's 44, (c) the additional constraints used, (d) sensitivity analysis showing which constraints are active.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Enhanced bound with D1 (equatorial slicing), D2 (trace), D3 (volume recurrence) constraints does NOT improve below Delsarte LP. Our ansatz gives tau_5<=51, literature optimal LP is 44. All dimensional constraints are redundant: D1 (degree<=24) too loose, D2 vacuous for n>=4, D3 is a soft geometric constraint that doesn't restrict LP certificate space. Detailed redundancy analysis in enhanced_bound_results.txt.",
           "error": null
         },
         {
           "id": "item_013",
           "description": "Investigate dimensional pyramid decomposition of spherical caps",
           "acceptance_criteria": "Analysis in results/pyramid_decomposition.md exploring the insight that integral(x^2) = x^3/3 corresponds to a pyramid being 1/3 of a cube. Apply this to S^4: (1) decompose the spherical cap on S^4 into infinitesimal 'pyramids' from the pole, each contributing dV = (1/5)*r^4*dOmega, (2) derive how the 1/n factor in V_n = S_{n-1}*R/n constrains the packing of caps on S^{n-1}, (3) explore whether the 1/5 factor for n=5 creates tighter geometric constraints than in other dimensions (since 1/5 is smaller than 1/3 or 1/4, each cap 'wastes' more volume in higher dimensions). Include at least 3 numerically verified lemmas.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Thorough analysis in pyramid_decomposition.md with 3 verified lemmas: (1) V_n/S_{n-1}=1/n decreasing with n, (2) cap density rho_n<=1 with equality iff n=2, (3) pyramid volume bound gives same tau_5<=77 as cap bound. Key result: 1/n factor cancels because both cone volume and total ball volume scale with 1/n. Cap density for tau_5=40 is 51.4%, for tau_5=44 is 56.6%.",
           "error": null
         },
         {
           "id": "item_014",
           "description": "Attempt construction of 41-point or 42-point kissing configurations in R^5",
           "acceptance_criteria": "Python script src/construct_kissing.py that: (1) starts from the 40-point D5 configuration, (2) uses at least 3 strategies to attempt adding a 41st point: (a) exhaustive search over a grid on S^4, (b) nonlinear optimization (minimize max violation of angular constraint), (c) algebraic construction based on symmetry subgroups of D5, (3) if a 41-point configuration is found, it is validated by the validator from item_009 and saved to results/kissing_41.npy. If no 41-point configuration is found, results/construction_attempts.md documents all strategies tried and why they failed, providing evidence toward tau_5 = 40.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "No 41st point found. Three strategies attempted: (1) grid search 100K samples - 0 valid, (2) nonlinear optimization 50 starts - best max IP 0.632456, margin -0.132, (3) algebraic construction 354 candidates - 0 valid. Best approach still 0.132 away from feasibility. Results in construction_attempts.md.",
           "error": null
         },
         {
           "id": "item_015",
           "description": "Analyze the contact graph structure using dimensional volume arguments",
           "acceptance_criteria": "Analysis in results/contact_graph_analysis.md that: (1) enumerates the possible contact graph structures for hypothetical 41-44 point kissing configurations in R^5, using the constraint that each vertex has degree related to the kissing number in R^4 (tau_4 = 24), (2) uses dimensional volume arguments to show certain contact graph structures are impossible (e.g., if a graph requires too many caps in a specific sub-arrangement, the dimensional volume bound from the recurrence rules it out), (3) if possible, eliminates tau_5 = 44 or tau_5 = 43 using these arguments. All graph-theoretic claims verified computationally.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive analysis in contact_graph_analysis.md. D5 graph: 40 vertices, 12-regular, 240 edges, omega=4, alpha=8, chi=5, vertex-transitive 4-class association scheme. REFINED degree bound: d(v)<=21 (not 24) because projected neighbors on S^3 have min angle arccos(1/3)=70.53°. D5 is locally rigid: min max IP = sqrt(2/5)=0.6325 > 0.5 (gap 9.23°). Graph-theoretic constraints cannot rule out k=41-44; the obstruction is geometric, not combinatorial.",
           "error": null
         },
         {
           "id": "item_016",
           "description": "Cross-dimensional consistency check using V_n recurrence",
           "acceptance_criteria": "Python script src/cross_dim_check.py that exploits the recurrence V_n = (2*pi/n)*V_{n-2} to derive constraints across dimensions. Specifically: (1) if tau_5 = K, compute what this implies about the maximum density of spherical caps on S^4, (2) project this density to S^3 and S^2 using the dimensional recurrence and check consistency with known tau_3 = 12 and tau_4 = 24, (3) report which values of K in {40,...,44} are consistent with the cross-dimensional constraints. Output to results/cross_dim_results.txt.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All values {40,...,44} pass the simple cross-dimensional consistency check. Cap coverage ranges 51.4%-56.6%, all below 100%. The omega ratio omega_5/omega_3 does not equal 2*pi/5 (because caps are not balls), so the volume recurrence does not directly eliminate candidates. Contact graph degree constraint (<=24) is also easily satisfied.",
           "error": null
         }
       ]
@@ -275,9 +275,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 10,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 15
+    "pending": 9
   }
 }

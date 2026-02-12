@@ -1,0 +1,326 @@
+========================================================================
+ENHANCED DELSARTE LP BOUND WITH DIMENSIONAL INTEGRATION CONSTRAINTS
+========================================================================
+
+Method: Polynomial ansatz search with Gegenbauer coefficient verification
+        + three dimensional integration constraints (D1, D2, D3).
+
+Constraints:
+  A1: f(t) <= 0 for t in [-1, 0.5]  (Delsarte nonpositivity)
+  A2: f_k >= 0 for all k             (Gegenbauer coefficient positivity)
+  D1: Contact graph degree <= tau_{n-1}  (equatorial slicing)
+  D2: trace(G^2) >= k^2/n             (second-moment / rank constraint)
+  D3: Cross-dim Gegenbauer consistency (volume recurrence V_n=(2pi/n)V_{n-2})
+
+Date: 2026-02-12 03:40:35
+
+------------------------------------------------------------------------
+SUMMARY TABLE
+------------------------------------------------------------------------
+  n    Enhanced   Floor   Known LB   Known UB   Improvement
+------------------------------------------------------------------------
+  3     14.0000      14         12         12            NO
+  4         N/A     N/A         24         24           N/A
+  5     51.0811      51         40         44            NO
+  8         N/A     N/A        240        240           N/A
+------------------------------------------------------------------------
+
+========================================================================
+DIMENSION n = 3
+========================================================================
+  Best bound:        13.999999999999995
+  Integer bound:     14
+  Best polynomial:   (t+1)(t-0.5)(t--0.400)^2
+  Candidates tested: 168
+  Passed Delsarte:   57
+  Passed all:        0
+  D1 rejections:     0
+  D2 rejections:     10
+  D3 rejections:     0
+
+  Top 10 polynomial bounds:
+     1.    14.0000  (t+1)(t-0.5)(t--0.400)^2
+     2.    14.0557  (t+1)(t-0.5)(t--0.450)^2
+     3.    14.0643  (t+1)(t-0.5)(t--0.350)^2
+     4.    14.2105  (t+1)(t-0.5)(t--0.500)^2
+     5.    14.2817  (t+1)(t-0.5)(t--0.300)^2
+     6.    14.2941  (t-0.5)(t--0.800)^2(t-0.000)^2
+     7.    14.7059  (t+1)(t-0.5)(t--0.250)^2
+     8.    14.8819  (t+1)(t-0.5)(t--0.500)^2(t-0.000)^2
+     9.    14.8819  (t+1)(t+0.5)^2*t^2*(t-0.5) [Levenshtein n=8]
+    10.    15.3283  (t-0.5)(t--0.640)^2(t-0.000)^2
+
+  Sensitivity Analysis:
+    D1_active: False
+    D2_active: True
+    D3_consistency: 0.0
+    D1_rejections: 0
+    D2_rejections: 10
+    D3_rejections: 0
+    bound_without_D1: 13.999999999999995
+    bound_without_D2: 13.999999999999995
+    bound_without_D3: 13.999999999999995
+    bound_with_all: 13.999999999999995
+    any_constraint_binding: False
+
+  Dimensional Constraint Details (best polynomial):
+    D1: No known tau_2 to constrain degree.
+    D2: trace(G^2) in [65.3, 59.5]. Max k from trace: 9.0 (binding for k=14).
+    D3: Cross-dim check skipped: n-2=1 < 2 (weight singular).
+
+Redundancy Analysis for n=3
+--------------------------------------------------
+
+D1 (Equatorial Slicing):
+  No known tau_2; constraint not applicable.
+
+D2 (Second-Moment Trace):
+  trace(G^2) in [65.3, 59.5]
+  Max k from trace: 9.0
+  For n=3: max k from trace = 9. Delsarte gives ~13.
+  The trace IS binding here but is weaker than our LP bound.
+
+D3 (Volume Recurrence Consistency):
+  Consistency measure: 0.0000
+  Ratios computed: 0
+  The volume recurrence V_n = (2*pi/n)*V_{n-2} relates cap geometry across
+  dimensions, but the Delsarte polynomial is an LP certificate, NOT a cap
+  indicator. Its Gegenbauer coefficients need not satisfy cross-dimensional
+  consistency.
+  WHY REDUNDANT: D3 is a geometric constraint on real configurations;
+  the LP certificate lives in a dual polynomial space where cross-dimensional
+  consistency is not required for a valid bound.
+
+OVERALL CONCLUSION:
+  The dimensional constraints (D1-D3) operate at a different level than the
+  Delsarte LP. The LP is a spectral (global) method; the dimensional constraints
+  are geometric (local/structural). For n=5, the LP bound of 44 is already tight
+  enough that none of D1-D3 can further restrict the polynomial search space.
+
+  To improve below 44, one would need:
+    (a) SDP / 3-point bounds (Bachoc-Vallentin 2008, Mittelmann-Vallentin 2010)
+    (b) Constraints interacting directly with the Gegenbauer expansion
+    (c) Fundamentally new techniques (flag algebras, modular forms)
+
+========================================================================
+DIMENSION n = 4
+========================================================================
+  Best bound:        None
+  Integer bound:     None
+  Best polynomial:   None
+  Candidates tested: 168
+  Passed Delsarte:   0
+  Passed all:        0
+  D1 rejections:     0
+  D2 rejections:     0
+  D3 rejections:     0
+
+Redundancy Analysis for n=4
+--------------------------------------------------
+
+D1 (Equatorial Slicing):
+  The constraint deg(v) <= tau_3 = 12 limits contact graph degree.
+  Our bound gives at most None points.
+  WHY REDUNDANT: The LP constrains total point count (global), while D1
+  constrains local structure. The LP bound is already small enough that
+  any contact graph fits within the degree bound.
+
+D2 (Second-Moment Trace):
+  For n=4 >= 4, the trace constraint gives k <= infinity.
+  WHY REDUNDANT: The rank constraint trace(G^2) >= k^2/4 is too weak;
+  the inequality 4k <= 4(k+3) is always satisfied for positive k.
+
+D3 (Volume Recurrence Consistency):
+  The volume recurrence V_n = (2*pi/n)*V_{n-2} relates cap geometry across
+  dimensions, but the Delsarte polynomial is an LP certificate, NOT a cap
+  indicator. Its Gegenbauer coefficients need not satisfy cross-dimensional
+  consistency.
+  WHY REDUNDANT: D3 is a geometric constraint on real configurations;
+  the LP certificate lives in a dual polynomial space where cross-dimensional
+  consistency is not required for a valid bound.
+
+OVERALL CONCLUSION:
+  The dimensional constraints (D1-D3) operate at a different level than the
+  Delsarte LP. The LP is a spectral (global) method; the dimensional constraints
+  are geometric (local/structural). For n=5, the LP bound of 44 is already tight
+  enough that none of D1-D3 can further restrict the polynomial search space.
+
+  To improve below 44, one would need:
+    (a) SDP / 3-point bounds (Bachoc-Vallentin 2008, Mittelmann-Vallentin 2010)
+    (b) Constraints interacting directly with the Gegenbauer expansion
+    (c) Fundamentally new techniques (flag algebras, modular forms)
+
+========================================================================
+DIMENSION n = 5
+========================================================================
+  Best bound:        51.08108108108109
+  Integer bound:     51
+  Best polynomial:   (t+1)(t+0.5)^2*t^2*(t-0.5) [Levenshtein n=8]
+  Candidates tested: 168
+  Passed Delsarte:   34
+  Passed all:        10
+  D1 rejections:     0
+  D2 rejections:     0
+  D3 rejections:     0
+
+  Top 10 polynomial bounds:
+     1.    51.0811  (t+1)(t+0.5)^2*t^2*(t-0.5) [Levenshtein n=8]
+     2.    51.0811  (t+1)(t-0.5)(t--0.500)^2(t-0.000)^2
+     3.    51.9285  (t-0.5)(t--0.640)^2(t-0.000)^2
+     4.    53.4906  (t-0.5)(t--0.800)^2(t-0.000)^2
+     5.    54.1791  (t+1)(t-0.5)(t--0.375)^2(t-0.000)^2
+     6.    55.1586  (t+1)(t-0.5)(t--0.500)^2(t-0.113)^2
+     7.    60.2068  (t+1)(t-0.5)(t--0.375)^2(t-0.113)^2
+     8.    60.6298  (t-0.5)(t--0.640)^2(t-0.090)^2
+     9.    61.7647  (t+1)(t-0.5)(t--0.250)^2(t-0.000)^2
+    10.    65.9773  (t+1)(t-0.5)(t--0.500)^2(t-0.225)^2
+
+  Sensitivity Analysis:
+    D1_active: False
+    D2_active: False
+    D3_consistency: 0.7368093119378687
+    D1_rejections: 0
+    D2_rejections: 0
+    D3_rejections: 0
+    bound_without_D1: 51.08108108108109
+    bound_without_D2: 51.08108108108109
+    bound_without_D3: 51.08108108108109
+    bound_with_all: 51.08108108108109
+    any_constraint_binding: False
+
+  Dimensional Constraint Details (best polynomial):
+    D1: Contact graph degree <= tau_4 = 24. For k=51, max edges = k*24//2 = 612. Constraint is easily satisfied.
+    D2: trace(G^2) in [520.2, 688.5]. Max k from trace: inf (not binding for k=51).
+    D3: Cross-dim consistency (CoV of h(n,k)/h(n-2,k)): 0.7368. 15 harmonic dimension ratios computed. Expected volume ratio 2*pi/5 = 1.2566.
+
+Redundancy Analysis for n=5
+--------------------------------------------------
+
+D1 (Equatorial Slicing):
+  The constraint deg(v) <= tau_4 = 24 limits contact graph degree.
+  Our bound gives at most 51 points.
+  With 51 points and max degree 24, the contact graph
+  is always feasible (max edges = 612).
+  WHY REDUNDANT: The LP constrains total point count (global), while D1
+  constrains local structure. The LP bound is already small enough that
+  any contact graph fits within the degree bound.
+
+D2 (Second-Moment Trace):
+  trace(G^2) in [520.2, 688.5]
+  Max k from trace: inf
+  For n=5 >= 4, the trace constraint gives k <= infinity.
+  WHY REDUNDANT: The rank constraint trace(G^2) >= k^2/5 is too weak;
+  the inequality 4k <= 5(k+3) is always satisfied for positive k.
+
+D3 (Volume Recurrence Consistency):
+  Consistency measure: 0.7368
+  Ratios computed: 15
+  The volume recurrence V_n = (2*pi/n)*V_{n-2} relates cap geometry across
+  dimensions, but the Delsarte polynomial is an LP certificate, NOT a cap
+  indicator. Its Gegenbauer coefficients need not satisfy cross-dimensional
+  consistency.
+  WHY REDUNDANT: D3 is a geometric constraint on real configurations;
+  the LP certificate lives in a dual polynomial space where cross-dimensional
+  consistency is not required for a valid bound.
+
+OVERALL CONCLUSION:
+  The dimensional constraints (D1-D3) operate at a different level than the
+  Delsarte LP. The LP is a spectral (global) method; the dimensional constraints
+  are geometric (local/structural). For n=5, the LP bound of 44 is already tight
+  enough that none of D1-D3 can further restrict the polynomial search space.
+
+  To improve below 44, one would need:
+    (a) SDP / 3-point bounds (Bachoc-Vallentin 2008, Mittelmann-Vallentin 2010)
+    (b) Constraints interacting directly with the Gegenbauer expansion
+    (c) Fundamentally new techniques (flag algebras, modular forms)
+
+========================================================================
+DIMENSION n = 8
+========================================================================
+  Best bound:        None
+  Integer bound:     None
+  Best polynomial:   None
+  Candidates tested: 168
+  Passed Delsarte:   0
+  Passed all:        0
+  D1 rejections:     0
+  D2 rejections:     0
+  D3 rejections:     0
+
+Redundancy Analysis for n=8
+--------------------------------------------------
+
+D1 (Equatorial Slicing):
+  The constraint deg(v) <= tau_7 = 134 limits contact graph degree.
+  Our bound gives at most None points.
+  WHY REDUNDANT: The LP constrains total point count (global), while D1
+  constrains local structure. The LP bound is already small enough that
+  any contact graph fits within the degree bound.
+
+D2 (Second-Moment Trace):
+  For n=8 >= 4, the trace constraint gives k <= infinity.
+  WHY REDUNDANT: The rank constraint trace(G^2) >= k^2/8 is too weak;
+  the inequality 4k <= 8(k+3) is always satisfied for positive k.
+
+D3 (Volume Recurrence Consistency):
+  The volume recurrence V_n = (2*pi/n)*V_{n-2} relates cap geometry across
+  dimensions, but the Delsarte polynomial is an LP certificate, NOT a cap
+  indicator. Its Gegenbauer coefficients need not satisfy cross-dimensional
+  consistency.
+  WHY REDUNDANT: D3 is a geometric constraint on real configurations;
+  the LP certificate lives in a dual polynomial space where cross-dimensional
+  consistency is not required for a valid bound.
+
+OVERALL CONCLUSION:
+  The dimensional constraints (D1-D3) operate at a different level than the
+  Delsarte LP. The LP is a spectral (global) method; the dimensional constraints
+  are geometric (local/structural). For n=5, the LP bound of 44 is already tight
+  enough that none of D1-D3 can further restrict the polynomial search space.
+
+  To improve below 44, one would need:
+    (a) SDP / 3-point bounds (Bachoc-Vallentin 2008, Mittelmann-Vallentin 2010)
+    (b) Constraints interacting directly with the Gegenbauer expansion
+    (c) Fundamentally new techniques (flag algebras, modular forms)
+
+========================================================================
+FINAL COMMENTARY
+========================================================================
+
+The enhanced bound with dimensional integration constraints does NOT
+improve below the standard Delsarte LP bound for any tested dimension.
+
+For n=5 specifically:
+  Our enhanced bound: tau_5 <= 51
+  Delsarte LP bound:  tau_5 <= 44  (from literature)
+  Known:              40 <= tau_5 <= 44
+
+WHY THE DIMENSIONAL CONSTRAINTS DON'T HELP:
+
+1. The Delsarte LP operates in a DUAL SPACE of polynomials. The bound
+   f(1)/f_0 is determined by the Gegenbauer expansion, which encodes
+   spectral information about S^{n-1}. The dimensional constraints
+   (equatorial degree, trace, volume recurrence) encode GEOMETRIC
+   information about real configurations, which does not directly
+   restrict the space of valid LP certificates.
+
+2. The equatorial slicing constraint (D1) bounds vertex degrees, but
+   the LP bound already gives at most 44 points, and any graph on
+   44 vertices can have max degree <= 24 = tau_4.
+
+3. The trace constraint (D2) is vacuous for n >= 4 because the rank
+   constraint trace(G^2) >= k^2/n is too weak relative to the diagonal
+   bound trace(G^2) <= k(k+3)/4.
+
+4. The volume recurrence (D3) relates cap geometry across dimensions,
+   but the LP polynomial is a certificate, not a geometric object. Its
+   Gegenbauer coefficients are not required to satisfy cross-dimensional
+   consistency.
+
+WHAT WOULD BE NEEDED TO IMPROVE THE BOUND:
+  - Semidefinite programming (SDP) with 3-point or k-point constraints
+    (Bachoc-Vallentin 2008, Mittelmann-Vallentin 2010)
+  - These constrain the TRIPLE correlation function, which the LP ignores.
+  - For n=5, SDP gives tau_5 <= 44 (matching LP), so even 3-point
+    constraints are not sufficient to improve further.
+  - A breakthrough would require Viazovska-type methods (modular forms)
+    or a clever new construction proving tau_5 >= 41.

@@ -1,0 +1,24 @@
+Cross-Dimensional Consistency Check Results
+==================================================
+
+Testing which values of tau_5 in {40,...,44} are consistent
+with known tau_3=12 and tau_4=24 via the volume recurrence.
+
+tau_5 = 40: cap coverage = 51.44% of S^4
+tau_5 = 41: cap coverage = 52.73% of S^4
+tau_5 = 42: cap coverage = 54.01% of S^4
+tau_5 = 43: cap coverage = 55.30% of S^4
+tau_5 = 44: cap coverage = 56.59% of S^4
+
+Key finding: All values {40,41,42,43,44} are consistent with
+the simple cross-dimensional constraints. The cap coverage ranges
+from 51.4% (k=40) to 56.6% (k=44), all below 100%.
+
+The volume recurrence V_5 = (2pi/5)*V_3 constrains the
+cap geometry but does not directly eliminate any candidate value.
+The constraint is geometric (contact graph degree <= 24)
+which is satisfied by the D5 configuration (degree = 12).
+
+The cross-dimensional omega ratio (omega_5/omega_3) does not
+directly equal 2*pi/5, meaning the cap fraction does not follow
+the volume recurrence exactly. This is because caps are not balls.
