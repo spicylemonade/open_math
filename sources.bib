@@ -1,2 +1,163 @@
 % Bibliography for research project
 % Erdős–Straus conjecture verification and Egyptian fraction decomposition
+
+@book{mordell1969diophantine,
+  author    = {Mordell, Louis Joel},
+  title     = {Diophantine Equations},
+  publisher = {Academic Press},
+  series    = {Pure and Applied Mathematics},
+  year      = {1969},
+  pages     = {312},
+  note      = {Contains the fundamental polynomial identity limitations for the Erdős–Straus conjecture}
+}
+
+@misc{swett1999erdos,
+  author    = {Swett, Allan},
+  title     = {The {Erdős}--{Straus} Conjecture},
+  year      = {1999},
+  note      = {Computational verification up to $10^{14}$ in 150 hours using a single modular equation sieve. Originally at http://math.uindy.edu/swett/esc.htm, rev.\ 10/28/99}
+}
+
+@article{elsholtz2013counting,
+  author    = {Elsholtz, Christian and Tao, Terence},
+  title     = {Counting the number of solutions to the {Erdős}--{Straus} equation on unit fractions},
+  journal   = {Journal of the Australian Mathematical Society},
+  volume    = {94},
+  pages     = {50--105},
+  year      = {2013},
+  doi       = {10.1017/S1446788712000468},
+  eprint    = {1107.1010},
+  archiveprefix = {arXiv}
+}
+
+@article{salez2014erdos,
+  author    = {Salez, Serge E.},
+  title     = {The {Erdős}--{Straus} conjecture: New modular equations and checking up to $N = 10^{17}$},
+  year      = {2014},
+  eprint    = {1406.6307},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NT},
+  note      = {Introduces 7 modular equations including 3 new ones; C++ sieve runs in 16 hours for $10^{17}$}
+}
+
+@article{mihnea2025further,
+  author    = {Mihnea, Spiridon and Bogdan, Dumitru C.},
+  title     = {Further verification and empirical evidence for the {Erdős}--{Straus} conjecture},
+  year      = {2025},
+  eprint    = {2509.00128},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NT},
+  note      = {Extends verification to $10^{18}$ using Python sieve + C++/GMP; reports $G_8 = 25{,}878{,}772{,}920$ and solution-counting function $f(p)$ data}
+}
+
+@article{dyachenko2025constructive,
+  author    = {Dyachenko, E.},
+  title     = {Constructive Proofs of the {Erdős}--{Straus} Conjecture for Prime Numbers of the Form $P \equiv 1 \pmod{4}$},
+  year      = {2025},
+  eprint    = {2511.07465},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NT},
+  note      = {Methods ED1 (nonlinear) and ED2 (linear affine lattice) for the hardest case $p \equiv 1 \pmod{4}$}
+}
+
+@article{webb1970erdos,
+  author    = {Webb, William},
+  title     = {On $4/n = 1/x + 1/y + 1/z$},
+  journal   = {Proceedings of the American Mathematical Society},
+  volume    = {25},
+  pages     = {578--584},
+  year      = {1970},
+  note      = {Showed the natural density of potential counterexamples is zero}
+}
+
+@article{vaughan1970erdos,
+  author    = {Vaughan, R. C.},
+  title     = {On a Problem of {Erdős}, {Straus} and {Schinzel}},
+  journal   = {Mathematika},
+  volume    = {17},
+  pages     = {193--198},
+  year      = {1970},
+  note      = {Sublinear bound on exceptions using the large sieve}
+}
+
+@article{bloom2022egyptian,
+  author    = {Bloom, Thomas F. and Elsholtz, Christian},
+  title     = {Egyptian fractions},
+  journal   = {Nieuw Archief voor Wiskunde},
+  series    = {5},
+  year      = {2022},
+  volume    = {23},
+  number    = {4},
+  pages     = {237--244},
+  note      = {Survey of Egyptian fraction problems including Erdős–Straus}
+}
+
+@article{trevino2019egyptian,
+  author    = {Treviño, Enrique},
+  title     = {On {Egyptian} fractions of length 3},
+  year      = {2019},
+  note      = {Analysis of Egyptian fraction decompositions into 3 unit fractions}
+}
+
+@misc{anothermathblog2012erdos,
+  author    = {{Another Math Blog}},
+  title     = {{Erdős}--{Straus} Conjecture and Computing},
+  year      = {2012},
+  howpublished = {\url{https://www.anothermathblog.com/?p=1047}},
+  note      = {C++ implementation using special cases, continued fractions, and brute-force fallback}
+}
+
+@misc{github_esc_paper,
+  author    = {Mihnea, Spiridon and Bogdan, Dumitru C.},
+  title     = {esc-paper/erdos-straus: Computational verification code},
+  year      = {2025},
+  howpublished = {\url{https://github.com/esc-paper/erdos-straus}},
+  note      = {Python + C++/GMP implementation for verification up to $10^{18}$}
+}
+
+@misc{github_suro_one,
+  author    = {{Suro-One}},
+  title     = {auro-zera\_Erdos-Straus\_proof: A constructive resolution attempt},
+  year      = {2024},
+  howpublished = {\url{https://github.com/Suro-One/auro-zera_Erdos-Straus_proof}},
+  note      = {Pure Python implementation with Fraction-based verification}
+}
+
+@misc{github_sean_dickinson,
+  author    = {Dickinson, Sean},
+  title     = {Erdos-Straus-Programs: Programs to check primes for the conjecture},
+  year      = {2020},
+  howpublished = {\url{https://github.com/sean-dickinson/Erdos-Straus-Programs}},
+  note      = {Educational implementation in JavaScript}
+}
+
+@article{terencetao_blog_erdos,
+  author    = {Tao, Terence},
+  title     = {Erdős--{Straus} conjecture},
+  journal   = {What's New (blog)},
+  howpublished = {\url{https://terrytao.wordpress.com/tag/erdos-straus-conjecture/}},
+  note      = {Blog posts discussing the conjecture and related work}
+}
+
+@misc{wikipedia_erdos_straus,
+  title     = {{Erdős}--{Straus} conjecture},
+  howpublished = {\url{https://en.wikipedia.org/wiki/Erdős–Straus_conjecture}},
+  note      = {Wikipedia article on the conjecture}
+}
+
+@misc{oeis_A006880,
+  author    = {{OEIS Foundation}},
+  title     = {A006880: Number of primes $< 10^n$},
+  howpublished = {\url{https://oeis.org/A006880}},
+  note      = {Provides exact values of $\pi(10^n)$ for prime counting estimates}
+}
+
+@article{garcia2024complete,
+  author    = {Garcia Morales, Violeta},
+  title     = {A Complete Congruence System for the {Erdős}--{Straus} Conjecture},
+  year      = {2024},
+  eprint    = {2404.01508},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NT},
+  note      = {Defines Type A and B solutions; extends congruence system classification}
+}

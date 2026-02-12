@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-12T04:30:00Z",
-  "updated_at": "2026-02-12T04:34:09.706960+00:00",
+  "updated_at": "2026-02-12T04:40:13.457983+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -47,40 +47,40 @@
           "id": "item_002",
           "description": "Define the Erdos-Straus conjecture problem statement formally",
           "acceptance_criteria": "A document results/problem_statement.md containing: (1) the formal conjecture statement (4/n = 1/a + 1/b + 1/c for all n >= 2), (2) why only prime n need be checked, (3) the known modular exclusion classes (n mod 840), and (4) the current verification bound of 10^18 from the 2025 Salez-extension paper.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Problem statement written to results/problem_statement.md with all 4 required elements.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Conduct literature review via web search on Erdos-Straus conjecture verification methods",
           "acceptance_criteria": "At least 10 relevant papers cited in sources.bib with proper BibTeX entries. Must include: Mordell (1967), Swett (1999), Elsholtz-Tao (2013), Salez (2014 arXiv:1406.6307), the 2025 extension paper (arXiv:2509.00128), Dyachenko (2025 arXiv:2511.07465), and at least 4 additional references on Egyptian fraction decomposition or modular sieving.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Literature review complete with 17 BibTeX entries in sources.bib including all required papers.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Survey existing open-source implementations and computational tools",
           "acceptance_criteria": "Document in results/implementation_survey.md at least 3 existing GitHub repos or code implementations (e.g., esc-paper/erdos-straus, Suro-One/auro-zera_Erdos-Straus_proof, sean-dickinson/Erdos-Straus-Programs), summarizing their approach, language, and maximum verified bound. Add these to sources.bib.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implementation survey written to results/implementation_survey.md covering 4 implementations.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Identify the modular sieving strategy and residue classes requiring brute-force checking",
           "acceptance_criteria": "A document results/modular_analysis.md that lists: (1) Salez's 7 modular equations, (2) the critical residue set {1, 121, 169, 289, 361, 529} mod 840, (3) the fraction of primes eliminated by the sieve (with a numeric estimate), and (4) the count G_8 = 25,878,772,920 from the 2025 paper as the number of residues still requiring checking per period.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Modular analysis written to results/modular_analysis.md with all required elements.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Assess computational feasibility of pushing the bound to 10^19",
           "acceptance_criteria": "A written analysis in results/feasibility.md estimating: (1) number of primes between 10^18 and 10^19, (2) the fraction surviving the modular sieve, (3) the per-prime verification cost, and (4) total estimated compute in CPU-hours. Must reference the 2025 paper's runtime of ~2 weeks for 10^18.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Feasibility analysis written to results/feasibility.md with prime counts, sieve fractions, and compute estimates.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 19
   }
 }
