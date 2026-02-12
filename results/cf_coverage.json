@@ -1,0 +1,14 @@
+{
+  "method": "continued_fraction_guided_divisor",
+  "range": [
+    1000000000,
+    1001000000
+  ],
+  "total_primes": 48155,
+  "solved": 48155,
+  "failed": 0,
+  "coverage_pct": 100.0,
+  "time_seconds": 10.082,
+  "throughput": 4776.1,
+  "failed_primes_sample": []
+}

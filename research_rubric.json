@@ -157,8 +157,8 @@
           "id": "item_014",
           "description": "Explore continued-fraction and lattice-based decomposition methods",
           "acceptance_criteria": "A file src/cf_solver.py implementing the continued-fraction approach described in the 'Another Math Blog' reference. Must solve at least 99.9% of test primes in [10^9, 10^9 + 10^6] without falling back to brute-force. Performance and coverage statistics written to results/cf_coverage.json.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "100% coverage on 48,155 primes in [10^9, 10^9+10^6] at 4776 primes/sec. CF-guided candidate selection + divisor decomposition. Results in results/cf_coverage.json.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 13,
+    "completed": 14,
     "in_progress": 0,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
