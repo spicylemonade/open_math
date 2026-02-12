@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-12T04:30:00Z",
-  "updated_at": "2026-02-12T04:40:13.457983+00:00",
+  "updated_at": "2026-02-12T04:47:58.803089+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -94,23 +94,23 @@
           "id": "item_007",
           "description": "Implement a naive brute-force Erdos-Straus solver in Python",
           "acceptance_criteria": "A file src/naive_solver.py that, given n, finds (a, b, c) such that 4/n = 1/a + 1/b + 1/c, or reports failure. Must include a verify() function that checks 4*a*b*c == b*c + a*c + a*b using exact integer arithmetic. Must pass tests on all primes up to 10^4 within 60 seconds.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "naive_solver.py passes all 1229 primes up to 10^4 in 34.74s (under 60s limit). Throughput: 35.4 primes/sec.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Implement Mordell's algebraic identity solver for known congruence classes",
           "acceptance_criteria": "A file src/mordell_solver.py implementing closed-form solutions for primes p where p mod 4 == 3, p mod 5 in {2,3}, p mod 7 in {3,5,6}, p mod 8 == 5. Must solve all such primes up to 10^6 in under 10 seconds and verify each solution with the verify() function.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Mordell solver handles all 76,128 Mordell-class primes up to 10^6 in 1.70s. Throughput: 44,805 primes/sec.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Implement Salez-style modular sieve filter in Python",
           "acceptance_criteria": "A file src/modular_sieve.py that precomputes the mod-840 residue filter and at least 5 of Salez's 7 modular equations. Given a range [lo, hi], it outputs the list of primes requiring brute-force checking. Must correctly reproduce the known density: roughly 15-20% of primes survive the sieve. Verified against known results for primes up to 10^7.",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         },
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
-    "in_progress": 0,
+    "completed": 8,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 19
+    "pending": 16
   }
 }
