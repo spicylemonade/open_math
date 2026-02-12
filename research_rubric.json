@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-12T04:30:00Z",
+  "updated_at": "2026-02-12T04:32:53.520032+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-12T04:30:00Z",
+      "completed_at": "2026-02-12T04:32:53.519986+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and document existing scaffolding",
+          "acceptance_criteria": "A written summary (in results/repo_analysis.md) listing all directories, files, and their purposes. Confirms the repo is a fresh scaffold with figures/, results/, and no pre-existing code.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Define the Erdos-Straus conjecture problem statement formally",
+          "acceptance_criteria": "A document results/problem_statement.md containing: (1) the formal conjecture statement (4/n = 1/a + 1/b + 1/c for all n >= 2), (2) why only prime n need be checked, (3) the known modular exclusion classes (n mod 840), and (4) the current verification bound of 10^18 from the 2025 Salez-extension paper.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review via web search on Erdos-Straus conjecture verification methods",
+          "acceptance_criteria": "At least 10 relevant papers cited in sources.bib with proper BibTeX entries. Must include: Mordell (1967), Swett (1999), Elsholtz-Tao (2013), Salez (2014 arXiv:1406.6307), the 2025 extension paper (arXiv:2509.00128), Dyachenko (2025 arXiv:2511.07465), and at least 4 additional references on Egyptian fraction decomposition or modular sieving.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey existing open-source implementations and computational tools",
+          "acceptance_criteria": "Document in results/implementation_survey.md at least 3 existing GitHub repos or code implementations (e.g., esc-paper/erdos-straus, Suro-One/auro-zera_Erdos-Straus_proof, sean-dickinson/Erdos-Straus-Programs), summarizing their approach, language, and maximum verified bound. Add these to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Identify the modular sieving strategy and residue classes requiring brute-force checking",
+          "acceptance_criteria": "A document results/modular_analysis.md that lists: (1) Salez's 7 modular equations, (2) the critical residue set {1, 121, 169, 289, 361, 529} mod 840, (3) the fraction of primes eliminated by the sieve (with a numeric estimate), and (4) the count G_8 = 25,878,772,920 from the 2025 paper as the number of residues still requiring checking per period.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Assess computational feasibility of pushing the bound to 10^19",
+          "acceptance_criteria": "A written analysis in results/feasibility.md estimating: (1) number of primes between 10^18 and 10^19, (2) the fraction surviving the modular sieve, (3) the per-prime verification cost, and (4) total estimated compute in CPU-hours. Must reference the 2025 paper's runtime of ~2 weeks for 10^18.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement a naive brute-force Erdos-Straus solver in Python",
+          "acceptance_criteria": "A file src/naive_solver.py that, given n, finds (a, b, c) such that 4/n = 1/a + 1/b + 1/c, or reports failure. Must include a verify() function that checks 4*a*b*c == b*c + a*c + a*b using exact integer arithmetic. Must pass tests on all primes up to 10^4 within 60 seconds.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement Mordell's algebraic identity solver for known congruence classes",
+          "acceptance_criteria": "A file src/mordell_solver.py implementing closed-form solutions for primes p where p mod 4 == 3, p mod 5 in {2,3}, p mod 7 in {3,5,6}, p mod 8 == 5. Must solve all such primes up to 10^6 in under 10 seconds and verify each solution with the verify() function.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement Salez-style modular sieve filter in Python",
+          "acceptance_criteria": "A file src/modular_sieve.py that precomputes the mod-840 residue filter and at least 5 of Salez's 7 modular equations. Given a range [lo, hi], it outputs the list of primes requiring brute-force checking. Must correctly reproduce the known density: roughly 15-20% of primes survive the sieve. Verified against known results for primes up to 10^7.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Establish baseline benchmarks and timing metrics",
+          "acceptance_criteria": "A file results/baseline_benchmarks.json containing: (1) naive solver throughput (primes/second) for ranges 10^4, 10^5, 10^6, (2) Mordell solver throughput, (3) sieve filter throughput, (4) combined pipeline throughput. All measurements reproducible via a script benchmarks/run_benchmarks.py.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_011",
+          "description": "Implement an optimized brute-force solver using parametric search over (x,y) pairs",
+          "acceptance_criteria": "A file src/optimized_solver.py that for a given prime p, iterates over candidate x values where x >= ceil(n/4) and for each x finds y,z via the identity 4xn - n^2 = x(y+z) + yz transformation. Must be at least 10x faster than naive_solver.py on primes in [10^6, 10^7], verified by benchmark comparison.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Develop extended modular sieve with additional congruence classes beyond Salez's 7",
+          "acceptance_criteria": "A file src/extended_sieve.py that adds at least 2 new modular identities beyond Salez's set (e.g., using moduli 11, 13, or composite moduli). Must demonstrably reduce the surviving fraction of primes compared to the baseline sieve (item_009). The improvement must be quantified: e.g., surviving fraction drops from X% to Y% with Y < X, documented in results/sieve_improvement.md.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement a C-extension or Cython-accelerated solver for the brute-force residual primes",
+          "acceptance_criteria": "A compiled module (src/fast_solver.pyx or src/fast_solver.c with Python bindings) that handles the brute-force check for primes surviving the sieve. Must achieve at least 100x speedup over the pure Python optimized_solver.py. Correctness verified by cross-checking against Python solver on 10,000 test primes.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Explore continued-fraction and lattice-based decomposition methods",
+          "acceptance_criteria": "A file src/cf_solver.py implementing the continued-fraction approach described in the 'Another Math Blog' reference. Must solve at least 99.9% of test primes in [10^9, 10^9 + 10^6] without falling back to brute-force. Performance and coverage statistics written to results/cf_coverage.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Investigate Dyachenko's constructive approach for p = 1 mod 4 primes",
+          "acceptance_criteria": "A file src/dyachenko_solver.py implementing the ED2 method from arXiv:2511.07465. Must produce valid decompositions for all p = 1 mod 4 primes up to 10^8. Compare coverage and performance against Mordell solver; results documented in results/dyachenko_evaluation.md with citations to the source paper.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_016",
+          "description": "Run full verification pipeline on range [2, 10^10] and validate correctness",
+          "acceptance_criteria": "All primes up to 10^10 verified with no failures. Results logged in results/verification_10e10.json containing: total primes checked, primes solved by Mordell identities, primes solved by extended sieve, primes solved by brute-force, total runtime. Every found decomposition verified via 4*a*b*c == b*c + a*c + a*b.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Run verification on range [10^10, 10^12] to stress-test scalability",
+          "acceptance_criteria": "All primes in [10^10, 10^12] verified with zero failures. Runtime and throughput metrics logged in results/verification_10e12.json. Compare throughput against the 2025 paper's reported performance (approximately 10^17/2-weeks). Identify bottlenecks.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Attempt to push verification bound to at least 10^13 using the optimized pipeline",
+          "acceptance_criteria": "All primes up to 10^13 verified with no counterexample found. Results file results/verification_10e13.json with full statistics. This extends beyond typical quick-check ranges and tests the full optimized pipeline's capability.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Measure and compare solution-counting function f(p) against prior work",
+          "acceptance_criteria": "For a sample of 10,000 primes uniformly distributed in [2, 10^10], compute f(p) = number of distinct (a,b,c) solutions. Plot f(p) vs p in figures/solution_count.png. Compare growth trend against the Elsholtz-Tao theoretical upper bound. Reference and compare with the 2025 paper's empirical f(p) data.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Analyze distribution of Type-1 vs Type-2 solutions",
+          "acceptance_criteria": "Classify solutions into Type-1 (a divides n) and Type-2 (a does not divide n) for primes up to 10^9. Report ratio S1/S2 in results/type_distribution.json. Compare with the 2025 paper's finding of S1=12,763,383 vs S2=5,838,200. Plot distribution in figures/type_distribution.png.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Run statistical analysis on primes requiring brute-force vs those caught by identities",
+          "acceptance_criteria": "For primes up to 10^10, produce a breakdown: (1) percentage solved by each Mordell identity, (2) percentage solved by Dyachenko's method, (3) percentage solved by extended sieve, (4) percentage requiring brute-force. Results in results/method_breakdown.json and a stacked bar chart in figures/method_breakdown.png.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_022",
+          "description": "Write a comprehensive results summary comparing against prior work",
+          "acceptance_criteria": "A document results/final_report.md containing: (1) summary of all verification results, (2) comparison table of our throughput vs Swett (10^14), Salez (10^17), and the 2025 paper (10^18), (3) analysis of our sieve improvement contributions, (4) all claims supported by citations from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Document all novel modular identities or algorithmic improvements discovered",
+          "acceptance_criteria": "A file results/novel_contributions.md listing any new modular identities, sieve optimizations, or algorithmic techniques developed during the research. Each contribution must include: mathematical statement, proof sketch, and empirical validation. If no novel identities were found, document the negative result with analysis of why.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Create a reproducibility package with instructions",
+          "acceptance_criteria": "A file README.md updated with: (1) project description, (2) installation instructions (Python >= 3.10, GMP, Cython), (3) how to run the full verification pipeline, (4) how to reproduce all figures and tables. A requirements.txt listing all Python dependencies.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Verify all results are computationally reproducible with a single-command test",
+          "acceptance_criteria": "A script tests/verify_all.py that: (1) runs the solver on a random sample of 1000 primes across the verified range, (2) checks each decomposition with exact arithmetic (4*a*b*c == b*c + a*c + a*b), (3) exits with code 0 if all pass, code 1 otherwise. Must complete in under 5 minutes.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
