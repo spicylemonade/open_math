@@ -70,24 +70,24 @@
           "id": "item_004",
           "description": "Formalize the dimensional analysis on calculus framework mathematically",
           "acceptance_criteria": "Document results/dimensional_framework.md created containing: (1) Proof that d/dR[V_n(R)] = S_{n-1}(R), (2) the recurrence V_n = (2*pi/n)*R^2*V_{n-2}, (3) spherical cap area formula A_cap(n,theta) derived via dimensional integration of S^{n-2} cross-sections, (4) the simple cap-packing upper bound tau_n <= S_{n-1}/A_cap(n,pi/6), (5) explicit computation for n=5 showing this gives an upper bound. All formulas verified symbolically or numerically in Python.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/dimensional_framework.md with proofs, recurrence verification, cap area derivation, and n=5 computation. Cap bound gives tau_5 <= 77 (weaker than Delsarte's 44 but provides geometric insight). All formulas verified numerically.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Study the D5 lattice and its kissing configuration achieving tau_5 >= 40",
           "acceptance_criteria": "Python script src/d5_lattice.py created that: (1) generates all 40 minimal vectors of the D5 lattice, (2) verifies they are unit vectors (after normalization), (3) computes all 780 pairwise inner products and confirms |<v_i,v_j>| <= 0.5 for i != j, (4) prints the contact graph structure (which pairs achieve equality |<v_i,v_j>| = 0.5). Script runs successfully and outputs are saved to results/d5_verification.txt.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "D5 lattice verified: 40 vectors, all pairwise inner products <= 0.5, contact graph is 12-regular with 240 contact pairs. Inner product spectrum: {-1, -0.5, 0, +0.5}. Configuration is VALID.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Survey existing upper bound techniques and identify gaps for dimensional analysis approach",
           "acceptance_criteria": "Document results/upper_bound_survey.md summarizing: (1) Delsarte LP bound for n=5 (gives tau_5 <= 44), (2) SDP/3-point bound improvements, (3) why the gap 40-44 persists, (4) identification of at least 2 specific places where dimensional integration arguments could tighten bounds (e.g., constraining Gegenbauer coefficients via volume/surface-area identities, or ruling out specific contact graph structures via cap-packing geometry). Cites at least 5 papers from sources.bib.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created upper_bound_survey.md. Identified 3 opportunities: (1) constraining Gegenbauer coefficients via volume identities, (2) ruling out contact graph structures via dimensional volume, (3) cross-dimensional density constraints. Cites 9 papers.",
           "error": null
         }
       ]
@@ -275,9 +275,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 3,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 22
+    "pending": 19
   }
 }
