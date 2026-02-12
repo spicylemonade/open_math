@@ -1,0 +1,116 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{DataGenetics}(2015)]{DataGenetics_Lychrel}
+{DataGenetics}.
+\newblock Lychrel numbers.
+\newblock \url{http://datagenetics.com/blog/october12015/index.html}, 2015.
+\newblock Blog post on Lychrel numbers with visualizations. Accessed:
+  2026-02-12.
+
+\bibitem[Dolbeau(2013)]{Dolbeau_p196}
+Romain Dolbeau.
+\newblock The p196\_mpi implementation of the reverse-and-add algorithm for the
+  palindrome quest.
+\newblock Technical report, Bull SAS, 2013.
+\newblock Available at \url{http://www.dolbeau.name/dolbeau/p196/p196_mpi.pdf}.
+  Achieved 1.1e12 digits/sec throughput.
+
+\bibitem[Doucette(2000)]{Doucette_196Quest}
+Jason Doucette.
+\newblock 196 palindrome quest.
+\newblock \url{https://jasondoucette.com/196.html}, 2000.
+\newblock Describes the 196 computation reaching 12.5 million digits. Accessed:
+  2026-02-12.
+
+\bibitem[Doucette(2005)]{Doucette_WorldRecords}
+Jason Doucette.
+\newblock World records -- 196 palindrome quest, most delayed palindromic
+  number.
+\newblock \url{https://jasondoucette.com/worldrecords.html}, 2005.
+\newblock Contains statistical prediction formula and exhaustive search results
+  through 18-digit numbers. Accessed: 2026-02-12.
+
+\bibitem[Maslov(2021{\natexlab{a}})]{Maslov_MDPN}
+Dmitry Maslov.
+\newblock Most delayed palindromic number -- {MDPN} project.
+\newblock \url{http://dmaslov.name/mdpn/}, 2021{\natexlab{a}}.
+\newblock Current world record: 1000206827388999999095750 (293 iterations, Dec
+  14 2021). Accessed: 2026-02-12.
+
+\bibitem[Maslov(2021{\natexlab{b}})]{Maslov_MDPN_DB}
+Dmitry Maslov.
+\newblock {MDPN} project database repository.
+\newblock \url{https://github.com/aloncat/mdpn-db}, 2021{\natexlab{b}}.
+\newblock Contains all delayed palindromes and stats up to 20-digit numbers.
+  Accessed: 2026-02-12.
+
+\bibitem[Maslov(2021{\natexlab{c}})]{Maslov_Records}
+Dmitry Maslov.
+\newblock All known delayed palindromic numbers -- {MDPN} project.
+\newblock \url{https://dmaslov.me/mdpn/records.html}, 2021{\natexlab{c}}.
+\newblock Comprehensive list of all MDPN records. Accessed: 2026-02-12.
+
+\bibitem[Nishiyama(2012)]{Nishiyama2012}
+Yutaka Nishiyama.
+\newblock Numerical palindromes and the 196 problem.
+\newblock \emph{International Journal of Pure and Applied Mathematics},
+  80\penalty0 (3):\penalty0 375--384, 2012.
+\newblock Available at \url{https://ijpam.eu/contents/2012-80-3/9/9.pdf}.
+
+\bibitem[{OEIS Foundation}(2024{\natexlab{a}})]{OEIS_A033665}
+{OEIS Foundation}.
+\newblock A033665 -- number of ``reverse and add'' steps needed to reach a
+  palindrome.
+\newblock \url{https://oeis.org/A033665}, 2024{\natexlab{a}}.
+\newblock Core sequence for reverse-and-add delay counts. Accessed: 2026-02-12.
+
+\bibitem[{OEIS Foundation}(2024{\natexlab{b}})]{OEIS_A065198}
+{OEIS Foundation}.
+\newblock A065198 -- indices of record high values in a033665.
+\newblock \url{https://oeis.org/A065198}, 2024{\natexlab{b}}.
+\newblock The MDPN sequence itself -- record-setting starting numbers.
+  Accessed: 2026-02-12.
+
+\bibitem[p196org()]{p196org}
+p196org.
+\newblock 196 and other lychrel numbers.
+\newblock \url{https://www.p196.org/}, 2005.
+\newblock Community resource for Lychrel number research. Accessed: 2026-02-12.
+
+\bibitem[Rosati(2017)]{Rosati_Blog}
+Robbie Rosati.
+\newblock Finding a more-delayed palindromic number.
+\newblock
+  \url{https://sites.cns.utexas.edu/rjrosati/blog/finding-more-delayed-palindromic-number},
+  2017.
+\newblock Blog post at UT-Austin Physics. Accessed: 2026-02-12.
+
+\bibitem[Shchebetov and Shchebetov(2017{\natexlab{a}})]{OEIS_A281506}
+Andrey~S. Shchebetov and Sergei~D. Shchebetov.
+\newblock A281506 -- numbers requiring exactly 261 steps to reach a palindrome.
+\newblock \url{https://oeis.org/A281506}, 2017{\natexlab{a}}.
+\newblock 108,864 numbers with 261-step delay. Accessed: 2026-02-12.
+
+\bibitem[Shchebetov and Shchebetov(2017{\natexlab{b}})]{OEIS_A281508}
+Andrey~S. Shchebetov and Sergei~D. Shchebetov.
+\newblock A281508 -- newly discovered 261-step delayed palindromes.
+\newblock \url{https://oeis.org/A281508}, 2017{\natexlab{b}}.
+\newblock 125 new 261-step delayed palindromes. Accessed: 2026-02-12.
+
+\bibitem[Trigg(1967)]{Trigg1967}
+C.~W. Trigg.
+\newblock Palindromes by addition.
+\newblock \emph{Mathematics Magazine}, 40:\penalty0 26--28, 1967.
+
+\bibitem[Wikipedia Lychrel()]{Wikipedia_Lychrel}
+Wikipedia Lychrel.
+\newblock Lychrel number --- {W}ikipedia{,} the free encyclopedia.
+\newblock \url{https://en.wikipedia.org/wiki/Lychrel_number}, 2025.
+\newblock Accessed: 2026-02-12.
+
+\end{thebibliography}
