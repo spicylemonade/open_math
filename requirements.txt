@@ -1,0 +1,6 @@
+pytest>=7.0
+gmpy2>=2.1
+matplotlib>=3.5
+seaborn>=0.12
+numpy>=1.21
+scipy>=1.7
