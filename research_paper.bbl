@@ -1,0 +1,148 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bachoc and Vallentin(2008)]{bachoc2008new}
+Christine Bachoc and Frank Vallentin.
+\newblock New upper bounds for kissing numbers from semidefinite programming.
+\newblock \emph{Journal of the American Mathematical Society}, 21\penalty0
+  (3):\penalty0 909--924, 2008.
+\newblock \doi{10.1090/S0894-0347-07-00589-9}.
+\newblock URL \url{https://arxiv.org/abs/math/0608426}.
+
+\bibitem[Boyvalenkov et~al.(2012)Boyvalenkov, Dodunekov, and
+  Musin]{boyvalenkov2012survey}
+Peter Boyvalenkov, Stefan Dodunekov, and Oleg~R. Musin.
+\newblock A survey on the kissing numbers.
+\newblock \emph{Serdica Mathematical Journal}, 38:\penalty0 507--522, 2012.
+\newblock URL \url{https://arxiv.org/abs/1507.03631}.
+
+\bibitem[Cohn and Elkies(2003)]{cohn2003new}
+Henry Cohn and Noam Elkies.
+\newblock New upper bounds on sphere packings {I}.
+\newblock \emph{Annals of Mathematics}, 157\penalty0 (2):\penalty0 689--714,
+  2003.
+\newblock \doi{10.4007/annals.2003.157.689}.
+
+\bibitem[Cohn and Kumar(2007)]{cohn2007universally}
+Henry Cohn and Abhinav Kumar.
+\newblock Universally optimal distribution of points on spheres.
+\newblock \emph{Journal of the American Mathematical Society}, 20\penalty0
+  (1):\penalty0 99--148, 2007.
+\newblock \doi{10.1090/S0894-0347-06-00546-7}.
+\newblock URL \url{https://arxiv.org/abs/math/0607446}.
+
+\bibitem[Cohn and Rajagopal(2024)]{cohn2024variations}
+Henry Cohn and Anantha Rajagopal.
+\newblock Variations on five-dimensional sphere packings.
+\newblock 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.00937}.
+\newblock arXiv preprint.
+
+\bibitem[Conway and Sloane(1999)]{conway1999sphere}
+John~H. Conway and Neil J.~A. Sloane.
+\newblock \emph{Sphere Packings, Lattices and Groups}, volume 290 of
+  \emph{Grundlehren der mathematischen Wissenschaften}.
+\newblock Springer-Verlag, 3rd edition, 1999.
+\newblock \doi{10.1007/978-1-4757-6568-7}.
+
+\bibitem[Delsarte(1973)]{delsarte1973algebraic}
+Philippe Delsarte.
+\newblock An algebraic approach to the association schemes of coding theory.
+\newblock \emph{Philips Research Reports Supplements}, 10, 1973.
+\newblock Introduced the linear programming method for coding theory bounds.
+
+\bibitem[Delsarte et~al.(1977)Delsarte, Goethals, and
+  Seidel]{delsarte1977spherical}
+Philippe Delsarte, Jean-Marie Goethals, and Johan~Jacob Seidel.
+\newblock Spherical codes and designs.
+\newblock \emph{Geometriae Dedicata}, 6\penalty0 (3):\penalty0 363--388, 1977.
+\newblock \doi{10.1007/BF00150270}.
+
+\bibitem[Kabatyansky and Levenshtein(1978)]{kabatyansky1978bounds}
+G.~A. Kabatyansky and V.~I. Levenshtein.
+\newblock Bounds for packings on the sphere and in space.
+\newblock \emph{Problems of Information Transmission}, 14\penalty0
+  (1):\penalty0 1--17, 1978.
+
+\bibitem[Levenshtein(1979)]{levenshtein1979boundaries}
+Vladimir~I. Levenshtein.
+\newblock On bounds for packings in n-dimensional {E}uclidean space.
+\newblock \emph{Soviet Mathematics Doklady}, 20:\penalty0 417--421, 1979.
+
+\bibitem[Machado and de~Oliveira~Filho(2018)]{machado2018improving}
+Fabrício~C. Machado and Fernando~M. de~Oliveira~Filho.
+\newblock Improving the semidefinite programming bound for the kissing number
+  by exploiting polynomial symmetry.
+\newblock \emph{Experimental Mathematics}, 27\penalty0 (3):\penalty0 362--369,
+  2018.
+\newblock \doi{10.1080/10586458.2017.1286273}.
+\newblock URL \url{https://arxiv.org/abs/1609.05167}.
+
+\bibitem[Mittelmann and Vallentin(2010)]{mittelmann2010high}
+Hans~D. Mittelmann and Frank Vallentin.
+\newblock High-accuracy semidefinite programming bounds for kissing numbers.
+\newblock \emph{Experimental Mathematics}, 19\penalty0 (2):\penalty0 175--179,
+  2010.
+\newblock \doi{10.1080/10586458.2010.10129070}.
+\newblock URL \url{https://arxiv.org/abs/0902.1105}.
+
+\bibitem[Musin(2008)]{musin2008kissing}
+Oleg~R. Musin.
+\newblock The kissing number in four dimensions.
+\newblock \emph{Annals of Mathematics}, 168\penalty0 (1):\penalty0 1--32, 2008.
+\newblock \doi{10.4007/annals.2008.168.1}.
+\newblock URL \url{https://arxiv.org/abs/math/0309430}.
+
+\bibitem[Odlyzko and Sloane(1979)]{odlyzko1979kissing}
+Andrew~M. Odlyzko and Neil J.~A. Sloane.
+\newblock New bounds on the number of unit spheres that can touch a unit sphere
+  in n dimensions.
+\newblock \emph{Journal of Combinatorial Theory, Series A}, 26\penalty0
+  (2):\penalty0 210--214, 1979.
+\newblock \doi{10.1016/0097-3165(79)90074-8}.
+
+\bibitem[Pfender(2007)]{pfender2007improved}
+Florian Pfender.
+\newblock Improved {D}elsarte bounds for spherical codes in small dimensions.
+\newblock \emph{Journal of Combinatorial Theory, Series A}, 114\penalty0
+  (6):\penalty0 1133--1147, 2007.
+\newblock \doi{10.1016/j.jcta.2006.12.001}.
+
+\bibitem[Pfender and Ziegler(2004)]{pfender2004kissing}
+Florian Pfender and G{\"u}nter~M. Ziegler.
+\newblock Kissing numbers, sphere packings, and some unexpected proofs.
+\newblock \emph{Notices of the American Mathematical Society}, 51\penalty0
+  (8):\penalty0 873--883, 2004.
+\newblock URL \url{https://www.ams.org/notices/200408/fea-pfender.pdf}.
+
+\bibitem[Sch{\"u}tte and van~der Waerden(1953)]{schutte1953problem}
+K.~Sch{\"u}tte and B.~L. van~der Waerden.
+\newblock Das problem der dreizehn kugeln.
+\newblock \emph{Mathematische Annalen}, 125:\penalty0 325--334, 1953.
+\newblock \doi{10.1007/BF01343127}.
+
+\bibitem[Sz{\"o}ll{\H{o}}si(2023)]{szollosi2023five}
+Ferenc Sz{\"o}ll{\H{o}}si.
+\newblock A note on five dimensional kissing arrangements.
+\newblock \emph{Mathematical Research Letters}, 30\penalty0 (5), 2023.
+\newblock URL \url{https://arxiv.org/abs/2301.08272}.
+
+\bibitem[Viazovska(2017)]{viazovska2017sphere}
+Maryna~S. Viazovska.
+\newblock The sphere packing problem in dimension 8.
+\newblock \emph{Annals of Mathematics}, 185\penalty0 (3):\penalty0 991--1015,
+  2017.
+\newblock \doi{10.4007/annals.2017.185.3.7}.
+\newblock URL \url{https://arxiv.org/abs/1603.04246}.
+
+\bibitem[Zong(2008)]{zong2008kissing}
+Chuanming Zong.
+\newblock \emph{The kissing number, blocking number and covering number of a
+  convex body}, volume 453 of \emph{Contemporary Mathematics}.
+\newblock American Mathematical Society, 2008.
+
+\end{thebibliography}
