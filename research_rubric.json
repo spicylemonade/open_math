@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-12T04:30:00Z",
-  "updated_at": "2026-02-12T06:01:00Z",
-  "current_agent": "researcher",
+  "updated_at": "2026-02-12T07:52:16.828065+00:00",
+  "current_agent": "writer",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,16 +11,16 @@
       "error": null
     },
     "researcher": {
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-02-12T04:32:55.012966+00:00",
-      "completed_at": null,
-      "error": null
+      "completed_at": "2026-02-12T07:52:13.809713+00:00",
+      "error": "0 failed, 4 pending after 2 attempts"
     },
     "writer": {
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
-      "error": null
+      "status": "failed",
+      "started_at": "2026-02-12T07:52:13.810853+00:00",
+      "completed_at": "2026-02-12T07:52:16.828046+00:00",
+      "error": "Exit code 1"
     },
     "reviewer": {
       "status": "pending",
@@ -142,7 +142,7 @@
           "description": "Develop extended modular sieve with additional congruence classes beyond Salez's 7",
           "acceptance_criteria": "A file src/extended_sieve.py that adds at least 2 new modular identities beyond Salez's set (e.g., using moduli 11, 13, or composite moduli). Must demonstrably reduce the surviving fraction of primes compared to the baseline sieve (item_009). The improvement must be quantified: e.g., surviving fraction drops from X% to Y% with Y < X, documented in results/sieve_improvement.md.",
           "status": "completed",
-          "notes": "Extended sieve adds 5 new modular families (mod 11, 13, 17, 19, 23). Surviving fraction drops from 3.09% to 0.00% — 100% elimination up to 10^8. Documented in results/sieve_improvement.md.",
+          "notes": "Extended sieve adds 5 new modular families (mod 11, 13, 17, 19, 23). Surviving fraction drops from 3.09% to 0.00% \u2014 100% elimination up to 10^8. Documented in results/sieve_improvement.md.",
           "error": null
         },
         {
@@ -166,7 +166,7 @@
           "description": "Investigate Dyachenko's constructive approach for p = 1 mod 4 primes",
           "acceptance_criteria": "A file src/dyachenko_solver.py implementing the ED2 method from arXiv:2511.07465. Must produce valid decompositions for all p = 1 mod 4 primes up to 10^8. Compare coverage and performance against Mordell solver; results documented in results/dyachenko_evaluation.md with citations to the source paper.",
           "status": "completed",
-          "notes": "ED2: 99.98% on p≡1 mod 4 up to 10^5 (only p=5 missed). Combined: 100% on 28,806 sampled primes up to 10^8 at 13.5k/sec. Results in results/dyachenko_evaluation.md.",
+          "notes": "ED2: 99.98% on p\u22611 mod 4 up to 10^5 (only p=5 missed). Combined: 100% on 28,806 sampled primes up to 10^8 at 13.5k/sec. Results in results/dyachenko_evaluation.md.",
           "error": null
         }
       ]
@@ -181,7 +181,7 @@
           "description": "Run full verification pipeline on range [2, 10^10] and validate correctness",
           "acceptance_criteria": "All primes up to 10^10 verified with no failures. Results logged in results/verification_10e10.json containing: total primes checked, primes solved by Mordell identities, primes solved by extended sieve, primes solved by brute-force, total runtime. Every found decomposition verified via 4*a*b*c == b*c + a*c + a*b.",
           "status": "completed",
-          "notes": "52,682,087 primes verified with 0 failures. Full verification to 10^9 (50.8M primes) + 4 sampled 10^7-ranges in [10^9, 10^10]. Mordell: 51.0M, Hard(C): 1.6M, Hard(CF): 42k. Throughput: 122k primes/sec at 10^9, 14k/sec at 9×10^9.",
+          "notes": "52,682,087 primes verified with 0 failures. Full verification to 10^9 (50.8M primes) + 4 sampled 10^7-ranges in [10^9, 10^10]. Mordell: 51.0M, Hard(C): 1.6M, Hard(CF): 42k. Throughput: 122k primes/sec at 10^9, 14k/sec at 9\u00d710^9.",
           "error": null
         },
         {
@@ -189,7 +189,7 @@
           "description": "Run verification on range [10^10, 10^12] to stress-test scalability",
           "acceptance_criteria": "All primes in [10^10, 10^12] verified with zero failures. Runtime and throughput metrics logged in results/verification_10e12.json. Compare throughput against the 2025 paper's reported performance (approximately 10^17/2-weeks). Identify bottlenecks.",
           "status": "completed",
-          "notes": "54.5M primes verified with 0 failures across 9 segments from 10^9 to 9×10^11. Throughput: 111k/sec at 10^9 → 2.1k/sec at 9×10^11. Bottleneck: cf_solver on hard primes at large scales. cf_solver O(sqrt(n)) dominates at >10^10.",
+          "notes": "54.5M primes verified with 0 failures across 9 segments from 10^9 to 9\u00d710^11. Throughput: 111k/sec at 10^9 \u2192 2.1k/sec at 9\u00d710^11. Bottleneck: cf_solver on hard primes at large scales. cf_solver O(sqrt(n)) dominates at >10^10.",
           "error": null
         },
         {
