@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-12T04:30:00Z",
-  "updated_at": "2026-02-12T04:49:49.425686+00:00",
+  "updated_at": "2026-02-12T06:01:00Z",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -118,8 +118,8 @@
           "id": "item_010",
           "description": "Establish baseline benchmarks and timing metrics",
           "acceptance_criteria": "A file results/baseline_benchmarks.json containing: (1) naive solver throughput (primes/second) for ranges 10^4, 10^5, 10^6, (2) Mordell solver throughput, (3) sieve filter throughput, (4) combined pipeline throughput. All measurements reproducible via a script benchmarks/run_benchmarks.py.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Baseline benchmarks saved to results/baseline_benchmarks.json. Naive: 35.8 primes/sec at 10^4 (times out at 10^5). Mordell: 46k-127k primes/sec. Sieve: 58k-294k primes/sec. Combined pipeline: 104 primes/sec bottlenecked by naive solver.",
           "error": null
         }
       ]
@@ -268,8 +268,8 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 9,
-    "in_progress": 1,
+    "completed": 10,
+    "in_progress": 0,
     "failed": 0,
     "pending": 15
   }

@@ -1,0 +1,107 @@
+{
+  "seed": 42,
+  "timestamp": "2026-02-12T06:00:00Z",
+  "naive_solver": {
+    "10e4": {
+      "limit": 10000,
+      "primes_checked": 1229,
+      "time_seconds": 34.308,
+      "throughput": 35.8,
+      "completed": true
+    },
+    "10e5": {
+      "limit": 100000,
+      "primes_checked": 1788,
+      "time_seconds": 120.0,
+      "throughput": 14.9,
+      "completed": false,
+      "note": "Timed out after 120s — only 1788 of 9592 primes checked"
+    },
+    "10e6": {
+      "limit": 1000000,
+      "primes_checked": 1825,
+      "time_seconds": 120.0,
+      "throughput": 15.2,
+      "completed": false,
+      "note": "Timed out after 120s — only 1825 of 78498 primes checked"
+    }
+  },
+  "mordell_solver": {
+    "10e4": {
+      "limit": 10000,
+      "primes_checked": 1202,
+      "primes_solved": 1202,
+      "time_seconds": 0.009,
+      "throughput": 126956.1,
+      "solve_rate": 1.0
+    },
+    "10e5": {
+      "limit": 100000,
+      "primes_checked": 9319,
+      "primes_solved": 9319,
+      "time_seconds": 0.114,
+      "throughput": 81710.0,
+      "solve_rate": 1.0
+    },
+    "10e6": {
+      "limit": 1000000,
+      "primes_checked": 76128,
+      "primes_solved": 76128,
+      "time_seconds": 1.633,
+      "throughput": 46612.3,
+      "solve_rate": 1.0
+    }
+  },
+  "sieve_filter": {
+    "10e4": {
+      "limit": 10000,
+      "total_primes": 1229,
+      "hard_primes": 27,
+      "surviving_fraction": 0.022,
+      "time_seconds": 0.004,
+      "throughput": 294492.7
+    },
+    "10e5": {
+      "limit": 100000,
+      "total_primes": 9592,
+      "hard_primes": 273,
+      "surviving_fraction": 0.0285,
+      "time_seconds": 0.063,
+      "throughput": 151219.4
+    },
+    "10e6": {
+      "limit": 1000000,
+      "total_primes": 78498,
+      "hard_primes": 2370,
+      "surviving_fraction": 0.0302,
+      "time_seconds": 1.064,
+      "throughput": 73776.8
+    },
+    "10e7": {
+      "limit": 10000000,
+      "total_primes": 664579,
+      "hard_primes": 20557,
+      "surviving_fraction": 0.0309,
+      "time_seconds": 11.384,
+      "throughput": 58379.4
+    }
+  },
+  "combined_pipeline": {
+    "10e4": {
+      "limit": 10000,
+      "total_primes": 1229,
+      "by_mordell": 1202,
+      "by_bruteforce": 27,
+      "failures": 0,
+      "time_seconds": 11.807,
+      "throughput": 104.1
+    },
+    "note": "10^5 and above not completable with naive brute-force — requires optimized solver (item_011)"
+  },
+  "analysis": {
+    "naive_solver_bottleneck": "Naive solver degrades rapidly for primes > 10^4 (35.8 -> 14.9 primes/sec). O(n^2) complexity makes it infeasible beyond 10^5.",
+    "mordell_effectiveness": "Mordell identities solve 100% of Mordell-class primes (96.9% of all primes) at 46k-127k primes/sec. Zero failures up to 10^6.",
+    "sieve_density": "Mod-840 sieve reduces primes requiring brute-force to ~3.1%, matching theoretical 6/192 = 3.125%.",
+    "pipeline_bottleneck": "Combined pipeline throughput (104 primes/sec at 10^4) is dominated by naive solver on the 3.1% hard primes. An optimized solver is critical for scaling."
+  }
+}
