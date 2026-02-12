@@ -1,0 +1,66 @@
+{
+  "description": "Type-1 vs Type-2 solution distribution. Type-1: 4/p = 1/p + 1/b + 1/c. Type-2: no denominator equals 1 or p.",
+  "item": "020",
+  "limit": 1000000,
+  "total_primes": 78498,
+  "S1_has_type1": 39267,
+  "S2_has_type2": 78496,
+  "both_types": 39265,
+  "type1_only": 2,
+  "type2_only": 39231,
+  "ratio_S1_S2": 0.5002420505503465,
+  "S1_fraction": 0.500229,
+  "S2_fraction": 0.999975,
+  "decade_breakdown": {
+    "10^0": {
+      "type1_only": 2,
+      "type2_only": 1,
+      "both": 1,
+      "s1": 3,
+      "s2": 2,
+      "total": 4
+    },
+    "10^1": {
+      "type1_only": 0,
+      "type2_only": 10,
+      "both": 11,
+      "s1": 11,
+      "s2": 21,
+      "total": 21
+    },
+    "10^2": {
+      "type1_only": 0,
+      "type2_only": 69,
+      "both": 74,
+      "s1": 74,
+      "s2": 143,
+      "total": 143
+    },
+    "10^3": {
+      "type1_only": 0,
+      "type2_only": 531,
+      "both": 530,
+      "s1": 530,
+      "s2": 1061,
+      "total": 1061
+    },
+    "10^4": {
+      "type1_only": 0,
+      "type2_only": 4173,
+      "both": 4190,
+      "s1": 4190,
+      "s2": 8363,
+      "total": 8363
+    },
+    "10^5": {
+      "type1_only": 0,
+      "type2_only": 34447,
+      "both": 34459,
+      "s1": 34459,
+      "s2": 68906,
+      "total": 68906
+    }
+  },
+  "runtime_seconds": 975.05,
+  "reference_note": "The 2025 paper (arXiv:2509.00128) reports S1=12,763,383 vs S2=5,838,200."
+}

@@ -1,0 +1,89 @@
+{
+  "description": "Method breakdown for Erdos-Straus verification pipeline",
+  "item": "021",
+  "limit": 100000000,
+  "total_primes": 5761455,
+  "methods": {
+    "mordell_identity": {
+      "count": 5581987,
+      "percentage": 96.885,
+      "description": "Mordell algebraic identities (O(1) closed-form for p mod 840 not in hard set)"
+    },
+    "extended_sieve": {
+      "count": 179468,
+      "percentage": 3.115,
+      "description": "Extended modular sieve using additional moduli {11,13,17,19,23}"
+    },
+    "bruteforce_divisor": {
+      "count": 0,
+      "percentage": 0.0,
+      "description": "Brute-force divisor search (parametric x with divisor enumeration)"
+    }
+  },
+  "hard_residues_mod_840": [
+    1,
+    121,
+    169,
+    289,
+    361,
+    529
+  ],
+  "extra_moduli": [
+    11,
+    13,
+    17,
+    19,
+    23
+  ],
+  "decade_breakdown": {
+    "10^0": {
+      "mordell": 4,
+      "extended_sieve": 0,
+      "bruteforce": 0,
+      "total": 4
+    },
+    "10^1": {
+      "mordell": 21,
+      "extended_sieve": 0,
+      "bruteforce": 0,
+      "total": 21
+    },
+    "10^2": {
+      "mordell": 143,
+      "extended_sieve": 0,
+      "bruteforce": 0,
+      "total": 143
+    },
+    "10^3": {
+      "mordell": 1034,
+      "extended_sieve": 27,
+      "bruteforce": 0,
+      "total": 1061
+    },
+    "10^4": {
+      "mordell": 8117,
+      "extended_sieve": 246,
+      "bruteforce": 0,
+      "total": 8363
+    },
+    "10^5": {
+      "mordell": 66809,
+      "extended_sieve": 2097,
+      "bruteforce": 0,
+      "total": 68906
+    },
+    "10^6": {
+      "mordell": 567938,
+      "extended_sieve": 18143,
+      "bruteforce": 0,
+      "total": 586081
+    },
+    "10^7": {
+      "mordell": 4937921,
+      "extended_sieve": 158955,
+      "bruteforce": 0,
+      "total": 5096876
+    }
+  },
+  "runtime_seconds": 17.2
+}
