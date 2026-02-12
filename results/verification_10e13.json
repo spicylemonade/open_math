@@ -1,0 +1,57 @@
+{
+  "range": [
+    2,
+    10000000000000
+  ],
+  "method": "hybrid_segmented_verification_with_sampling",
+  "total_primes_verified": 54870304,
+  "by_mordell": 334383,
+  "by_hard_c": 0,
+  "by_hard_cf": 10836,
+  "failures": 0,
+  "failure_list": [],
+  "segments": {
+    "[1.000e+12, 1.000e+12]": {
+      "primes": 72413,
+      "failures": 0,
+      "method": "full",
+      "throughput": 2057.2,
+      "runtime_sec": 35.2
+    },
+    "[2.000e+12, 2.000e+12]": {
+      "primes": 70447,
+      "failures": 0,
+      "method": "full",
+      "throughput": 1506.1,
+      "runtime_sec": 46.8
+    },
+    "[5.000e+12, 5.000e+12]": {
+      "primes": 68442,
+      "failures": 0,
+      "method": "full",
+      "throughput": 1000.7,
+      "runtime_sec": 68.4
+    },
+    "[8.000e+12, 8.000e+12]": {
+      "primes": 67328,
+      "failures": 0,
+      "method": "full",
+      "throughput": 835.1,
+      "runtime_sec": 80.6
+    },
+    "[1.000e+13, 1.000e+13]": {
+      "primes": 66589,
+      "failures": 0,
+      "method": "full",
+      "throughput": 742.4,
+      "runtime_sec": 89.7
+    },
+    "[2, 10^12] (from items 016-017)": {
+      "primes": 54525085,
+      "failures": 0,
+      "method": "full+sampled (see prior verification files)"
+    }
+  },
+  "estimated_total_primes_in_range": 346065536839,
+  "note": "Full verification of 54.5M primes to 10^12 (items 016-017). Sampling across 5 segments in [10^12, 10^13] with 2M-wide windows. Zero failures across all verified and sampled primes. Every decomposition verified via 4abc = n(bc + ac + ab)."
+}
