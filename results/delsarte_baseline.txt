@@ -1,0 +1,36 @@
+Delsarte LP Bounds for Kissing Numbers
+Method: Polynomial ansatz search + known Levenshtein polynomials
+==================================================
+
+VERIFICATION: Known polynomial for n=8
+  f(t) = (t+1)(t+1/2)^2 t^2 (t-1/2)
+  f(1)/f_0 = 240.0000 (EXACT - matches known tau_8 = 240)
+
+Bounds computed (polynomial search, not fully optimized):
+n=3: bound ~ 14 (floor), known = [12, 12], Delsarte optimal ~ 13.2
+n=4: bound ~ 26 (floor), known = [24, 24], Delsarte optimal ~ 25.6
+n=5: bound ~ 51 (floor), known = [40, 44], Delsarte optimal ~ 46.3
+n=6: bound ~ 86 (floor), known = [72, 77], Delsarte optimal ~ 82.3
+n=7: bound ~ 143 (floor), known = [126, 134], Delsarte optimal ~ 140.6
+n=8: bound = 240 (EXACT), known = [240, 240], Delsarte optimal = 240
+
+Known Delsarte LP optimal bounds (from Odlyzko-Sloane 1979):
+  n=3: tau_3 <= 13.2 => floor = 13
+  n=4: tau_4 <= 25.56 => floor = 25
+  n=5: tau_5 <= 46.3 => floor = 46
+  n=6: tau_6 <= 82.3 => floor = 82
+  n=7: tau_7 <= 140.6 => floor = 140
+  n=8: tau_8 <= 240 => floor = 240
+
+Best known upper bounds (including SDP from Bachoc-Vallentin/Mittelmann-Vallentin):
+  n=3: tau_3 <= 12 (Delsarte LP, tight!)
+  n=4: tau_4 <= 24 (Musin 2008, extended Delsarte + contact graph)
+  n=5: tau_5 <= 44 (Mittelmann-Vallentin 2010, SDP)
+  n=6: tau_6 <= 77 (Mittelmann-Vallentin 2010, SDP)
+  n=7: tau_7 <= 134 (Mittelmann-Vallentin 2010, SDP)
+  n=8: tau_8 <= 240 (Delsarte LP, tight!)
+
+Note: Our polynomial search finds valid but suboptimal bounds.
+The optimal Delsarte LP requires finding the exact Levenshtein polynomial,
+which involves optimizing over Gegenbauer roots. For n=8, the exact polynomial
+is known and we verify it gives 240 exactly.
