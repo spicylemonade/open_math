@@ -16,6 +16,59 @@ from fractions import Fraction
 from typing import List, Optional, Tuple
 
 
+def berlekamp_massey_modular(seq: List[int], mod: int = 998244353) -> Optional[List[int]]:
+    """Berlekamp-Massey over Z/pZ for fast screening.
+
+    Returns coefficients modulo `mod`, or None if order > len(seq)//2.
+    Much faster than rational BM for long sequences.
+    """
+    N = len(seq)
+    s = [x % mod for x in seq]
+
+    C = [1]
+    B = [1]
+    L = 0
+    m = 1
+    b = 1
+
+    def modinv(a, p):
+        return pow(a % p, p - 2, p)
+
+    for n in range(N):
+        d = s[n]
+        for i in range(1, L + 1):
+            if i < len(C):
+                d = (d + C[i] * s[n - i]) % mod
+
+        if d == 0:
+            m += 1
+        elif 2 * L <= n:
+            T = C[:]
+            coeff = (d * modinv(b, mod)) % mod
+            while len(C) < len(B) + m:
+                C.append(0)
+            for i in range(len(B)):
+                C[i + m] = (C[i + m] - coeff * B[i]) % mod
+            L = n + 1 - L
+            B = T
+            b = d
+            m = 1
+        else:
+            coeff = (d * modinv(b, mod)) % mod
+            while len(C) < len(B) + m:
+                C.append(0)
+            for i in range(len(B)):
+                C[i + m] = (C[i + m] - coeff * B[i]) % mod
+            m += 1
+
+    if L > N // 2:
+        return None
+
+    # Convert: C[0]=1, so s_n = -C[1]*s_{n-1} - ... - C[L]*s_{n-L} mod p
+    coeffs = [(-C[i]) % mod for i in range(1, L + 1)]
+    return coeffs
+
+
 def berlekamp_massey_rational(seq: List[int]) -> Optional[List[Fraction]]:
     """Berlekamp-Massey algorithm over rationals.
 
@@ -103,40 +156,46 @@ def find_homogeneous_recurrence(seq: List[int], d_max: int = 50
     if N < 10:
         return None
 
-    # Use first 1/3 for detection, remaining 2/3 for out-of-sample verification.
-    # This guards against BM overfitting to quasi-periodic sequences.
-    train_len = N // 3
-    if train_len < 2 * d_max + 2:
-        # Not enough data for reliable detection at this d_max
-        effective_dmax = max(1, (train_len - 2) // 2)
-        if effective_dmax < 1:
+    # Phase 1: Fast modular screening on full sequence
+    # Use two different primes to reduce false positives
+    PRIMES = [998244353, 1000000007]
+    mod_orders = []
+    for p in PRIMES:
+        mod_coeffs = berlekamp_massey_modular(seq, mod=p)
+        if mod_coeffs is None:
             return None
-    else:
-        effective_dmax = d_max
+        mod_orders.append(len(mod_coeffs))
 
-    coeffs = berlekamp_massey_rational(seq[:train_len])
+    # Both primes should agree on the order for a genuine recurrence
+    if mod_orders[0] != mod_orders[1]:
+        return None
+
+    order_estimate = mod_orders[0]
+    if order_estimate == 0 or order_estimate > d_max:
+        return None
+
+    # Order must be well below N/2 for reliability.
+    # For Beatty sequences, quasi-periodic first differences can fool BM
+    # into finding high-order "recurrences" that are artifacts. We require
+    # the order to be at most N/10 to strongly reject these.
+    if order_estimate > N // 10:
+        return None
+
+    # Phase 2: Exact rational verification on the full sequence
+    # Use rational BM only on a prefix sufficient to determine the recurrence
+    rational_prefix_len = min(3 * order_estimate + 10, N)
+    coeffs = berlekamp_massey_rational(seq[:rational_prefix_len])
     if coeffs is None:
         return None
 
     order = len(coeffs)
-    if order == 0:
+    if order != order_estimate:
         return None
-    if order > effective_dmax:
-        return None
-
-    # The order must be at most train_len / 4 for reliability
-    if order > train_len // 4:
+    if order > d_max:
         return None
 
-    # Verify the recurrence holds for ALL N terms (2/3 is out-of-sample)
+    # Verify the recurrence holds for ALL N terms
     if not verify_recurrence(seq, coeffs):
-        return None
-
-    # Additional check: for sequences that look "almost periodic" in their
-    # first differences, the recurrence may hold for thousands of terms then
-    # fail. Require that the verified portion is at least 5x the order.
-    verified_terms = N - order
-    if verified_terms < 5 * order:
         return None
 
     return (order, coeffs)

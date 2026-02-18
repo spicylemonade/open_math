@@ -114,15 +114,33 @@ def beatty_sequence(r: Union[Fraction, float, 'mpmath.mpf'], N: int,
         for n in range(start, start + N):
             result.append((n * p) // q)
     else:
-        # High-precision arithmetic
+        # For speed: convert mpmath to Python float and use math.floor
+        # Python float has 53-bit mantissa, good for n*r up to ~2^53
         if HAS_MPMATH and isinstance(r, mpmath.mpf):
-            for n in range(start, start + N):
-                val = mpmath.floor(n * r)
-                result.append(int(val))
+            r_float = float(r)
+            max_n = start + N - 1
+            # Check if Python float precision is sufficient
+            if max_n * abs(r_float) < 2**50:
+                for n in range(start, start + N):
+                    result.append(math.floor(n * r_float))
+                # Spot-check with mpmath
+                _ensure_mpmath(30)
+                for check_n in [start, start + N // 3, start + 2 * N // 3, max_n]:
+                    exact = int(mpmath.floor(check_n * r))
+                    idx = check_n - start
+                    if idx < len(result) and result[idx] != exact:
+                        # Precision loss - fall back to mpmath
+                        result = []
+                        for n in range(start, start + N):
+                            result.append(int(mpmath.floor(n * r)))
+                        break
+            else:
+                _ensure_mpmath(30)
+                for n in range(start, start + N):
+                    result.append(int(mpmath.floor(n * r)))
         else:
-            # Fallback to Python float
             for n in range(start, start + N):
-                result.append(math.floor(n * r))
+                result.append(math.floor(n * float(r)))
     return result
 
 

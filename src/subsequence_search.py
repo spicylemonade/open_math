@@ -37,11 +37,11 @@ def _timeout_handler(signum, frame):
 
 def search_arithmetic_subsequences(
     r_spec: str,
-    N: int = 50000,
+    N: int = 20000,
     A_max: int = 20,
     D_max: int = 20,
     d_max_recurrence: int = 50,
-    min_subseq_len: int = 500,
+    min_subseq_len: int = 200,
     timeout_seconds: int = 120,
     verbose: bool = False
 ) -> List[Dict[str, Any]]:
@@ -123,7 +123,7 @@ def search_arithmetic_subsequences(
 
 def search_single_r(
     r_spec: str,
-    N: int = 50000,
+    N: int = 20000,
     A_max: int = 20,
     D_max: int = 20,
     d_max_recurrence: int = 50,
@@ -197,7 +197,7 @@ def run_search_battery(
     r_specs: List[str],
     output_csv: str = 'results/subsequence_search.csv',
     output_json: str = 'results/subsequence_search.json',
-    N: int = 50000,
+    N: int = 20000,
     A_max: int = 20,
     D_max: int = 20,
     d_max_recurrence: int = 50,
@@ -271,7 +271,7 @@ if __name__ == "__main__":
         DEFAULT_R_SPECS,
         output_csv='results/subsequence_search.csv',
         output_json='results/subsequence_search.json',
-        N=50000,
+        N=20000,
         A_max=20,
         D_max=20,
         d_max_recurrence=50,
