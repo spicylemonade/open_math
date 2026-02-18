@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-18T12:00:00Z",
-  "updated_at": "2026-02-18T13:41:35.742244+00:00",
+  "updated_at": "2026-02-18T13:56:25.989862+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -133,40 +133,40 @@
           "id": "item_011",
           "description": "Prove the rational case completely: for r = p/q rational (in lowest terms, p,q > 0), show that floor(n*r) itself (the full sequence) satisfies a homogeneous linear recurrence of order 2q, and characterize the minimal order. Prove that the entire sequence is a quasi-polynomial (piecewise linear function of n modulo q).",
           "acceptance_criteria": "A rigorous proof document (LaTeX or Markdown in results/) containing: (1) proof that a_{n+q} = a_n + p for all n >= 1 when r = p/q, hence a_{n+2q} - 2a_{n+q} + a_n = 0, (2) proof that the minimal homogeneous recurrence order divides 2q and determination of the exact minimal order, (3) explicit characteristic polynomial and its roots, (4) verification that the computational results from item_010 match the theoretical predictions for all tested rationals.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/rational_case_proof.md: Complete proof that minimal order is q+1 with characteristic polynomial (x-1)(x^q-1). Includes fundamental shift identity, minimality proof, AP subsequence theorem, explicit examples for r=3/2,5/3,7/4, cyclotomic analysis, and computational verification against all 13 tested rationals.",
           "error": null
         },
         {
           "id": "item_012",
           "description": "Prove the quadratic irrational case: for r a quadratic irrational, investigate whether floor(n*r) contains a non-trivial homogeneous linearly recurrent subsequence. Use the connection to Ostrowski representations and the morphic/automatic structure of the Sturmian word. The key conjecture to resolve: for quadratic irrational r, subsequences of floor(n*r) along arithmetic progressions satisfy eventual quasi-linear growth, not exact linear recurrence, unless the recurrence is trivially derived from the quasi-linear structure.",
           "acceptance_criteria": "A proof or strong partial result document containing: (1) analysis of floor(n*r) for r = golden ratio along arithmetic progressions {a + kd}, showing whether any such subsequence satisfies a homogeneous linear recurrence, (2) extension to general quadratic irrationals (r = (a + sqrt(D))/b), (3) either a proof that non-trivial homogeneous linearly recurrent subsequences exist (with explicit construction) or a proof that they do not (with lower bounds on recurrence violation), (4) connection to the Ostrowski representation and why the morphic structure does or does not force linear recurrence.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/irrational_case_proof.md: Complete proof that NO AP subsequence of floor(nr) satisfies a homogeneous linear recurrence for ANY irrational r. Proof uses growth analysis, rationality constraint on asymptotic slope, and Weyl equidistribution. Includes Ostrowski/morphic analysis for quadratic irrationals, extension to polynomial/exponential index sets, and computational verification (0/16 irrationals positive).",
           "error": null
         },
         {
           "id": "item_013",
           "description": "Analyze the transcendental case and higher-degree algebraic case: investigate whether the continued fraction structure (unbounded partial quotients for non-quadratic irrationals, Roth's theorem constraints for algebraic numbers, vs. possible Liouville-type behavior for transcendentals) determines existence of linearly recurrent subsequences. Formulate and test a precise conjecture linking Diophantine approximation properties of r to the existence of such subsequences.",
           "acceptance_criteria": "A document containing: (1) precise conjecture statement linking properties of r (rationality, bounded vs unbounded CF, irrationality measure) to existence of homogeneous linearly recurrent subsequences in floor(n*r), (2) proof or computational evidence for at least 3 non-quadratic algebraic irrationals (e.g., cube root of 2, cube root of 3), (3) analysis for at least 3 transcendentals (pi, e, Liouville's constant), (4) discussion of whether Roth's theorem (irrationality measure = 2 for algebraics) vs. unbounded irrationality measure for some transcendentals creates a meaningful distinction, (5) results compared against literature found in Phase 1.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/transcendental_algebraic_analysis.md: Proves the characterization is a theorem (not just conjecture). Analyzes 6 algebraic degree>=3 numbers (cbrt(2),cbrt(3),cbrt(5),2^{1/4},3^{1/4},5^{1/4}) and 3 transcendentals (pi,e,ln2). Shows Roth's theorem, CF structure, and algebraic degree create NO distinction -- only rationality matters. Discusses pi approximation by 355/113 and Liouville numbers.",
           "error": null
         },
         {
           "id": "item_014",
           "description": "Prove the main characterization theorem (or the strongest partial result achievable): Synthesize findings from items 011-013 into a unified theorem characterizing the set of r for which floor(n*r) contains a homogeneous linearly recurrent subsequence. The expected answer based on preliminary analysis: r rational => yes (the full sequence is linearly recurrent); r irrational => investigate whether the answer is 'never,' 'only for quadratic irrationals,' or 'always (with trivial subsequences).'",
           "acceptance_criteria": "A proof document containing: (1) complete theorem statement of the form 'The sequence floor(n*r) contains a non-trivial homogeneous linearly recurrent subsequence if and only if [characterization of r]', (2) proof of the 'if' direction with explicit construction, (3) proof of the 'only if' direction (or identification of the exact obstruction), (4) precise definition of 'non-trivial' used (excluding, e.g., constant subsequences or length-1 subsequences), (5) statement of any open cases with concrete conjectures. Proof must be logically complete or clearly identify gaps.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/main_characterization.md: Complete theorem: r rational <=> floor(nr) satisfies homogeneous linear recurrence <=> some AP subsequence satisfies one. Three-way equivalence (i)<=>(ii)<=>(iii) fully proved. Includes extensions to polynomial/exponential index sets, completeness table, comparison with prior work, and confidence assessment (HIGH). Novel contribution: complete clean characterization with uniform proof across all irrationals.",
           "error": null
         },
         {
           "id": "item_015",
           "description": "Handle edge cases and boundary phenomena: (a) r = 1 (floor(n) = n, which trivially satisfies a_{n+2} - 2a_{n+1} + a_n = 0), (b) r close to rational (e.g., r = p/q + epsilon for small epsilon \u2014 when does the recurrence 'break'?), (c) r = 0 (degenerate: floor(0) = 0 for all n), (d) negative r, (e) r between 0 and 1 (many zeros in the Beatty sequence).",
           "acceptance_criteria": "A document containing rigorous treatment of: (1) r = 0 and r = 1 as trivial cases, (2) analysis of r in (0,1) showing the sequence has long runs of repeated values and characterizing recurrence, (3) perturbation analysis: for r = p/q + epsilon, quantify how the recurrence from the rational case deteriorates as epsilon grows (compute recurrence residual as a function of epsilon and n), (4) treatment of negative r via floor(n*r) = -ceiling(n*|r|) and reduction to positive case, (5) at least 2 computed examples per edge case.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/edge_cases.md: Rigorous treatment of r=0 (zero sequence, order 1), r=1 (identity, order 2), r in (0,1) rational (still recurrent, examples r=1/2,1/3,2/5) and irrational, negative r (reduction via -ceil), positive integers, large-denominator rationals (355/113 vs pi), and perturbation analysis showing sharp discontinuous transition at rational/irrational boundary. Multiple computed examples per case.",
           "error": null
         }
       ]
