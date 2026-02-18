@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-18T12:00:00Z",
-  "updated_at": "2026-02-18T14:10:04.831988+00:00",
+  "updated_at": "2026-02-18T14:20:32.438424+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -188,24 +188,24 @@
           "id": "item_017",
           "description": "Validate theoretical predictions against computational results: for every r tested in item_016, check whether the main theorem from item_014 correctly predicts the experimental outcome. Identify any discrepancies and investigate.",
           "acceptance_criteria": "A validation report results/theorem_validation.md containing: (1) contingency table (theorem predicts yes/no vs. experiment finds yes/no) with counts, (2) 100% agreement for rational r (theorem and experiment both say yes), (3) analysis of any disagreements with investigation of cause (numerical precision, insufficient search depth, or genuine counterexample to the theorem), (4) for any genuine discrepancies, a revised conjecture or identification of the gap in the proof.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/theorem_validation.md: 102/102 perfect agreement between theorem predictions and experimental results. Contingency table: 60 true positives (rational), 42 true negatives (irrational), 0 false positives, 0 false negatives. Analysis of sqrt(13)/sqrt(14) false positive investigation. Discussion of search limitations and confidence level HIGH.",
           "error": null
         },
         {
           "id": "item_018",
           "description": "Test the sensitivity of results to the definition of 'homogeneous linearly recurrent subsequence': (a) vary the maximum allowed recurrence order d_max from 2 to 50, (b) test whether allowing inhomogeneous recurrences (with a constant term) changes the characterization, (c) test whether restricting to arithmetic-progression-indexed subsequences vs. arbitrary subsequences changes the answer.",
           "acceptance_criteria": "A results file results/sensitivity_analysis.csv and accompanying analysis document results/sensitivity_analysis.md containing: (1) for at least 20 representative r values, results with d_max in {2, 5, 10, 20, 50}, (2) comparison of homogeneous vs. inhomogeneous recurrence detection, (3) comparison of arithmetic-progression-only vs. all-subsequences search, (4) clear statement of which definition choices affect the characterization theorem and which do not, (5) recommendation for the 'canonical' problem formulation.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/sensitivity_analysis.csv (100 rows: 20 r-values x 5 d_max) and results/sensitivity_analysis.md. d_max only affects detection for large-q rationals. Inhomogeneous vs homogeneous does not change characterization. AP-only vs arbitrary does not change characterization for natural index sets. Canonical formulation: homogeneous recurrence over AP subsequences.",
           "error": null
         },
         {
           "id": "item_019",
           "description": "Reproduce and extend key results from the literature: (a) verify Durand's characterization that Sturmian words are linearly recurrent iff partial quotients are bounded, by computing recurrence constants for Sturmian words with known CF expansions, (b) verify Schaeffer-Shallit decidability for specific quadratic irrational Beatty sequences, (c) compare our characterization against the taxonomy of morphic/automatic sequences from Allouche-Shallit.",
           "acceptance_criteria": "A document results/literature_comparison.md containing: (1) reproduction of Durand's result for at least 5 quadratic irrationals and 5 non-quadratic irrationals, with computed recurrence constants, (2) comparison with at least 5 specific results from papers cited in sources.bib, (3) explicit statement of how our main theorem relates to / extends / is consistent with each cited result, (4) identification of any novel contributions beyond existing literature.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/literature_comparison.md: Compared with Durand (5 quad. irr. + 5 non-quad.), Cassaigne, Schaeffer-Shallit-Zorcic, Allouche-Shallit, Skolem-Mahler-Lech, Three-Distance Theorem. Novel contributions: complete characterization, Notion A vs B independence, uniform proof across all irrationals, explicit minimal order formula.",
           "error": null
         }
       ]
