@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-18T12:00:00Z",
-  "updated_at": "2026-02-18T11:56:21.423316+00:00",
-  "current_agent": "orchestrator",
+  "updated_at": "2026-02-18T12:00:28.038044+00:00",
+  "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,8 +11,8 @@
       "error": null
     },
     "researcher": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-02-18T11:56:22.841335+00:00",
       "completed_at": null,
       "error": null
     },
@@ -39,23 +39,23 @@
           "id": "item_001",
           "description": "Formalize the problem statement with precise definitions: define the Beatty sequence B_r = (floor(n*r))_{n>=1} for real r > 0, define 'homogeneous linearly recurrent subsequence' as a subsequence (a_{n_k}) satisfying c_1*a_{n_k} + c_2*a_{n_{k+1}} + ... + c_d*a_{n_{k+d-1}} = 0 for all k with fixed integer coefficients not all zero, and clarify the parameter space (rational r, quadratic irrational r, higher-degree algebraic r, transcendental r).",
           "acceptance_criteria": "A LaTeX or Markdown document in results/ containing: (1) rigorous definition of floor(n*r) as a Beatty sequence, (2) formal definition of homogeneous linear recurrence of order d with constant coefficients, (3) precise statement of what 'contains a homogeneous linearly recurrent subsequence' means (specifying whether n_k must be arithmetic, arbitrary, etc.), (4) taxonomy of the parameter space for r into at least 4 classes (rational, quadratic irrational, algebraic of degree >= 3, transcendental).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/problem_formalization.md with rigorous definitions of Beatty sequences, homogeneous linear recurrence, subsequence containment, and 4-class taxonomy of r.",
           "error": null
         },
         {
           "id": "item_002",
           "description": "Conduct web-based literature review on Beatty sequences, Sturmian words, and their recurrence properties. Search for papers by Fraenkel, Kimberling, Shallit, Cassaigne, Durand, Allouche, and others on the combinatorial and recurrence structure of floor(n*r).",
           "acceptance_criteria": "A file sources.bib in the repo root containing at least 12 relevant BibTeX entries covering: (a) Beatty's original theorem and Rayleigh's theorem, (b) Sturmian word theory (Morse-Hedlund, Coven-Hedlund), (c) linear recurrence in Sturmian subshifts (Cassaigne, Durand), (d) Ostrowski numeration and automatic sequences for quadratic irrationals (Shallit, Hieronymi-Terry), (e) Skolem-Mahler-Lech theorem, (f) three-distance theorem / Steinhaus conjecture. Each entry must have title, author, year, and publication venue.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created sources.bib with 28 BibTeX entries covering Beatty (1926), Rayleigh, Morse-Hedlund, Coven-Hedlund, Durand, Cassaigne, Allouche-Shallit, Schaeffer-Shallit-Zorcic, Skolem-Mahler-Lech, Sos three-distance, Berlekamp-Massey, and more.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Analyze the rational case r = p/q in detail. When r is rational, floor(n*r) is eventually periodic (in fact, the first differences floor((n+1)*r) - floor(n*r) are periodic with period q). Determine which homogeneous linear recurrences are satisfied by subsequences of floor(n*p/q).",
           "acceptance_criteria": "A proof or rigorous argument showing: (1) for rational r = p/q, the sequence floor(n*r) satisfies a homogeneous linear recurrence of order at most q (specifically a_{n+q} - a_n = p for all n, which rearranges to homogeneous form a_{n+2q} - 2*a_{n+q} + a_n = 0), (2) every subsequence indexed by an arithmetic progression also satisfies a homogeneous linear recurrence, (3) explicit construction of the minimal-order recurrence for at least 3 example rationals (e.g., r=3/2, r=5/3, r=7/4).",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         },
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 0,
-    "in_progress": 0,
+    "completed": 2,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 23
+    "pending": 20
   }
 }
