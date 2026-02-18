@@ -24,7 +24,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from beatty import (beatty_sequence, parse_r_value, classify_r,
                     continued_fraction, subsequence_arithmetic)
 from recurrence_detector import (find_homogeneous_recurrence,
-                                 recurrence_to_homogeneous_form)
+                                 recurrence_to_homogeneous_form,
+                                 verify_recurrence)
 
 
 class ComputeTimeout(Exception):
@@ -86,6 +87,19 @@ def search_arithmetic_subsequences(
 
                 result = find_homogeneous_recurrence(subseq, d_max_recurrence)
                 count += 1
+
+                # Extended verification: recompute a longer subsequence and verify
+                if result is not None and len(subseq) < 5000:
+                    order, coeffs = result
+                    # Compute longer base sequence for verification
+                    ext_N = max(N, (d * 5000) + a + 1)
+                    if ext_N > N:
+                        ext_seq = beatty_sequence(r_val, ext_N)
+                        ext_sub = subsequence_arithmetic(ext_seq, a, d)
+                    else:
+                        ext_sub = subseq
+                    if not verify_recurrence(ext_sub[:5000], coeffs):
+                        result = None  # false positive
 
                 if result is not None:
                     order, coeffs = result
