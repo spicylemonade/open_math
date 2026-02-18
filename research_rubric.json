@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-18T12:00:00Z",
-  "updated_at": "2026-02-18T12:00:28.038044+00:00",
+  "updated_at": "2026-02-18T12:27:34.784401+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -55,32 +55,32 @@
           "id": "item_003",
           "description": "Analyze the rational case r = p/q in detail. When r is rational, floor(n*r) is eventually periodic (in fact, the first differences floor((n+1)*r) - floor(n*r) are periodic with period q). Determine which homogeneous linear recurrences are satisfied by subsequences of floor(n*p/q).",
           "acceptance_criteria": "A proof or rigorous argument showing: (1) for rational r = p/q, the sequence floor(n*r) satisfies a homogeneous linear recurrence of order at most q (specifically a_{n+q} - a_n = p for all n, which rearranges to homogeneous form a_{n+2q} - 2*a_{n+q} + a_n = 0), (2) every subsequence indexed by an arithmetic progression also satisfies a homogeneous linear recurrence, (3) explicit construction of the minimal-order recurrence for at least 3 example rationals (e.g., r=3/2, r=5/3, r=7/4).",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/rational_case_analysis.md. Proved: a_{n+q}-a_n=p for r=p/q, yielding order-2q homogeneous recurrence. Computed minimal recurrences for r=3/2,5/3,7/4. Verified numerically for 1000 terms.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Study the key connection between Sturmian words and Beatty sequences: the first-difference sequence Delta_r(n) = floor((n+1)*r) - floor(n*r) is a Sturmian word when r is irrational. Investigate when Sturmian words are linearly recurrent (uniformly recurrent with linear gap bounds) using Durand's characterization.",
           "acceptance_criteria": "A document containing: (1) proof that Delta_r is Sturmian iff r is irrational, (2) statement and proof sketch of Durand's theorem that a Sturmian word is linearly recurrent iff the partial quotients in the continued fraction of r are bounded, (3) connection to Lagrange's theorem (bounded partial quotients iff r is a quadratic irrational), (4) explicit analysis of what 'linearly recurrent' means for the Sturmian word vs. for subsequences of floor(n*r) itself.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/sturmian_analysis.md. Proved Delta_r is Sturmian iff r irrational. Stated Durand theorem on linear recurrence of Sturmian words iff bounded partial quotients. Connected to Lagrange theorem.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Review the Skolem-Mahler-Lech theorem and its implications for zero sets of linear recurrence sequences, and study how the three-distance theorem constrains the gap structure of Beatty sequences. Research the Schaeffer-Shallit decidability results for quadratic Beatty sequences.",
           "acceptance_criteria": "A document containing: (1) precise statement of Skolem-Mahler-Lech and its relevance to identifying which subsequences of a linearly recurrent sequence can themselves be linearly recurrent, (2) statement of the three-distance theorem for rotations on the circle and its connection to gap structure in floor(n*r), (3) summary of Schaeffer-Shallit-Zorcic (2024) decidability results for Beatty sequences of quadratic irrationals via Ostrowski numeration, (4) at least 3 papers cited from sources.bib for each sub-topic.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/skolem_three_distance.md. Stated Skolem-Mahler-Lech, three-distance theorem, and Schaeffer-Shallit-Zorcic decidability results. All properly cited.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Investigate the distinction between (a) the Sturmian word associated with r being linearly recurrent (a property of the symbolic dynamics) and (b) the integer-valued Beatty sequence floor(n*r) containing a subsequence that satisfies a homogeneous linear recurrence relation. Clarify whether these are equivalent, one implies the other, or they are independent.",
           "acceptance_criteria": "A rigorous analysis document with: (1) formal definitions distinguishing the two notions, (2) at least one direction of implication proved or refuted with a counterexample, (3) identification of the exact gap: does 'linearly recurrent Sturmian word' imply or follow from 'floor(n*r) has a homogeneous linearly recurrent subsequence'?, (4) discussion of whether every floor sequence (even for non-quadratic irrationals or transcendentals) trivially contains a linearly recurrent subsequence (e.g., constant subsequences, or subsequences along arithmetic progressions where the recurrence degenerates).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/two_notions_analysis.md. Proved the two notions (Sturmian linear recurrence vs algebraic linear recurrence) are independent. Key result: for irrational r, no AP subsequence of floor(nr) satisfies a homogeneous linear recurrence.",
           "error": null
         }
       ]
@@ -94,7 +94,7 @@
           "id": "item_007",
           "description": "Implement a Python module that computes the Beatty sequence floor(n*r) for arbitrary real r (using mpmath or sympy for exact arithmetic with algebraic numbers) and extracts subsequences. Support rational, quadratic irrational (e.g., golden ratio, sqrt(2), sqrt(3)), and transcendental (e.g., pi, e) inputs.",
           "acceptance_criteria": "A Python file src/beatty.py that: (1) computes floor(n*r) for n=1..N with configurable precision for irrational r, (2) supports exact rational arithmetic for rational r, (3) extracts subsequences along arithmetic progressions {a + kd : k >= 0}, (4) extracts subsequences along arbitrary index sets, (5) passes unit tests for r=golden_ratio, r=sqrt(2), r=3/2, r=pi with N=10000 matching known OEIS values (A001950, A001951, A001952, etc.).",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         },
@@ -252,9 +252,9 @@
   ],
   "summary": {
     "total_items": 23,
-    "completed": 2,
+    "completed": 6,
     "in_progress": 1,
     "failed": 0,
-    "pending": 20
+    "pending": 16
   }
 }

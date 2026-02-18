@@ -1,0 +1,1 @@
+# Beatty sequence research project
