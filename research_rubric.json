@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-22T00:55:00Z",
+  "updated_at": "2026-02-22T00:53:35.734095+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-22T00:55:00Z",
+      "completed_at": "2026-02-22T00:53:35.734075+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scaffold",
+          "acceptance_criteria": "A markdown document (docs/repo_analysis.md) listing all existing directories (figures/, results/, .archivara/), the empty README, .gitignore contents, and a proposed directory layout for the simulator (src/, tests/, docs/, data/). Must identify that this is a greenfield project with no existing code modules.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the research problem: define scope of minimal cellular automata simulator",
+          "acceptance_criteria": "A document (docs/problem_statement.md) that precisely defines: (1) what 'minimal' means (fewest abstractions, small codebase, core CA rules only), (2) which CA types are in scope (1D elementary, 2D Game of Life, totalistic), (3) target interface (CLI with optional visualization), (4) performance goals (grid sizes up to 1000x1000, real-time stepping). Must be at most 2 pages.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review on cellular automata theory and simulation techniques",
+          "acceptance_criteria": "Search the web for at least 10 relevant papers and resources covering: Wolfram's elementary CA classification (NKS), Conway's Game of Life algorithms (HashLife, QuickLife), totalistic CA, reversible CA, and modern GPU-accelerated CA simulations. Produce docs/literature_review.md summarizing key findings, algorithmic approaches, and their trade-offs. Each source must be cited with author, year, and title.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey existing open-source CA simulators and codebases",
+          "acceptance_criteria": "Search the web for at least 5 existing open-source CA projects (e.g., Golly, lifelib, cellular-automaton on PyPI, Lenia). Document each in docs/prior_implementations.md with: repository URL, language, feature set, architecture pattern, and lessons applicable to our minimal design. Include at least 3 Python-based implementations.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
+          "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries for at least 10 relevant papers/books/resources. Must include entries for: Wolfram (2002) NKS, Gardner (1970) Game of Life, Gosper (1984) HashLife, and at least 7 additional sources found during literature search. Each entry must have author, title, year, and venue/publisher fields.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_006",
+          "description": "Implement core CA engine: grid data structure and cell state management",
+          "acceptance_criteria": "Python module src/grid.py implementing: (1) Grid class supporting arbitrary 2D dimensions with toroidal (wrap-around) and fixed boundary conditions, (2) cell state get/set by coordinate, (3) neighbor lookup for Moore and von Neumann neighborhoods, (4) copy/snapshot functionality. All methods must have docstrings. Unit tests in tests/test_grid.py with at least 8 test cases covering edge cases (corners, boundaries, large grids) all passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_007",
+          "description": "Implement rule engine for elementary 1D and 2D totalistic cellular automata",
+          "acceptance_criteria": "Python module src/rules.py implementing: (1) Elementary1DRule class parameterized by Wolfram rule number (0-255), (2) LifeRule class for Conway's Game of Life (B3/S23), (3) GenericTotalisticRule class accepting arbitrary birth/survival sets. Each rule class must implement an apply(grid) -> grid method. Unit tests in tests/test_rules.py with at least 10 test cases verifying known patterns (e.g., Rule 110 produces expected output, blinker oscillates, glider translates) all passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement simulation loop with step-by-step execution",
+          "acceptance_criteria": "Python module src/simulator.py implementing: (1) Simulator class that takes a Grid and a Rule, (2) step() method advancing one generation, (3) run(n) method advancing n generations, (4) history tracking storing generation count and population at each step, (5) reset() method. Unit tests in tests/test_simulator.py with at least 6 test cases including multi-step runs and history validation, all passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement CLI interface for running simulations",
+          "acceptance_criteria": "Python module src/cli.py providing command-line interface with argparse supporting: --rule (Wolfram number or 'life'), --width, --height, --steps, --boundary (wrap/fixed), --seed (random seed or pattern file), --output (file path for results). Running 'python -m src.cli --rule life --width 10 --height 10 --steps 5' must execute without error and print grid state to stdout. Must include --help documentation for all flags.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Establish baseline performance benchmarks",
+          "acceptance_criteria": "Script benchmarks/bench_baseline.py that measures: (1) time per generation step for Game of Life on 100x100, 500x500, and 1000x1000 grids, (2) memory usage at each grid size, (3) time for 1000 steps of Rule 110 on a 1D grid of width 10000. Results saved to results/baseline_benchmarks.json with mean and std over 5 runs. Document baseline numbers in docs/benchmarks.md. Compare measured performance against any benchmarks reported in prior work from the literature review (item_003).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_011",
+          "description": "Implement NumPy-accelerated grid computation using vectorized operations",
+          "acceptance_criteria": "Python module src/grid_numpy.py implementing a NumPyGrid class that uses numpy arrays for state storage and vectorized convolution (scipy.signal.convolve2d or manual slicing) for neighbor counting. Must pass the same test suite as item_006 via a shared interface. Benchmark on 500x500 Life grid for 100 steps must show at least 5x speedup over the baseline Python implementation from item_010.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Implement HashLife algorithm for efficient large-pattern simulation",
+          "acceptance_criteria": "Python module src/hashlife.py implementing the Gosper HashLife algorithm with: (1) quadtree node representation with memoization, (2) canonical node caching, (3) result computation via recursive macro-stepping. Must correctly simulate a Gosper glider gun for 2^10 generations and produce the same final state as the naive simulator. Include at least 5 unit tests in tests/test_hashlife.py. Reference and cite the Gosper (1984) paper from sources.bib in code comments.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement pattern I/O supporting standard file formats",
+          "acceptance_criteria": "Python module src/patterns.py supporting: (1) RLE (Run Length Encoded) format parsing and writing, (2) plaintext (.cells) format parsing and writing, (3) loading patterns from file and placing them on a grid at arbitrary offsets. Must successfully load and round-trip at least 3 well-known patterns (glider, Gosper glider gun, R-pentomino) from embedded test data. Unit tests in tests/test_patterns.py with at least 6 test cases all passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement terminal-based visualization using curses or rich library",
+          "acceptance_criteria": "Python module src/visualizer.py providing: (1) real-time terminal rendering of grid state using Unicode block characters, (2) configurable frame rate (--fps flag), (3) pause/resume with spacebar, (4) step-by-step mode with arrow keys. Must render a 50x50 Game of Life simulation smoothly at 10 FPS in a standard terminal. Include a fallback plain-text mode for environments without curses support.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Investigate and implement Wolfram complexity classification metrics",
+          "acceptance_criteria": "Python module src/analysis.py implementing quantitative metrics for classifying CA behavior: (1) Shannon entropy of cell states per generation, (2) Lempel-Ziv complexity of spacetime diagrams, (3) Lyapunov exponent estimation via Hamming distance divergence of perturbed initial conditions. Apply all three metrics to the 256 elementary 1D rules and save classification results to results/wolfram_classification.json. At least 80% of rules must match Wolfram's Class I-IV classification from NKS (cite from sources.bib). Include docs/classification_methodology.md explaining each metric.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_016",
+          "description": "Systematic performance comparison: naive vs NumPy vs HashLife",
+          "acceptance_criteria": "Script benchmarks/bench_comparison.py that benchmarks all three engine implementations (naive from item_008, NumPy from item_011, HashLife from item_012) on: (1) Game of Life random soup at 100x100, 500x500, 1000x1000 for 100 generations, (2) Gosper glider gun for 1000, 10000, 100000 generations, (3) R-pentomino stabilization. Results saved to results/performance_comparison.json. Generate comparison plots (bar charts and log-scale line plots) saved to figures/performance_comparison.png. Compare speedups against published benchmarks from prior work in the literature review.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Validate correctness across all implementations using known CA census data",
+          "acceptance_criteria": "Script tests/test_correctness.py that runs the following validation checks across all three engine implementations: (1) Blinker (period 2) oscillates correctly for 100 periods, (2) Glider translates correctly for 100 steps, (3) Gosper glider gun produces exactly 1 new glider every 30 generations for 300 generations, (4) R-pentomino stabilizes at generation 1103 with population 116. All engines must produce identical results. Zero correctness failures.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Run complexity classification experiments on 2D outer-totalistic rule space",
+          "acceptance_criteria": "Script experiments/classify_2d_rules.py that samples at least 50 random 2D outer-totalistic rules (varying birth/survival conditions) and classifies each using the metrics from item_015. Save results to results/2d_classification.json with rule specification, entropy trajectory, LZ complexity, and Lyapunov exponent for each. Identify and document at least 3 rules exhibiting Class IV (complex/edge-of-chaos) behavior. Compare findings against any 2D classification results from the literature review.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Conduct sensitivity analysis on grid size and boundary conditions",
+          "acceptance_criteria": "Script experiments/sensitivity.py that tests Game of Life with: (1) grid sizes 50, 100, 200, 500, 1000 with same random seed, (2) toroidal vs fixed boundary conditions, measuring population dynamics divergence over 500 generations. Save time-series data to results/sensitivity_data.json. Generate at least 2 figures (population over time for different sizes, boundary condition comparison) saved to figures/sensitivity_*.png. Document surprising findings in docs/sensitivity_analysis.md.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Memory profiling and scalability analysis",
+          "acceptance_criteria": "Script benchmarks/bench_memory.py that profiles peak memory usage for each engine at grid sizes 100, 500, 1000, 2000, and 5000 (where feasible). Plot memory vs grid size for each engine in figures/memory_scaling.png. HashLife must demonstrate sub-quadratic memory growth on repetitive patterns (e.g., glider gun field). Results saved to results/memory_profile.json. Compare memory characteristics against what prior implementations report.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_021",
+          "description": "Write comprehensive research report synthesizing all findings",
+          "acceptance_criteria": "Document docs/research_report.md containing: (1) Abstract (150 words), (2) Introduction with problem motivation, (3) Literature review summary citing at least 8 sources from sources.bib, (4) Methodology describing all three engine implementations, (5) Results section referencing all figures and benchmark data, (6) Discussion comparing our results to prior work, (7) Conclusion with contributions and future work. Minimum 3000 words, maximum 6000 words.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Generate publication-quality figures for all experimental results",
+          "acceptance_criteria": "Script figures/generate_figures.py that produces at least 6 figures: (1) performance comparison bar chart, (2) HashLife speedup log-scale plot, (3) Wolfram 1D classification heatmap, (4) 2D rule classification scatter plot, (5) sensitivity analysis population dynamics, (6) memory scaling plot. All figures saved as both PNG (300 DPI) and PDF in figures/ directory. Figures must use consistent styling (matplotlib with a coherent color palette, labeled axes, legends, titles).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Create reproducibility package with requirements and run instructions",
+          "acceptance_criteria": "Files in repo root: (1) requirements.txt listing all Python dependencies with pinned versions, (2) Makefile or run.sh with targets/commands for: install, test, benchmark, experiment, figures, report. Running 'pip install -r requirements.txt && make test' (or equivalent) must execute all tests with zero failures. README.md updated with project description, installation instructions, usage examples, and structure overview (at least 500 words).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Compile comparison table of our simulator against prior implementations",
+          "acceptance_criteria": "Document docs/comparison_table.md containing a detailed table comparing our minimal CA simulator against at least 4 existing implementations surveyed in item_004. Columns must include: features supported, languages, lines of code, performance on comparable benchmarks, and unique strengths/weaknesses. Must cite sources.bib entries for each compared project.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Final validation checklist and self-assessment",
+          "acceptance_criteria": "Document docs/validation_checklist.md containing: (1) a checklist of all 25 rubric items with pass/fail status, (2) summary statistics (items completed, items with caveats), (3) list of any known limitations or unresolved issues, (4) self-assessment of research contributions with honest evaluation of novelty, (5) suggested future work directions (at least 3 concrete ideas). All tests must pass, all benchmarks must have been run, and all figures must exist.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
