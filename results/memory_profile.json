@@ -1,0 +1,85 @@
+{
+  "profiles": [
+    {
+      "engine": "naive",
+      "size": 100,
+      "peak_mb": 0.180388
+    },
+    {
+      "engine": "naive",
+      "size": 500,
+      "peak_mb": 4.068204
+    },
+    {
+      "engine": "naive",
+      "size": 1000,
+      "peak_mb": 16.133484
+    },
+    {
+      "engine": "naive",
+      "size": 2000,
+      "peak_mb": null,
+      "note": "skipped"
+    },
+    {
+      "engine": "numpy",
+      "size": 100,
+      "peak_mb": 0.177901
+    },
+    {
+      "engine": "numpy",
+      "size": 500,
+      "peak_mb": 4.253464
+    },
+    {
+      "engine": "numpy",
+      "size": 1000,
+      "peak_mb": 17.003464
+    },
+    {
+      "engine": "numpy",
+      "size": 2000,
+      "peak_mb": 68.003464
+    },
+    {
+      "engine": "numpy",
+      "size": 5000,
+      "peak_mb": 425.003464
+    },
+    {
+      "engine": "hashlife",
+      "steps_log2": 8,
+      "steps": 256,
+      "peak_mb": 0.858286,
+      "population": 84
+    },
+    {
+      "engine": "hashlife",
+      "steps_log2": 10,
+      "steps": 1024,
+      "peak_mb": 0.878077,
+      "population": 221
+    },
+    {
+      "engine": "hashlife",
+      "steps_log2": 12,
+      "steps": 4096,
+      "peak_mb": 1.138176,
+      "population": 724
+    },
+    {
+      "engine": "hashlife",
+      "steps_log2": 14,
+      "steps": 16384,
+      "peak_mb": 1.330172,
+      "population": 2781
+    },
+    {
+      "engine": "hashlife",
+      "steps_log2": 16,
+      "steps": 65536,
+      "peak_mb": 1.523124,
+      "population": 10964
+    }
+  ]
+}

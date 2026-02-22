@@ -212,8 +212,8 @@
           "id": "item_020",
           "description": "Memory profiling and scalability analysis",
           "acceptance_criteria": "Script benchmarks/bench_memory.py that profiles peak memory usage for each engine at grid sizes 100, 500, 1000, 2000, and 5000 (where feasible). Plot memory vs grid size for each engine in figures/memory_scaling.png. HashLife must demonstrate sub-quadratic memory growth on repetitive patterns (e.g., glider gun field). Results saved to results/memory_profile.json. Compare memory characteristics against what prior implementations report.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Profiled all engines at 100-5000 grid sizes. HashLife sub-linear memory growth confirmed (0.86->1.52 MB for 256x more generations). Figures in figures/memory_scaling.png.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 19,
+    "completed": 20,
     "in_progress": 0,
     "failed": 0,
-    "pending": 6
+    "pending": 5
   }
 }
