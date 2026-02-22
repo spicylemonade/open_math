@@ -71,8 +71,8 @@
           "id": "item_005",
           "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries for at least 10 relevant papers/books/resources. Must include entries for: Wolfram (2002) NKS, Gardner (1970) Game of Life, Gosper (1984) HashLife, and at least 7 additional sources found during literature search. Each entry must have author, title, year, and venue/publisher fields.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created sources.bib with 19 BibTeX entries including all required sources (Wolfram 2002, Gardner 1970, Gosper 1984) plus 16 additional references.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 4,
+    "completed": 5,
     "in_progress": 0,
     "failed": 0,
-    "pending": 21
+    "pending": 20
   }
 }
