@@ -1,0 +1,37 @@
+{
+  "benchmarks": {
+    "soup_100x100": {
+      "naive_time": 2.6085807360000217,
+      "numpy_time": 0.028469824000012522,
+      "speedup": 91.62616305597373
+    },
+    "soup_500x500": {
+      "naive_time": 68.47207885500006,
+      "numpy_time": 0.684155020000162,
+      "speedup": 100.08269595826958
+    },
+    "soup_1000x1000": {
+      "naive_time": 275.98681772999953,
+      "numpy_time": 3.1450476350000827,
+      "speedup": 87.7528259536178
+    },
+    "gun_1024_gen": {
+      "hashlife_time": 0.02335324499995295,
+      "population": 221
+    },
+    "gun_16384_gen": {
+      "hashlife_time": 0.02927694300001349,
+      "population": 2781
+    },
+    "gun_131072_gen": {
+      "hashlife_time": 0.03511746000003768,
+      "population": 21888
+    },
+    "gun_1024_numpy": {
+      "numpy_time": 0.1279448660000071
+    },
+    "r_pentomino_1103": {
+      "numpy_time": 1.2095525979998456
+    }
+  }
+}

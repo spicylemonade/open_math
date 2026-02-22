@@ -180,8 +180,8 @@
           "id": "item_016",
           "description": "Systematic performance comparison: naive vs NumPy vs HashLife",
           "acceptance_criteria": "Script benchmarks/bench_comparison.py that benchmarks all three engine implementations (naive from item_008, NumPy from item_011, HashLife from item_012) on: (1) Game of Life random soup at 100x100, 500x500, 1000x1000 for 100 generations, (2) Gosper glider gun for 1000, 10000, 100000 generations, (3) R-pentomino stabilization. Results saved to results/performance_comparison.json. Generate comparison plots (bar charts and log-scale line plots) saved to figures/performance_comparison.png. Compare speedups against published benchmarks from prior work in the literature review.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Benchmarked naive vs NumPy vs HashLife. NumPy achieves 88-93x speedup. HashLife handles 131K gen in 0.035s. Figures in figures/performance_comparison.png.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 15,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 10
+    "pending": 9
   }
 }
