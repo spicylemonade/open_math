@@ -47,8 +47,8 @@
           "id": "item_002",
           "description": "Formalize the research problem: define scope of minimal cellular automata simulator",
           "acceptance_criteria": "A document (docs/problem_statement.md) that precisely defines: (1) what 'minimal' means (fewest abstractions, small codebase, core CA rules only), (2) which CA types are in scope (1D elementary, 2D Game of Life, totalistic), (3) target interface (CLI with optional visualization), (4) performance goals (grid sizes up to 1000x1000, real-time stepping). Must be at most 2 pages.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/problem_statement.md defining minimal scope, CA types (1D elementary, 2D Life, outer-totalistic), CLI+visualization interface, and performance goals.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 2,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 23
   }
 }
