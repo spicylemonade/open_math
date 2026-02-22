@@ -86,8 +86,8 @@
           "id": "item_006",
           "description": "Implement core CA engine: grid data structure and cell state management",
           "acceptance_criteria": "Python module src/grid.py implementing: (1) Grid class supporting arbitrary 2D dimensions with toroidal (wrap-around) and fixed boundary conditions, (2) cell state get/set by coordinate, (3) neighbor lookup for Moore and von Neumann neighborhoods, (4) copy/snapshot functionality. All methods must have docstrings. Unit tests in tests/test_grid.py with at least 8 test cases covering edge cases (corners, boundaries, large grids) all passing.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented Grid class with wrap/fixed boundary, Moore/von Neumann neighborhoods, copy/snapshot/population/clear. 17 test cases all passing.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 5,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 20
+    "pending": 19
   }
 }
