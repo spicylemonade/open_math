@@ -141,8 +141,8 @@
           "id": "item_012",
           "description": "Implement HashLife algorithm for efficient large-pattern simulation",
           "acceptance_criteria": "Python module src/hashlife.py implementing the Gosper HashLife algorithm with: (1) quadtree node representation with memoization, (2) canonical node caching, (3) result computation via recursive macro-stepping. Must correctly simulate a Gosper glider gun for 2^10 generations and produce the same final state as the naive simulator. Include at least 5 unit tests in tests/test_hashlife.py. Reference and cite the Gosper (1984) paper from sources.bib in code comments.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented HashLife with quadtree nodes, hash consing, and macro-stepping. 8 tests pass including glider gun at 2^10 generations.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 11,
+    "completed": 12,
     "in_progress": 0,
     "failed": 0,
-    "pending": 14
+    "pending": 13
   }
 }
