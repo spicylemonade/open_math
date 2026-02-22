@@ -1,0 +1,2573 @@
+{
+  "total_rules": 256,
+  "known_rules_tested": 116,
+  "correct_matches": 106,
+  "accuracy_percent": 91.37931034482759,
+  "parameters": {
+    "width": 101,
+    "steps": 100,
+    "seed": 42
+  },
+  "results": [
+    {
+      "rule": 0,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0250236916611885,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 1,
+      "predicted_class": 3,
+      "final_entropy": 0.7410760362787313,
+      "entropy_variance": 0.01222567996685699,
+      "lz_complexity": 0.040828128499833874,
+      "lyapunov_exponent": -0.9128951428730165,
+      "known_class": 2,
+      "match": false
+    },
+    {
+      "rule": 2,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06716885656424282,
+      "lyapunov_exponent": -0.5040459367806118,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 3,
+      "predicted_class": 2,
+      "final_entropy": 0.9222247469517818,
+      "entropy_variance": 0.003276586088100106,
+      "lz_complexity": 0.1554102955800128,
+      "lyapunov_exponent": -0.34971565172516106,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 4,
+      "predicted_class": 2,
+      "final_entropy": 0.3993820824245976,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03160887367729074,
+      "lyapunov_exponent": -0.6931471805599451,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 5,
+      "predicted_class": 3,
+      "final_entropy": 0.8694419868157238,
+      "entropy_variance": 0.006142748583191046,
+      "lz_complexity": 0.04873034691915656,
+      "lyapunov_exponent": -0.5063312341781513,
+      "known_class": 2,
+      "match": false
+    },
+    {
+      "rule": 6,
+      "predicted_class": 2,
+      "final_entropy": 0.7077347537146024,
+      "entropy_variance": 0.00010435077656125485,
+      "lz_complexity": 0.12643549470916296,
+      "lyapunov_exponent": -0.3432021988067692,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 7,
+      "predicted_class": 2,
+      "final_entropy": 0.95520064542611,
+      "entropy_variance": 0.000588818046394476,
+      "lz_complexity": 0.1830680600476422,
+      "lyapunov_exponent": -0.3312583993021116,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 8,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 9,
+      "predicted_class": 2,
+      "final_entropy": 0.9768929699057102,
+      "entropy_variance": 6.621609366216952e-06,
+      "lz_complexity": 0.288430972305278,
+      "lyapunov_exponent": -0.35558221083993535,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 10,
+      "predicted_class": 2,
+      "final_entropy": 0.8228368841492257,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08429032980610864,
+      "lyapunov_exponent": -0.09633110893843183,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 11,
+      "predicted_class": 2,
+      "final_entropy": 0.9993634856727655,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.24233469819256234,
+      "lyapunov_exponent": 0.00028473726994805823,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 12,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -0.09408643908460806,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 13,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07243700217712461,
+      "lyapunov_exponent": -0.2807854060609057,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 14,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.15409325917679234,
+      "lyapunov_exponent": -0.519664212145477,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 15,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.19097027846696488,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 16,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06716885656424282,
+      "lyapunov_exponent": -0.6890738551723095,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 17,
+      "predicted_class": 2,
+      "final_entropy": 0.9222247469517818,
+      "entropy_variance": 0.003276586088100106,
+      "lz_complexity": 0.15936140478967414,
+      "lyapunov_exponent": -0.34971565172516106,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 18,
+      "predicted_class": 3,
+      "final_entropy": 0.8091792843516193,
+      "entropy_variance": 0.003331882720698495,
+      "lz_complexity": 0.7296381673841279,
+      "lyapunov_exponent": 0.9084974454618466,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 19,
+      "predicted_class": 2,
+      "final_entropy": 0.9914266810680206,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.05136441972559745,
+      "lyapunov_exponent": -0.33755678443037934,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 20,
+      "predicted_class": 2,
+      "final_entropy": 0.7601782075390696,
+      "entropy_variance": 0.003926109754536111,
+      "lz_complexity": 0.13697178593492654,
+      "lyapunov_exponent": -0.3083133631674667,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 21,
+      "predicted_class": 2,
+      "final_entropy": 0.9479402932021174,
+      "entropy_variance": 0.0006958742167308397,
+      "lz_complexity": 0.19492138767662623,
+      "lyapunov_exponent": -0.31517591771145137,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 22,
+      "predicted_class": 3,
+      "final_entropy": 0.9296554283936249,
+      "entropy_variance": 0.002736716634804082,
+      "lz_complexity": 0.8810973537544794,
+      "lyapunov_exponent": 1.3197366506407295,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 23,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.050047383322377,
+      "lyapunov_exponent": -0.09098780888211805,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 24,
+      "predicted_class": 2,
+      "final_entropy": 0.6975195309289136,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09219254822543133,
+      "lyapunov_exponent": 0.004307819467735176,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 25,
+      "predicted_class": 2,
+      "final_entropy": 0.9878148678299423,
+      "entropy_variance": 9.317669941259268e-06,
+      "lz_complexity": 0.38457462974037065,
+      "lyapunov_exponent": 0.8940009422193665,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 26,
+      "predicted_class": 2,
+      "final_entropy": 0.941405222179724,
+      "entropy_variance": 0.00285372467472586,
+      "lz_complexity": 0.37272130211138665,
+      "lyapunov_exponent": 0.2478372844825641,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 27,
+      "predicted_class": 2,
+      "final_entropy": 0.995395083370393,
+      "entropy_variance": 1.574821683347358e-05,
+      "lz_complexity": 0.1580443683864537,
+      "lyapunov_exponent": -0.08331767856772805,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 28,
+      "predicted_class": 2,
+      "final_entropy": 0.9982314418957049,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08692440261254954,
+      "lyapunov_exponent": -0.4211727152466293,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 29,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.052681456128817895,
+      "lyapunov_exponent": 0.013568879914349038,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 30,
+      "predicted_class": 3,
+      "final_entropy": 0.9958477553604197,
+      "entropy_variance": 7.075765790444361e-05,
+      "lz_complexity": 1.027288394511949,
+      "lyapunov_exponent": 1.380464611459071,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 31,
+      "predicted_class": 2,
+      "final_entropy": 0.9696221783046048,
+      "entropy_variance": 0.0004754363407597991,
+      "lz_complexity": 0.18965324206374443,
+      "lyapunov_exponent": -0.33718479201582213,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 32,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.034242946483731634,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 33,
+      "predicted_class": 3,
+      "final_entropy": 0.9085507467055652,
+      "entropy_variance": 0.007346866234327077,
+      "lz_complexity": 0.05794960174169969,
+      "lyapunov_exponent": 0.027335324809735568,
+      "known_class": 2,
+      "match": false
+    },
+    {
+      "rule": 34,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.08692440261254954,
+      "lyapunov_exponent": -0.09408643908460806,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 35,
+      "predicted_class": 2,
+      "final_entropy": 0.9611808766092553,
+      "entropy_variance": 0.0009148086873578628,
+      "lz_complexity": 0.16199547759611505,
+      "lyapunov_exponent": 0.024633877705733796,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 36,
+      "predicted_class": 2,
+      "final_entropy": 0.32508219764519103,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03819405569339298,
+      "lyapunov_exponent": -0.7039383788264182,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 37,
+      "predicted_class": 2,
+      "final_entropy": 0.9648305490032627,
+      "entropy_variance": 9.004438726540954e-05,
+      "lz_complexity": 0.1633125139993355,
+      "lyapunov_exponent": -0.024050139792298992,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 38,
+      "predicted_class": 2,
+      "final_entropy": 0.8143343774757001,
+      "entropy_variance": 0.0005414035182872185,
+      "lz_complexity": 0.13302067672526519,
+      "lyapunov_exponent": -0.1067611855076245,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 39,
+      "predicted_class": 2,
+      "final_entropy": 0.9888488302987175,
+      "entropy_variance": 8.803340037992641e-05,
+      "lz_complexity": 0.16199547759611505,
+      "lyapunov_exponent": 0.012617372663008483,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 40,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04477923770949521,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 41,
+      "predicted_class": 3,
+      "final_entropy": 0.9521558162075534,
+      "entropy_variance": 0.0022241435417417682,
+      "lz_complexity": 0.6374456191586966,
+      "lyapunov_exponent": 1.463086735059945,
+      "known_class": 4,
+      "match": false
+    },
+    {
+      "rule": 42,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08692440261254954,
+      "lyapunov_exponent": 0.015561818044417223,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 43,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.24233469819256234,
+      "lyapunov_exponent": 0.23162641383938654,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 44,
+      "predicted_class": 2,
+      "final_entropy": 0.6305062394675904,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.047413310515936107,
+      "lyapunov_exponent": -0.38619147209050103,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 45,
+      "predicted_class": 3,
+      "final_entropy": 0.9876299941311114,
+      "entropy_variance": 0.00015108060806847895,
+      "lz_complexity": 1.0128009940765241,
+      "lyapunov_exponent": 1.4506715070457916,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 46,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.33647223662121245,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 47,
+      "predicted_class": 2,
+      "final_entropy": 0.9942646092619049,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.2436517345957828,
+      "lyapunov_exponent": -0.12545491759353236,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 48,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.08955847541899042,
+      "lyapunov_exponent": -0.6890738551723095,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 49,
+      "predicted_class": 2,
+      "final_entropy": 0.9659240733564456,
+      "entropy_variance": 0.0003278416418443162,
+      "lz_complexity": 0.1580443683864537,
+      "lyapunov_exponent": -0.4998995453608338,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 50,
+      "predicted_class": 2,
+      "final_entropy": 0.9965322634876733,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.07111996577390416,
+      "lyapunov_exponent": -0.1834125772723255,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 51,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.040828128499833874,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 52,
+      "predicted_class": 2,
+      "final_entropy": 0.8562177636082293,
+      "entropy_variance": 0.0011142831134565204,
+      "lz_complexity": 0.14750807716069012,
+      "lyapunov_exponent": -0.4834830501818358,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 53,
+      "predicted_class": 2,
+      "final_entropy": 0.9916969784222337,
+      "entropy_variance": 5.877533342245421e-05,
+      "lz_complexity": 0.15936140478967414,
+      "lyapunov_exponent": -0.33101462901897216,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 54,
+      "predicted_class": 3,
+      "final_entropy": 0.9653391698023668,
+      "entropy_variance": 0.0006943806401554401,
+      "lz_complexity": 0.6967122573036167,
+      "lyapunov_exponent": 1.072131286055706,
+      "known_class": 4,
+      "match": false
+    },
+    {
+      "rule": 55,
+      "predicted_class": 2,
+      "final_entropy": 0.9942646092619049,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.052681456128817895,
+      "lyapunov_exponent": -0.2027325323617321,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 56,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.1409228951445879,
+      "lyapunov_exponent": 0.05032503878176,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 57,
+      "predicted_class": 2,
+      "final_entropy": 0.9982314418957049,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.24233469819256234,
+      "lyapunov_exponent": -0.44137009541457745,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 58,
+      "predicted_class": 2,
+      "final_entropy": 0.9309350721504901,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.22653026135391696,
+      "lyapunov_exponent": -0.40595315519079295,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 59,
+      "predicted_class": 2,
+      "final_entropy": 0.9638504435131605,
+      "entropy_variance": 0.0005839845189713307,
+      "lz_complexity": 0.15409325917679234,
+      "lyapunov_exponent": -0.08043947379608787,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 60,
+      "predicted_class": 3,
+      "final_entropy": 0.9944801047401842,
+      "entropy_variance": 6.716558543714703e-05,
+      "lz_complexity": 1.015435066882965,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 61,
+      "predicted_class": 2,
+      "final_entropy": 0.9888488302987174,
+      "entropy_variance": 8.803340037992641e-05,
+      "lz_complexity": 0.2581391350312077,
+      "lyapunov_exponent": 0.20055827741380688,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 62,
+      "predicted_class": 2,
+      "final_entropy": 0.9400155406752961,
+      "entropy_variance": 0.00042745691915976376,
+      "lz_complexity": 0.38457462974037065,
+      "lyapunov_exponent": 0.7091132161530196,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 63,
+      "predicted_class": 2,
+      "final_entropy": 0.9308300692731942,
+      "entropy_variance": 0.002830282762162755,
+      "lz_complexity": 0.15672733198323324,
+      "lyapunov_exponent": -0.09685761658495527,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 64,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 65,
+      "predicted_class": 2,
+      "final_entropy": 0.9763085938586269,
+      "entropy_variance": 5.962738923818407e-05,
+      "lz_complexity": 0.31213762756324603,
+      "lyapunov_exponent": -0.35502096121867094,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 66,
+      "predicted_class": 2,
+      "final_entropy": 0.7179499765002912,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09350958462865178,
+      "lyapunov_exponent": -0.5006732523019725,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 67,
+      "predicted_class": 2,
+      "final_entropy": 0.9808129407488447,
+      "entropy_variance": 0.0003441227169743967,
+      "lz_complexity": 0.2607732078376486,
+      "lyapunov_exponent": 0.48586257406903477,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 68,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -0.6890738551723095,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 69,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07243700217712461,
+      "lyapunov_exponent": -0.8493473823824932,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 70,
+      "predicted_class": 2,
+      "final_entropy": 0.9993634856727655,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.14715211523332206,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 71,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.053998492532038346,
+      "lyapunov_exponent": 0.00947874395454418,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 72,
+      "predicted_class": 2,
+      "final_entropy": 0.3993820824245976,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04609627411271566,
+      "lyapunov_exponent": -0.6729444732424256,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 73,
+      "predicted_class": 2,
+      "final_entropy": 0.9849689937304256,
+      "entropy_variance": 0.0003896668991874332,
+      "lz_complexity": 0.5175953064656359,
+      "lyapunov_exponent": 0.4036993179246788,
+      "known_class": 3,
+      "match": false
+    },
+    {
+      "rule": 74,
+      "predicted_class": 2,
+      "final_entropy": 0.911553273406725,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.1606784411928946,
+      "lyapunov_exponent": -0.04927963527942184,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 75,
+      "predicted_class": 3,
+      "final_entropy": 0.9942483940885039,
+      "entropy_variance": 4.812514698837647e-05,
+      "lz_complexity": 1.0246543217055082,
+      "lyapunov_exponent": 1.4895397240309547,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 76,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.03687701929017253,
+      "lyapunov_exponent": 0.010152371464018128,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 77,
+      "predicted_class": 2,
+      "final_entropy": 0.9965322634876733,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04346220130627477,
+      "lyapunov_exponent": -0.19527657148414687,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 78,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07375403858034506,
+      "lyapunov_exponent": -0.5956282097851642,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 79,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.06848589296746327,
+      "lyapunov_exponent": -0.6138946355262447,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 80,
+      "predicted_class": 2,
+      "final_entropy": 0.8228368841492257,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.5074300347648523,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 81,
+      "predicted_class": 2,
+      "final_entropy": 0.9942646092619049,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.24760284380544412,
+      "lyapunov_exponent": -0.6532265325001891,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 82,
+      "predicted_class": 2,
+      "final_entropy": 0.9608190806044075,
+      "entropy_variance": 0.0007028451587430256,
+      "lz_complexity": 0.37272130211138665,
+      "lyapunov_exponent": -0.22338789580287102,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 83,
+      "predicted_class": 2,
+      "final_entropy": 0.9942646092619049,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.1554102955800128,
+      "lyapunov_exponent": -0.34293259129114906,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 84,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.13697178593492654,
+      "lyapunov_exponent": 0.15433547460042774,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 85,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.19228731487018533,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 86,
+      "predicted_class": 3,
+      "final_entropy": 0.9857846998460605,
+      "entropy_variance": 0.00015512552528990726,
+      "lz_complexity": 1.0259713581087286,
+      "lyapunov_exponent": 1.4127452659640556,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 87,
+      "predicted_class": 2,
+      "final_entropy": 0.9802469188603145,
+      "entropy_variance": 0.00032344306881049346,
+      "lz_complexity": 0.18438509645086265,
+      "lyapunov_exponent": 0.021081121065746833,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 88,
+      "predicted_class": 2,
+      "final_entropy": 0.8895986430672327,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.13960585874136744,
+      "lyapunov_exponent": 0.047204588777215055,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 89,
+      "predicted_class": 3,
+      "final_entropy": 0.99188230303915,
+      "entropy_variance": 0.0001461231015917169,
+      "lz_complexity": 1.0220202488990673,
+      "lyapunov_exponent": 1.454351298405445,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 90,
+      "predicted_class": 3,
+      "final_entropy": 0.992363308236199,
+      "entropy_variance": 0.00012765183569080847,
+      "lz_complexity": 1.018069139689406,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 91,
+      "predicted_class": 2,
+      "final_entropy": 0.9529089413343149,
+      "entropy_variance": 0.0017102912697370954,
+      "lz_complexity": 0.1277525311123834,
+      "lyapunov_exponent": -0.03125834826115229,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 92,
+      "predicted_class": 2,
+      "final_entropy": 0.9914266810680206,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.0777051477900064,
+      "lyapunov_exponent": -0.2794667132978508,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 93,
+      "predicted_class": 2,
+      "final_entropy": 0.9914266810680206,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.06848589296746327,
+      "lyapunov_exponent": -0.4509123887632325,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 94,
+      "predicted_class": 2,
+      "final_entropy": 0.9712066180272154,
+      "entropy_variance": 0.00034301153637319114,
+      "lz_complexity": 0.1277525311123834,
+      "lyapunov_exponent": -0.10426226819065894,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 95,
+      "predicted_class": 3,
+      "final_entropy": 0.8813363517744106,
+      "entropy_variance": 0.005476743743370601,
+      "lz_complexity": 0.050047383322377,
+      "lyapunov_exponent": -0.09403047790244813,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 96,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04609627411271566,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 97,
+      "predicted_class": 3,
+      "final_entropy": 0.9467873693062312,
+      "entropy_variance": 0.0016380962661558642,
+      "lz_complexity": 0.6756396748520895,
+      "lyapunov_exponent": 1.3452704288571706,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 98,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.13697178593492654,
+      "lyapunov_exponent": -0.21212674107642285,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 99,
+      "predicted_class": 2,
+      "final_entropy": 0.9982314418957049,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.2594561714344282,
+      "lyapunov_exponent": 0.5449932775892666,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 100,
+      "predicted_class": 2,
+      "final_entropy": 0.6538398806263329,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.053998492532038346,
+      "lyapunov_exponent": -0.24263203817918616,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 101,
+      "predicted_class": 3,
+      "final_entropy": 0.9971801716146377,
+      "entropy_variance": 8.510811044451857e-05,
+      "lz_complexity": 1.027288394511949,
+      "lyapunov_exponent": 1.4930539910367764,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 102,
+      "predicted_class": 3,
+      "final_entropy": 0.9944801047401842,
+      "entropy_variance": 6.716558543714703e-05,
+      "lz_complexity": 1.0207032124958468,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 103,
+      "predicted_class": 2,
+      "final_entropy": 0.9906236695615803,
+      "entropy_variance": 4.124761898059281e-05,
+      "lz_complexity": 0.38720870254681156,
+      "lyapunov_exponent": 1.3290441647649016,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 104,
+      "predicted_class": 2,
+      "final_entropy": 0.24047340659188005,
+      "entropy_variance": 7.703719777548943e-34,
+      "lz_complexity": 0.06321774735458148,
+      "lyapunov_exponent": -0.8977903240397787,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 105,
+      "predicted_class": 3,
+      "final_entropy": 0.9860100738177074,
+      "entropy_variance": 0.00017913344725793047,
+      "lz_complexity": 1.0351906129312718,
+      "lyapunov_exponent": 0.9999147356756216,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 106,
+      "predicted_class": 3,
+      "final_entropy": 0.9952178928682697,
+      "entropy_variance": 3.59517015176352e-05,
+      "lz_complexity": 1.0048987756572014,
+      "lyapunov_exponent": 1.5522577377071658,
+      "known_class": 4,
+      "match": false
+    },
+    {
+      "rule": 107,
+      "predicted_class": 3,
+      "final_entropy": 0.9436105683343335,
+      "entropy_variance": 0.000915175153170661,
+      "lz_complexity": 0.6440308011747988,
+      "lyapunov_exponent": 1.3227704488546845,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 108,
+      "predicted_class": 2,
+      "final_entropy": 0.9212441727786075,
+      "entropy_variance": 9.39135306359537e-05,
+      "lz_complexity": 0.052681456128817895,
+      "lyapunov_exponent": -0.21122065229247422,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 109,
+      "predicted_class": 2,
+      "final_entropy": 0.994940247982195,
+      "entropy_variance": 2.070682654418269e-05,
+      "lz_complexity": 0.24760284380544412,
+      "lyapunov_exponent": 0.05296217696443637,
+      "known_class": 3,
+      "match": false
+    },
+    {
+      "rule": 110,
+      "predicted_class": 3,
+      "final_entropy": 0.9855378913710611,
+      "entropy_variance": 0.00011943421939174936,
+      "lz_complexity": 0.7836366599161663,
+      "lyapunov_exponent": 1.2218584108654187,
+      "known_class": 4,
+      "match": false
+    },
+    {
+      "rule": 111,
+      "predicted_class": 2,
+      "final_entropy": 0.9763085938586269,
+      "entropy_variance": 5.962738923818407e-05,
+      "lz_complexity": 0.3332102100147732,
+      "lyapunov_exponent": 0.12536938561655417,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 112,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08824143901576997,
+      "lyapunov_exponent": -0.5074300347648523,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 113,
+      "predicted_class": 2,
+      "final_entropy": 0.9993634856727655,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.2647243170473099,
+      "lyapunov_exponent": -0.5498041752871274,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 114,
+      "predicted_class": 2,
+      "final_entropy": 0.9309350721504901,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.2528709894183259,
+      "lyapunov_exponent": -0.05019178261307559,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 115,
+      "predicted_class": 2,
+      "final_entropy": 0.9638504435131605,
+      "entropy_variance": 0.0005839845189713307,
+      "lz_complexity": 0.17516584162831952,
+      "lyapunov_exponent": -0.16600978363595414,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 116,
+      "predicted_class": 2,
+      "final_entropy": 0.9553413768968347,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.08824143901576997,
+      "lyapunov_exponent": -0.6603920071713056,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 117,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.2331154433700192,
+      "lyapunov_exponent": -0.2570538732557816,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 118,
+      "predicted_class": 2,
+      "final_entropy": 0.9339974320533182,
+      "entropy_variance": 3.430724599565948e-05,
+      "lz_complexity": 0.41486646701444096,
+      "lyapunov_exponent": 0.641252036175835,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 119,
+      "predicted_class": 2,
+      "final_entropy": 0.9308300692731942,
+      "entropy_variance": 0.002830282762162755,
+      "lz_complexity": 0.1606784411928946,
+      "lyapunov_exponent": -0.09685761658495527,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 120,
+      "predicted_class": 3,
+      "final_entropy": 0.9957291395754515,
+      "entropy_variance": 3.25412472026228e-05,
+      "lz_complexity": 0.9969965572378787,
+      "lyapunov_exponent": 1.6207012123796514,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 121,
+      "predicted_class": 3,
+      "final_entropy": 0.9325611566851968,
+      "entropy_variance": 0.0017463232643503454,
+      "lz_complexity": 0.6677374564327668,
+      "lyapunov_exponent": 0.8374344475720227,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 122,
+      "predicted_class": 3,
+      "final_entropy": 0.9915135323481887,
+      "entropy_variance": 0.00018492236943636867,
+      "lz_complexity": 0.750710749835655,
+      "lyapunov_exponent": 1.0013211974566072,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 123,
+      "predicted_class": 2,
+      "final_entropy": 0.9419316261645687,
+      "entropy_variance": 0.00273874111986607,
+      "lz_complexity": 0.05663256533847924,
+      "lyapunov_exponent": 0.013503806487462477,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 124,
+      "predicted_class": 3,
+      "final_entropy": 0.9744347041247348,
+      "entropy_variance": 0.00036863751349041143,
+      "lz_complexity": 0.8626588441093931,
+      "lyapunov_exponent": 1.3045804702318018,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 125,
+      "predicted_class": 2,
+      "final_entropy": 0.9708643072633268,
+      "entropy_variance": 6.351532536639159e-05,
+      "lz_complexity": 0.3714042657081662,
+      "lyapunov_exponent": 0.34874207043175615,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 126,
+      "predicted_class": 3,
+      "final_entropy": 0.9865148288604741,
+      "entropy_variance": 0.00022244584372308992,
+      "lz_complexity": 0.7744174050936231,
+      "lyapunov_exponent": 1.0252659242368931,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 127,
+      "predicted_class": 3,
+      "final_entropy": 0.7923874763884114,
+      "entropy_variance": 0.01919543629145232,
+      "lz_complexity": 0.04346220130627477,
+      "lyapunov_exponent": -0.3447122240314079,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 128,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.040828128499833874,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 129,
+      "predicted_class": 3,
+      "final_entropy": 0.9865148288604741,
+      "entropy_variance": 0.00022244584372308992,
+      "lz_complexity": 0.7731003686904027,
+      "lyapunov_exponent": 1.0252659242368931,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 130,
+      "predicted_class": 2,
+      "final_entropy": 0.6975195309289136,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09877773024153357,
+      "lyapunov_exponent": -0.33623416972329023,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 131,
+      "predicted_class": 2,
+      "final_entropy": 0.9313102313930509,
+      "entropy_variance": 0.0001703813493372874,
+      "lz_complexity": 0.438573122272409,
+      "lyapunov_exponent": 1.0019940999114503,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 132,
+      "predicted_class": 2,
+      "final_entropy": 0.6061112071230006,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04609627411271566,
+      "lyapunov_exponent": -0.018633311737014942,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 133,
+      "predicted_class": 2,
+      "final_entropy": 0.9737496659666803,
+      "entropy_variance": 0.00011028285768345647,
+      "lz_complexity": 0.1409228951445879,
+      "lyapunov_exponent": 0.04677062611282494,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 134,
+      "predicted_class": 2,
+      "final_entropy": 0.7895035165395613,
+      "entropy_variance": 0.001111113396201026,
+      "lz_complexity": 0.17121473241865817,
+      "lyapunov_exponent": -0.0880201814817921,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 135,
+      "predicted_class": 3,
+      "final_entropy": 0.9930407692183854,
+      "entropy_variance": 8.128859635943094e-05,
+      "lz_complexity": 1.0391417221409331,
+      "lyapunov_exponent": 1.508011133230229,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 136,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.05794960174169969,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 137,
+      "predicted_class": 3,
+      "final_entropy": 0.9790682677378534,
+      "entropy_variance": 0.00019986673393279243,
+      "lz_complexity": 0.7731003686904027,
+      "lyapunov_exponent": 1.111412359299277,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 138,
+      "predicted_class": 2,
+      "final_entropy": 0.9840304711717021,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.0803392205964473,
+      "lyapunov_exponent": -0.3479666160469477,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 139,
+      "predicted_class": 2,
+      "final_entropy": 0.9553413768968347,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.08955847541899042,
+      "lyapunov_exponent": -0.8960880245566353,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 140,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.05663256533847924,
+      "lyapunov_exponent": -0.09623469434708914,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 141,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07507107498356551,
+      "lyapunov_exponent": -0.27194728962150294,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 142,
+      "predicted_class": 2,
+      "final_entropy": 0.9993634856727655,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.15277622277357192,
+      "lyapunov_exponent": -0.5498041752871274,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 143,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.1606784411928946,
+      "lyapunov_exponent": -0.7313202284334018,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 144,
+      "predicted_class": 2,
+      "final_entropy": 0.6761627418829197,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09482662103187221,
+      "lyapunov_exponent": -0.12980391193290022,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 145,
+      "predicted_class": 2,
+      "final_entropy": 0.9465229520804062,
+      "entropy_variance": 0.0001966386256783037,
+      "lz_complexity": 0.41750053982088187,
+      "lyapunov_exponent": 0.2030861859659074,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 146,
+      "predicted_class": 3,
+      "final_entropy": 0.8073484313217382,
+      "entropy_variance": 0.0038612025560333827,
+      "lz_complexity": 0.7520277862388755,
+      "lyapunov_exponent": 1.228643035013562,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 147,
+      "predicted_class": 3,
+      "final_entropy": 0.9821084778074285,
+      "entropy_variance": 0.001043994821334654,
+      "lz_complexity": 0.741491495013112,
+      "lyapunov_exponent": 1.2076652657753124,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 148,
+      "predicted_class": 2,
+      "final_entropy": 0.8541170110499416,
+      "entropy_variance": 0.002188900264585066,
+      "lz_complexity": 0.17384880522509907,
+      "lyapunov_exponent": -0.15584720724014892,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 149,
+      "predicted_class": 3,
+      "final_entropy": 0.9908808561236174,
+      "entropy_variance": 8.165350327817246e-05,
+      "lz_complexity": 1.0207032124958468,
+      "lyapunov_exponent": 1.3901962167080089,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 150,
+      "predicted_class": 3,
+      "final_entropy": 0.9860100738177074,
+      "entropy_variance": 0.00017913344725793047,
+      "lz_complexity": 1.032556540124831,
+      "lyapunov_exponent": 0.9999147356756216,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 151,
+      "predicted_class": 3,
+      "final_entropy": 0.938234592893083,
+      "entropy_variance": 0.0018208991106671234,
+      "lz_complexity": 0.8903166085770224,
+      "lyapunov_exponent": 1.365446504042132,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 152,
+      "predicted_class": 2,
+      "final_entropy": 0.6975195309289136,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.11853327628984027,
+      "lyapunov_exponent": -0.12709613206244563,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 153,
+      "predicted_class": 3,
+      "final_entropy": 0.9944801047401842,
+      "entropy_variance": 6.716558543714703e-05,
+      "lz_complexity": 1.0220202488990673,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 154,
+      "predicted_class": 2,
+      "final_entropy": 0.9879624510552037,
+      "entropy_variance": 0.00023629989944933314,
+      "lz_complexity": 0.2528709894183259,
+      "lyapunov_exponent": 0.00943601467726557,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 155,
+      "predicted_class": 2,
+      "final_entropy": 0.8562177636082293,
+      "entropy_variance": 0.0011142831134565204,
+      "lz_complexity": 0.14750807716069012,
+      "lyapunov_exponent": -0.22785009469235806,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 156,
+      "predicted_class": 2,
+      "final_entropy": 0.9982314418957049,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08429032980610864,
+      "lyapunov_exponent": -0.2659859633039382,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 157,
+      "predicted_class": 2,
+      "final_entropy": 0.9942646092619049,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.2850173869186246,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 158,
+      "predicted_class": 3,
+      "final_entropy": 0.8435526105401936,
+      "entropy_variance": 0.007635694597074961,
+      "lz_complexity": 0.18701916925730355,
+      "lyapunov_exponent": 0.06223843017004381,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 159,
+      "predicted_class": 2,
+      "final_entropy": 0.7601782075390696,
+      "entropy_variance": 0.003926109754536111,
+      "lz_complexity": 0.14619104075746966,
+      "lyapunov_exponent": -0.18428793619606662,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 160,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.052681456128817895,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 161,
+      "predicted_class": 3,
+      "final_entropy": 0.9885620845041748,
+      "entropy_variance": 0.0002559871157903069,
+      "lz_complexity": 0.7968070239483707,
+      "lyapunov_exponent": 1.4093352366197793,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 162,
+      "predicted_class": 2,
+      "final_entropy": 0.911553273406725,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.12906956751560386,
+      "lyapunov_exponent": -0.31902301893092755,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 163,
+      "predicted_class": 2,
+      "final_entropy": 0.9685867165455516,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.1777999144347604,
+      "lyapunov_exponent": -0.30770696948876963,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 164,
+      "predicted_class": 2,
+      "final_entropy": 0.4334884632446066,
+      "entropy_variance": 3.0814879110195774e-33,
+      "lz_complexity": 0.06585182016102237,
+      "lyapunov_exponent": -0.1305887679435716,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 165,
+      "predicted_class": 3,
+      "final_entropy": 0.992363308236199,
+      "entropy_variance": 0.00012765183569080847,
+      "lz_complexity": 1.0207032124958468,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 166,
+      "predicted_class": 2,
+      "final_entropy": 0.9972947512297354,
+      "entropy_variance": 9.314218253711667e-06,
+      "lz_complexity": 0.31740577317612784,
+      "lyapunov_exponent": 0.02575665370622069,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 167,
+      "predicted_class": 2,
+      "final_entropy": 0.9455951781448044,
+      "entropy_variance": 0.0004054816117269696,
+      "lz_complexity": 0.39511092096613426,
+      "lyapunov_exponent": 0.04664291945904967,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 168,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0777051477900064,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 169,
+      "predicted_class": 3,
+      "final_entropy": 0.9926813222644404,
+      "entropy_variance": 5.702434737489752e-05,
+      "lz_complexity": 1.015435066882965,
+      "lyapunov_exponent": 1.5577992447342792,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 170,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0777051477900064,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 171,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08692440261254954,
+      "lyapunov_exponent": -0.21805448180673837,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 172,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09219254822543133,
+      "lyapunov_exponent": -0.6284576773514903,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 173,
+      "predicted_class": 2,
+      "final_entropy": 0.9309350721504901,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.16858065961221727,
+      "lyapunov_exponent": -0.8725536408214473,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 174,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07638811138678596,
+      "lyapunov_exponent": -0.35086097407331235,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 175,
+      "predicted_class": 2,
+      "final_entropy": 0.8228368841492257,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.5074300347648523,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 176,
+      "predicted_class": 2,
+      "final_entropy": 0.911553273406725,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.12643549470916296,
+      "lyapunov_exponent": -0.6808086482992274,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 177,
+      "predicted_class": 2,
+      "final_entropy": 0.9685867165455516,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.17253176882187862,
+      "lyapunov_exponent": -0.6744120414228655,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 178,
+      "predicted_class": 2,
+      "final_entropy": 0.9965322634876733,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.059266638144920135,
+      "lyapunov_exponent": -0.19527657148414687,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 179,
+      "predicted_class": 2,
+      "final_entropy": 0.9965322634876733,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06848589296746327,
+      "lyapunov_exponent": -0.18686680013639084,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 180,
+      "predicted_class": 2,
+      "final_entropy": 0.9963036670285241,
+      "entropy_variance": 7.673915014346377e-06,
+      "lz_complexity": 0.31477170036968694,
+      "lyapunov_exponent": 0.013873100272608551,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 181,
+      "predicted_class": 2,
+      "final_entropy": 0.9589616174969041,
+      "entropy_variance": 0.00032153228203442004,
+      "lz_complexity": 0.35955093807918215,
+      "lyapunov_exponent": 0.05420627274549034,
+      "known_class": 3,
+      "match": false
+    },
+    {
+      "rule": 182,
+      "predicted_class": 3,
+      "final_entropy": 0.8353578101633741,
+      "entropy_variance": 0.0018483253478445872,
+      "lz_complexity": 0.7520277862388755,
+      "lyapunov_exponent": 1.3093758599358474,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 183,
+      "predicted_class": 3,
+      "final_entropy": 0.8114677300069048,
+      "entropy_variance": 0.0026215680414702065,
+      "lz_complexity": 0.738857422206671,
+      "lyapunov_exponent": 1.1725095459785535,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 184,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.2647243170473099,
+      "lyapunov_exponent": 2.678879597540489,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 185,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.14882511356391057,
+      "lyapunov_exponent": -0.23665084313850346,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 186,
+      "predicted_class": 2,
+      "final_entropy": 0.8776296673746863,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.12380142190272206,
+      "lyapunov_exponent": -0.6785305987771163,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 187,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.09087551182221087,
+      "lyapunov_exponent": -0.6890738551723095,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 188,
+      "predicted_class": 2,
+      "final_entropy": 0.7561701489298969,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.1303866039188243,
+      "lyapunov_exponent": -0.48081548339663405,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 189,
+      "predicted_class": 2,
+      "final_entropy": 0.7179499765002912,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09350958462865178,
+      "lyapunov_exponent": -0.5006732523019725,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 190,
+      "predicted_class": 2,
+      "final_entropy": 0.6305062394675904,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09350958462865178,
+      "lyapunov_exponent": -0.6664549376050729,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 191,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06980292937068372,
+      "lyapunov_exponent": -1.2039728043259357,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 192,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.059266638144920135,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 193,
+      "predicted_class": 3,
+      "final_entropy": 0.9866610698056479,
+      "entropy_variance": 0.0003472231193850474,
+      "lz_complexity": 0.8376351524482046,
+      "lyapunov_exponent": 1.0394127590239086,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 194,
+      "predicted_class": 2,
+      "final_entropy": 0.6975195309289136,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.12380142190272206,
+      "lyapunov_exponent": 0.03171900357013994,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 195,
+      "predicted_class": 3,
+      "final_entropy": 0.9944801047401842,
+      "entropy_variance": 6.716558543714703e-05,
+      "lz_complexity": 1.0193861760926264,
+      "lyapunov_exponent": 0.9808292530117266,
+      "known_class": 3,
+      "match": true
+    },
+    {
+      "rule": 196,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.060583674548140586,
+      "lyapunov_exponent": -0.8142285293274872,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 197,
+      "predicted_class": 2,
+      "final_entropy": 0.9880162151534646,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07638811138678596,
+      "lyapunov_exponent": -1.0996393183088258,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 198,
+      "predicted_class": 2,
+      "final_entropy": 0.9982314418957049,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.07902218419322685,
+      "lyapunov_exponent": -0.1660164522031101,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 199,
+      "predicted_class": 2,
+      "final_entropy": 0.9965322634876733,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.08560736620932909,
+      "lyapunov_exponent": -0.16048091335570938,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 200,
+      "predicted_class": 2,
+      "final_entropy": 0.9840304711717021,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -0.09633110893843183,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 201,
+      "predicted_class": 2,
+      "final_entropy": 0.87130647128826,
+      "entropy_variance": 3.99828087473967e-05,
+      "lz_complexity": 0.05663256533847924,
+      "lyapunov_exponent": 0.014788109263808651,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 202,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09614365743509266,
+      "lyapunov_exponent": -1.6840188842024741,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 203,
+      "predicted_class": 2,
+      "final_entropy": 0.6538398806263329,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.053998492532038346,
+      "lyapunov_exponent": -0.7526696493846691,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 204,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0250236916611885,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 205,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.034242946483731634,
+      "lyapunov_exponent": -0.09858082867244732,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 206,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.059266638144920135,
+      "lyapunov_exponent": -0.6737559912452945,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 207,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.03687701929017253,
+      "lyapunov_exponent": -0.6890738551723095,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 208,
+      "predicted_class": 2,
+      "final_entropy": 0.9840304711717021,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.0777051477900064,
+      "lyapunov_exponent": 0.012170535620255553,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 209,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08560736620932909,
+      "lyapunov_exponent": -0.07468650847301134,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 210,
+      "predicted_class": 2,
+      "final_entropy": 0.9899850742179455,
+      "entropy_variance": 9.274648546646059e-05,
+      "lz_complexity": 0.25418802582154637,
+      "lyapunov_exponent": 0.02527261792029651,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 211,
+      "predicted_class": 2,
+      "final_entropy": 0.8143343774757001,
+      "entropy_variance": 0.0005414035182872185,
+      "lz_complexity": 0.13697178593492654,
+      "lyapunov_exponent": -0.07843553656317846,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 212,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.1303866039188243,
+      "lyapunov_exponent": 0.23162641383938654,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 213,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.138288822338147,
+      "lyapunov_exponent": 0.27432956894432114,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 214,
+      "predicted_class": 2,
+      "final_entropy": 0.8745778651339334,
+      "entropy_variance": 0.001367180816939618,
+      "lz_complexity": 0.17253176882187862,
+      "lyapunov_exponent": 0.056255702503873115,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 215,
+      "predicted_class": 2,
+      "final_entropy": 0.7642779326520022,
+      "entropy_variance": 0.0007176165228535737,
+      "lz_complexity": 0.13170364032204473,
+      "lyapunov_exponent": 0.027619913970087947,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 216,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09087551182221087,
+      "lyapunov_exponent": -0.18914072764552192,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 217,
+      "predicted_class": 2,
+      "final_entropy": 0.6061112071230006,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.053998492532038346,
+      "lyapunov_exponent": 0.012487121151064543,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 218,
+      "predicted_class": 2,
+      "final_entropy": 0.3993820824245976,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06190071095136103,
+      "lyapunov_exponent": -0.1467575082337031,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 219,
+      "predicted_class": 2,
+      "final_entropy": 0.32508219764519103,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03819405569339298,
+      "lyapunov_exponent": -0.7039383788264182,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 220,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.059266638144920135,
+      "lyapunov_exponent": -0.08088945878178593,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 221,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.03819405569339298,
+      "lyapunov_exponent": -0.09408643908460806,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 222,
+      "predicted_class": 2,
+      "final_entropy": 0.4658491737720424,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.050047383322377,
+      "lyapunov_exponent": 0.0027359798188748455,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 223,
+      "predicted_class": 2,
+      "final_entropy": 0.3993820824245976,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03160887367729074,
+      "lyapunov_exponent": -0.3537637337312738,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 224,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.07638811138678596,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 225,
+      "predicted_class": 3,
+      "final_entropy": 0.9955626268139447,
+      "entropy_variance": 6.067591457025492e-05,
+      "lz_complexity": 1.003581739253981,
+      "lyapunov_exponent": 1.6630931027894336,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 226,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.2792117174827349,
+      "lyapunov_exponent": 2.8127698266721537,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 227,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.1409228951445879,
+      "lyapunov_exponent": 0.05940290554641036,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 228,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09350958462865178,
+      "lyapunov_exponent": -0.92911807653903,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 229,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.16594658680577637,
+      "lyapunov_exponent": -0.05049546267153713,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 230,
+      "predicted_class": 2,
+      "final_entropy": 0.6761627418829197,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.12248438549950161,
+      "lyapunov_exponent": -0.4537665941502367,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 231,
+      "predicted_class": 2,
+      "final_entropy": 0.6975195309289136,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.09087551182221087,
+      "lyapunov_exponent": 0.004307819467735176,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 232,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03951109209661342,
+      "lyapunov_exponent": -0.09098780888211805,
+      "known_class": 2,
+      "match": true
+    },
+    {
+      "rule": 233,
+      "predicted_class": 2,
+      "final_entropy": 0.32508219764519103,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06453478375780193,
+      "lyapunov_exponent": -0.6803435740727509,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 234,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.07638811138678596,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 235,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.05136441972559745,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 236,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.032925910080511184,
+      "lyapunov_exponent": -0.34409416484900623,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 237,
+      "predicted_class": 2,
+      "final_entropy": 0.5805970961414402,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.04346220130627477,
+      "lyapunov_exponent": -1.1837700970084164,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 238,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.05794960174169969,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 239,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.034242946483731634,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 240,
+      "predicted_class": 2,
+      "final_entropy": 0.9999292854321661,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0777051477900064,
+      "lyapunov_exponent": 2.2204460492503128e-16,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 241,
+      "predicted_class": 2,
+      "final_entropy": 0.9215608652945445,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08560736620932909,
+      "lyapunov_exponent": -0.09858082867244732,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 242,
+      "predicted_class": 2,
+      "final_entropy": 0.8776296673746863,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.12380142190272206,
+      "lyapunov_exponent": -0.08593804902701738,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 243,
+      "predicted_class": 2,
+      "final_entropy": 0.7374895672137457,
+      "entropy_variance": 4.930380657631324e-32,
+      "lz_complexity": 0.08955847541899042,
+      "lyapunov_exponent": -0.09408643908460806,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 244,
+      "predicted_class": 2,
+      "final_entropy": 0.97946621870173,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08165625699966775,
+      "lyapunov_exponent": -0.09633110893843183,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 245,
+      "predicted_class": 2,
+      "final_entropy": 0.8228368841492257,
+      "entropy_variance": 1.232595164407831e-32,
+      "lz_complexity": 0.08429032980610864,
+      "lyapunov_exponent": -0.09633110893843183,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 246,
+      "predicted_class": 2,
+      "final_entropy": 0.6761627418829197,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.09350958462865178,
+      "lyapunov_exponent": -0.09641876916744051,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 247,
+      "predicted_class": 2,
+      "final_entropy": 0.5538976334852961,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.06716885656424282,
+      "lyapunov_exponent": -0.09184679649110303,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 248,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.07507107498356551,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 249,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.05136441972559745,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 250,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.052681456128817895,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 251,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03687701929017253,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 252,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.05794960174169969,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 253,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03555998288695208,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    },
+    {
+      "rule": 254,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.03687701929017253,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": 1,
+      "match": true
+    },
+    {
+      "rule": 255,
+      "predicted_class": 1,
+      "final_entropy": 0.0,
+      "entropy_variance": 0.0,
+      "lz_complexity": 0.0250236916611885,
+      "lyapunov_exponent": -23.025850929940457,
+      "known_class": null,
+      "match": true
+    }
+  ]
+}
