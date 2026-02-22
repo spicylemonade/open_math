@@ -118,8 +118,8 @@
           "id": "item_010",
           "description": "Establish baseline performance benchmarks",
           "acceptance_criteria": "Script benchmarks/bench_baseline.py that measures: (1) time per generation step for Game of Life on 100x100, 500x500, and 1000x1000 grids, (2) memory usage at each grid size, (3) time for 1000 steps of Rule 110 on a 1D grid of width 10000. Results saved to results/baseline_benchmarks.json with mean and std over 5 runs. Document baseline numbers in docs/benchmarks.md. Compare measured performance against any benchmarks reported in prior work from the literature review (item_003).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Benchmarked Life at 100x100, 500x500, 1000x1000 plus Rule 110. Results in results/baseline_benchmarks.json and docs/benchmarks.md.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 9,
+    "completed": 10,
     "in_progress": 0,
     "failed": 0,
-    "pending": 16
+    "pending": 15
   }
 }
