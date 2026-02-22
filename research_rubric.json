@@ -110,8 +110,8 @@
           "id": "item_009",
           "description": "Implement CLI interface for running simulations",
           "acceptance_criteria": "Python module src/cli.py providing command-line interface with argparse supporting: --rule (Wolfram number or 'life'), --width, --height, --steps, --boundary (wrap/fixed), --seed (random seed or pattern file), --output (file path for results). Running 'python -m src.cli --rule life --width 10 --height 10 --steps 5' must execute without error and print grid state to stdout. Must include --help documentation for all flags.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "CLI with all flags working. Help docs and JSON output supported.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 8,
+    "completed": 9,
     "in_progress": 0,
     "failed": 0,
-    "pending": 17
+    "pending": 16
   }
 }
