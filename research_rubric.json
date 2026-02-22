@@ -235,8 +235,8 @@
           "id": "item_022",
           "description": "Generate publication-quality figures for all experimental results",
           "acceptance_criteria": "Script figures/generate_figures.py that produces at least 6 figures: (1) performance comparison bar chart, (2) HashLife speedup log-scale plot, (3) Wolfram 1D classification heatmap, (4) 2D rule classification scatter plot, (5) sensitivity analysis population dynamics, (6) memory scaling plot. All figures saved as both PNG (300 DPI) and PDF in figures/ directory. Figures must use consistent styling (matplotlib with a coherent color palette, labeled axes, legends, titles).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created figures/generate_figures.py producing 7 figures (PNG+PDF): performance comparison, HashLife speedup, Wolfram heatmap, 2D scatter, sensitivity dynamics, memory scaling, boundary comparison.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 21,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 4
+    "pending": 3
   }
 }
