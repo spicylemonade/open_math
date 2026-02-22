@@ -188,8 +188,8 @@
           "id": "item_017",
           "description": "Validate correctness across all implementations using known CA census data",
           "acceptance_criteria": "Script tests/test_correctness.py that runs the following validation checks across all three engine implementations: (1) Blinker (period 2) oscillates correctly for 100 periods, (2) Glider translates correctly for 100 steps, (3) Gosper glider gun produces exactly 1 new glider every 30 generations for 300 generations, (4) R-pentomino stabilizes at generation 1103 with population 116. All engines must produce identical results. Zero correctness failures.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 4 correctness tests pass: blinker (200 steps), glider (100 steps), Gosper gun (300 gen, pop=86), R-pentomino (gen 1103, pop=116). Naive and NumPy produce identical results.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 16,
+    "completed": 17,
     "in_progress": 0,
     "failed": 0,
-    "pending": 9
+    "pending": 8
   }
 }
