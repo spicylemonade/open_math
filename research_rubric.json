@@ -102,8 +102,8 @@
           "id": "item_008",
           "description": "Implement simulation loop with step-by-step execution",
           "acceptance_criteria": "Python module src/simulator.py implementing: (1) Simulator class that takes a Grid and a Rule, (2) step() method advancing one generation, (3) run(n) method advancing n generations, (4) history tracking storing generation count and population at each step, (5) reset() method. Unit tests in tests/test_simulator.py with at least 6 test cases including multi-step runs and history validation, all passing.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented Simulator with step/run/reset/history. 8 test cases all passing.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 7,
+    "completed": 8,
     "in_progress": 0,
     "failed": 0,
-    "pending": 18
+    "pending": 17
   }
 }
