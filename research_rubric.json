@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-22T00:55:00Z",
-  "updated_at": "2026-02-22T01:00:00.000000+00:00",
-  "current_agent": "researcher",
+  "updated_at": "2026-02-22T02:01:15.789866+00:00",
+  "current_agent": "writer",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,15 +11,15 @@
       "error": null
     },
     "researcher": {
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-02-22T00:53:37.733878+00:00",
-      "completed_at": null,
+      "completed_at": "2026-02-22T01:55:12.813049+00:00",
       "error": null
     },
     "writer": {
-      "status": "pending",
-      "started_at": null,
-      "completed_at": null,
+      "status": "completed",
+      "started_at": "2026-02-22T01:55:12.813972+00:00",
+      "completed_at": "2026-02-22T02:01:15.789846+00:00",
       "error": null
     },
     "reviewer": {
