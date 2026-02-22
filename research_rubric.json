@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Compile comparison table of our simulator against prior implementations",
           "acceptance_criteria": "Document docs/comparison_table.md containing a detailed table comparing our minimal CA simulator against at least 4 existing implementations surveyed in item_004. Columns must include: features supported, languages, lines of code, performance on comparable benchmarks, and unique strengths/weaknesses. Must cite sources.bib entries for each compared project.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/comparison_table.md comparing against 5 implementations (Golly, Lenia, CellPyLib, python-lifelib, jakevdp). Covers features, languages, LOC, performance, strengths/weaknesses with sources.bib citations.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 2
+    "pending": 1
   }
 }
