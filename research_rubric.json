@@ -196,8 +196,8 @@
           "id": "item_018",
           "description": "Run complexity classification experiments on 2D outer-totalistic rule space",
           "acceptance_criteria": "Script experiments/classify_2d_rules.py that samples at least 50 random 2D outer-totalistic rules (varying birth/survival conditions) and classifies each using the metrics from item_015. Save results to results/2d_classification.json with rule specification, entropy trajectory, LZ complexity, and Lyapunov exponent for each. Identify and document at least 3 rules exhibiting Class IV (complex/edge-of-chaos) behavior. Compare findings against any 2D classification results from the literature review.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Classified 56 random 2D outer-totalistic rules. Found 3 Class IV rules: B4/S024, B48/S125 (algorithmic), B3/S23 (canonical). Results in results/2d_classification.json.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 17,
+    "completed": 18,
     "in_progress": 0,
     "failed": 0,
-    "pending": 8
+    "pending": 7
   }
 }
