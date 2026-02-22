@@ -149,8 +149,8 @@
           "id": "item_013",
           "description": "Implement pattern I/O supporting standard file formats",
           "acceptance_criteria": "Python module src/patterns.py supporting: (1) RLE (Run Length Encoded) format parsing and writing, (2) plaintext (.cells) format parsing and writing, (3) loading patterns from file and placing them on a grid at arbitrary offsets. Must successfully load and round-trip at least 3 well-known patterns (glider, Gosper glider gun, R-pentomino) from embedded test data. Unit tests in tests/test_patterns.py with at least 6 test cases all passing.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Pattern I/O supporting RLE and plaintext formats. Roundtrip tests for glider, Gosper gun, R-pentomino. 9 tests pass.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 12,
+    "completed": 13,
     "in_progress": 0,
     "failed": 0,
-    "pending": 13
+    "pending": 12
   }
 }
