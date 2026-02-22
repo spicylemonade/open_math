@@ -243,8 +243,8 @@
           "id": "item_023",
           "description": "Create reproducibility package with requirements and run instructions",
           "acceptance_criteria": "Files in repo root: (1) requirements.txt listing all Python dependencies with pinned versions, (2) Makefile or run.sh with targets/commands for: install, test, benchmark, experiment, figures, report. Running 'pip install -r requirements.txt && make test' (or equivalent) must execute all tests with zero failures. README.md updated with project description, installation instructions, usage examples, and structure overview (at least 500 words).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created requirements.txt (5 pinned deps), Makefile (install/test/benchmark/experiment/figures/report/all/clean), README.md (845 words). All 60 tests pass via make test.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 22,
+    "completed": 23,
     "in_progress": 0,
     "failed": 0,
-    "pending": 3
+    "pending": 2
   }
 }
