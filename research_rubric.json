@@ -220,8 +220,8 @@
           "id": "item_021",
           "description": "Generate trajectory and energy-drift visualizations",
           "acceptance_criteria": "At least 4 publication-quality figures saved to figures/ as PNG: (1) 2-body orbit trajectory, (2) energy error vs time for all integrators, (3) scaling benchmark log-log plot, (4) figure-8 three-body trajectory. Each figure has axis labels, legend, and title",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 publication-quality figures: two_body_orbit, energy_error_comparison, scaling_benchmark, figure_8_trajectory. All as PNG (300 DPI) and PDF.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 20,
+    "completed": 21,
     "in_progress": 0,
     "failed": 0,
-    "pending": 5
+    "pending": 4
   }
 }
