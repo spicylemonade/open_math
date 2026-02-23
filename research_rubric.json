@@ -47,8 +47,8 @@
           "id": "item_002",
           "description": "Conduct literature review on N-body gravitational simulation methods using web search",
           "acceptance_criteria": "A written summary (literature_review.md) covering at least: (1) direct-summation methods, (2) symplectic integrators (leapfrog, Verlet), (3) tree-based methods (Barnes-Hut), (4) softening techniques, and (5) adaptive time-stepping. Must cite at least 10 papers by author and year",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "literature_review.md created with 5 sections covering all required topics, citing 15 papers by author and year",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
-    "in_progress": 0,
+    "completed": 2,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 24
+    "pending": 22
   }
 }
