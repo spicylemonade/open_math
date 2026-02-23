@@ -1,0 +1,284 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T12:00:00Z",
+  "updated_at": "2026-02-23T16:17:34.402638+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T12:00:00Z",
+      "completed_at": "2026-02-23T16:17:34.402616+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scaffold",
+          "acceptance_criteria": "Document listing all existing files/directories, their purposes, and a proposed project structure including directories for src/, data/, tests/, figures/, and results/. Create the directory scaffold.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct comprehensive literature review on vector bin packing for cloud VM scheduling",
+          "acceptance_criteria": "Use web search to find and review at least 15 papers covering: (a) classical bin packing algorithms (FF, FFD, BF, BFD, Harmonic, Super Harmonic), (b) vector bin packing (VBP) theory and competitive ratios, (c) production VM allocation systems (Google Borg, Azure Protean), (d) recent ML/DRL approaches, (e) FunSearch and LLM-based heuristic generation. Produce a literature_review.md summarizing findings organized by category with key results and open problems.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
+          "acceptance_criteria": "sources.bib exists in the repo root containing at least 10 relevant BibTeX entries. Must include: Christensen et al. 2017 (VBP survey), Tirmazi et al. 2020 (Borg: the Next Generation), Hadary et al. 2020 (Protean), Coffman et al. 2013 (bin packing survey), Seiden 2002 (Super Harmonic), and at least 5 additional papers on fragmentation reduction, DRL scheduling, or FunSearch. Each entry must have complete fields (authors, title, year, venue/journal).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey and document available public workload trace datasets",
+          "acceptance_criteria": "Document describing at least 3 public trace datasets: Google ClusterData2019, Azure TracesForPacking2020, and Alibaba cluster traces. For each, document: schema (tables/columns), size, time span, access method, licensing, and relevance to 2D bin packing (CPU + RAM). Identify which dataset(s) are most suitable for the simulation experiments.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Formalize the 2D online vector bin packing problem specification",
+          "acceptance_criteria": "A formal problem definition document (problem_spec.md) that includes: (a) mathematical formulation of 2D VBP with CPU and RAM dimensions, (b) definition of online vs. offline settings, (c) objective function (minimize number of active hosts / maximize utilization / minimize fragmentation), (d) constraints (capacity, affinity, fault domains if applicable), (e) definition of fragmentation metric(s) to be used, (f) competitive ratio bounds from literature with citations to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Identify and catalog baseline algorithms for comparison",
+          "acceptance_criteria": "A document (baselines.md) listing at least 6 baseline algorithms to implement: First Fit (FF), First Fit Decreasing (FFD), Best Fit (BF), Best Fit Decreasing (BFD), Dot-Product scoring, and at least one advanced baseline (e.g., Harmonic or a DRL-based method). For each algorithm, provide: pseudocode or reference, time complexity, known competitive ratio, and citation to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement the simulation framework for VM placement on physical hosts",
+          "acceptance_criteria": "A Python simulation engine (src/simulator.py or equivalent module) that: (a) models physical hosts with configurable CPU and RAM capacity, (b) models VMs with CPU and RAM requirements and optional lifetimes, (c) supports online arrival of VMs (sequential placement decisions), (d) supports VM departure/deallocation, (e) tracks host utilization over time, (f) has unit tests achieving >= 90% code coverage for the simulator module.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement data loaders for Google and Azure workload traces",
+          "acceptance_criteria": "Data loading modules (src/data_loader.py or equivalent) that: (a) download or load a representative sample from Google ClusterData2019 (at least 10,000 task events) and Azure TracesForPacking2020, (b) normalize CPU and RAM values to [0, 1] relative to host capacity, (c) extract VM arrival time, resource requirements, and lifetime, (d) output a unified trace format consumable by the simulator, (e) include unit tests verifying correct parsing of at least 100 trace entries.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Define and implement evaluation metrics",
+          "acceptance_criteria": "A metrics module (src/metrics.py or equivalent) computing at least 5 metrics: (a) number of active hosts used, (b) average host utilization (CPU and RAM separately), (c) resource fragmentation rate (stranded resources: capacity available on hosts that cannot fit any pending VM), (d) overall packing efficiency (total allocated resources / total host capacity), (e) makespan or throughput (VMs placed per unit time). All metrics must have unit tests with known-answer cases.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement baseline bin packing algorithms",
+          "acceptance_criteria": "Implementation of at least 6 algorithms from the baselines catalog (item_006) in src/algorithms/: First Fit, First Fit Decreasing, Best Fit, Best Fit Decreasing, Dot-Product scoring, and at least one advanced method. Each algorithm must: (a) conform to a common interface/ABC, (b) accept a VM and list of hosts, return a placement decision, (c) have unit tests verifying correct placement on small synthetic examples, (d) be documented with references to sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Run baseline experiments and establish performance benchmarks",
+          "acceptance_criteria": "Run all baseline algorithms on both Google and Azure trace samples. Produce a results table (results/baseline_results.csv) with columns: algorithm, dataset, num_hosts_used, avg_cpu_util, avg_ram_util, fragmentation_rate, packing_efficiency. Results must show FF/BF variants achieving 80-90% utilization consistent with literature. Include a brief analysis (results/baseline_analysis.md) comparing algorithms and identifying which dimension (CPU or RAM) is the bottleneck.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Design a novel fragmentation-aware 2D bin packing heuristic",
+          "acceptance_criteria": "A design document (design/novel_heuristic.md) proposing at least one novel heuristic that addresses multi-dimensional fragmentation. The design must: (a) define a fragmentation-aware scoring function that accounts for resource imbalance across CPU and RAM dimensions, (b) explain how the heuristic avoids stranding resources on partially-filled hosts, (c) provide theoretical analysis or intuitive justification for why it should outperform Best Fit variants, (d) reference at least 3 papers from sources.bib that motivate the approach (e.g., FGD, Protean, resource imbalance scoring).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement the novel fragmentation-aware heuristic",
+          "acceptance_criteria": "Implementation in src/algorithms/ conforming to the common algorithm interface. Must include: (a) the fragmentation-aware scoring function from the design doc, (b) configurable parameters (e.g., weighting between dimensions, fragmentation penalty), (c) unit tests on synthetic examples demonstrating the heuristic places VMs differently than BF/BFD in fragmentation-prone scenarios, (d) time complexity no worse than O(n * m) per placement where n = VMs and m = hosts.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Design and implement a workload-adaptive placement strategy",
+          "acceptance_criteria": "A second novel approach (src/algorithms/) that adapts placement decisions based on observed workload characteristics. Must: (a) maintain a running profile of recent VM arrivals (e.g., CPU/RAM ratio distribution), (b) adjust scoring or bin selection strategy based on the workload profile (e.g., reserve hosts for anticipated large VMs, pack small VMs more aggressively), (c) include a mechanism to handle workload distribution shifts, (d) have unit tests verifying adaptation behavior when workload characteristics change mid-trace.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement a hybrid approach combining fragmentation-awareness with workload adaptation",
+          "acceptance_criteria": "A combined algorithm (src/algorithms/) that integrates ideas from items 013 and 014. Must: (a) use workload profiling to parameterize the fragmentation-aware scoring, (b) dynamically adjust dimension weights based on which resource is more scarce, (c) include a consolidation/defragmentation trigger when fragmentation exceeds a configurable threshold, (d) conform to the common interface and have unit tests.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Explore VM lifetime prediction to enhance placement decisions",
+          "acceptance_criteria": "Implement a lifetime-aware extension (src/algorithms/ or src/predictors/) inspired by Azure's MLSys 2023 work. Must: (a) use a simple predictor (e.g., exponential moving average of historical lifetimes by VM type) to estimate VM duration, (b) use predicted lifetime to prefer placing short-lived VMs on fragmented hosts (they will free resources soon), (c) demonstrate robustness to prediction errors via tests with noisy lifetime estimates, (d) cite the Azure MLSys 2023 paper in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_017",
+          "description": "Run full-scale experiments on Google ClusterData2019 traces",
+          "acceptance_criteria": "Execute all algorithms (6 baselines + 3-4 novel approaches) on the Google trace sample. Results saved to results/google_trace_results.csv. Minimum 50,000 VM placement events processed. Each algorithm run at least 3 times if stochastic. Record all 5 evaluation metrics from item_009.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Run full-scale experiments on Azure TracesForPacking2020",
+          "acceptance_criteria": "Execute all algorithms on Azure packing traces. Results saved to results/azure_trace_results.csv. Process the full packing trace or a representative sample of at least 50,000 VM events. Record all 5 evaluation metrics. Compare resource fragmentation rates across algorithms.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Perform statistical significance testing on results",
+          "acceptance_criteria": "Apply appropriate statistical tests (e.g., paired t-test or Wilcoxon signed-rank test) comparing each novel approach against the best baseline (BFD or Dot-Product). Results saved to results/statistical_tests.csv. Report p-values and confidence intervals for fragmentation rate improvement. Determine if the target >= 2% fragmentation reduction is statistically significant (p < 0.05).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Conduct ablation studies on novel heuristic components",
+          "acceptance_criteria": "Ablation study isolating contribution of each component: (a) fragmentation-aware scoring alone, (b) workload adaptation alone, (c) lifetime prediction alone, (d) combined approach. Results saved to results/ablation_results.csv. Include a table showing marginal improvement of each component. Identify which component contributes most to fragmentation reduction.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Evaluate scalability and runtime performance",
+          "acceptance_criteria": "Measure wall-clock time and memory usage for each algorithm at different scales: 1K, 10K, 50K, and 100K+ VM events. Results saved to results/scalability_results.csv. Verify that novel heuristics add no more than 2x overhead compared to First Fit. Plot runtime vs. trace size for all algorithms.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Sensitivity analysis on key hyperparameters",
+          "acceptance_criteria": "Vary key parameters of the novel heuristics (e.g., dimension weights, fragmentation threshold, workload window size, lifetime prediction smoothing factor) across at least 5 values each. Results saved to results/sensitivity_results.csv. Identify parameter ranges where performance is robust and ranges where it degrades. Produce heatmaps or line plots for at least 2 parameters.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality visualizations of all results",
+          "acceptance_criteria": "Produce at least 6 figures saved to figures/: (a) bar chart comparing fragmentation rates across all algorithms on both datasets, (b) utilization heatmap showing CPU vs. RAM utilization per host over time, (c) ablation study bar chart, (d) scalability line plot (runtime vs. trace size), (e) sensitivity heatmap for key parameters, (f) time-series plot of host count over the trace duration. All figures must have axis labels, legends, and titles.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Compare results against prior work from literature review",
+          "acceptance_criteria": "A comparison document (results/prior_work_comparison.md) that: (a) tabulates fragmentation rates and utilization achieved by at least 5 prior methods from sources.bib alongside our results, (b) identifies where our approach improves over the state-of-the-art and where it falls short, (c) discusses differences in experimental setup that affect comparability, (d) explicitly addresses whether the 2% fragmentation reduction target was met relative to the best known baseline.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Write comprehensive research report",
+          "acceptance_criteria": "A research report (REPORT.md) of at least 3,000 words containing: (a) Abstract summarizing the problem, approach, and key results, (b) Introduction with motivation and the 2% fragmentation reduction target, (c) Related Work section citing at least 10 entries from sources.bib, (d) Problem Formulation with the formal specification from item_005, (e) Methodology describing all novel approaches, (f) Experimental Setup describing datasets and metrics, (g) Results with tables and figure references, (h) Discussion of findings, limitations, and practical implications, (i) Conclusion with future work directions.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Document reproducibility and create experiment runner",
+          "acceptance_criteria": "Create: (a) a requirements.txt or pyproject.toml listing all Python dependencies, (b) a run_experiments.py script that reproduces all experiments end-to-end (data loading, baseline runs, novel algorithm runs, metric computation, figure generation), (c) a README.md update with setup instructions, data acquisition steps, and commands to reproduce results, (d) verify that running the script from a clean state produces results consistent with the reported figures (within statistical tolerance).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 26,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 26
+  }
+}
