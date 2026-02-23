@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T01:26:03.384845+00:00",
+  "updated_at": "2026-02-23T01:28:06.667969+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -63,8 +63,8 @@
           "id": "item_004",
           "description": "Survey existing open-source MDS implementations, graph libraries, and PACE 2025 solver code",
           "acceptance_criteria": "Document (docs/code_survey.md) identifying at least 5 open-source implementations or repositories: (1) NetworkX dominating set module, (2) at least 2 PACE 2025 solver submissions on GitHub, (3) OGDF or similar C++ planar graph library, (4) at least 1 LP/ILP-based solver. For each: URL, language, algorithmic approach, reported performance, and license.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Code survey in docs/code_survey.md covering 7 implementations: NetworkX, 2 PACE 2025 solvers, OGDF, AWS Labs OR-Tools, PuLP, and PACE instances repo. Each with URL, language, approach, performance, license.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 4,
+    "completed": 5,
     "in_progress": 0,
     "failed": 0,
-    "pending": 23
+    "pending": 22
   }
 }
