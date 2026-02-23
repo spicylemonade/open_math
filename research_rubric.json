@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T20:45:35.854919+00:00",
+  "updated_at": "2026-02-23T20:48:02.120916+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -55,8 +55,8 @@
           "id": "item_003",
           "description": "Survey existing open-source gravity simulation codebases and libraries",
           "acceptance_criteria": "Web search performed for open-source N-body simulators (e.g., REBOUND, Gadget, nbody6). At least 4 existing codebases identified with notes on: language, integration method, force algorithm, and license. Comparison table added to ANALYSIS.md",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Surveyed 6 codebases: REBOUND, Gadget-2, NBODY6++GPU, GravHopper, galpy, pynbody. Comparison table added to ANALYSIS.md section 5.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 2,
+    "completed": 3,
     "in_progress": 0,
     "failed": 0,
-    "pending": 23
+    "pending": 22
   }
 }

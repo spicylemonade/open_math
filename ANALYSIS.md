@@ -118,3 +118,26 @@ Symplectic integrators preserve the geometric structure of Hamiltonian systems �
 | 6 | Barnes & Hut | 1986 | A hierarchical O(N log N) force-calculation algorithm | Tree-code approximation |
 | 7 | Greengard & Rokhlin | 1987 | A fast algorithm for particle simulations | Fast Multipole Method |
 | 8 | Wisdom & Holman | 1991 | Symplectic maps for the N-body problem | Symplectic mapping for planets |
+
+## 5. Survey of Open-Source N-body Simulation Codebases
+
+### Comparison Table
+
+| Code | Language | Integration Method | Force Algorithm | License | Best For |
+|------|----------|-------------------|-----------------|---------|----------|
+| **REBOUND** | C + Python | WHFast, IAS15, Leapfrog, SEI, MERCURIUS | Direct, Barnes-Hut tree | GPL-3.0 | Planetary dynamics, rings, high-precision orbits |
+| **Gadget-2/4** | C | Leapfrog (KDK) | TreePM (tree + particle mesh) | GPL-2.0 | Cosmological N-body/SPH, galaxy formation |
+| **NBODY6++GPU** | Fortran/C | 4th-order Hermite | Direct N-body + KS regularization | MIT | Star clusters, close encounters, million-body |
+| **GravHopper** | Python + C | Leapfrog | Direct, Barnes-Hut tree | MIT | Educational, quick prototyping, galpy integration |
+| **galpy** | Python + C | Orbit integration (RK, symplectic) | Analytic potentials, N-body snapshots | BSD-3 | Galactic dynamics, orbit computation |
+| **pynbody** | Python | N/A (analysis only) | N/A | GPL-3.0 | Post-processing Gadget/PKDGRAV outputs |
+
+### Detailed Notes
+
+**REBOUND** (Rein & Liu, 2012): The most relevant comparison point for this project. It is a modular C library with a Python wrapper that provides multiple integrators and force solvers. Its IAS15 integrator achieves machine-precision accuracy with adaptive time-stepping. The leapfrog integrator in REBOUND uses the standard kick-drift-kick form. REBOUND's modularity (separate gravity modules, collision modules, integrator modules) is an excellent design pattern.
+
+**Gadget-2** (Springel, 2005): The standard cosmological simulation code. Uses a TreePM algorithm combining a hierarchical multipole expansion for short-range forces with a particle mesh FFT for long-range forces. Optimized for large N (millions to billions) on distributed-memory clusters. Overkill for our minimal simulation but a good reference for Barnes-Hut tree implementation.
+
+**NBODY6++GPU** (Wang et al., 2015): State-of-the-art direct N-body code for star clusters. Uses 4th-order Hermite integration with block time-steps and Ahmad-Cohen neighbor schemes. GPU acceleration provides ~33x speedup for regular force computation. Handles close encounters via Kustaanheimo-Stiefel regularization — far beyond our minimal scope.
+
+**GravHopper** (Bailin, 2023): Closest in spirit to our project — a simple Python interface with C backend, supporting both direct summation and Barnes-Hut. Uses leapfrog integration and can generate equilibrium initial conditions (Plummer, Hernquist profiles). Good reference for Python/C hybrid design.
