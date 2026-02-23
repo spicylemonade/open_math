@@ -1,170 +1,181 @@
-# Peer Review: A Minimal N-Body Gravitational Simulator
+# Peer Review: A Minimal N-Body Gravitational Simulator (Revision 1)
 
 **Paper:** "A Minimal N-Body Gravitational Simulator: Integrator Comparison, Hierarchical Force Computation, and Adaptive Time-Stepping"
 **Reviewer:** Automated Peer Reviewer
 **Date:** 2026-02-23
+**Review Round:** 2 (post-revision)
+
+---
+
+## Status of Previously Required Revisions
+
+| # | Issue from Round 1 | Status |
+|---|---------------------|:------:|
+| 1 | Bibliography rendering defects (unescaped math in `note` fields) | **FIXED** — `note` fields removed; bibtex now runs cleanly with only one minor warning |
+| 2 | Figure 6(b) caption mismatch (claimed multi-body cluster, showed two-body orbit) | **FIXED** — Caption now correctly describes "Two-body elliptical orbit (e=0.5) showing the trajectory of Body 1 around the centre of mass (Body 0)" |
+
+Both critical issues from Round 1 have been properly addressed.
 
 ---
 
 ## Criterion Scores
 
-| # | Criterion | Score (1-5) | Summary |
+| # | Criterion | Score (1–5) | Comments |
 |---|-----------|:-----------:|---------|
-| 1 | Completeness | **5** | All required sections present with thorough coverage |
-| 2 | Technical Rigor | **5** | Methods formally described with equations; experiments reproducible |
-| 3 | Results Integrity | **5** | All figures/tables verified against raw data in `results/` |
-| 4 | Citation Accuracy | **5** | All 15 citations verified as real via web search |
-| 5 | Compilation | **3** | PDF compiles (14 pages) but bibliography has rendering defects |
-| 6 | Writing Quality | **4** | Professional tone, clear structure; minor bibliography formatting issues |
-| 7 | Figure Quality | **4** | Main figures are publication-quality; one caption mismatch in Fig. 6(b) |
+| 1 | **Completeness** | 5 | All required sections present: Abstract, Introduction, Related Work, Background, Method, Experimental Setup, Results, Discussion, Conclusion, References. Additionally includes notation table, algorithm pseudocode, and architecture diagram. |
+| 2 | **Technical Rigor** | 5 | Methods formally described with equations (Eqs. 1–8). All three integrators specified with update equations. Barnes–Hut opening-angle criterion and adaptive time-stepping formula properly derived. Algorithm 1 provides pseudocode. Experiments are fully reproducible with stated parameters. |
+| 3 | **Results Integrity** | 5 | Every numerical claim cross-checked against raw JSON data in `results/`. All values match precisely. Zero discrepancies found. See detailed verification below. |
+| 4 | **Citation Accuracy** | 4 | All 15 citations verified via web search as real publications with correct metadata. One minor issue: Quinn et al. (1997) is an arXiv-only preprint with no journal field, producing a bibtex warning. See full verification report below. |
+| 5 | **Compilation** | 5 | LaTeX compiles cleanly via pdflatex → bibtex → pdflatex → pdflatex. Output: 13 pages, 420,959 bytes. Only one bibtex warning (empty journal for Quinn1997). All figures included successfully. One minor overfull hbox (5.96pt) in Table 2 — cosmetic only. |
+| 6 | **Writing Quality** | 5 | Professional academic tone throughout. Clear logical flow from problem formulation through experiments to conclusions. Hypotheses stated quantitatively and revisited systematically. Limitations section is honest (5 specific limitations). Self-contained with notation table. |
+| 7 | **Figure Quality** | 4 | Figures are publication-quality with proper labels, legends, distinct color palettes, log-scale axes, and multi-panel layouts. Minor deductions for: (a) analytical ellipse barely visible in trajectory_kepler.png due to near-perfect overlap, (b) softening bar chart could use a connecting trend line. These are polish items only. |
 
 ---
 
-## Detailed Evaluation
+## Citation Verification Report
 
-### 1. Completeness (5/5)
+Each entry in `sources.bib` was independently verified via web search:
 
-All required sections are present and substantive:
+| # | Citation Key | Status | Verification Details |
+|---|-------------|:------:|---------------------|
+| 1 | `Aarseth2003` | **VERIFIED** | Sverre J. Aarseth, "Gravitational N-Body Simulations: Tools and Algorithms," Cambridge University Press, 2003. Confirmed via CUP catalog and NASA ADS. DOI 10.1017/CBO9780511535246 resolves correctly. ISBN 978-0521432726 confirmed. |
+| 2 | `BarnesHut1986` | **VERIFIED** | Josh Barnes & Piet Hut, "A Hierarchical O(N log N) Force-Calculation Algorithm," Nature 324(6096), 446–449, 1986. Confirmed via Nature.com and NASA ADS. DOI 10.1038/324446a0 resolves correctly. |
+| 3 | `Verlet1967` | **VERIFIED** | Loup Verlet, "Computer 'Experiments' on Classical Fluids. I. Thermodynamical Properties of Lennard-Jones Molecules," Physical Review 159(1), 98–103, 1967. Confirmed via APS and SCIRP. DOI 10.1103/PhysRev.159.98 resolves correctly. |
+| 4 | `WisdomHolman1991` | **VERIFIED** | Jack Wisdom & Matthew J. Holman, "Symplectic Maps for the N-Body Problem," Astronomical Journal 102, 1528–1538, 1991. Confirmed via NASA ADS and NTRS. DOI 10.1086/115978 resolves correctly. |
+| 5 | `Springel2005` | **VERIFIED** | Volker Springel, "The Cosmological Simulation Code GADGET-2," MNRAS 364(4), 1105–1134, 2005. Confirmed via Oxford Academic and NASA ADS. DOI 10.1111/j.1365-2966.2005.09655.x resolves correctly. |
+| 6 | `ReinLiu2012` | **VERIFIED** | Hanno Rein & Shang-Fei Liu, "REBOUND: An Open-Source Multi-Purpose N-Body Code for Collisional Dynamics," A&A 537, A128, 2012. Confirmed via A&A journal and arXiv 1110.4876. DOI 10.1051/0004-6361/201118085 resolves correctly. |
+| 7 | `ChencinerMontgomery2000` | **VERIFIED** | Alain Chenciner & Richard Montgomery, "A Remarkable Periodic Solution of the Three-Body Problem in the Case of Equal Masses," Annals of Mathematics 152(3), 881–901, 2000. Confirmed via Princeton and arXiv math/0011268. DOI 10.2307/2661357 resolves correctly. |
+| 8 | `DehnenRead2011` | **VERIFIED** | Walter Dehnen & Justin I. Read, "N-Body Simulations of Gravitational Dynamics," European Physical Journal Plus 126, 55, 2011. Confirmed via Springer and NASA ADS. DOI 10.1140/epjp/i2011-11055-3 resolves correctly. |
+| 9 | `HairerLubichWanner2006` | **VERIFIED** | Ernst Hairer, Christian Lubich & Gerhard Wanner, "Geometric Numerical Integration," 2nd ed., Springer, 2006. Springer Series in Computational Mathematics Vol. 31. Confirmed via Springer catalog. DOI 10.1007/3-540-30666-8 resolves correctly. |
+| 10 | `GreengardRokhlin1987` | **VERIFIED** | Leslie Greengard & Vladimir Rokhlin, "A Fast Algorithm for Particle Simulations," J. Comput. Phys. 73(2), 325–348, 1987. Confirmed via ScienceDirect and NASA ADS. DOI 10.1016/0021-9991(87)90140-9 resolves correctly. |
+| 11 | `ReinSpiegel2015` | **VERIFIED** | Hanno Rein & David S. Spiegel, "IAS15: A Fast, Adaptive, High-Order Integrator for Gravitational Dynamics," MNRAS 446(2), 1424–1437, 2015. Confirmed via Oxford Academic. DOI 10.1093/mnras/stu2164 resolves correctly. |
+| 12 | `Plummer1911` | **VERIFIED** | H. C. Plummer, "On the Problem of Distribution in Globular Star Clusters," MNRAS 71(5), 460–470, 1911. Confirmed via Oxford Academic and NASA ADS. DOI 10.1093/mnras/71.5.460 resolves correctly. |
+| 13 | `Dehnen2001` | **VERIFIED** | Walter Dehnen, "Towards Optimal Softening in Three-Dimensional N-Body Codes. I. Minimizing the Force Error," MNRAS 324(2), 273–291, 2001. Confirmed via Oxford Academic. DOI 10.1046/j.1365-8711.2001.04237.x resolves correctly. |
+| 14 | `Quinn1997` | **VERIFIED (minor issue)** | Thomas Quinn et al., "Time Stepping N-Body Simulations," arXiv astro-ph/9710043, 1997. Confirmed via arXiv and NASA ADS. This is an arXiv-only preprint — never formally published in a journal. BibTeX entry lacks journal field, producing a bibtex warning. |
+| 15 | `MakinoAarseth1992` | **VERIFIED** | Junichiro Makino & Sverre J. Aarseth, "On a Hermite Integrator with Ahmad-Cohen Scheme for Gravitational Many-Body Problems," PASJ 44, 141–151, 1992. Confirmed via NASA ADS and Semantic Scholar. |
 
-- **Abstract**: Concise, quantitative summary of all three hypotheses and key results.
-- **Introduction** (Sec. 1): Motivates the work, lists five specific contributions, and outlines the paper.
-- **Related Work** (Sec. 2): Covers integration methods, force algorithms, softening, and adaptive time-stepping with appropriate citations.
-- **Background** (Sec. 3): Formalizes the N-body problem, conserved quantities, and notation (Table 1).
-- **Method** (Sec. 4): Describes all three integrators with equations, Barnes-Hut algorithm, adaptive time-stepping, and softening. Includes Algorithm 1 pseudocode and architecture diagram (Fig. 1).
-- **Experimental Setup** (Sec. 5): Defines test problems, configurations (Table 2), baselines, and hardware.
-- **Results** (Sec. 6): Six subsections covering H1, H2, H3, validation, softening, and literature comparison, each with tables and figures.
-- **Discussion** (Sec. 7): Three implications, five limitations, and comparison with prior work.
-- **Conclusion** (Sec. 8): Summarizes hypothesis outcomes and lists six future work directions.
-- **References**: 15 entries, all used in-text.
-
-### 2. Technical Rigor (5/5)
-
-- All three integrators (Euler, Leapfrog KDK, RK4) are described with formal update equations (Eqs. 2-8).
-- The gravitational acceleration with Plummer softening is given in Eq. 1; energy and momentum in Eq. 2.
-- Barnes-Hut opening-angle criterion is stated precisely.
-- Adaptive time-stepping formula (Eq. 9) is clearly defined with bounds.
-- Algorithm 1 provides pseudocode for all three integrators.
-- Experimental grid is well-defined: 3 integrators x 4 dt values x 1000 periods = 12 configurations for H1.
-- Convergence order of RK4 verified (16x error reduction when halving dt).
-- All experiments are reproducible via `make benchmark` and `make figures`.
-
-### 3. Results Integrity (5/5)
-
-Every numerical claim in the paper was cross-checked against the raw data files:
-
-| Claim in Paper | Data File | Verified Value | Match? |
-|---|---|---|---|
-| Leapfrog dt=0.001: dE/E = 9.74e-7 | `integrator_comparison.json` | 9.7428e-7 | YES |
-| Euler dt=0.001: dE/E = 0.647 (100 per.) | `integrator_comparison.json` | 0.6466 | YES |
-| RK4 dt=0.0005: dE/E = 5.37e-13 | `integrator_comparison.json` | 5.3744e-13 | YES |
-| BH crossover at N=100 | `scalability.json` | crossover_N: 100 | YES |
-| BH speedup 6.34x at N=1000 | `scalability.json` | 0.549/0.0866 = 6.34x | YES |
-| BH force RMS 3.07% at N=1000 | `scalability.json` | 0.030738 | YES |
-| Adaptive: 62,746 steps (90% reduction) | `adaptive_comparison.json` | 62746 / 628318 = 10% | YES |
-| Adaptive dE/E = 9.76e-4 | `adaptive_comparison.json` | 9.758e-4 | YES |
-| Circular orbit error 2.92e-6 | `validation.json` | 2.917e-6 | YES |
-| LRL drift 0.023 deg | `validation.json` | 0.02267 deg | YES |
-| Figure-eight dE/E = 8.99e-14 | `validation.json` | 8.988e-14 | YES |
-| Softening eps=0.1: dE/E = 4.74e-3 | `softening_analysis.json` | 0.004744 | YES |
-
-**No fabricated results detected.** All tables and figures faithfully represent the underlying data.
-
-### 4. Citation Accuracy (5/5)
-
-All 15 entries in `sources.bib` were individually verified via web search. Every citation is a real, published work with correct metadata.
-
-#### Citation Verification Report
-
-| BibTeX Key | Title | Authors | Year | Venue | DOI/URL | Status |
-|---|---|---|---|---|---|---|
-| `Aarseth2003` | Gravitational N-Body Simulations: Tools and Algorithms | Sverre J. Aarseth | 2003 | Cambridge Univ. Press | 10.1017/CBO9780511535246 | **VERIFIED** |
-| `BarnesHut1986` | A Hierarchical O(N log N) Force-Calculation Algorithm | Josh Barnes, Piet Hut | 1986 | Nature 324, 446-449 | 10.1038/324446a0 | **VERIFIED** (minor: issue number listed as 4, actual is 6096) |
-| `Verlet1967` | Computer "Experiments" on Classical Fluids. I. ... | Loup Verlet | 1967 | Phys. Rev. 159, 98-103 | 10.1103/PhysRev.159.98 | **VERIFIED** |
-| `WisdomHolman1991` | Symplectic Maps for the N-Body Problem | Jack Wisdom, Matthew J. Holman | 1991 | Astron. J. 102, 1528-1538 | 10.1086/115978 | **VERIFIED** |
-| `Springel2005` | The Cosmological Simulation Code GADGET-2 | Volker Springel | 2005 | MNRAS 364, 1105-1134 | 10.1111/j.1365-2966.2005.09655.x | **VERIFIED** |
-| `ReinLiu2012` | REBOUND: An Open-Source Multi-Purpose N-Body Code ... | Hanno Rein, Shang-Fei Liu | 2012 | A&A 537, A128 | 10.1051/0004-6361/201118085 | **VERIFIED** |
-| `ChencinerMontgomery2000` | A Remarkable Periodic Solution of the Three-Body Problem ... | Alain Chenciner, Richard Montgomery | 2000 | Ann. Math. 152, 881-901 | 10.2307/2661357 | **VERIFIED** |
-| `DehnenRead2011` | N-Body Simulations of Gravitational Dynamics | Walter Dehnen, Justin I. Read | 2011 | Eur. Phys. J. Plus 126, 55 | 10.1140/epjp/i2011-11055-3 | **VERIFIED** |
-| `HairerLubichWanner2006` | Geometric Numerical Integration (2nd ed.) | Ernst Hairer, Christian Lubich, Gerhard Wanner | 2006 | Springer SSCM vol. 31 | 10.1007/3-540-30666-8 | **VERIFIED** |
-| `GreengardRokhlin1987` | A Fast Algorithm for Particle Simulations | Leslie Greengard, Vladimir Rokhlin | 1987 | J. Comput. Phys. 73, 325-348 | 10.1016/0021-9991(87)90140-9 | **VERIFIED** |
-| `ReinSpiegel2015` | IAS15: A Fast, Adaptive, High-Order Integrator ... | Hanno Rein, David S. Spiegel | 2015 | MNRAS 446, 1424-1437 | 10.1093/mnras/stu2164 | **VERIFIED** |
-| `Plummer1911` | On the Problem of Distribution in Globular Star Clusters | H. C. Plummer | 1911 | MNRAS 71, 460-470 | 10.1093/mnras/71.5.460 | **VERIFIED** |
-| `Dehnen2001` | Towards Optimal Softening in 3D N-Body Codes. I. ... | Walter Dehnen | 2001 | MNRAS 324, 273-291 | 10.1046/j.1365-8711.2001.04237.x | **VERIFIED** |
-| `Quinn1997` | Time Stepping N-Body Simulations | Thomas Quinn, Neal Katz, Joachim Stadel, George Lake | 1997 | arXiv:astro-ph/9710043 | arxiv.org/abs/astro-ph/9710043 | **VERIFIED** |
-| `MakinoAarseth1992` | On a Hermite Integrator with Ahmad-Cohen Scheme ... | Junichiro Makino, Sverre J. Aarseth | 1992 | PASJ 44, 141-151 | ADS: 1992PASJ...44..141M | **VERIFIED** |
-
-**All 15 citations verified. Zero fabricated references.** All in-text `\cite`/`\citet`/`\citep` commands correspond to entries in `sources.bib`.
-
-One minor bibliographic note: `BarnesHut1986` lists `number = {4}` but the actual Nature issue number is 6096. This does not affect the rendered citation (Nature articles are cited by volume and page).
-
-### 5. Compilation (3/5)
-
-The PDF compiles successfully to 14 well-formatted pages. However:
-
-- **Bibliography rendering defect**: There is a LaTeX error (`Extra }, or forgotten \endgroup`) caused by unescaped math expressions (e.g., `O(N^2)`, `10^9`, `r^2 + eps^2`) in the `note` fields of several BibTeX entries. This causes text in multiple reference entries to run together without spaces in the PDF bibliography. Affected entries include: `BarnesHut1986`, `GreengardRokhlin1987`, `Plummer1911`, `ReinSpiegel2015`, `Springel2005`, `Verlet1967`, and `Dehnen2001`.
-- The body text, figures, tables, equations, and algorithm are all properly rendered.
-- The issue is confined to the references section and is easily fixable by either (a) removing the `note` fields from BibTeX entries, or (b) properly escaping math expressions within them.
-
-### 6. Writing Quality (4/5)
-
-**Strengths:**
-- Professional academic tone throughout; reads like a genuine journal submission.
-- Logical flow from problem formulation through experiments to conclusions.
-- Hypotheses are stated quantitatively upfront and revisited systematically in results.
-- Tables are well-designed with clear headers and boldface highlighting of key results.
-- Limitations section is honest and thorough (5 specific limitations).
-- The paper is self-contained with a useful notation table (Table 1).
-
-**Minor issues:**
-- The garbled text in the bibliography section detracts from the professional presentation.
-- The architecture diagram (Fig. 1, TikZ) is functional but could be more polished for a top venue.
-
-### 7. Figure Quality (4/5)
-
-The five main figures are well above the default matplotlib baseline:
-
-- **Fig. 2 (energy_conservation)**: Excellent three-panel layout with distinct colors per integrator, different line styles for dt values, log-scale y-axis. Clearly shows bounded leapfrog vs. drifting Euler.
-- **Fig. 3 (scalability)**: Dual-panel with log-log timing plot and speedup bar chart. Includes O(N^2) and O(N log N) reference lines. Annotated bars.
-- **Fig. 4 (adaptive_timestep)**: Filled-area plot of dt variation with fixed-dt reference line, plus step-count bar chart with count annotations. Informative.
-- **Fig. 5 (softening_effects)**: Dual-panel bar charts with log-scale and threshold line. Clear comparison across softening values.
-- **Fig. 6(a) (trajectory_kepler)**: Clean Kepler orbit with analytical overlay, central body marker, and start position.
-
-**Issue identified:**
-- **Fig. 6(b) caption mismatch**: The caption reads "Example multi-body trajectory from the random cluster simulation, illustrating the complex gravitational scattering dynamics captured by the simulator." However, the actual figure (`trajectory_example.png`) shows a simple two-body elliptical orbit (e=0.5) with labels "Body 0" and "Body 1" — not a random multi-body cluster. This is a factual error in the caption that must be corrected.
+**Citation Summary:** 15/15 verified as real. 0 fabricated or hallucinated references. All in-text `\cite`/`\citet`/`\citep` commands have corresponding entries in `sources.bib`.
 
 ---
 
-## Overall Verdict: **REVISE**
+## Detailed Results Verification
 
-### Summary
+### H1: Integrator Comparison (Energy Conservation)
 
-This is a strong, well-structured research paper with excellent experimental design, rigorous methodology, and fully verified results and citations. The core science is sound and the paper would be suitable for publication after addressing the issues below. The two issues requiring revision are both easily fixable.
+| Claim in Paper | Value in `results/integrator_comparison.json` | Match? |
+|----------------|----------------------------------------------|:------:|
+| Leapfrog dE = 9.74e-7 at dt=0.001, 1000 periods | `final_energy_error: 9.742784988606313e-07` | YES |
+| Euler dE = 0.65 at dt=0.001, 100 periods | `final_energy_error: 0.6466494572927386` | YES |
+| RK4 dE = 5.37e-13 at dt=0.0005 | `final_energy_error: 5.374424050328533e-13` | YES |
+| Leapfrog dE = 2.69e-4 at dt=0.01 | `final_energy_error: 0.000268906451350496` | YES |
+| Leapfrog dE = 6.67e-5 at dt=0.005 | `final_energy_error: 6.671041094349048e-05` | YES |
+| Leapfrog dE = 2.06e-7 at dt=0.0005 | `final_energy_error: 2.0552294480334814e-07` | YES |
+| RK4 dE = 3.04e-6 at dt=0.01 | `final_energy_error: 3.042245023785157e-06` | YES |
+| RK4 dE = 9.54e-8 at dt=0.005 | `final_energy_error: 9.544520266163372e-08` | YES |
+| RK4 dE = 3.06e-11 at dt=0.001 | `final_energy_error: 3.055332544040985e-11` | YES |
+| Euler dE = 1.01 at dt=0.01, 1000 periods | `final_energy_error: 1.0115255225357564` | YES |
+| Euler dE = 1.00 at dt=0.005, 1000 periods | `final_energy_error: 0.9979705819427368` | YES |
+| Euler dE = 5.07e-1 at dt=0.0005, 100 periods | `final_energy_error: 0.506591264556507` | YES |
 
-### Required Revisions
+### H2: Barnes–Hut Scalability
 
-1. **Fix bibliography rendering (Critical)**
-   The `note` fields in `sources.bib` contain unescaped LaTeX math expressions (`O(N^2)`, `10^9`, `r^2 + eps^2`, `N^{-0.3}`, `dt^2`, etc.) that cause an `Extra }, or forgotten \endgroup` error during compilation. This results in garbled, concatenated text in multiple reference entries in the PDF.
-   **Fix**: Either (a) remove the verbose `note` fields entirely (they are not standard in published bibliographies), or (b) wrap all math expressions in proper `\$...\$` delimiters and escape special characters. Option (a) is recommended as the notes are excessively long for a bibliography.
+| Claim in Paper | Value in `results/scalability.json` | Match? |
+|----------------|-------------------------------------|:------:|
+| Crossover at N=100 | `crossover_N: 100` | YES |
+| 6.3x speedup at N=1000 | 0.549081 / 0.086648 = 6.34x | YES |
+| Force RMS error 3.07% at N=1000 | `force_rms_error_vs_direct: 0.030738` (3.07%) | YES |
+| Direct N=10: 5.5e-5s | `wall_time_seconds: 5.5e-05` | YES |
+| BH N=10: 1.68e-4s | `wall_time_seconds: 0.000168` | YES |
+| Direct N=100: 5.27e-3s | `wall_time_seconds: 0.005269` | YES |
+| BH N=100: 4.21e-3s | `wall_time_seconds: 0.004209` | YES |
+| Force RMS 0.69% at N=10 | `force_rms_error_vs_direct: 0.006863` (0.69%) | YES |
 
-2. **Fix Figure 6(b) caption (Critical)**
-   The caption claims the figure shows "a multi-body cluster showing chaotic gravitational interactions" but the actual `trajectory_example.png` figure displays a two-body elliptical orbit. Either:
-   (a) Replace the figure with an actual multi-body cluster trajectory, or
-   (b) Update the caption to accurately describe what is shown (a two-body elliptical orbit).
+### H3: Adaptive Time-Stepping
 
-### Minor Suggestions (Non-blocking)
+| Claim in Paper | Value in `results/adaptive_comparison.json` | Match? |
+|----------------|---------------------------------------------|:------:|
+| Fixed: 628,318 steps | `total_steps: 628318` | YES |
+| Adaptive: 62,746 steps | `total_steps: 62746` | YES |
+| 90% reduction | `step_reduction_percent: 90.0` | YES |
+| Adaptive dE = 9.76e-4 | `final_energy_error: 0.000975796880930298` | YES |
+| Fixed dE = 2.33e-3 | `final_energy_error: 0.0023340955487139428` | YES |
+| Fixed wall time: 17.88s | `wall_time_seconds: 17.88` | YES |
+| Adaptive wall time: 1.36s | `wall_time_seconds: 1.36` | YES |
 
-3. **Barnes-Hut issue number**: In `sources.bib`, `BarnesHut1986` has `number = {4}` but the actual Nature issue is 6096. Consider correcting to `number = {6096}`.
+### Physical Validation
 
-4. **Quinn et al. 1997**: This preprint (arXiv:astro-ph/9710043) does not appear to have been published in a peer-reviewed journal. Consider adding a note or finding the published version if one exists.
+| Claim in Paper | Value in `results/validation.json` | Match? |
+|----------------|-------------------------------------|:------:|
+| Circular orbit period error 2.92e-6 | `relative_error: 2.9166588896568726e-06` | YES |
+| LRL vector drift 0.023 deg | `angle_difference_deg: 0.022666801155502347` | YES |
+| Figure-eight dE = 8.99e-14 | `energy_error: 8.987760472889877e-14` | YES |
 
-5. **Architecture diagram (Fig. 1)**: The TikZ diagram is functional but could benefit from slightly more visual polish (grouping boxes, colored regions for modules) for a top-tier venue.
+### Softening Analysis
+
+| Claim in Paper | Value in `results/softening_analysis.json` | Match? |
+|----------------|---------------------------------------------|:------:|
+| eps=0: dE = 4.65e3, unstable | `relative_energy_error: 4649.99`, `stability: "unstable"` | YES |
+| eps=1e-4: dE = 5.77e3, unstable | `relative_energy_error: 5770.79`, `stability: "unstable"` | YES |
+| eps=1e-3: dE = 4.59e3, unstable | `relative_energy_error: 4588.73`, `stability: "unstable"` | YES |
+| eps=1e-2: dE = 12.2, unstable | `relative_energy_error: 12.19`, `stability: "unstable"` | YES |
+| eps=0.1: dE = 4.74e-3, stable | `relative_energy_error: 0.004744`, `stability: "stable"` | YES |
+| eps=0.1: Max |F| = 245 | `max_force_magnitude: 245.38` | YES |
+
+**All numerical claims verified. Zero discrepancies detected.**
 
 ---
 
-### Justification for REVISE (not REJECT)
+## Strengths
 
-- All scientific content is correct and verified
-- All citations are real and accurate
-- All results match raw data with zero discrepancies
-- The paper structure and writing quality are publication-ready
-- The required fixes are purely presentational (bibliography formatting + one caption) and can be addressed in a single revision pass
+1. **Exceptional completeness.** All required sections present with thorough detail. Notation table (Table 1), algorithm pseudocode (Algorithm 1), and architecture diagram (Figure 1) are excellent additions not always found in comparable papers.
+
+2. **Strong experimental design.** The 12-configuration grid (3 integrators x 4 dt values) is systematic and well-motivated. The decision to limit Euler to 100 periods at small dt is scientifically justified and honestly reported.
+
+3. **Rigorous validation.** Three independent validation tests (orbital period, LRL vector, figure-eight stability) provide strong evidence of correctness. Comparison with REBOUND, NBODY6, and GADGET-2 benchmarks is appropriate and well-documented.
+
+4. **Perfect data integrity.** Every numerical value in the paper matches the raw results files exactly. No rounding errors, embellishment, or fabrication.
+
+5. **Honest limitations.** Five specific limitations are clearly enumerated (2D-only, pure Python, no individual timesteps, fixed opening angle, no regularization).
+
+6. **All citations verified.** Every bibliography entry is a real, correctly attributed publication.
+
+7. **Publication-quality figures.** Consistent color palettes, proper legends, labeled axes, log-scale where appropriate, multi-panel layouts, and line-style differentiation.
+
+8. **Round 1 issues fully resolved.** Both critical issues (bibliography rendering, caption mismatch) have been properly fixed.
+
+---
+
+## Minor Suggestions (Non-blocking)
+
+1. **Quinn1997 BibTeX warning:** Add `note = {arXiv preprint}` or `journal = {arXiv e-prints}` to suppress the bibtex warning about the empty journal field.
+
+2. **MakinoAarseth1992 missing DOI:** Adding `doi = {10.1093/pasj/44.2.141}` would improve bibliographic completeness.
+
+3. **Softening exponent:** Line 166 states softening "scales as $N^{-0.3}$" citing Dehnen (2001). The original Dehnen paper derives an optimal softening scaling more nuanced than a single exponent (it depends on dimensionality, kernel choice, and the quantity being optimized). Consider verifying this specific exponent or citing the relevant equation from Dehnen (2001).
+
+4. **Trajectory figure overlay:** In Fig. 7a, the "Analytical" ellipse in the legend is nearly invisible because the simulated trajectory overlaps it almost perfectly. Consider using a thicker dashed line or an inset zoom to make the comparison visible.
+
+5. **Table 2 overfull hbox:** Minor cosmetic issue (5.96pt overflow). Could be fixed with `\resizebox` or slight column adjustment.
+
+---
+
+## Overall Verdict: **ACCEPT**
+
+### Justification
+
+This paper meets publication standards across all seven evaluation criteria, with scores of 4–5 on every criterion. The minimum threshold of 3+ on all criteria is comfortably exceeded.
+
+**Key factors supporting acceptance:**
+
+- All required sections are present and well-developed (Completeness: 5/5)
+- Methods are formally specified with equations and pseudocode (Technical Rigor: 5/5)
+- Every numerical claim verified against raw data with zero discrepancies (Results Integrity: 5/5)
+- All 15 citations verified as real via web search (Citation Accuracy: 4/5)
+- LaTeX compiles cleanly to a well-formatted 13-page PDF (Compilation: 5/5)
+- Professional academic writing with clear logical flow (Writing Quality: 5/5)
+- Publication-quality figures with proper styling (Figure Quality: 4/5)
+- All three hypotheses confirmed with strong quantitative evidence
+- Validated against analytical solutions and published benchmarks (REBOUND, NBODY6, GADGET-2)
+- Both critical issues from Round 1 have been fully resolved
+
+The minor suggestions above are editorial recommendations that do not affect the scientific contribution or warrant another revision cycle.
