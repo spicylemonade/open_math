@@ -1,0 +1,30 @@
+{
+  "eps=0.0": {
+    "epsilon": 0.0,
+    "has_nan_inf": false,
+    "max_relative_energy_error": 586.9751813286052,
+    "final_relative_energy_error": 582.0279332238067,
+    "n_steps_completed": 5000
+  },
+  "eps=0.01": {
+    "epsilon": 0.01,
+    "has_nan_inf": false,
+    "max_relative_energy_error": 85.13346262937883,
+    "final_relative_energy_error": 79.51941825135427,
+    "n_steps_completed": 5000
+  },
+  "eps=0.05": {
+    "epsilon": 0.05,
+    "has_nan_inf": false,
+    "max_relative_energy_error": 0.10013086926724102,
+    "final_relative_energy_error": 1.5595927359178221e-06,
+    "n_steps_completed": 5000
+  },
+  "eps=0.1": {
+    "epsilon": 0.1,
+    "has_nan_inf": false,
+    "max_relative_energy_error": 0.006216633168648324,
+    "final_relative_energy_error": 2.302894088150987e-07,
+    "n_steps_completed": 5000
+  }
+}

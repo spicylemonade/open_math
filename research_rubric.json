@@ -157,8 +157,8 @@
           "id": "item_014",
           "description": "Implement gravitational softening to handle close encounters",
           "acceptance_criteria": "A configurable softening parameter epsilon added to the force computation (r^2 + eps^2 denominator). Demonstrated on a 3-body near-collision scenario: simulation completes without NaN/Inf. Analysis of softening parameter's effect on energy conservation at 3 different epsilon values saved to results/softening_analysis.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Softening tested on 3-body near-collision. eps=0: |dE/E|=587, eps=0.01: 85, eps=0.05: 0.1, eps=0.1: 0.006. No NaN/Inf. Results in results/softening_analysis.json",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 13,
+    "completed": 14,
     "in_progress": 0,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
