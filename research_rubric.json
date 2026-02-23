@@ -110,8 +110,8 @@
           "id": "item_009",
           "description": "Implement Forward Euler time integration as the baseline integrator",
           "acceptance_criteria": "A Forward Euler integrator that advances positions and velocities by one time step. Verified on a circular two-body orbit: orbit completes approximately one period with visible energy drift. At least 2 unit tests confirming position update correctness",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sim/integrators.py with euler function. 3 tests: position update, velocity update, energy drift on Kepler orbit",
           "error": null
         },
         {
@@ -268,8 +268,8 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 8,
-    "in_progress": 1,
+    "completed": 9,
+    "in_progress": 0,
     "failed": 0,
     "pending": 16
   }
