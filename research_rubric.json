@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T16:15:00Z",
+  "updated_at": "2026-02-23T16:14:38.826929+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T16:11:00Z",
+      "completed_at": "2026-02-23T16:14:38.826904+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and establish project scaffold",
+          "acceptance_criteria": "A written document (README.md or ARCHITECTURE.md) listing all directories (figures/, results/, etc.), their intended purpose, and the chosen programming language/framework with justification. Must specify Python 3.10+ with OR-Tools or a comparable solver library.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formally define the JSSP-SDST problem and its mathematical formulation",
+          "acceptance_criteria": "A file problem_definition.md exists containing: (1) the mixed-integer programming formulation with decision variables, objective function (minimize makespan), and all constraints including sequence-dependent setup time matrices S_{k}[i][j]; (2) distinction from standard JSSP; (3) the disjunctive graph representation extended with setup arcs. Must reference at least 3 foundational papers (e.g., Allahverdi et al. 2008 survey, Ovacik & Uzsoy 1997, Balas & Vazacopoulos 1998).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review on JSSP-SDST metaheuristics via web search",
+          "acceptance_criteria": "A literature_review.md file summarizing at least 15 papers covering: (a) tabu search approaches (Nowicki & Smutnicki, Bo\u017cejko et al.), (b) simulated annealing variants, (c) genetic/evolutionary algorithms (Bierwirth, Gon\u00e7alves et al.), (d) ant colony optimization, (e) hybrid/matheuristic methods, (f) dispatching rules for SDST (ATCS, apparent tardiness cost with setups). Each entry must include the paper title, year, key contribution, and reported best results on benchmark instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted literature",
+          "acceptance_criteria": "A valid sources.bib file exists in the repo root containing at least 10 BibTeX entries with correct fields (author, title, journal/booktitle, year, doi where available). Entries must span at least 4 distinct research groups and cover years from 1990 to 2024+. The file must parse without errors using a BibTeX validator.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Survey and catalog existing open-source JSSP/SDST codebases and benchmark instance sets",
+          "acceptance_criteria": "A benchmarks.md file listing: (1) at least 5 open-source repositories or libraries for JSSP solving (e.g., OR-Tools, JSSPLib, jsp-framework), (2) at least 3 standard benchmark instance sets with SDST support (Taillard, Lawrence, Demirkol et al., or SDST-specific sets from Ovacik-Uzsoy or Kim-Bobrowski), (3) for each benchmark set: number of instances, size range (jobs x machines), and best-known solutions where published. All sources cited in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Identify the gap in current JSSP-SDST approaches and formulate research hypotheses",
+          "acceptance_criteria": "A research_hypotheses.md file containing: (1) at least 3 identified gaps or limitations in existing methods (e.g., poor neighborhood structures for SDST, lack of setup-aware dispatching, no learning-based approaches), (2) at least 2 concrete hypotheses (e.g., 'A neighborhood operator that groups jobs by setup similarity will reduce makespan by >1% on Taillard instances compared to standard swap/insert'), (3) rationale grounded in literature review findings with specific citations.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement JSSP-SDST instance parser and data model",
+          "acceptance_criteria": "A Python module (e.g., src/instance.py) that: (1) parses at least 2 standard benchmark formats (Taillard-style and OR-Library style), (2) supports sequence-dependent setup time matrices per machine, (3) includes a JSSPInstance class with fields for n_jobs, n_machines, processing_times[j][m], setup_times[m][i][j], (4) has unit tests covering at least 3 instance sizes (small <=6x6, medium <=15x10, large <=30x15), (5) can generate random SDST instances with configurable setup-to-processing-time ratios.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement schedule representation and makespan evaluator",
+          "acceptance_criteria": "A Python module (e.g., src/schedule.py) that: (1) represents a schedule as a permutation-based encoding (operation sequence or job permutation per machine), (2) computes makespan including sequence-dependent setup times in O(n*m) time via topological ordering on the disjunctive graph, (3) validates schedule feasibility (all operations present, precedence constraints satisfied), (4) unit tests verify makespan computation against at least 3 hand-computed examples with known optimal values.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement baseline dispatching rules for JSSP-SDST",
+          "acceptance_criteria": "A Python module (e.g., src/dispatching.py) implementing at least 5 dispatching/priority rules: (1) SPT (Shortest Processing Time), (2) LPT (Longest Processing Time), (3) EDD (Earliest Due Date), (4) MDD (Modified Due Date), (5) ATCS (Apparent Tardiness Cost with Setups). Each rule must produce a valid complete schedule. Tested on at least 3 benchmark instances with results logged to results/ directory as CSV.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement baseline metaheuristics: tabu search and simulated annealing",
+          "acceptance_criteria": "A Python module (e.g., src/metaheuristics.py) with: (1) Tabu search using N7 neighborhood (swap critical operations) adapted for SDST \u2014 must maintain tabu tenure, aspiration criterion, and iterate for configurable max_iterations; (2) Simulated annealing with geometric cooling schedule and swap/insert neighborhoods; (3) both methods accept a JSSPInstance and return a Schedule with makespan; (4) reproducible with random seed parameter; (5) tested on ft06 (6x6) and la01 (10x5) instances, producing makespans within 15% of best-known values.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Establish performance metrics and benchmarking infrastructure",
+          "acceptance_criteria": "A Python module (e.g., src/benchmark.py) that: (1) runs any solver on a set of instances and records makespan, computation time (wall-clock seconds), and relative gap to best-known solution (BKS); (2) outputs results as CSV to results/ with columns [instance, method, makespan, bks, gap_pct, time_sec, seed]; (3) supports at least 10 benchmark instances loaded and ready to run; (4) includes a script (run_baselines.py) that executes all baseline methods on all instances and aggregates results.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Design and implement a setup-aware neighborhood structure for local search",
+          "acceptance_criteria": "A Python module (e.g., src/neighborhoods.py) implementing at least 2 novel neighborhood operators: (1) Setup-Similarity Swap \u2014 swaps operations on the same machine prioritizing pairs where the swap reduces total setup time based on the setup matrix; (2) Block-Move with Setup Penalty \u2014 moves a block of operations considering aggregate setup cost change. Each operator must: (a) generate neighbors in O(n^2) or better per machine, (b) include delta-evaluation (incremental makespan update) rather than full recomputation, (c) be tested showing >5% reduction in neighborhood evaluation time vs. naive recomputation on instances with >=20 jobs.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Develop a hybrid metaheuristic combining tabu search with setup-aware construction",
+          "acceptance_criteria": "A Python module (e.g., src/hybrid_solver.py) that: (1) uses ATCS or a novel setup-aware dispatching rule for initial solution construction, (2) applies tabu search with the novel setup-aware neighborhood from item_012, (3) includes an intensification-diversification mechanism (e.g., restart with perturbation after stagnation for K iterations), (4) on at least 5 medium-to-large benchmark instances (>=15 jobs), achieves average makespan gap to BKS that is at least 1 percentage point lower than the baseline tabu search from item_010.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement a setup-time clustering heuristic for job grouping",
+          "acceptance_criteria": "A Python module (e.g., src/clustering.py) that: (1) clusters jobs by setup similarity (e.g., using k-medoids on setup time matrices per machine), (2) schedules intra-cluster jobs first to minimize setup transitions, (3) uses inter-cluster ordering heuristic (e.g., nearest-cluster TSP-like approach on average setup costs), (4) the clustering-then-scheduling approach produces initial solutions with >=3% lower makespan than random or SPT construction on instances where setup times are >=25% of processing times.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Develop an adaptive operator selection mechanism for the hybrid metaheuristic",
+          "acceptance_criteria": "A Python module (e.g., src/adaptive.py) implementing: (1) a roulette-wheel or upper-confidence-bound (UCB1) mechanism to dynamically select among at least 3 neighborhood operators based on recent improvement history, (2) operator weights updated every W iterations with a configurable learning rate, (3) logging of operator selection frequencies and per-operator improvement rates to results/, (4) on at least 5 instances, the adaptive approach must match or exceed the best single-operator variant in average makespan.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Implement an optional machine-learning-guided dispatching component",
+          "acceptance_criteria": "A Python module (e.g., src/ml_dispatch.py) that: (1) extracts at least 8 features per scheduling decision point (e.g., remaining processing time, setup time to next job, machine load, queue length, slack, setup ratio, critical ratio, time-in-system), (2) trains a classifier or regression model (random forest or gradient boosting) on solutions from the best metaheuristic to predict good dispatching decisions, (3) uses the trained model as a construction heuristic, (4) evaluated on at least 5 instances showing either (a) faster convergence when used as initial solution for metaheuristic, or (b) standalone makespan within 5% of metaheuristic solution.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement a critical-path-based intensification procedure for SDST",
+          "acceptance_criteria": "A Python module (e.g., src/critical_path.py) that: (1) identifies the critical path in the schedule's disjunctive graph including setup arcs, (2) identifies critical blocks (consecutive operations on the same machine on the critical path), (3) applies targeted moves only within/adjacent to critical blocks to reduce makespan, (4) when integrated into the hybrid solver, reduces the number of iterations to reach a given solution quality by >=15% compared to random neighborhood exploration, measured on at least 3 instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Run comprehensive experiments on standard JSSP-SDST benchmark instances",
+          "acceptance_criteria": "Execute all implemented methods (dispatching rules, baseline metaheuristics, hybrid solver, clustering heuristic, adaptive variant) on at least 20 benchmark instances spanning small (6x6 to 10x5), medium (15x10 to 20x10), and large (30x15 to 50x20) sizes. Each stochastic method run with at least 5 different random seeds. All results stored in results/ as CSV files with columns [instance, size, method, seed, makespan, bks, gap_pct, time_sec, setup_ratio]. Total experiment data must contain at least 500 rows.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Perform statistical significance testing on experimental results",
+          "acceptance_criteria": "A Python script (e.g., src/statistics.py) that: (1) computes descriptive statistics (mean, std, min, max gap_pct) per method per instance group, (2) applies Wilcoxon signed-rank test or Friedman test with post-hoc Nemenyi test comparing all pairs of methods, (3) reports p-values and effect sizes, (4) generates a results table showing which method differences are statistically significant at alpha=0.05. Results saved to results/statistical_tests.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Analyze impact of setup time magnitude on method performance",
+          "acceptance_criteria": "Experiments run on at least 3 instance sizes with setup-to-processing-time ratios of 0.1, 0.25, 0.5, and 1.0 (generated via the instance generator from item_007). A CSV in results/setup_ratio_analysis.csv with columns [instance_base, setup_ratio, method, makespan, gap_pct, time_sec]. Analysis must show whether the novel methods provide larger improvements as setup times increase relative to processing times.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Compare results against state-of-the-art values reported in the literature",
+          "acceptance_criteria": "A comparison table in results/literature_comparison.csv listing: (1) for each benchmark instance: instance name, best-known solution from literature (with citation key from sources.bib), best solution found by each implemented method, and gap; (2) at least 10 instances must have published BKS values from cited papers; (3) a summary showing on how many instances the novel approach matches, improves upon, or falls short of published results. Any new best-known solutions must be clearly flagged.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Perform convergence and scalability analysis",
+          "acceptance_criteria": "A Python script (e.g., src/convergence.py) that: (1) logs best-found makespan vs. iteration count for the hybrid solver on at least 5 instances, (2) logs wall-clock time vs. solution quality, (3) outputs convergence data to results/convergence.csv, (4) measures scalability by running on instances of increasing size (10, 20, 30, 50 jobs) and recording time-to-best and final gap, stored in results/scalability.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality figures for all experimental results",
+          "acceptance_criteria": "At least 5 figures saved to figures/ as PDF or PNG: (1) bar chart comparing average gap_pct across methods, (2) box plot of makespan distributions per method on representative instances, (3) convergence curves (makespan vs. iterations) for top 3 methods on a large instance, (4) heatmap of setup-ratio impact on method rankings, (5) operator selection frequency evolution over iterations for the adaptive method. All figures must have labeled axes, legends, and use a consistent color scheme.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write a comprehensive research report documenting all findings",
+          "acceptance_criteria": "A file REPORT.md (or report.pdf) containing: (1) Abstract (<=250 words), (2) Introduction with problem motivation and industrial relevance, (3) Literature review section citing all papers in sources.bib, (4) Methodology section describing each implemented approach, (5) Experimental setup (instances, parameters, hardware specs), (6) Results section with tables and figure references, (7) Discussion of findings including which hypotheses were supported/refuted, (8) Conclusion with practical recommendations. Minimum 3000 words.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Document reproducibility: parameter settings, environment, and run instructions",
+          "acceptance_criteria": "A file REPRODUCE.md containing: (1) exact Python version and all package dependencies (or requirements.txt / pyproject.toml), (2) hardware specification used for experiments, (3) complete parameter settings for every method (tabu tenure, cooling schedule, population size, etc.) in a table, (4) step-by-step instructions to reproduce all results from scratch (install, download instances, run baselines, run experiments, generate figures), (5) expected output for at least one small instance to verify correctness.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
