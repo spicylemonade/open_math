@@ -1,0 +1,33 @@
+{
+  "description": "Quantitative integrator performance summary",
+  "test_conditions": {
+    "energy_test": "circular 2-body orbit, dt=0.01, 10000 steps",
+    "timing_test": "N=100 random bodies, 200 steps, dt=0.01"
+  },
+  "integrators": [
+    {
+      "name": "Forward Euler",
+      "order_of_accuracy": 1,
+      "symplectic": false,
+      "energy_error_10k_steps": 0.5751303498999896,
+      "wall_clock_time_per_step_seconds": 0.030029048940000393,
+      "recommended_use_case": "Baseline comparison only; not suitable for production simulations due to secular energy drift"
+    },
+    {
+      "name": "Velocity Verlet",
+      "order_of_accuracy": 2,
+      "symplectic": true,
+      "energy_error_10k_steps": 9.991408145282323e-09,
+      "wall_clock_time_per_step_seconds": 0.03018641503000026,
+      "recommended_use_case": "General-purpose N-body integration; excellent energy conservation with minimal overhead"
+    },
+    {
+      "name": "Leapfrog (KDK)",
+      "order_of_accuracy": 2,
+      "symplectic": true,
+      "energy_error_10k_steps": 9.991407479148508e-09,
+      "wall_clock_time_per_step_seconds": 0.030363640685000064,
+      "recommended_use_case": "Equivalent to Verlet; preferred when adaptive time-stepping is needed (natural KDK form)"
+    }
+  ]
+}

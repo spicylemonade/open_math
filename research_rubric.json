@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T21:12:56.773757+00:00",
+  "updated_at": "2026-02-23T21:13:59.185329+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -235,8 +235,8 @@
           "id": "item_022",
           "description": "Produce quantitative summary table of integrator performance characteristics",
           "acceptance_criteria": "File results/integrator_summary.json containing a table with columns: integrator name, order of accuracy, symplectic (yes/no), energy error after 10k steps (2-body test), wall-clock time per step (N=100), and recommended use case. All 3+ integrators included. Values are numeric (not qualitative) and reproducible from the experiment scripts",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "integrator_summary.json: Euler (order 1, non-symplectic, E_err=5.75e-1), Verlet (order 2, symplectic, E_err=9.99e-9), Leapfrog (order 2, symplectic, E_err=9.99e-9). All numeric values reproducible.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 21,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 4
+    "pending": 3
   }
 }
