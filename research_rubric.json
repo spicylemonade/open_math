@@ -212,8 +212,8 @@
           "id": "item_020",
           "description": "Compare quantitative results against published literature values",
           "acceptance_criteria": "For each canonical scenario, compare obtained energy conservation and orbital elements against at least 2 published reference values from sources.bib. Discrepancies documented and explained. Comparison table saved to results/literature_comparison.md",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table for all 3 scenarios against 2+ published references each. All results consistent with literature. Saved to results/literature_comparison.md",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 19,
+    "completed": 20,
     "in_progress": 0,
     "failed": 0,
-    "pending": 6
+    "pending": 5
   }
 }
