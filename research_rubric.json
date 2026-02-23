@@ -204,8 +204,8 @@
           "id": "item_019",
           "description": "Test canonical gravitational scenarios: circular orbit, elliptical orbit, and figure-8 three-body",
           "acceptance_criteria": "Three test scenarios run successfully: (1) circular two-body orbit maintains radius within 1% over 100 orbits, (2) elliptical orbit (e=0.5) preserves eccentricity within 5% over 50 orbits, (3) figure-8 three-body choreography (Chenciner-Montgomery initial conditions) remains stable for at least 5 periods. Results saved to results/canonical_tests.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 3 canonical tests PASS. Circular: radius within 0.0001% over 100 orbits. Elliptical e=0.5: eccentricity within 0.0002% over 50 orbits. Figure-8: stable for 5 periods (drift=0.0007).",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 18,
+    "completed": 19,
     "in_progress": 0,
     "failed": 0,
-    "pending": 7
+    "pending": 6
   }
 }

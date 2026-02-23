@@ -1,0 +1,28 @@
+{
+  "circular_orbit": {
+    "n_orbits": 100,
+    "dt": 0.01,
+    "initial_radius": 1.0,
+    "final_radius": 1.0,
+    "radius_relative_change": 0.0,
+    "max_relative_energy_error": 2.4996e-09,
+    "radius_within_1_percent": true
+  },
+  "elliptical_orbit": {
+    "n_orbits": 50,
+    "dt": 0.005,
+    "initial_eccentricity": 0.5,
+    "final_eccentricity": 0.500001,
+    "eccentricity_relative_change": 2e-06,
+    "max_relative_energy_error": 6.7946e-05,
+    "eccentricity_within_5_percent": true
+  },
+  "figure_8": {
+    "n_periods": 5,
+    "dt": 0.001,
+    "period": 6.3259,
+    "max_relative_energy_error": 5.8918e-07,
+    "max_position_drift": 0.000743,
+    "stable_for_5_periods": true
+  }
+}
