@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T21:55:00Z",
+  "updated_at": "2026-02-23T21:55:10.504940+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T21:52:00Z",
+      "completed_at": "2026-02-23T21:55:10.504916+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scope",
+          "acceptance_criteria": "Written document (ANALYSIS.md) listing all existing repo files/directories, their purposes, and a clear problem statement defining the minimal gravity simulator scope: 2D/3D N-body gravitational simulation with at least two integration methods and one acceleration structure",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct literature review on N-body gravitational simulation methods",
+          "acceptance_criteria": "Web search performed for at least 15 queries covering: Newton's law of gravitation for N-body systems, direct summation algorithms, Barnes-Hut tree codes, Fast Multipole Method, particle-mesh methods, and symplectic integrators. Summary of findings documented with key algorithms, their time complexities, and trade-offs",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Survey numerical integration schemes for gravitational dynamics",
+          "acceptance_criteria": "Web search performed covering Euler, Symplectic Euler, Velocity Verlet (Stormer-Verlet), Leapfrog, and Runge-Kutta (RK4) integration methods. Document comparing each method's order of accuracy, energy conservation properties, computational cost per step, and suitability for gravitational problems",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey existing open-source gravity simulators and reference implementations",
+          "acceptance_criteria": "Web search identifying at least 5 existing open-source N-body or gravity simulation projects (e.g., REBOUND, Gadget, nbody.js, PyNbody). Each entry must include: repository URL, language, key algorithms used, and license. Findings documented in a comparison table",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted references",
+          "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. At least 10 relevant papers/books cited including: Aarseth (2003) gravitational N-body simulations, Barnes & Hut (1986) tree algorithm, Verlet (1967) integration, and at least 7 additional relevant references on numerical methods, N-body algorithms, or gravity simulation",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Define technical requirements and select technology stack",
+          "acceptance_criteria": "Document specifying: programming language (Python recommended for minimal implementation), required libraries (numpy at minimum), target particle counts (10 to 10,000), 2D and 3D support requirements, output format for results (CSV/JSON), and visualization approach (matplotlib). Requirements traceable to literature review findings",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement core data structures for particle/body representation",
+          "acceptance_criteria": "Python module (sim/bodies.py) implementing a Body class with attributes: mass (float), position (numpy array, 2D/3D), velocity (numpy array, 2D/3D), acceleration (numpy array, 2D/3D). Unit tests verifying construction, attribute access, and vectorized operations on arrays of bodies. All tests pass",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement O(N^2) direct-summation gravitational force calculation",
+          "acceptance_criteria": "Python module (sim/forces.py) computing pairwise gravitational forces F = G*m1*m2/r^2 with softening parameter epsilon to prevent singularities. Verified against analytical two-body solution: two equal masses in circular orbit must maintain constant orbital radius within 1% over 10 orbits using sufficiently small timestep. Unit tests pass",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement Forward Euler integration as baseline integrator",
+          "acceptance_criteria": "Python module (sim/integrators.py) with Euler integrator updating position and velocity each timestep. Tested on a known two-body Kepler problem: integrator produces trajectory output, energy drift is measured and documented (expected to be large for Euler). Output saved to results/ directory as CSV with columns: time, x, y, (z), vx, vy, (vz), total_energy",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Define quantitative accuracy and performance metrics",
+          "acceptance_criteria": "Python module (sim/metrics.py) implementing: (1) relative energy error |E(t)-E(0)|/|E(0)|, (2) relative angular momentum error |L(t)-L(0)|/|L(0)|, (3) wall-clock execution time measurement, (4) force evaluations counter. Each metric function has unit tests with known inputs/outputs. All tests pass",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Create analytical test cases with known solutions",
+          "acceptance_criteria": "Python module (tests/test_analytical.py) with at least 3 test scenarios: (1) circular two-body orbit with known period T=2*pi*sqrt(a^3/(G*M)), (2) radial free-fall with known collapse time, (3) three-body figure-eight solution (Chenciner & Montgomery 2000, must be cited in sources.bib). Each test has pass/fail criteria with explicit numerical tolerances",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Implement Velocity Verlet (Stormer-Verlet) symplectic integrator",
+          "acceptance_criteria": "Velocity Verlet integrator added to sim/integrators.py. On circular two-body orbit test case, energy error remains bounded (no secular drift) and stays below 1e-4 relative error over 100 orbits with dt=T/100. Performance compared to Euler baseline from Phase 2",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement Leapfrog integration scheme",
+          "acceptance_criteria": "Leapfrog (kick-drift-kick) integrator added to sim/integrators.py. Demonstrated to be symplectic: energy oscillates but does not grow secularly over 1000 orbits on two-body test. Angular momentum conserved to within 1e-10 relative error. Results compared against Velocity Verlet on same test cases",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement 4th-order Runge-Kutta (RK4) integrator",
+          "acceptance_criteria": "RK4 integrator added to sim/integrators.py. Convergence order verified: halving dt must reduce position error by approximately 16x on two-body test. Energy drift measured and documented (expected secular drift despite high order). Comparison table produced showing error vs dt for RK4, Verlet, Leapfrog, and Euler",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement Barnes-Hut tree algorithm for O(N log N) force approximation",
+          "acceptance_criteria": "Python module (sim/barneshut.py) implementing: octree (3D) / quadtree (2D) construction, center-of-mass computation for tree nodes, force calculation with opening angle parameter theta. For theta=0 (exact), results match direct summation to machine precision. For theta=0.5, relative force error on random 1000-particle system is below 1% RMS. Algorithmic complexity verified: timing for N=100,1000,5000 particles fits O(N log N) scaling",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Implement adaptive time-stepping based on local dynamical timescale",
+          "acceptance_criteria": "Adaptive timestep module (sim/adaptive.py) computing dt from particle accelerations: dt = eta * sqrt(epsilon / |a_max|) where eta is a safety factor. Tested on eccentric two-body orbit (e=0.9): adaptive stepping uses fewer total steps than fixed stepping to achieve same energy accuracy. Step count reduction of at least 3x documented",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement simulation runner with configurable parameters",
+          "acceptance_criteria": "Main simulation driver (sim/simulation.py) accepting: initial conditions, integrator choice, force algorithm choice (direct/Barnes-Hut), timestep (fixed or adaptive), total time, and output interval. Produces trajectory output to results/ directory. Command-line interface via argparse or configuration file. Runs without error on all test cases from Phase 2",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Benchmark integrator accuracy on Kepler two-body problem",
+          "acceptance_criteria": "Experiment running all 4 integrators (Euler, Verlet, Leapfrog, RK4) on circular and eccentric (e=0.5, e=0.9) Kepler orbits for 100 orbital periods. Results table showing: max energy error, mean energy error, angular momentum error, and position error vs analytical solution. Results saved to results/kepler_benchmark.csv. Accuracy rankings compared against theoretical predictions from literature review (sources.bib references)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Benchmark computational performance scaling with particle count N",
+          "acceptance_criteria": "Experiment measuring wall-clock time for direct summation vs Barnes-Hut on random Plummer sphere initial conditions with N = 100, 500, 1000, 2000, 5000 particles. Each run timed over 100 timesteps. Results saved to results/scaling_benchmark.csv. Log-log plot of time vs N saved to figures/scaling.png showing O(N^2) vs O(N log N) slopes. Measured scaling exponents reported and compared against theoretical expectations cited in sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Energy conservation comparison across all methods",
+          "acceptance_criteria": "Long-duration simulation (1000 orbital periods) of a 3-body system comparing energy drift for all integrator + force-method combinations. Plot of relative energy error vs time for each combination saved to figures/energy_conservation.png. Symplectic integrators must show bounded energy error while non-symplectic (Euler, RK4) show secular drift. Quantitative comparison with error bounds from literature (cite Hairer et al. geometric numerical integration)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Solar system validation test",
+          "acceptance_criteria": "Simulation of inner solar system (Sun + 4 inner planets) using JPL ephemeris initial conditions for at least 10 Earth years. Planet positions compared against known orbital periods: each planet's computed period within 0.1% of actual period. Trajectory plot saved to figures/solar_system.png. Initial conditions and data sources cited in sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Barnes-Hut accuracy vs performance trade-off analysis",
+          "acceptance_criteria": "Experiment varying Barnes-Hut opening angle theta from 0.1 to 1.5 in steps of 0.1 on a 1000-particle system. For each theta: measure RMS force error relative to direct summation and wall-clock time. Results saved to results/theta_tradeoff.csv. Plot of error vs speedup saved to figures/theta_tradeoff.png. Optimal theta value identified and compared against Barnes & Hut (1986) recommendation of theta=1.0 (cited in sources.bib)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate comprehensive visualization suite",
+          "acceptance_criteria": "Python script (scripts/generate_figures.py) producing all figures for the report: (1) trajectory plots for 2-body and 3-body systems, (2) energy conservation comparison plot, (3) performance scaling plot, (4) Barnes-Hut theta trade-off plot, (5) integrator convergence order plot. At least 6 publication-quality figures saved to figures/ directory as PNG (300 DPI minimum)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write technical report documenting methods, results, and analysis",
+          "acceptance_criteria": "Markdown report (REPORT.md) with sections: Abstract, Introduction, Methods (force calculation, integration schemes, Barnes-Hut algorithm), Experimental Setup, Results, Discussion, Conclusion, References. Report must cite at least 8 entries from sources.bib. Results section references all figures and data tables from Phase 4. Discussion compares findings with prior work. Minimum 2000 words",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Document API, usage instructions, and reproduction steps",
+          "acceptance_criteria": "Updated README.md with: project description, installation instructions (pip install -r requirements.txt), usage examples for running simulations, description of all modules in sim/ package, instructions for reproducing all experiments and figures. requirements.txt file listing all Python dependencies with pinned versions. Running the documented commands reproduces all results",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
