@@ -188,40 +188,40 @@
           "id": "item_017",
           "description": "Systematic integrator comparison on energy conservation",
           "acceptance_criteria": "Run two-body Kepler orbit (e=0.5 eccentricity) for 1000 periods with Euler, leapfrog, and RK4 at dt values [0.01, 0.005, 0.001, 0.0005]. Record relative energy error vs time for all 12 configurations in results/integrator_comparison.json. Generate figure figures/energy_conservation.png showing all curves. Leapfrog must demonstrate bounded energy error (no secular drift) consistent with symplectic behavior as noted in literature (Wisdom & Holman 1991). Verify H1 from hypotheses.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Ran 12 configurations (3 integrators x 4 dt values) for 1000 periods on e=0.5 Kepler orbit. H1 CONFIRMED: leapfrog |dE/E|=9.7e-7 (bounded), Euler |dE/E|=0.65 (secular drift), 663721x ratio.",
           "error": null
         },
         {
           "id": "item_018",
           "description": "Scalability benchmarks: direct vs Barnes-Hut",
           "acceptance_criteria": "Benchmark wall-clock time for force computation using direct O(N^2) and Barnes-Hut (theta=0.5) for N in [10, 50, 100, 200, 500, 1000]. Record results in results/scalability.json with fields: method, N, wall_time_seconds, force_rms_error_vs_direct. Generate figure figures/scalability.png with log-log plot. Barnes-Hut must show O(N log N) scaling trend. Crossover point where Barnes-Hut becomes faster must be identified. Verify H2 from hypotheses.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Benchmarked N=[10-1000]. Barnes-Hut faster at N>=100 (6.3x at N=1000). Force RMS error <3.2% at theta=0.5. H2 confirmed for N>100.",
           "error": null
         },
         {
           "id": "item_019",
           "description": "Adaptive vs fixed time-step comparison on eccentric orbits",
           "acceptance_criteria": "Run two-body orbit with eccentricity e=0.9 for 100 periods using leapfrog with: (a) fixed dt=0.001, (b) adaptive time-stepping targeting same energy tolerance. Record results in results/adaptive_comparison.json: total steps taken, final energy error, wall time. Adaptive method must use fewer total steps than fixed while achieving comparable or better energy conservation. Verify H3 from hypotheses. Generate figure figures/adaptive_timestep.png showing dt variation over one orbit.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "H3 CONFIRMED: Adaptive uses 10% of fixed steps (90% reduction) with comparable energy conservation on e=0.9 orbit. Adaptive |dE/E|=9.8e-4 vs fixed |dE/E|=2.3e-3.",
           "error": null
         },
         {
           "id": "item_020",
           "description": "Reproduce known physical scenarios for validation",
           "acceptance_criteria": "Validate the simulator against: (a) two-body circular orbit \u2014 period must match T=2*pi*sqrt(a^3/(G*M)) within 0.1%, (b) two-body elliptical orbit \u2014 must conserve Laplace-Runge-Lenz vector direction within 1 degree over 100 periods, (c) three-body figure-eight (Chenciner & Montgomery) \u2014 must remain stable for at least 5 periods. Results recorded in results/validation.json. All three validation checks must pass.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "ALL PASS: (a) Period accurate to 0.0003% (b) LRL vector drift 0.023 deg < 1 deg (c) Figure-eight stable 5 periods, |dE/E|=9e-14.",
           "error": null
         },
         {
           "id": "item_021",
           "description": "Compare simulation accuracy against prior work from literature",
           "acceptance_criteria": "Create results/literature_comparison.md comparing this simulator's energy conservation and performance against published results from at least 3 prior works found in the literature review (e.g., REBOUND benchmarks, Aarseth benchmarks, Gadget-2 test problems). Include a comparison table with columns: method, N, dt, energy_error, source. Cite all compared works from sources.bib.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Compared against REBOUND, NBODY6, GADGET-2. Our leapfrog matches REBOUND accuracy. RK4 approaches NBODY6 Hermite. Literature comparison documented in results/literature_comparison.md.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 16,
+    "completed": 21,
     "in_progress": 0,
     "failed": 0,
-    "pending": 9
+    "pending": 4
   }
 }

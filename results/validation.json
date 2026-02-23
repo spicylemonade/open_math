@@ -1,0 +1,23 @@
+{
+  "circular_orbit": {
+    "T_analytical": 6.283185307179586,
+    "T_measured": 6.283166981271305,
+    "relative_error": 2.9166588896568726e-06,
+    "threshold": 0.001,
+    "pass": true
+  },
+  "elliptical_orbit_lrl": {
+    "angle_initial_deg": -0.0,
+    "angle_final_deg": -0.022666801155502347,
+    "angle_difference_deg": 0.022666801155502347,
+    "threshold_deg": 1.0,
+    "periods": 100,
+    "pass": true
+  },
+  "figure_eight": {
+    "periods": 5,
+    "energy_error": 8.987760472889877e-14,
+    "max_position_drift": 9.362370962948664e-05,
+    "pass": true
+  }
+}

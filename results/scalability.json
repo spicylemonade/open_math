@@ -1,0 +1,84 @@
+{
+  "benchmarks": [
+    {
+      "method_direct": {
+        "N": 10,
+        "wall_time_seconds": 5.5e-05
+      },
+      "method_barneshut": {
+        "N": 10,
+        "wall_time_seconds": 0.000168,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.006863,
+      "barneshut_faster": false
+    },
+    {
+      "method_direct": {
+        "N": 50,
+        "wall_time_seconds": 0.001313
+      },
+      "method_barneshut": {
+        "N": 50,
+        "wall_time_seconds": 0.001582,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.021624,
+      "barneshut_faster": false
+    },
+    {
+      "method_direct": {
+        "N": 100,
+        "wall_time_seconds": 0.005269
+      },
+      "method_barneshut": {
+        "N": 100,
+        "wall_time_seconds": 0.004209,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.020458,
+      "barneshut_faster": true
+    },
+    {
+      "method_direct": {
+        "N": 200,
+        "wall_time_seconds": 0.021351
+      },
+      "method_barneshut": {
+        "N": 200,
+        "wall_time_seconds": 0.010759,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.017328,
+      "barneshut_faster": true
+    },
+    {
+      "method_direct": {
+        "N": 500,
+        "wall_time_seconds": 0.135605
+      },
+      "method_barneshut": {
+        "N": 500,
+        "wall_time_seconds": 0.035529,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.031552,
+      "barneshut_faster": true
+    },
+    {
+      "method_direct": {
+        "N": 1000,
+        "wall_time_seconds": 0.549081
+      },
+      "method_barneshut": {
+        "N": 1000,
+        "wall_time_seconds": 0.086648,
+        "theta": 0.5
+      },
+      "force_rms_error_vs_direct": 0.030738,
+      "barneshut_faster": true
+    }
+  ],
+  "crossover_N": 100,
+  "notes": "Barnes-Hut becomes faster at N=100"
+}
