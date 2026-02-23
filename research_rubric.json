@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T18:17:00Z",
+  "updated_at": "2026-02-23T18:20:22.148999+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T18:17:00Z",
+      "completed_at": "2026-02-23T18:20:22.148967+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and set up project scaffold",
+          "acceptance_criteria": "Create a project scaffold with directories src/, tests/, docs/, figures/, results/. Write a MODULE_MAP.md documenting the planned module layout: vector math, body/particle representation, force computation, integrators, simulation loop, visualization, and benchmarking. README.md updated with project overview.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the N-body gravitational simulation problem",
+          "acceptance_criteria": "Document in docs/problem_statement.md: (1) mathematical formulation of the gravitational N-body problem with Newton's law F = G*m1*m2/r^2, (2) definition of 'minimal' scope \u2014 2D point-mass simulation with configurable N, (3) key quantities to track (total energy, linear momentum, angular momentum), (4) target scenarios (two-body Kepler orbit, three-body figure-eight, random N-body cluster with N up to 1000).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review on N-body simulation methods",
+          "acceptance_criteria": "Search the web for papers and references on: (a) classical N-body integration schemes (Euler, Verlet, leapfrog, RK4, symplectic methods), (b) force calculation algorithms (direct summation, Barnes-Hut, FMM), (c) gravitational softening, (d) adaptive time-stepping. Produce docs/literature_review.md summarizing at least 10 key papers/resources with 1-paragraph descriptions of each. Must cite Aarseth (2003), Barnes & Hut (1986), Verlet (1967), and Wisdom & Holman (1991).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey existing open-source gravity and N-body simulators",
+          "acceptance_criteria": "Search the web for at least 5 open-source N-body or gravity simulation codebases (e.g., REBOUND, Gadget, NBODY6, PyNbody, galpy). Document in docs/code_survey.md: language, integration method, force algorithm, feature set, performance characteristics, and license for each. Identify design patterns and best practices to adopt.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Create and populate sources.bib with BibTeX entries",
+          "acceptance_criteria": "Create sources.bib in the repo root with valid BibTeX entries for all consulted sources. At least 10 relevant papers cited. Must include entries for: Aarseth (Gravitational N-Body Simulations), Barnes & Hut (1986 hierarchical force calculation), Verlet (1967 integration), Wisdom & Holman (1991 symplectic mapping), Springel (Gadget), Rein & Liu (REBOUND). Each entry must have author, title, year, and journal/publisher fields.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Define research hypotheses and success metrics",
+          "acceptance_criteria": "Document in docs/hypotheses.md: (1) H1: Symplectic integrators (leapfrog/Verlet) will conserve energy to within 1e-6 relative error over 1000 orbital periods for two-body Kepler problem, while Euler will diverge. (2) H2: Barnes-Hut O(N log N) will outperform direct O(N^2) for N > 100 while maintaining force accuracy within 1% RMS error. (3) H3: Adaptive time-stepping will reduce computation by >50% on eccentric orbits vs fixed step. Include at least 3 falsifiable predictions with quantitative targets.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement 2D vector math and particle/body data structures",
+          "acceptance_criteria": "Create src/vector.py with a Vec2 class supporting addition, subtraction, scalar multiply, dot product, magnitude, and unit vector. Create src/body.py with a Body class holding mass, position (Vec2), velocity (Vec2). All operations must have unit tests in tests/test_vector.py and tests/test_body.py with at least 15 passing tests total.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement direct O(N^2) pairwise gravitational force computation",
+          "acceptance_criteria": "Create src/force.py with a direct_gravity(bodies, G, softening) function that computes gravitational acceleration for each body via pairwise summation. Must handle softening parameter to avoid singularities. Unit tests in tests/test_force.py verifying: (a) two-body force matches analytical F=Gm1m2/r^2, (b) net force on symmetric configurations is zero, (c) softening prevents NaN/inf. At least 8 passing tests.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement Euler and leapfrog (Stormer-Verlet) integrators",
+          "acceptance_criteria": "Create src/integrators.py with: (a) euler_step(bodies, dt, force_func) implementing forward Euler, (b) leapfrog_step(bodies, dt, force_func) implementing the kick-drift-kick leapfrog scheme. Both return updated body states without mutating inputs. Unit tests in tests/test_integrators.py verifying: single step produces correct positions for known force, at least 10 passing tests.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement simulation loop and state recording",
+          "acceptance_criteria": "Create src/simulation.py with a Simulation class that: (a) accepts bodies, integrator, force function, dt, and total time, (b) steps the simulation and records position/velocity history, (c) computes total kinetic energy, potential energy, and total energy at each step, (d) computes total linear and angular momentum at each step. Unit tests verifying energy and momentum computation against analytical values for a simple two-body case. At least 6 passing tests.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Establish baseline benchmarks on canonical test problems",
+          "acceptance_criteria": "Create tests/test_benchmarks.py that runs: (a) two-body circular orbit for 100 periods with Euler and leapfrog at dt=0.001, recording relative energy error at each period, (b) three-body figure-eight solution (Chenciner & Montgomery 2000) for 10 periods. Record results to results/baseline_benchmarks.json with fields: integrator, dt, N, periods, final_energy_error, wall_time_seconds. Euler energy error must be measurably worse than leapfrog, confirming the setup is correct.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Implement RK4 integrator for accuracy comparison",
+          "acceptance_criteria": "Add rk4_step(bodies, dt, force_func) to src/integrators.py implementing the classical 4th-order Runge-Kutta method. Unit tests confirming 4th-order convergence: halving dt must reduce single-step error by ~16x on a known analytical problem. At least 5 new passing tests in tests/test_integrators.py.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement Barnes-Hut tree-based force calculation",
+          "acceptance_criteria": "Create src/barneshut.py implementing: (a) a QuadTree that recursively subdivides 2D space, (b) insertion of bodies into the tree, (c) force calculation using the theta (opening angle) parameter with default theta=0.5. The force on each body must agree with direct summation to within 1% RMS relative error for a random 100-body configuration. Unit tests in tests/test_barneshut.py with at least 10 passing tests covering tree construction, force accuracy vs direct, and edge cases (coincident bodies, single body).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement adaptive time-stepping strategy",
+          "acceptance_criteria": "Create src/adaptive.py with an adaptive time-step controller that adjusts dt based on the maximum acceleration magnitude (dt proportional to 1/sqrt(max |a|)). Integrates with leapfrog and RK4. Unit tests verifying: (a) dt decreases during close encounters, (b) dt increases during slow-moving phases, (c) total energy conservation is maintained within tolerance. At least 6 passing tests.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement simple 2D visualization of simulation trajectories",
+          "acceptance_criteria": "Create src/visualize.py that uses matplotlib to: (a) plot body trajectories as colored lines, (b) animate the simulation with configurable frame rate, (c) plot energy error over time. Save static trajectory plot to figures/trajectory_example.png and energy plot to figures/energy_example.png. Both files must exist and be valid PNG images.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Analyze gravitational softening parameter effects",
+          "acceptance_criteria": "Create a study in results/softening_analysis.json testing softening values [0, 1e-4, 1e-3, 1e-2, 1e-1] on a 50-body random cluster for 100 time units. For each softening value record: (a) max force magnitude encountered, (b) relative energy error at end, (c) number of NaN/inf events (must be 0 for softening > 0), (d) qualitative trajectory stability. Document findings in docs/softening_analysis.md with recommendations for default softening value. Reference prior work on softening from literature review.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_017",
+          "description": "Systematic integrator comparison on energy conservation",
+          "acceptance_criteria": "Run two-body Kepler orbit (e=0.5 eccentricity) for 1000 periods with Euler, leapfrog, and RK4 at dt values [0.01, 0.005, 0.001, 0.0005]. Record relative energy error vs time for all 12 configurations in results/integrator_comparison.json. Generate figure figures/energy_conservation.png showing all curves. Leapfrog must demonstrate bounded energy error (no secular drift) consistent with symplectic behavior as noted in literature (Wisdom & Holman 1991). Verify H1 from hypotheses.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Scalability benchmarks: direct vs Barnes-Hut",
+          "acceptance_criteria": "Benchmark wall-clock time for force computation using direct O(N^2) and Barnes-Hut (theta=0.5) for N in [10, 50, 100, 200, 500, 1000]. Record results in results/scalability.json with fields: method, N, wall_time_seconds, force_rms_error_vs_direct. Generate figure figures/scalability.png with log-log plot. Barnes-Hut must show O(N log N) scaling trend. Crossover point where Barnes-Hut becomes faster must be identified. Verify H2 from hypotheses.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Adaptive vs fixed time-step comparison on eccentric orbits",
+          "acceptance_criteria": "Run two-body orbit with eccentricity e=0.9 for 100 periods using leapfrog with: (a) fixed dt=0.001, (b) adaptive time-stepping targeting same energy tolerance. Record results in results/adaptive_comparison.json: total steps taken, final energy error, wall time. Adaptive method must use fewer total steps than fixed while achieving comparable or better energy conservation. Verify H3 from hypotheses. Generate figure figures/adaptive_timestep.png showing dt variation over one orbit.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Reproduce known physical scenarios for validation",
+          "acceptance_criteria": "Validate the simulator against: (a) two-body circular orbit \u2014 period must match T=2*pi*sqrt(a^3/(G*M)) within 0.1%, (b) two-body elliptical orbit \u2014 must conserve Laplace-Runge-Lenz vector direction within 1 degree over 100 periods, (c) three-body figure-eight (Chenciner & Montgomery) \u2014 must remain stable for at least 5 periods. Results recorded in results/validation.json. All three validation checks must pass.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Compare simulation accuracy against prior work from literature",
+          "acceptance_criteria": "Create results/literature_comparison.md comparing this simulator's energy conservation and performance against published results from at least 3 prior works found in the literature review (e.g., REBOUND benchmarks, Aarseth benchmarks, Gadget-2 test problems). Include a comparison table with columns: method, N, dt, energy_error, source. Cite all compared works from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_022",
+          "description": "Generate publication-quality figures for all experiments",
+          "acceptance_criteria": "Produce at least 5 figures in figures/ directory in both PNG and PDF formats: (1) energy_conservation.png/pdf \u2014 integrator comparison, (2) scalability.png/pdf \u2014 direct vs Barnes-Hut timing, (3) adaptive_timestep.png/pdf \u2014 adaptive dt variation, (4) trajectory_kepler.png/pdf \u2014 elliptical orbit trajectory, (5) softening_effects.png/pdf \u2014 energy error vs softening. All figures must have labeled axes, legends, and titles. Font size >= 10pt.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Write comprehensive research report",
+          "acceptance_criteria": "Create docs/research_report.md with at least 3000 words covering: (1) Introduction and motivation, (2) Background on N-body problem, (3) Methods \u2014 integrators, force algorithms, adaptive stepping, (4) Results \u2014 energy conservation, scalability, adaptive stepping, validation, (5) Discussion \u2014 hypothesis verification (H1, H2, H3), comparison to prior work, limitations, (6) Conclusions and future work. Must cite at least 8 sources from sources.bib. All claims must reference specific results files or figures.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Create reproducibility package",
+          "acceptance_criteria": "Create: (a) requirements.txt listing all Python dependencies with pinned versions, (b) Makefile with targets: install, test, benchmark, figures, clean, (c) docs/REPRODUCIBILITY.md with step-by-step instructions to reproduce all results from a clean environment. Running 'make test' must execute all unit tests. Running 'make benchmark' must regenerate all results/ files. Running 'make figures' must regenerate all figures/ files.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Final validation checklist and self-assessment",
+          "acceptance_criteria": "Create results/validation_checklist.md confirming all of the following pass: (1) All unit tests pass (report total count), (2) Energy conservation within stated tolerances for all integrators, (3) Barnes-Hut force accuracy within 1% of direct, (4) All 3 hypotheses evaluated with quantitative evidence, (5) sources.bib has >= 10 entries, (6) All figures render correctly, (7) Research report is >= 3000 words with >= 8 citations. Each check must show PASS/FAIL with evidence.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
