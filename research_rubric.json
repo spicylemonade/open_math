@@ -1,0 +1,292 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T12:00:00Z",
+  "updated_at": "2026-02-23T01:12:28.150868+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T12:00:00Z",
+      "completed_at": "2026-02-23T01:12:28.150848+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and set up project scaffold for MDS on planar graphs research",
+          "acceptance_criteria": "Directory structure created with src/, tests/, data/, docs/, benchmarks/ directories. README.md updated with project description: 'Tightening the practical polynomial-time approximation ratio for Minimum Dominating Set on planar graphs.' Document listing all modules and their intended purposes.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the research problem: Minimum Dominating Set on planar graphs \u2014 closing the gap between PTAS and practical constant-factor algorithms",
+          "acceptance_criteria": "Written problem statement (docs/problem_statement.md) with: (1) formal definition of MDS and planar graphs, (2) NP-hardness citation (Garey & Johnson), (3) statement of Baker's PTAS giving (1+2/k)-approximation in O(2^{ck}\u00b7n) time, (4) identification that standard greedy gives O(log n) even on planar graphs while modified greedy achieves only loose constant factors, (5) concrete research question: 'Can we design a practical O(n\u00b7polylog(n))-time algorithm achieving approximation ratio \u2264 5 on planar graphs, combining separator decomposition with LP rounding?'",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct web-based literature review on MDS approximation algorithms for planar and sparse graph classes",
+          "acceptance_criteria": "Literature survey document (docs/literature_review.md) covering at least 15 papers across these categories: (a) Baker's technique and PTAS variants (Baker 1994, Demaine & Hajiaghayi), (b) greedy and modified-greedy approaches (Jones et al., Dvo\u0159\u00e1k 2013), (c) LP-based methods and integrality gap results, (d) distributed MDS approximation (Lenzen et al., Czygrinow et al., Hilke et al. 2025), (e) FPT and kernelization (Alber et al., Fomin & Thilikos), (f) practical solvers from PACE 2025 competition. Each paper summarized with key result, technique, and relevance.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey existing open-source MDS implementations, graph libraries, and PACE 2025 solver code",
+          "acceptance_criteria": "Document (docs/code_survey.md) identifying at least 5 open-source implementations or repositories: (1) NetworkX dominating set module, (2) at least 2 PACE 2025 solver submissions on GitHub, (3) OGDF or similar C++ planar graph library, (4) at least 1 LP/ILP-based solver. For each: URL, language, algorithmic approach, reported performance, and license.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
+          "acceptance_criteria": "File sources.bib in repo root with at least 15 valid BibTeX entries including: Baker 1994 (JACM), Alber/Fellows/Niedermeier 2004 (JACM kernelization), Fomin/Thilikos 2006 (SIAM), Lenzen/Pignolet/Wattenhofer 2013, Czygrinow et al. distributed MDS, Hilke et al. 2025 (11+\u03b5 result), PACE 2025 challenge description, Garey & Johnson 1979, Vazirani approximation algorithms textbook, Williamson & Shmoys 2011, and at least 5 additional relevant papers. All entries compilable by BibTeX with no errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Identify the specific approximation gap and formulate testable research hypothesis",
+          "acceptance_criteria": "Document (docs/research_hypothesis.md) specifying: (1) current best practical centralized constant-factor ratio for MDS on planar graphs with citation, (2) the target ratio (numerically specified, e.g., \u2264 5), (3) the proposed algorithmic approach (separator-based decomposition + LP rounding + local search), (4) why planar structure enables improvement (bounded treewidth in k-outerplanar pieces, Euler formula constraints on LP), (5) at least 2 falsifiable predictions that experiments will test.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement planar graph data structures, generators, and standard test-graph loaders",
+          "acceptance_criteria": "Python module src/graph.py with: (1) adjacency-list Graph class supporting node/edge operations, (2) planarity testing via Boyer-Myrvold or LR-planarity (may wrap networkx), (3) random planar graph generators (random triangulation, Delaunay-based, grid-based) parameterized by n, (4) loader for PACE 2025 .gr format files, (5) at least 10 unit tests in tests/test_graph.py all passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement baseline greedy MDS algorithm and verify correctness",
+          "acceptance_criteria": "Module src/greedy.py with: (1) standard greedy dominating set (repeatedly pick highest-degree undominated vertex), (2) modified greedy with degree-ratio selection (Jones et al. variant), (3) both verified to produce valid dominating sets on at least 10 test instances including paths, cycles, grids, and random planar graphs, (4) unit tests asserting domination validity and comparing to known optimal on small cases (\u2264 30 nodes).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement LP-relaxation based MDS algorithm with rounding",
+          "acceptance_criteria": "Module src/lp_solver.py with: (1) LP relaxation of MDS ILP formulation (minimize sum x_v subject to sum_{u in N[v]} x_u >= 1, 0 <= x_v <= 1), (2) deterministic rounding scheme (threshold at 1/(\u0394+1) or similar), (3) produces feasible dominating sets on all test instances, (4) optionally: ILP exact solver for small instances (\u2264 500 nodes) to compute OPT for ratio measurement, (5) unit tests passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement Baker's PTAS for MDS on planar graphs with configurable k",
+          "acceptance_criteria": "Module src/baker_ptas.py with: (1) BFS-layering decomposition into k-outerplanar subgraphs, (2) exact MDS solver on each piece via dynamic programming on tree decomposition, (3) configurable parameter k controlling trade-off between ratio (1+2/k) and runtime, (4) correctness verified: output is valid dominating set, ratio approaches 1 as k increases on test instances, (5) measured runtime for k=2,3,4,5 on graphs of 100-1000 nodes.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Establish benchmark suite and baseline performance metrics",
+          "acceptance_criteria": "Benchmark framework in benchmarks/ with: (1) at least 100 planar graph instances spanning sizes 50, 100, 500, 1000, 5000, 10000 nodes (mix of grid, triangulation, Delaunay, random planar), (2) at least 10 PACE 2025 instances downloaded and converted, (3) metrics collection script recording: solution size, approximation ratio (vs ILP optimal on small instances or vs LP lower bound on larger), wall-clock time, peak memory, (4) baseline CSV with greedy, LP-rounding, and Baker k=3 results on all instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Design separator-based decomposition algorithm for MDS on planar graphs",
+          "acceptance_criteria": "Algorithm design document (docs/separator_algorithm.md) with: (1) use of Lipton-Tarjan planar separator theorem to recursively decompose graph, (2) strategy for handling separator vertices (include in dominating set or handle via boundary DP), (3) analysis of approximation ratio introduced by separator overhead (additive O(sqrt(n)) or multiplicative constant), (4) full pseudocode, (5) theoretical time complexity analysis showing O(n\u00b7polylog(n)) or O(n^{1.5}).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement the novel separator-based MDS algorithm",
+          "acceptance_criteria": "Module src/separator_mds.py with: (1) planar separator computation (may use networkx or custom BFS-based), (2) recursive decomposition with base-case exact solve on pieces of size \u2264 threshold, (3) merge strategy for combining sub-solutions across separators, (4) produces valid dominating sets on all test instances, (5) runs in polynomial time verified empirically (runtime < 10x greedy on same instances), (6) unit tests passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Develop enhanced LP rounding exploiting planarity constraints",
+          "acceptance_criteria": "Module src/planar_lp.py with: (1) LP formulation augmented with planar-specific valid inequalities (e.g., face-based constraints from planar embedding, or constraints derived from Euler's formula m \u2264 3n-6), (2) tighter rounding scheme exploiting the fact that planar LP has bounded integrality gap (proven to be \u2264 some constant c for planar graphs), (3) produces feasible dominating sets with empirically measured ratio < standard LP rounding on at least 80% of test instances, (4) unit tests passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement k-swap local search post-processing to reduce dominating set size",
+          "acceptance_criteria": "Module src/local_search.py with: (1) 1-swap: try removing each vertex and check if domination maintained, (2) 2-swap: try replacing pairs with single vertices, (3) configurable iteration limit and convergence criterion, (4) measured improvement: reduces dominating set size by \u2265 2% on average across at least 50 benchmark instances when applied to greedy output, (5) runtime overhead < 5x the base algorithm time on instances up to 10000 nodes.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Write proof sketch establishing approximation ratio bound for the novel algorithm",
+          "acceptance_criteria": "Document (docs/proof_sketch.md) with: (1) formal theorem statement: 'Algorithm X returns a dominating set of size at most \u03b1\u00b7OPT + \u03b2\u00b7sqrt(n) on any n-vertex planar graph' (with specific constants \u03b1, \u03b2), (2) key lemma on separator cost overhead, (3) key lemma on sub-problem solution quality, (4) proof outline combining lemmas to obtain the bound, (5) comparison showing the bound is strictly better than baseline greedy O(log n) ratio on planar graphs, (6) identification of where the bound is tight or loose.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement hybrid algorithm combining separator decomposition, LP rounding, and local search",
+          "acceptance_criteria": "Module src/hybrid_mds.py with: (1) pipeline: planar LP for lower bound and initial fractional solution \u2192 separator-based rounding using decomposition \u2192 local search refinement, (2) configurable parameters (separator threshold, LP augmentation level, local search depth), (3) produces solutions at least as good as any individual baseline algorithm on \u2265 95% of test instances, (4) end-to-end runtime \u2264 O(n^2) empirically on all benchmark instances, (5) unit tests and integration tests passing.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Systematic performance comparison of all algorithms on full benchmark suite",
+          "acceptance_criteria": "Experiment script benchmarks/run_all.py executing all algorithms (greedy, modified-greedy, LP-rounding, Baker PTAS at k=2,3,5, separator-based, planar-LP, hybrid) on entire benchmark suite. Results saved as benchmarks/results.csv with columns: instance_name, n, m, algorithm, solution_size, lp_lower_bound, approx_ratio_vs_lp, runtime_seconds, peak_memory_mb. At least 500 (instance, algorithm) data points collected.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Statistical analysis of approximation ratio improvements",
+          "acceptance_criteria": "Analysis script benchmarks/analysis.py producing: (1) paired Wilcoxon signed-rank tests comparing hybrid algorithm to each baseline, (2) p-values < 0.05 for at least 3 baseline comparisons (or documented explanation if not), (3) effect size (Cohen's d or rank-biserial) for each comparison, (4) distribution summary: mean, median, std, min, max approximation ratio for each algorithm, (5) results saved to benchmarks/statistical_analysis.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Scalability analysis on graphs from 1K to 100K+ nodes",
+          "acceptance_criteria": "Scalability experiment with planar graphs at n = 1000, 5000, 10000, 50000, 100000 nodes (at least 5 instances per size). For each algorithm: (1) runtime scaling plot saved as figures/scalability.png, (2) memory usage profile, (3) identification of the practical size limit where each algorithm exceeds 5-minute timeout, (4) empirical growth rate fitting (e.g., O(n), O(n log n), O(n^1.5)) for each algorithm, (5) results documented in benchmarks/scalability.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Validate exact approximation ratios against ILP-optimal solutions on small instances",
+          "acceptance_criteria": "Validation on at least 50 planar graph instances with n \u2264 500 where exact ILP optimal is computed. For each algorithm: (1) exact approximation ratio = solution_size / OPT recorded, (2) distribution of exact ratios reported, (3) novel hybrid algorithm achieves mean ratio < mean ratio of standard greedy with statistical significance (p < 0.05), (4) worst-case ratio of hybrid documented and compared to theoretical bound from proof sketch, (5) results in benchmarks/exact_validation.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Compare experimental results against prior work from literature review",
+          "acceptance_criteria": "Comparison document (docs/prior_work_comparison.md) with: (1) table comparing achieved approximation ratios against results from at least 5 papers cited in sources.bib, (2) runtime comparison where data is available (e.g., PACE 2025 results), (3) identification of graph families where the novel algorithm outperforms prior work, (4) honest discussion of cases where prior work is superior, (5) all comparisons properly cited with BibTeX keys from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Write comprehensive research report synthesizing all findings",
+          "acceptance_criteria": "Report (docs/research_report.md) of at least 4000 words with sections: (1) Introduction and motivation, (2) Related work citing \u2265 10 entries from sources.bib, (3) Algorithm design with pseudocode, (4) Theoretical analysis with proof sketch, (5) Experimental setup, (6) Results with reference to figures, (7) Discussion of limitations, (8) Conclusion and future work. All claims supported by data or proof.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Generate publication-quality figures for all experimental results",
+          "acceptance_criteria": "At least 5 figures saved in figures/ as both PNG and PDF: (1) approximation ratio comparison bar chart across all algorithms, (2) runtime scaling log-log plot, (3) ratio distribution box/violin plot per algorithm, (4) scatter plot of ratio vs graph size colored by algorithm, (5) algorithm pipeline/flowchart diagram. Figures use consistent styling, axis labels, legends, and are referenced in the research report.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Create reproducibility package with complete build and run instructions",
+          "acceptance_criteria": "Repo root contains: (1) requirements.txt with all Python dependencies pinned to versions, (2) Makefile with targets: install, test, benchmark, figures, report, (3) README.md with step-by-step instructions to reproduce all results, (4) all random generators use fixed seeds documented in code, (5) an independent user can run 'make install && make test && make benchmark && make figures' and reproduce the key results within numerical tolerance.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Structured comparison table against at least 5 prior approaches from the literature",
+          "acceptance_criteria": "File docs/comparison_table.csv (and rendered in research report) with columns: Method, Source (BibTeX key), Approx_Ratio_Theoretical, Approx_Ratio_Empirical_Mean, Approx_Ratio_Empirical_Worst, Runtime_Complexity, Runtime_Empirical_Mean_1K, Runtime_Empirical_Mean_10K. At least 6 rows: greedy, modified-greedy, Baker PTAS, one distributed algorithm, one prior LP approach, and the novel hybrid. All source entries reference sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_027",
+          "description": "Final validation checklist and self-assessment of all research claims",
+          "acceptance_criteria": "Checklist document (docs/validation_checklist.md) verifying: (1) all algorithms produce valid dominating sets (domination check passes on 100% of outputs), (2) theoretical approximation ratio claim is consistent with experimental worst case, (3) no measurement bugs (spot-check 5 instances manually), (4) all benchmark results reproducible with fixed seeds, (5) sources.bib has \u2265 15 entries and all are cited in the report, (6) proof sketch is logically consistent (each lemma used in the final theorem), (7) code passes all tests (pytest exit code 0). Each item explicitly marked PASS or FAIL with evidence.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 27,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 27
+  }
+}
