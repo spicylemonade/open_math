@@ -173,8 +173,8 @@
           "id": "item_016",
           "description": "Analyze gravitational softening parameter effects",
           "acceptance_criteria": "Create a study in results/softening_analysis.json testing softening values [0, 1e-4, 1e-3, 1e-2, 1e-1] on a 50-body random cluster for 100 time units. For each softening value record: (a) max force magnitude encountered, (b) relative energy error at end, (c) number of NaN/inf events (must be 0 for softening > 0), (d) qualitative trajectory stability. Document findings in docs/softening_analysis.md with recommendations for default softening value. Reference prior work on softening from literature review.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Softening analysis complete. Tested epsilon=[0, 1e-4, 1e-3, 1e-2, 1e-1]. Zero NaN for softening>0. epsilon=0.1 gives |dE/E|=4.7e-3 (stable). Documented in docs/softening_analysis.md.",
           "error": null
         }
       ]
@@ -268,8 +268,8 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 15,
-    "in_progress": 1,
+    "completed": 16,
+    "in_progress": 0,
     "failed": 0,
     "pending": 9
   }

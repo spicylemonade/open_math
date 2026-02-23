@@ -1,0 +1,42 @@
+[
+  {
+    "softening": 0,
+    "max_force_magnitude": 52.324428186014266,
+    "relative_energy_error": 4649.994057051708,
+    "nan_inf_events": 0,
+    "stability": "unstable",
+    "wall_time_seconds": 61.3
+  },
+  {
+    "softening": 0.0001,
+    "max_force_magnitude": 52.32439513892453,
+    "relative_energy_error": 5770.789071340082,
+    "nan_inf_events": 0,
+    "stability": "unstable",
+    "wall_time_seconds": 60.37
+  },
+  {
+    "softening": 0.001,
+    "max_force_magnitude": 52.321123656721745,
+    "relative_energy_error": 4588.734846132077,
+    "nan_inf_events": 0,
+    "stability": "unstable",
+    "wall_time_seconds": 60.21
+  },
+  {
+    "softening": 0.01,
+    "max_force_magnitude": 51.99576288921874,
+    "relative_energy_error": 12.193244777016195,
+    "nan_inf_events": 0,
+    "stability": "unstable",
+    "wall_time_seconds": 60.32
+  },
+  {
+    "softening": 0.1,
+    "max_force_magnitude": 245.38135362200464,
+    "relative_energy_error": 0.004744020045673419,
+    "nan_inf_events": 0,
+    "stability": "stable",
+    "wall_time_seconds": 60.38
+  }
+]
