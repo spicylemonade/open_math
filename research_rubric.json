@@ -71,8 +71,8 @@
           "id": "item_005",
           "description": "Formalize the mathematical formulation of the N-body gravitational problem",
           "acceptance_criteria": "A document (FORMULATION.md) containing: Newton's law of gravitation for N particles, equations of motion as a system of ODEs, definitions of total energy (kinetic + potential), total linear momentum, and total angular momentum as conserved quantities, with LaTeX-style notation",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "FORMULATION.md created with Newton's law, ODEs, conserved quantities (E, P, L), Hamiltonian formulation, softening, and natural units",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 4,
+    "completed": 5,
     "in_progress": 1,
     "failed": 0,
-    "pending": 20
+    "pending": 19
   }
 }
