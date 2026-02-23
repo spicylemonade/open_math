@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T21:01:29.751485+00:00",
+  "updated_at": "2026-02-23T21:02:22.542386+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -188,8 +188,8 @@
           "id": "item_017",
           "description": "Benchmark energy conservation across all integrators over long time spans",
           "acceptance_criteria": "Run circular 2-body orbit for 10,000 time steps with each integrator (Euler, Verlet, Leapfrog) at dt = 0.01. Record |dE/E0| at every 100th step. Generate energy drift plot (time vs. relative energy error) saved to figures/energy_drift.png. Euler shows linear drift, Verlet/Leapfrog show bounded oscillation \u2014 both behaviors quantified and compared against expected behavior from literature (cited in sources.bib)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Energy drift plot: Euler 0.58 (linear drift), Verlet/Leapfrog 1e-8 (bounded oscillation) after 10k steps dt=0.01. Figure at figures/energy_drift.png, data at results/energy_drift.json.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 16,
+    "completed": 17,
     "in_progress": 0,
     "failed": 0,
-    "pending": 9
+    "pending": 8
   }
 }
