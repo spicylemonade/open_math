@@ -1,0 +1,57 @@
+{
+  "greedy": {
+    "mean": 1.149,
+    "median": 1.1429,
+    "std": 0.0616,
+    "min": 1.0,
+    "max": 1.2609,
+    "count": 36,
+    "optimal_pct": 2.8
+  },
+  "hybrid": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": 0.0,
+    "min": 1.0,
+    "max": 1.0,
+    "count": 36,
+    "optimal_pct": 100.0
+  },
+  "lp_rounding": {
+    "mean": 1.9625,
+    "median": 1.8695,
+    "std": 0.61,
+    "min": 1.0,
+    "max": 2.9167,
+    "count": 36,
+    "optimal_pct": 11.1
+  },
+  "modified_greedy": {
+    "mean": 1.2325,
+    "median": 1.2198,
+    "std": 0.0925,
+    "min": 1.0833,
+    "max": 1.4167,
+    "count": 36,
+    "optimal_pct": 0.0
+  },
+  "planar_lp": {
+    "mean": 1.0805,
+    "median": 1.0774,
+    "std": 0.0837,
+    "min": 1.0,
+    "max": 1.2917,
+    "count": 36,
+    "optimal_pct": 36.1
+  },
+  "separator": {
+    "mean": 1.0,
+    "median": 1.0,
+    "std": 0.0,
+    "min": 1.0,
+    "max": 1.0,
+    "count": 36,
+    "optimal_pct": 100.0
+  },
+  "hybrid_vs_greedy_p_value": 1.2174955653682274e-07
+}
