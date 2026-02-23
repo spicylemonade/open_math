@@ -1,0 +1,12 @@
+{
+  "test": "circular_binary_1_orbit",
+  "euler_baseline": {
+    "dt": 0.001,
+    "n_steps": 4443,
+    "orbital_period": 4.442882938158366,
+    "position_error": 0.042164830912505745,
+    "energy_error": 0.01716441081469056,
+    "E0": -0.4999999999999999,
+    "E_final": -0.4914177945926546
+  }
+}
