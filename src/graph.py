@@ -174,10 +174,11 @@ def generate_grid_graph(rows, cols):
 
 
 def generate_random_planar_graph(n, seed=42):
-    """Generate a random planar graph using random triangulation approach.
+    """Generate a random planar graph efficiently.
 
-    Starts with a triangle and incrementally adds vertices connected to
-    existing face vertices, maintaining planarity.
+    Uses Delaunay triangulation as a maximally planar graph, then randomly
+    removes a fraction of edges to produce a sparser planar graph.
+    This is always fast and always produces a planar graph.
     """
     rng = random.Random(seed)
     if n <= 3:
@@ -190,42 +191,50 @@ def generate_random_planar_graph(n, seed=42):
                 g.add_edge(nodes[i], nodes[j])
         return g
 
-    g = Graph()
-    for i in range(3):
-        g.add_node(i)
-    g.add_edge(0, 1)
-    g.add_edge(1, 2)
-    g.add_edge(0, 2)
+    # Generate Delaunay triangulation (always planar, fast)
+    import numpy as np
+    np.random.seed(seed)
+    try:
+        from scipy.spatial import Delaunay
+        points = np.random.rand(n, 2)
+        tri = Delaunay(points)
+        all_edges = set()
+        for simplex in tri.simplices:
+            for i in range(3):
+                for j in range(i + 1, 3):
+                    u, v = int(simplex[i]), int(simplex[j])
+                    all_edges.add((min(u, v), max(u, v)))
 
-    for v in range(3, n):
-        g.add_node(v)
-        existing = list(range(v))
-        # Connect to 2-3 random existing vertices, preferring high degree
-        num_edges = rng.randint(2, min(3, v))
-        targets = rng.sample(existing, min(num_edges, len(existing)))
-        for t in targets:
-            g.add_edge(v, t)
+        # Build full Delaunay graph first (guaranteed planar)
+        nxG_full = nx.Graph()
+        nxG_full.add_nodes_from(range(n))
+        nxG_full.add_edges_from(all_edges)
 
-    # Verify planarity; if not planar, remove edges until planar
-    nxG = g.to_networkx()
-    planar, _ = nx.check_planarity(nxG)
-    if not planar:
-        # Fall back: use NetworkX's random planar graph
+        # Get a spanning tree to guarantee connectivity
+        tree_edges = set()
+        for u, v in nx.bfs_edges(nxG_full, 0):
+            tree_edges.add((min(u, v), max(u, v)))
+
+        # Non-tree edges that we can randomly include/exclude
+        non_tree = list(all_edges - tree_edges)
+        rng.shuffle(non_tree)
+        # Keep ~50% of non-tree edges
+        keep = int(len(non_tree) * 0.5)
+        kept_non_tree = non_tree[:keep]
+
+        g = Graph()
+        for i in range(n):
+            g.add_node(i)
+        for u, v in tree_edges:
+            g.add_edge(u, v)
+        for u, v in kept_non_tree:
+            g.add_edge(u, v)
+
+        return g
+    except ImportError:
         nxG = nx.random_labeled_tree(n)
-        # Add extra edges while maintaining planarity
-        nodes = list(nxG.nodes())
-        extra = 0
-        max_extra = n
-        while extra < max_extra:
-            u, v = rng.sample(nodes, 2)
-            if not nxG.has_edge(u, v):
-                nxG.add_edge(u, v)
-                if not nx.check_planarity(nxG)[0]:
-                    nxG.remove_edge(u, v)
-                else:
-                    extra += 1
         g = Graph.from_networkx(nxG)
-    return g
+        return g
 
 
 def generate_delaunay_planar_graph(n, seed=42):

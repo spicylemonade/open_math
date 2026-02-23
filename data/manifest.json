@@ -1,0 +1,254 @@
+[
+  {
+    "name": "grid_n49_t0",
+    "n": 49,
+    "m": 84,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n49_t0.gr"
+  },
+  {
+    "name": "grid_n48_t1",
+    "n": 48,
+    "m": 82,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n48_t1.gr"
+  },
+  {
+    "name": "grid_n100_t0",
+    "n": 100,
+    "m": 180,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n100_t0.gr"
+  },
+  {
+    "name": "grid_n99_t1",
+    "n": 99,
+    "m": 178,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n99_t1.gr"
+  },
+  {
+    "name": "grid_n484_t0",
+    "n": 484,
+    "m": 924,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n484_t0.gr"
+  },
+  {
+    "name": "grid_n483_t1",
+    "n": 483,
+    "m": 922,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n483_t1.gr"
+  },
+  {
+    "name": "grid_n992_t0",
+    "n": 992,
+    "m": 1921,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n992_t0.gr"
+  },
+  {
+    "name": "grid_n992_t1",
+    "n": 992,
+    "m": 1921,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n992_t1.gr"
+  },
+  {
+    "name": "grid_n4970_t0",
+    "n": 4970,
+    "m": 9799,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n4970_t0.gr"
+  },
+  {
+    "name": "grid_n4970_t1",
+    "n": 4970,
+    "m": 9799,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n4970_t1.gr"
+  },
+  {
+    "name": "grid_n10000_t0",
+    "n": 10000,
+    "m": 19800,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n10000_t0.gr"
+  },
+  {
+    "name": "grid_n9999_t1",
+    "n": 9999,
+    "m": 19798,
+    "type": "grid",
+    "path": "/home/codex/work/repo/data/grid_n9999_t1.gr"
+  },
+  {
+    "name": "delaunay_n50_t0",
+    "n": 50,
+    "m": 136,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n50_t0.gr"
+  },
+  {
+    "name": "delaunay_n50_t1",
+    "n": 50,
+    "m": 137,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n50_t1.gr"
+  },
+  {
+    "name": "delaunay_n100_t0",
+    "n": 100,
+    "m": 284,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n100_t0.gr"
+  },
+  {
+    "name": "delaunay_n100_t1",
+    "n": 100,
+    "m": 284,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n100_t1.gr"
+  },
+  {
+    "name": "delaunay_n500_t0",
+    "n": 500,
+    "m": 1479,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n500_t0.gr"
+  },
+  {
+    "name": "delaunay_n500_t1",
+    "n": 500,
+    "m": 1482,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n500_t1.gr"
+  },
+  {
+    "name": "delaunay_n1000_t0",
+    "n": 1000,
+    "m": 2978,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n1000_t0.gr"
+  },
+  {
+    "name": "delaunay_n1000_t1",
+    "n": 1000,
+    "m": 2977,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n1000_t1.gr"
+  },
+  {
+    "name": "delaunay_n5000_t0",
+    "n": 5000,
+    "m": 14978,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n5000_t0.gr"
+  },
+  {
+    "name": "delaunay_n5000_t1",
+    "n": 5000,
+    "m": 14974,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n5000_t1.gr"
+  },
+  {
+    "name": "delaunay_n10000_t0",
+    "n": 10000,
+    "m": 29978,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n10000_t0.gr"
+  },
+  {
+    "name": "delaunay_n10000_t1",
+    "n": 10000,
+    "m": 29972,
+    "type": "delaunay",
+    "path": "/home/codex/work/repo/data/delaunay_n10000_t1.gr"
+  },
+  {
+    "name": "random_planar_n50_t0",
+    "n": 50,
+    "m": 92,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n50_t0.gr"
+  },
+  {
+    "name": "random_planar_n50_t1",
+    "n": 50,
+    "m": 93,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n50_t1.gr"
+  },
+  {
+    "name": "random_planar_n100_t0",
+    "n": 100,
+    "m": 191,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n100_t0.gr"
+  },
+  {
+    "name": "random_planar_n100_t1",
+    "n": 100,
+    "m": 191,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n100_t1.gr"
+  },
+  {
+    "name": "random_planar_n500_t0",
+    "n": 500,
+    "m": 989,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n500_t0.gr"
+  },
+  {
+    "name": "random_planar_n500_t1",
+    "n": 500,
+    "m": 990,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n500_t1.gr"
+  },
+  {
+    "name": "random_planar_n1000_t0",
+    "n": 1000,
+    "m": 1988,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n1000_t0.gr"
+  },
+  {
+    "name": "random_planar_n1000_t1",
+    "n": 1000,
+    "m": 1988,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n1000_t1.gr"
+  },
+  {
+    "name": "random_planar_n5000_t0",
+    "n": 5000,
+    "m": 9988,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n5000_t0.gr"
+  },
+  {
+    "name": "random_planar_n5000_t1",
+    "n": 5000,
+    "m": 9986,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n5000_t1.gr"
+  },
+  {
+    "name": "random_planar_n10000_t0",
+    "n": 10000,
+    "m": 19988,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n10000_t0.gr"
+  },
+  {
+    "name": "random_planar_n10000_t1",
+    "n": 10000,
+    "m": 19985,
+    "type": "random_planar",
+    "path": "/home/codex/work/repo/data/random_planar_n10000_t1.gr"
+  }
+]
