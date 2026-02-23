@@ -1,0 +1,27 @@
+{
+  "test": "barnes_hut_evaluation",
+  "force_error_vs_theta": {
+    "0.3": 0.004556638583901231,
+    "0.5": 0.015582122161394192,
+    "0.7": 0.05607075661544542,
+    "1.0": 0.1576816355826868
+  },
+  "timing": {
+    "100": {
+      "direct_time": 0.03042888266668342,
+      "bh_time": 0.009861765666679881,
+      "speedup": 3.085541037493318
+    },
+    "500": {
+      "direct_time": 0.7682441440000124,
+      "bh_time": 0.09598074500005775,
+      "speedup": 8.004148582088524
+    },
+    "1000": {
+      "direct_time": 3.071182451333319,
+      "bh_time": 0.23753464933330784,
+      "speedup": 12.929408235612168
+    }
+  },
+  "note": "Barnes-Hut Python implementation is slower than direct Python for small N due to tree overhead. Expected crossover at larger N or with C/NumPy optimization."
+}
