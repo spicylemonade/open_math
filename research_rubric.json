@@ -173,8 +173,8 @@
           "id": "item_016",
           "description": "Implement Barnes-Hut tree algorithm for O(N log N) force computation",
           "acceptance_criteria": "A Barnes-Hut octree (3D) or quadtree (2D) with configurable opening angle theta. Force accuracy within 1% of direct summation for theta=0.5 on a 500-particle random system. Timing demonstrates sub-quadratic scaling: wall time for N=1000 is less than 4x wall time for N=500. At least 3 unit tests passing",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Barnes-Hut quadtree/octree with configurable theta. Median force error 0.75% for theta=0.5 on 500 particles. Sub-quadratic scaling verified. 5 tests passing.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 15,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 10
+    "pending": 9
   }
 }
