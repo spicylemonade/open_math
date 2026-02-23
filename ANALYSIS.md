@@ -61,3 +61,60 @@
 - Collisions and mergers
 - 3D rendering or interactive visualization
 - Parallel/distributed computation
+
+## 4. Literature Review
+
+### 4.1 N-body Gravitational Simulation Algorithms
+
+The gravitational N-body problem requires computing the mutual gravitational interactions among N point masses and integrating their equations of motion forward in time. The fundamental challenge is computational cost: the direct pairwise force calculation scales as O(N²), which becomes prohibitive for large N.
+
+**Key survey papers:**
+
+1. **Dehnen & Read (2011)** — "N-body simulations of gravitational dynamics" (arXiv:1105.1082). Comprehensive review covering both collisional (star clusters) and collisionless (galaxies, large-scale structure) regimes. Describes state-of-the-art algorithms including tree codes, FMM, and particle-mesh methods. Identifies that direct N-body codes like NBODY6 are practical up to ~20,000 particles for Hubble-time integrations.
+
+2. **Trenti & Hut (2008)** — "Gravitational N-body Simulations" (arXiv:0806.3950). Overview of N-body methods from few-body to cosmological scales. Emphasizes the importance of choosing appropriate force solvers and integrators for different physical regimes.
+
+3. **Aarseth (2003)** — "Gravitational N-Body Simulations" (Cambridge University Press). The definitive monograph on direct N-body methods, written by the pioneer of the field. Covers regularization techniques for close encounters, Hermite integration, and the NBODY series of codes.
+
+### 4.2 Symplectic Integrators for Orbital Mechanics
+
+Symplectic integrators preserve the geometric structure of Hamiltonian systems — specifically, they conserve phase-space volume (Liouville's theorem). This makes them ideal for long-term orbital integrations where energy conservation over many orbits is critical.
+
+**Key findings:**
+
+4. **Velocity Verlet and Leapfrog are mathematically equivalent** — they are the same second-order symplectic method expressed in different forms (Verlet computes x, v at aligned time steps; Leapfrog staggers them by dt/2). Both are time-reversible and exactly conserve a shadow Hamiltonian close to the true Hamiltonian, resulting in bounded energy oscillations rather than secular drift.
+
+5. **Yoshida (1990)** — "Construction of higher order symplectic integrators" (Physics Letters A). Showed how to compose leapfrog steps with specially chosen sub-step sizes to achieve 4th, 6th, and 8th order symplectic integrators. The 4th-order Yoshida integrator uses 3 leapfrog evaluations per step.
+
+6. **Wisdom & Holman (1991)** — Developed the symplectic mapping method for planetary dynamics, enabling efficient long-term solar system integrations.
+
+### 4.3 Efficient Force Computation Methods
+
+**Barnes-Hut (1986):**
+- Divides space into a hierarchical octree (3D) or quadtree (2D)
+- Distant groups of particles approximated as single point masses at their center of mass
+- Opening angle parameter θ controls accuracy vs. speed tradeoff
+- Complexity: O(N log N)
+- θ = 0 degenerates to exact direct summation; typical θ ≈ 0.5–0.7
+
+7. **Barnes & Hut (1986)** — "A hierarchical O(N log N) force-calculation algorithm" (Nature, 324, 446-449). The foundational paper introducing the tree-code approximation.
+
+**Fast Multipole Method (Greengard & Rokhlin, 1987):**
+- Uses multipole expansions for cell-to-cell interactions
+- Achieves O(N) complexity for uniform particle distributions
+- More complex to implement but higher accuracy for given computational cost
+
+8. **Greengard & Rokhlin (1987)** — "A fast algorithm for particle simulations" (Journal of Computational Physics). Introduced the FMM, achieving linear scaling for N-body force computation.
+
+### 4.4 Key Papers Summary
+
+| # | Authors | Year | Title | Key Contribution |
+|---|---------|------|-------|-----------------|
+| 1 | Dehnen & Read | 2011 | N-body simulations of gravitational dynamics | Comprehensive algorithm survey |
+| 2 | Trenti & Hut | 2008 | Gravitational N-body Simulations | Astrophysical context overview |
+| 3 | Aarseth | 2003 | Gravitational N-Body Simulations (book) | Direct N-body methods bible |
+| 4 | Verlet | 1967 | Computer experiments on classical fluids | Velocity Verlet algorithm |
+| 5 | Yoshida | 1990 | Construction of higher order symplectic integrators | Higher-order symplectic methods |
+| 6 | Barnes & Hut | 1986 | A hierarchical O(N log N) force-calculation algorithm | Tree-code approximation |
+| 7 | Greengard & Rokhlin | 1987 | A fast algorithm for particle simulations | Fast Multipole Method |
+| 8 | Wisdom & Holman | 1991 | Symplectic maps for the N-body problem | Symplectic mapping for planets |
