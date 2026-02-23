@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T21:10:36.406080+00:00",
+  "updated_at": "2026-02-23T21:11:58.790689+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -212,8 +212,8 @@
           "id": "item_020",
           "description": "Compare simulation accuracy and performance against results reported in prior work",
           "acceptance_criteria": "Comparison table in results/comparison_vs_literature.json containing: (1) energy conservation results vs. values reported in at least 2 cited papers for equivalent test problems, (2) performance scaling vs. theoretical complexity from literature. Discrepancies > 10% explained with identified causes. At least 3 entries from sources.bib directly referenced in the comparison",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "6 comparisons against literature: Verlet O(dt^2) scaling, Euler linear drift, symplectic bounded oscillation, O(N^2) direct, O(N log N) BH, BH force error. All consistent with published values. 4 sources cited.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 19,
+    "completed": 20,
     "in_progress": 0,
     "failed": 0,
-    "pending": 6
+    "pending": 5
   }
 }
