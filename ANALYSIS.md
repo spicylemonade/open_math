@@ -199,3 +199,99 @@ where ε > 0 is the softening length. The softened acceleration becomes:
 - The softened potential is: Φ_soft = -G * m_j / √(|**r**_ij|² + ε²)
 - Softening introduces a systematic bias in the potential energy; the energy is no longer exactly conserved even analytically, but the softened system has its own conserved energy
 - Choosing ε involves a tradeoff: too large suppresses real dynamics; too small allows near-singular behavior (Dehnen & Read 2011)
+
+## 7. Comparison of Numerical Integration Methods
+
+### 7.1 Forward Euler
+
+**Update rule:**
+- **r**(t+dt) = **r**(t) + **v**(t) · dt
+- **v**(t+dt) = **v**(t) + **a**(t) · dt
+
+| Property | Value |
+|----------|-------|
+| Order of accuracy | 1st order, O(dt) global error |
+| Symplectic | No |
+| Time-reversible | No |
+| Energy drift | **Secular (linear) growth** — energy increases monotonically over time |
+| Force evaluations per step | 1 |
+
+Forward Euler is the simplest explicit method. It is neither symplectic nor time-reversible, leading to systematic energy drift that grows linearly with time. For orbital problems, orbits spiral outward (energy gain) or inward (energy loss). Useful only as a baseline to demonstrate the superiority of symplectic methods (Hairer et al. 2006).
+
+### 7.2 Velocity Verlet (Störmer-Verlet)
+
+**Update rule:**
+1. **r**(t+dt) = **r**(t) + **v**(t) · dt + ½ · **a**(t) · dt²
+2. Compute **a**(t+dt) from new positions
+3. **v**(t+dt) = **v**(t) + ½ · (**a**(t) + **a**(t+dt)) · dt
+
+| Property | Value |
+|----------|-------|
+| Order of accuracy | 2nd order, O(dt²) global error |
+| Symplectic | Yes |
+| Time-reversible | Yes |
+| Energy drift | **Bounded oscillation** — no secular growth; error ~ O(dt²) |
+| Force evaluations per step | 1 (with cached previous acceleration) |
+
+The Velocity Verlet method (Verlet 1967, Störmer 1907) is the workhorse of molecular dynamics and N-body simulation. Its symplectic nature guarantees long-term bounded energy error via the shadow Hamiltonian mechanism (Hairer et al. 2003). It is algebraically equivalent to the Leapfrog method (see below).
+
+### 7.3 Leapfrog (Kick-Drift-Kick)
+
+**Update rule (KDK form):**
+1. **v**(t+dt/2) = **v**(t) + **a**(t) · dt/2       ← "kick"
+2. **r**(t+dt) = **r**(t) + **v**(t+dt/2) · dt       ← "drift"
+3. Compute **a**(t+dt)
+4. **v**(t+dt) = **v**(t+dt/2) + **a**(t+dt) · dt/2  ← "kick"
+
+| Property | Value |
+|----------|-------|
+| Order of accuracy | 2nd order, O(dt²) global error |
+| Symplectic | Yes |
+| Time-reversible | Yes |
+| Energy drift | **Bounded oscillation** — identical to Velocity Verlet |
+| Force evaluations per step | 1 |
+
+The Leapfrog method in KDK form is mathematically equivalent to Velocity Verlet (as shown by Hairer et al. 2003). Both conserve the same shadow Hamiltonian. The KDK formulation is natural for adaptive time-stepping because the half-kicks can be adjusted between steps. Used by REBOUND (Rein & Liu 2012), Gadget-2 (Springel 2005), and most modern N-body codes.
+
+### 7.4 4th-Order Yoshida (Higher-Order Symplectic)
+
+**Update rule:**
+Composition of 3 leapfrog steps with coefficients:
+- c₁ = c₄ = 1 / (2 - 2^(1/3)) ≈ 1.3512
+- c₂ = c₃ = -2^(1/3) / (2 - 2^(1/3)) ≈ -1.7024
+- d₁ = d₃ = 1 / (2 - 2^(1/3)) ≈ 1.3512
+- d₂ = -2^(1/3) / (2 - 2^(1/3)) ≈ -1.7024
+- d₄ = 0
+
+Apply leapfrog substeps with these scaled dt values.
+
+| Property | Value |
+|----------|-------|
+| Order of accuracy | 4th order, O(dt⁴) global error |
+| Symplectic | Yes |
+| Time-reversible | Yes |
+| Energy drift | **Bounded oscillation** — tighter than 2nd-order methods at same dt |
+| Force evaluations per step | 3 |
+
+The Yoshida (1990) 4th-order method achieves higher accuracy by composing leapfrog steps with carefully chosen coefficients that cancel lower-order error terms. The negative time steps (backward evolution substeps) may seem counterintuitive but are essential for error cancellation. Requires 3 force evaluations per step vs. 1 for leapfrog.
+
+### 7.5 Comparison Summary
+
+| Method | Order | Symplectic | Time-Reversible | Energy Drift | Cost/Step |
+|--------|-------|------------|-----------------|-------------|-----------|
+| Forward Euler | 1 | No | No | Linear (secular) | 1 eval |
+| Velocity Verlet | 2 | Yes | Yes | Bounded | 1 eval |
+| Leapfrog (KDK) | 2 | Yes | Yes | Bounded | 1 eval |
+| Yoshida 4th-order | 4 | Yes | Yes | Bounded (tighter) | 3 evals |
+
+### 7.6 Recommended Baseline Method
+
+**Velocity Verlet** is recommended as the primary integrator for this project:
+
+1. **Symplectic**: Guarantees bounded energy error over arbitrarily long integrations (Hairer et al. 2006)
+2. **2nd-order accurate**: Sufficient for the target applications (2-body validation, N-body benchmarks)
+3. **Simple to implement**: Only requires caching the previous acceleration
+4. **Standard in the field**: Used as the baseline in nearly all N-body method comparisons (Dehnen & Read 2011)
+5. **Compatible with adaptive time-stepping**: The KDK (Leapfrog) form extends naturally to variable dt
+
+Forward Euler is included only as a negative baseline to demonstrate the importance of symplecticity.
