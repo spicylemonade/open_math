@@ -5,7 +5,7 @@ import pytest
 from src.vector import Vec2
 from src.body import Body
 from src.force import direct_gravity
-from src.integrators import euler_step, leapfrog_step
+from src.integrators import euler_step, leapfrog_step, rk4_step
 
 
 # --- Helper: constant acceleration force function ---
@@ -146,3 +146,104 @@ def test_leapfrog_with_gravity():
     # Bodies should still be roughly distance 2 apart
     dist = bodies[0].pos.distance_to(bodies[1].pos)
     assert 1.5 < dist < 2.5
+
+
+# === RK4 tests ===
+
+def test_rk4_free_particle():
+    """Free particle with constant velocity moves linearly."""
+    b = Body(1.0, Vec2(0, 0), Vec2(1, 0))
+    result = rk4_step([b], 1.0, zero_force)
+    assert abs(result[0].pos.x - 1.0) < 1e-10
+    assert abs(result[0].pos.y) < 1e-10
+
+
+def test_rk4_constant_accel_exact():
+    """RK4 should be exact for constant acceleration (polynomial of degree <= 3)."""
+    b = Body(1.0, Vec2(0, 0), Vec2(0, 0))
+    dt = 1.0
+    result = rk4_step([b], dt, constant_accel)
+    # Exact: y = 0.5*a*t^2 = -0.5, vy = a*t = -1.0
+    assert abs(result[0].pos.y - (-0.5)) < 1e-10
+    assert abs(result[0].vel.y - (-1.0)) < 1e-10
+
+
+def test_rk4_does_not_mutate():
+    """RK4 should not modify input bodies."""
+    b = Body(1.0, Vec2(0, 0), Vec2(1, 0))
+    original_pos = b.pos
+    rk4_step([b], 1.0, zero_force)
+    assert b.pos == original_pos
+
+
+def test_rk4_fourth_order_convergence():
+    """Halving dt should reduce single-step error by ~16x (4th order)."""
+    # Use gravitational two-body problem for non-trivial dynamics
+    bodies = [
+        Body(1.0, Vec2(0, 0), Vec2(0, 0)),
+        Body(1e-6, Vec2(1, 0), Vec2(0, 1)),
+    ]
+
+    # Reference: very small dt
+    dt_ref = 0.0001
+    ref = rk4_step(bodies, dt_ref, direct_gravity, G=1.0, softening=0.0)
+
+    # Two steps with dt
+    dt1 = 0.01
+    dt2 = dt1 / 2.0
+
+    # Single step with dt1
+    result1 = rk4_step(bodies, dt1, direct_gravity, G=1.0, softening=0.0)
+
+    # Single step with dt2
+    result2 = rk4_step(bodies, dt2, direct_gravity, G=1.0, softening=0.0)
+
+    # Compare to reference at their respective times (not the same time, so
+    # compare truncation errors). For order p, error ~ C*dt^(p+1).
+    # Since we're doing single steps starting from the same IC:
+    # err(dt) ~ C * dt^5 for RK4
+    # err(dt/2) ~ C * (dt/2)^5 = err(dt)/32
+
+    # Actually, for a single step the local truncation error is O(dt^5).
+    # Let's use a simpler approach: integrate the same total time with N and 2N steps.
+    total_time = 0.1
+    n1 = 10
+    n2 = 20
+    dt1 = total_time / n1
+    dt2 = total_time / n2
+
+    b1 = list(bodies)
+    for _ in range(n1):
+        b1 = rk4_step(b1, dt1, direct_gravity, G=1.0, softening=0.0)
+
+    b2 = list(bodies)
+    for _ in range(n2):
+        b2 = rk4_step(b2, dt2, direct_gravity, G=1.0, softening=0.0)
+
+    # Reference with very fine dt
+    b_ref = list(bodies)
+    n_ref = 10000
+    dt_ref = total_time / n_ref
+    for _ in range(n_ref):
+        b_ref = rk4_step(b_ref, dt_ref, direct_gravity, G=1.0, softening=0.0)
+
+    # Error in position of test particle (body index 1)
+    err1 = b1[1].pos.distance_to(b_ref[1].pos)
+    err2 = b2[1].pos.distance_to(b_ref[1].pos)
+
+    # For 4th order global convergence: err(dt/2) / err(dt) ~ (1/2)^4 = 1/16
+    ratio = err1 / max(err2, 1e-30)
+    print(f"RK4 convergence: err1={err1:.6e}, err2={err2:.6e}, ratio={ratio:.1f} (expect ~16)")
+    assert 8 < ratio < 32, f"Expected ~16x reduction, got {ratio:.1f}x"
+
+
+def test_rk4_with_gravity():
+    """RK4 with gravity produces plausible orbit."""
+    bodies = [
+        Body(1.0, Vec2(0, 0), Vec2(0, 0)),
+        Body(1e-6, Vec2(1, 0), Vec2(0, 1)),
+    ]
+    for _ in range(100):
+        bodies = rk4_step(bodies, 0.01, direct_gravity, G=1.0, softening=0.0)
+    dist = bodies[0].pos.distance_to(bodies[1].pos)
+    assert 0.5 < dist < 1.5
