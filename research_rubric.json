@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T03:41:36.526040+00:00",
+  "updated_at": "2026-02-23T04:04:13.236296+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -212,8 +212,8 @@
           "id": "item_020",
           "description": "Scalability analysis on graphs from 1K to 100K+ nodes",
           "acceptance_criteria": "Scalability experiment with planar graphs at n = 1000, 5000, 10000, 50000, 100000 nodes (at least 5 instances per size). For each algorithm: (1) runtime scaling plot saved as figures/scalability.png, (2) memory usage profile, (3) identification of the practical size limit where each algorithm exceeds 5-minute timeout, (4) empirical growth rate fitting (e.g., O(n), O(n log n), O(n^1.5)) for each algorithm, (5) results documented in benchmarks/scalability.json.",
-          "status": "in_progress",
-          "notes": null,
+          "status": "completed",
+          "notes": "Scalability tested on n=1K,5K,10K,50K,100K. Figures saved to figures/scalability.png and .pdf. Growth rates: greedy O(n^2), separator O(n^2), hybrid O(n) empirically. Greedy times out at n=50K. 55 data points in results/scalability.json.",
           "error": null
         },
         {
@@ -284,8 +284,8 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 21,
-    "in_progress": 1,
+    "completed": 22,
+    "in_progress": 0,
     "failed": 0,
     "pending": 5
   }

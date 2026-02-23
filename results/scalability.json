@@ -1,0 +1,497 @@
+[
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "greedy",
+    "runtime": 0.248,
+    "memory_mb": 0.1,
+    "solution_size": 193,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "modified_greedy",
+    "runtime": 0.416,
+    "memory_mb": 0.1,
+    "solution_size": 200,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "lp_rounding",
+    "runtime": 0.237,
+    "memory_mb": 3.4,
+    "solution_size": 449,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "separator",
+    "runtime": 0.135,
+    "memory_mb": 0.9,
+    "solution_size": 191,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "planar_lp",
+    "runtime": 0.978,
+    "memory_mb": 14.7,
+    "solution_size": 175,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "baker_k3",
+    "runtime": 0.559,
+    "memory_mb": 0.9,
+    "solution_size": 464,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 0,
+    "algorithm": "hybrid",
+    "runtime": 35.291,
+    "memory_mb": 16.1,
+    "solution_size": 169,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "greedy",
+    "runtime": 0.24,
+    "memory_mb": 0.1,
+    "solution_size": 186,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "modified_greedy",
+    "runtime": 0.387,
+    "memory_mb": 0.1,
+    "solution_size": 194,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "lp_rounding",
+    "runtime": 0.202,
+    "memory_mb": 3.4,
+    "solution_size": 427,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "separator",
+    "runtime": 0.15,
+    "memory_mb": 0.9,
+    "solution_size": 187,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "planar_lp",
+    "runtime": 0.744,
+    "memory_mb": 16.1,
+    "solution_size": 167,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "baker_k3",
+    "runtime": 0.552,
+    "memory_mb": 0.8,
+    "solution_size": 473,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 1,
+    "algorithm": "hybrid",
+    "runtime": 28.727,
+    "memory_mb": 16.1,
+    "solution_size": 166,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "greedy",
+    "runtime": 0.23,
+    "memory_mb": 0.1,
+    "solution_size": 178,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "modified_greedy",
+    "runtime": 0.37,
+    "memory_mb": 0.1,
+    "solution_size": 183,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "lp_rounding",
+    "runtime": 0.215,
+    "memory_mb": 3.4,
+    "solution_size": 420,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "separator",
+    "runtime": 0.125,
+    "memory_mb": 0.9,
+    "solution_size": 187,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "planar_lp",
+    "runtime": 0.796,
+    "memory_mb": 15.5,
+    "solution_size": 168,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "baker_k3",
+    "runtime": 0.524,
+    "memory_mb": 0.8,
+    "solution_size": 476,
+    "timed_out": false
+  },
+  {
+    "n": 1000,
+    "trial": 2,
+    "algorithm": "hybrid",
+    "runtime": 21.133,
+    "memory_mb": 11.8,
+    "solution_size": 165,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "greedy",
+    "runtime": 6.113,
+    "memory_mb": 0.7,
+    "solution_size": 894,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "modified_greedy",
+    "runtime": 9.762,
+    "memory_mb": 0.7,
+    "solution_size": 934,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "lp_rounding",
+    "runtime": 3.512,
+    "memory_mb": 16.7,
+    "solution_size": 2186,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "separator",
+    "runtime": 3.516,
+    "memory_mb": 4.8,
+    "solution_size": 910,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "planar_lp",
+    "runtime": 11.945,
+    "memory_mb": 72.7,
+    "solution_size": 860,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 0,
+    "algorithm": "hybrid",
+    "runtime": 35.989,
+    "memory_mb": 58.9,
+    "solution_size": 860,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "greedy",
+    "runtime": 6.292,
+    "memory_mb": 0.7,
+    "solution_size": 896,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "modified_greedy",
+    "runtime": 9.86,
+    "memory_mb": 0.7,
+    "solution_size": 936,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "lp_rounding",
+    "runtime": 3.371,
+    "memory_mb": 16.7,
+    "solution_size": 2099,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "separator",
+    "runtime": 3.397,
+    "memory_mb": 4.8,
+    "solution_size": 902,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "planar_lp",
+    "runtime": 11.392,
+    "memory_mb": 72.7,
+    "solution_size": 846,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 1,
+    "algorithm": "hybrid",
+    "runtime": 36.56,
+    "memory_mb": 59.0,
+    "solution_size": 846,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "greedy",
+    "runtime": 6.176,
+    "memory_mb": 0.7,
+    "solution_size": 904,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "modified_greedy",
+    "runtime": 9.818,
+    "memory_mb": 0.7,
+    "solution_size": 944,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "lp_rounding",
+    "runtime": 3.341,
+    "memory_mb": 16.7,
+    "solution_size": 2165,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "separator",
+    "runtime": 3.456,
+    "memory_mb": 4.8,
+    "solution_size": 899,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "planar_lp",
+    "runtime": 11.451,
+    "memory_mb": 72.7,
+    "solution_size": 847,
+    "timed_out": false
+  },
+  {
+    "n": 5000,
+    "trial": 2,
+    "algorithm": "hybrid",
+    "runtime": 35.738,
+    "memory_mb": 59.0,
+    "solution_size": 847,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 0,
+    "algorithm": "greedy",
+    "runtime": 25.125,
+    "memory_mb": 1.4,
+    "solution_size": 1811,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 0,
+    "algorithm": "modified_greedy",
+    "runtime": 39.623,
+    "memory_mb": 1.4,
+    "solution_size": 1880,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 0,
+    "algorithm": "separator",
+    "runtime": 14.082,
+    "memory_mb": 10.1,
+    "solution_size": 1819,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 0,
+    "algorithm": "hybrid",
+    "runtime": 59.862,
+    "memory_mb": 10.0,
+    "solution_size": 1793,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 1,
+    "algorithm": "greedy",
+    "runtime": 25.197,
+    "memory_mb": 1.4,
+    "solution_size": 1814,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 1,
+    "algorithm": "modified_greedy",
+    "runtime": 42.63,
+    "memory_mb": 1.4,
+    "solution_size": 1880,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 1,
+    "algorithm": "separator",
+    "runtime": 14.274,
+    "memory_mb": 10.0,
+    "solution_size": 1827,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 1,
+    "algorithm": "hybrid",
+    "runtime": 60.467,
+    "memory_mb": 10.0,
+    "solution_size": 1794,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 2,
+    "algorithm": "greedy",
+    "runtime": 25.104,
+    "memory_mb": 1.4,
+    "solution_size": 1796,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 2,
+    "algorithm": "modified_greedy",
+    "runtime": 40.693,
+    "memory_mb": 1.4,
+    "solution_size": 1855,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 2,
+    "algorithm": "separator",
+    "runtime": 14.006,
+    "memory_mb": 10.1,
+    "solution_size": 1799,
+    "timed_out": false
+  },
+  {
+    "n": 10000,
+    "trial": 2,
+    "algorithm": "hybrid",
+    "runtime": 60.483,
+    "memory_mb": 10.0,
+    "solution_size": 1776,
+    "timed_out": false
+  },
+  {
+    "n": 50000,
+    "trial": 0,
+    "algorithm": "greedy",
+    "runtime": 120,
+    "memory_mb": null,
+    "solution_size": null,
+    "timed_out": true
+  },
+  {
+    "n": 50000,
+    "trial": 1,
+    "algorithm": "greedy",
+    "runtime": 120,
+    "memory_mb": null,
+    "solution_size": null,
+    "timed_out": true
+  },
+  {
+    "n": 50000,
+    "trial": 2,
+    "algorithm": "greedy",
+    "runtime": 120,
+    "memory_mb": null,
+    "solution_size": null,
+    "timed_out": true
+  },
+  {
+    "n": 100000,
+    "trial": 0,
+    "algorithm": "greedy",
+    "runtime": 120,
+    "memory_mb": null,
+    "solution_size": null,
+    "timed_out": true
+  }
+]
