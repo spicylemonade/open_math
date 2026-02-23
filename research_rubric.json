@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T01:15:20.579900+00:00",
+  "updated_at": "2026-02-23T01:26:03.384845+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -55,8 +55,8 @@
           "id": "item_003",
           "description": "Conduct web-based literature review on MDS approximation algorithms for planar and sparse graph classes",
           "acceptance_criteria": "Literature survey document (docs/literature_review.md) covering at least 15 papers across these categories: (a) Baker's technique and PTAS variants (Baker 1994, Demaine & Hajiaghayi), (b) greedy and modified-greedy approaches (Jones et al., Dvo\u0159\u00e1k 2013), (c) LP-based methods and integrality gap results, (d) distributed MDS approximation (Lenzen et al., Czygrinow et al., Hilke et al. 2025), (e) FPT and kernelization (Alber et al., Fomin & Thilikos), (f) practical solvers from PACE 2025 competition. Each paper summarized with key result, technique, and relevance.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Literature review covering 25 papers across all 6 categories written in docs/literature_review.md. Key finding: LP integrality gap \u2264 4 on planar graphs, separator-based constant-factor approximation is underexplored.",
           "error": null
         },
         {
@@ -71,8 +71,8 @@
           "id": "item_005",
           "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "File sources.bib in repo root with at least 15 valid BibTeX entries including: Baker 1994 (JACM), Alber/Fellows/Niedermeier 2004 (JACM kernelization), Fomin/Thilikos 2006 (SIAM), Lenzen/Pignolet/Wattenhofer 2013, Czygrinow et al. distributed MDS, Hilke et al. 2025 (11+\u03b5 result), PACE 2025 challenge description, Garey & Johnson 1979, Vazirani approximation algorithms textbook, Williamson & Shmoys 2011, and at least 5 additional relevant papers. All entries compilable by BibTeX with no errors.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib populated with 27 BibTeX entries covering all required references: Baker 1994, Alber et al. 2004, Fomin/Thilikos 2004, Lenzen et al. 2013, Czygrinow et al. 2008, Heydt et al. 2025, PACE 2025, Garey & Johnson 1979, Vazirani 2001, Williamson & Shmoys 2011, plus 17 additional entries.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 2,
+    "completed": 4,
     "in_progress": 0,
     "failed": 0,
-    "pending": 25
+    "pending": 23
   }
 }

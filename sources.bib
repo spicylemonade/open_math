@@ -1,2 +1,339 @@
 % Bibliography for research project
 % Minimum Dominating Set on Planar Graphs: Tightening Approximation Ratios
+
+% ============================================================
+% Category (a): Baker's technique and PTAS variants
+% ============================================================
+
+@article{Baker1994,
+  author    = {Brenda S. Baker},
+  title     = {Approximation Algorithms for {NP}-Complete Problems on Planar Graphs},
+  journal   = {Journal of the ACM},
+  volume    = {41},
+  number    = {1},
+  pages     = {153--180},
+  year      = {1994},
+  doi       = {10.1145/174644.174650},
+  note      = {Foundational PTAS via k-outerplanar decomposition for MDS and other problems on planar graphs.}
+}
+
+@inproceedings{DemaineHajiaghayi2005,
+  author    = {Erik D. Demaine and MohammadTaghi Hajiaghayi},
+  title     = {Bidimensionality: New Connections between {FPT} Algorithms and {PTAS}s},
+  booktitle = {Proceedings of the 16th Annual {ACM-SIAM} Symposium on Discrete Algorithms (SODA)},
+  pages     = {590--601},
+  year      = {2005},
+  publisher = {SIAM},
+  note      = {Unified bidimensionality framework yielding PTASs and EPTASs for dominating set on planar and H-minor-free graphs.}
+}
+
+@article{FominLokshtanovRamanSaurabh2011,
+  author    = {Fedor V. Fomin and Daniel Lokshtanov and Venkatesh Raman and Saket Saurabh},
+  title     = {Bidimensionality and {EPTAS}},
+  journal   = {arXiv preprint arXiv:1005.5449},
+  year      = {2011},
+  note      = {Extended bidimensionality theory to EPTASs via decomposition lemma for H-minor-free graphs.}
+}
+
+@article{MarzbanGu2013,
+  author    = {Marjan Marzban and Qian-Ping Gu},
+  title     = {Computational Study on a {PTAS} for Planar Dominating Set Problem},
+  journal   = {Algorithms},
+  volume    = {6},
+  number    = {1},
+  pages     = {43--59},
+  year      = {2013},
+  publisher = {MDPI},
+  doi       = {10.3390/a6010043},
+  note      = {Shows Baker's original application has unbounded ratio for MDS; provides corrected (1+2/k)-PTAS with computational evaluation.}
+}
+
+% ============================================================
+% Category (b): Greedy and modified-greedy approaches
+% ============================================================
+
+@article{Dvorak2013,
+  author    = {Zden\v{e}k Dvo\v{r}\'{a}k},
+  title     = {Constant-factor approximation of the domination number in sparse graphs},
+  journal   = {European Journal of Combinatorics},
+  volume    = {34},
+  number    = {5},
+  pages     = {833--840},
+  year      = {2013},
+  doi       = {10.1016/j.ejc.2012.12.004},
+  note      = {Constant-factor approximation for distance-r dominating sets in bounded expansion graphs via generalized coloring numbers.}
+}
+
+@article{Siebertz2019,
+  author    = {Sebastian Siebertz},
+  title     = {Greedy domination on biclique-free graphs},
+  journal   = {Information Processing Letters},
+  volume    = {145},
+  pages     = {64--67},
+  year      = {2019},
+  doi       = {10.1016/j.ipl.2019.01.001},
+  note      = {Modified greedy yields O(t ln k)-approximation on K\_{t,t}-free graphs, extending Jones et al. to broader sparse classes.}
+}
+
+@article{Dvorak2019,
+  author    = {Zden\v{e}k Dvo\v{r}\'{a}k},
+  title     = {On distance $r$-dominating and $2r$-independent sets in sparse graphs},
+  journal   = {Journal of Graph Theory},
+  volume    = {91},
+  number    = {2},
+  pages     = {162--173},
+  year      = {2019},
+  doi       = {10.1002/jgt.22426},
+  note      = {Improved bounds on distance-r domination using LP arguments inspired by Bansal--Umboh.}
+}
+
+% ============================================================
+% Category (c): LP-based methods and integrality gap results
+% ============================================================
+
+@article{BansalUmboh2017,
+  author    = {Nikhil Bansal and Seeun William Umboh},
+  title     = {Tight approximation bounds for dominating set on graphs of bounded arboricity},
+  journal   = {Information Processing Letters},
+  volume    = {122},
+  pages     = {21--24},
+  year      = {2017},
+  doi       = {10.1016/j.ipl.2017.01.011},
+  note      = {O(alpha)-approximation LP rounding for MDS on arboricity-alpha graphs; (2alpha+1)-approx; NP-hardness of (alpha-1-eps). Planar graphs have arboricity <=3, giving bounded integrality gap.}
+}
+
+@inproceedings{Sun2021,
+  author    = {Kevin Sun},
+  title     = {An Improved Approximation Bound for Minimum Weight Dominating Set on Graphs of Bounded Arboricity},
+  booktitle = {Proceedings of WAOA 2021},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13059},
+  pages     = {39--53},
+  year      = {2021},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-030-92702-8\_3},
+  note      = {Primal-dual algorithm showing natural LP integrality gap is at most arboricity+1 for weighted MDS.}
+}
+
+@inproceedings{MorganSolomonWein2021,
+  author    = {Adir Morgan and Shay Solomon and Nicole Wein},
+  title     = {Algorithms for the Minimum Dominating Set Problem in Bounded Arboricity Graphs: Simpler, Faster, and Combinatorial},
+  booktitle = {Proceedings of the 35th International Symposium on Distributed Computing (DISC)},
+  series    = {LIPIcs},
+  volume    = {209},
+  pages     = {33:1--33:19},
+  year      = {2021},
+  publisher = {Schloss Dagstuhl},
+  doi       = {10.4230/LIPIcs.DISC.2021.33},
+  note      = {First non-LP-based O(alpha)-approximation for MDS on bounded-arboricity graphs in linear time; also O(alpha log n)-round distributed algorithm.}
+}
+
+% ============================================================
+% Category (d): Distributed MDS approximation
+% ============================================================
+
+@inproceedings{LenzenOswaldWattenhofer2008,
+  author    = {Christoph Lenzen and Yvonne Anne Oswald and Roger Wattenhofer},
+  title     = {What Can Be Approximated Locally? {Case} Study: Dominating Sets in Planar Graphs},
+  booktitle = {Proceedings of the 20th Annual Symposium on Parallelism in Algorithms and Architectures (SPAA)},
+  pages     = {46--54},
+  year      = {2008},
+  publisher = {ACM},
+  doi       = {10.1145/1378533.1378540},
+  note      = {First constant-round 126-approximation for MDS on planar graphs in the LOCAL model.}
+}
+
+@article{LenzenPignoletWattenhofer2013,
+  author    = {Christoph Lenzen and Yvonne Anne Pignolet and Roger Wattenhofer},
+  title     = {Distributed minimum dominating set approximations in restricted families of graphs},
+  journal   = {Distributed Computing},
+  volume    = {26},
+  pages     = {119--137},
+  year      = {2013},
+  doi       = {10.1007/s00446-013-0186-z},
+  note      = {52-approximation for planar graphs; asymptotically tight trade-off for unit disk graphs.}
+}
+
+@inproceedings{CzygrinowHanckowiak2008,
+  author    = {Andrzej Czygrinow and Michal Han\'{c}kowiak and Wojciech Wawrzyniak},
+  title     = {Fast Distributed Approximations in Planar Graphs},
+  booktitle = {Proceedings of the 22nd International Symposium on Distributed Computing (DISC)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {5218},
+  pages     = {78--92},
+  year      = {2008},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-540-87779-0\_6},
+  note      = {Deterministic (1+/-delta)-approximation for MDS on planar graphs in O(log* n) rounds; proved no faster deterministic algorithm is possible.}
+}
+
+@inproceedings{HilkeLenzenSuomela2014,
+  author    = {Miikka Hilke and Christoph Lenzen and Jukka Suomela},
+  title     = {Brief Announcement: Local Approximability of Minimum Dominating Set on Planar Graphs},
+  booktitle = {Proceedings of the 33rd Annual ACM Symposium on Principles of Distributed Computing (PODC)},
+  pages     = {344--346},
+  year      = {2014},
+  publisher = {ACM},
+  doi       = {10.1145/2611462.2611504},
+  note      = {Proved (7-eps) lower bound on constant-round approximation ratio for MDS on planar graphs.}
+}
+
+@article{HeydtKublenzOdMSiebertzVigny2025,
+  author    = {Ozan Heydt and Simeon Kublenz and Patrice Ossona de Mendez and Sebastian Siebertz and Alexandre Vigny},
+  title     = {Distributed domination on sparse graph classes},
+  journal   = {European Journal of Combinatorics},
+  volume    = {123},
+  pages     = {103773},
+  year      = {2025},
+  doi       = {10.1016/j.ejc.2023.103773},
+  note      = {(11+eps)-approximation for MDS on planar graphs in constant LOCAL rounds; best known ratio. Generalizes to bounded expansion.}
+}
+
+@inproceedings{BonamyCookGroenlandWesolek2021,
+  author    = {Marthe Bonamy and Linda Cook and Josse van den Heuvel and Jirka Matou\v{s}ek and Alexandra Wesolek},
+  title     = {A Tight Local Algorithm for the Minimum Dominating Set Problem in Outerplanar Graphs},
+  booktitle = {Proceedings of the 35th International Symposium on Distributed Computing (DISC)},
+  series    = {LIPIcs},
+  volume    = {209},
+  pages     = {13:1--13:18},
+  year      = {2021},
+  publisher = {Schloss Dagstuhl},
+  doi       = {10.4230/LIPIcs.DISC.2021.13},
+  note      = {Tight 5-approximation for MDS on outerplanar graphs in constant LOCAL rounds; matching lower bound of (5-eps).}
+}
+
+% ============================================================
+% Category (e): FPT and kernelization
+% ============================================================
+
+@article{AlberBodlaenderFernauKloksNiedermeier2002,
+  author    = {Jochen Alber and Hans L. Bodlaender and Henning Fernau and Ton Kloks and Rolf Niedermeier},
+  title     = {Fixed Parameter Algorithms for {DOMINATING SET} and Related Problems on Planar Graphs},
+  journal   = {Algorithmica},
+  volume    = {33},
+  pages     = {461--493},
+  year      = {2002},
+  doi       = {10.1007/s00453-001-0116-5},
+  note      = {First FPT algorithm for dominating set on planar graphs; subexponential 2^{O(sqrt(k))} n^{O(1)} time.}
+}
+
+@article{AlberFellowsNiedermeier2004,
+  author    = {Jochen Alber and Michael R. Fellows and Rolf Niedermeier},
+  title     = {Polynomial-Time Data Reduction for {Dominating Set}},
+  journal   = {Journal of the ACM},
+  volume    = {51},
+  number    = {3},
+  pages     = {363--384},
+  year      = {2004},
+  doi       = {10.1145/990308.990309},
+  note      = {Linear kernel (335k vertices) for dominating set on planar graphs via two simple reduction rules.}
+}
+
+@inproceedings{FominThilikos2004,
+  author    = {Fedor V. Fomin and Dimitrios M. Thilikos},
+  title     = {Fast Parameterized Algorithms for Graphs on Surfaces: Linear Kernel and Exponential Speed-Up},
+  booktitle = {Proceedings of the 31st International Colloquium on Automata, Languages and Programming (ICALP)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {3142},
+  pages     = {581--592},
+  year      = {2004},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-540-27836-8\_50},
+  note      = {Linear kernel for dominating set on bounded-genus graphs; 2^{15.13 sqrt(k)} + n^3 algorithm using branch-width.}
+}
+
+@inproceedings{FominLokshtanovSaurabhThilikos2010,
+  author    = {Fedor V. Fomin and Daniel Lokshtanov and Saket Saurabh and Dimitrios M. Thilikos},
+  title     = {Bidimensionality and Kernels},
+  booktitle = {Proceedings of the 21st Annual {ACM-SIAM} Symposium on Discrete Algorithms (SODA)},
+  pages     = {503--510},
+  year      = {2010},
+  publisher = {SIAM},
+  doi       = {10.1137/1.9781611973075.43},
+  note      = {Meta-algorithmic framework: bidimensionality implies linear kernels for dominating set on H-minor-free graphs.}
+}
+
+@article{FominLokshtanovSaurabhThilikos2018,
+  author    = {Fedor V. Fomin and Daniel Lokshtanov and Saket Saurabh and Dimitrios M. Thilikos},
+  title     = {Kernels for (Connected) Dominating Set on Graphs with Excluded Topological Minors},
+  journal   = {ACM Transactions on Algorithms},
+  volume    = {14},
+  number    = {1},
+  pages     = {6:1--6:31},
+  year      = {2018},
+  doi       = {10.1145/3155298},
+  note      = {First linear kernels for dominating set on H-topological-minor-free graphs.}
+}
+
+% ============================================================
+% Category (f): PACE 2025 competition and practical solvers
+% ============================================================
+
+@inproceedings{PACE2025report,
+  author    = {Mario Grobler and Sebastian Siebertz},
+  title     = {The {PACE} 2025 Parameterized Algorithms and Computational Experiments Challenge: Dominating Set and Hitting Set},
+  booktitle = {Proceedings of the 20th International Symposium on Parameterized and Exact Computation (IPEC)},
+  series    = {LIPIcs},
+  volume    = {358},
+  pages     = {32:1--32:22},
+  year      = {2025},
+  publisher = {Schloss Dagstuhl},
+  doi       = {10.4230/LIPIcs.IPEC.2025.32},
+  note      = {Official PACE 2025 challenge report; 71 participants, 25 teams; exact and heuristic tracks for dominating set on structured instances including planar (OSM) graphs.}
+}
+
+@inproceedings{PACE2025BadDSMaker,
+  author    = {Alexander Dobler and Simon Dominik Fink and Mathis Rocton},
+  title     = {{PACE} Solver Description: Bad Dominating Set Maker},
+  booktitle = {Proceedings of the 20th International Symposium on Parameterized and Exact Computation (IPEC)},
+  series    = {LIPIcs},
+  volume    = {358},
+  pages     = {35:1--35:4},
+  year      = {2025},
+  publisher = {Schloss Dagstuhl},
+  doi       = {10.4230/LIPIcs.IPEC.2025.35},
+  note      = {Reduction rules + tree decomposition DP (width <= 13) + MaxSAT fallback (EvalMaxSat).}
+}
+
+@inproceedings{PACE2025UzL,
+  author    = {Max Bannach and Florian Chudigiewitsch and Marcel Wien\"{o}bst},
+  title     = {{PACE} Solver Description: {UzL} Solver for Dominating Set and Hitting Set},
+  booktitle = {Proceedings of the 20th International Symposium on Parameterized and Exact Computation (IPEC)},
+  series    = {LIPIcs},
+  volume    = {358},
+  pages     = {39:1--39:4},
+  year      = {2025},
+  publisher = {Schloss Dagstuhl},
+  doi       = {10.4230/LIPIcs.IPEC.2025.39},
+  note      = {MaxSAT formulation + hitting-set reduction rules + clique solver for small vertex cover instances.}
+}
+
+% ============================================================
+% Classic references and textbooks
+% ============================================================
+
+@book{GareyJohnson1979,
+  author    = {Michael R. Garey and David S. Johnson},
+  title     = {Computers and Intractability: A Guide to the Theory of {NP}-Completeness},
+  publisher = {W. H. Freeman},
+  year      = {1979},
+  note      = {NP-completeness of dominating set, including on planar graphs of max degree 3.}
+}
+
+@book{Vazirani2001,
+  author    = {Vijay V. Vazirani},
+  title     = {Approximation Algorithms},
+  publisher = {Springer},
+  year      = {2001},
+  doi       = {10.1007/978-3-662-04565-7},
+  note      = {Textbook covering greedy set cover / dominating set O(ln n) approximation.}
+}
+
+@book{WilliamsonShmoys2011,
+  author    = {David P. Williamson and David B. Shmoys},
+  title     = {The Design of Approximation Algorithms},
+  publisher = {Cambridge University Press},
+  year      = {2011},
+  doi       = {10.1017/CBO9780511921735},
+  note      = {Textbook on LP relaxation, rounding, primal-dual methods for combinatorial optimization.}
+}
