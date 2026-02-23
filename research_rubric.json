@@ -94,8 +94,8 @@
           "id": "item_007",
           "description": "Implement particle data structures and initialization routines",
           "acceptance_criteria": "A Python module (sim/body.py or similar) defining a Body/Particle class with mass, position (2D or 3D vector), and velocity attributes. An initialization function that can set up: (1) a two-body Kepler orbit, (2) a random N-body system. All code passes at least 3 unit tests verifying attribute storage and initialization correctness",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sim/body.py with kepler_circular, kepler_elliptical, random_system. 9 unit tests passing in tests/test_body.py",
           "error": null
         },
         {
@@ -268,10 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
-    "in_progress": 0,
+    "completed": 7,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 19,
-    "in_progress_note": "Phase 1 complete"
+    "pending": 17
   }
 }
