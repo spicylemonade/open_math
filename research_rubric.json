@@ -102,8 +102,8 @@
           "id": "item_008",
           "description": "Implement direct-summation O(N^2) pairwise gravitational force computation",
           "acceptance_criteria": "A function computing gravitational acceleration on each particle via direct pairwise summation. Verified against hand-calculated values for a 2-body and 3-body configuration. At least 3 unit tests passing, including a test that confirms O(N^2) scaling by timing N=100 vs N=200",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sim/forces.py with direct_summation function. 6 unit tests passing including 2-body, 3-body, Newton 3rd law, O(N^2) scaling, and softening",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 7,
+    "completed": 8,
     "in_progress": 1,
     "failed": 0,
-    "pending": 17
+    "pending": 16
   }
 }
