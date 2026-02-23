@@ -149,8 +149,8 @@
           "id": "item_013",
           "description": "Implement Velocity Verlet integrator and compare with Leapfrog",
           "acceptance_criteria": "A Velocity Verlet integrator implemented and verified to produce identical trajectories to Leapfrog (to machine precision) on a test orbit. Documented equivalence in a comparison note. At least 2 unit tests passing",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Velocity Verlet produces identical trajectories to Leapfrog (atol=1e-12). 2 tests passing: equivalence and bounded energy.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 12,
+    "completed": 13,
     "in_progress": 0,
     "failed": 0,
-    "pending": 13
+    "pending": 12
   }
 }

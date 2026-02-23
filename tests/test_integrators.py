@@ -98,3 +98,46 @@ class TestLeapfrogKDK:
         assert max_lf_err < euler_err / 1000, (
             f"Expected leapfrog >> Euler: LF={max_lf_err:.2e}, Euler={euler_err:.2e}"
         )
+
+
+class TestVelocityVerlet:
+    def test_identical_trajectories_to_leapfrog(self):
+        """Velocity Verlet and Leapfrog should produce identical trajectories."""
+        masses, pos, vel = kepler_circular()
+        dt = 0.01
+        n_steps = 100
+
+        # Run Leapfrog
+        p_l, v_l = pos.copy(), vel.copy()
+        acc_l = None
+        for _ in range(n_steps):
+            p_l, v_l, acc_l = leapfrog_kdk(masses, p_l, v_l, dt, acc_prev=acc_l)
+
+        # Run Velocity Verlet
+        p_v, v_v = pos.copy(), vel.copy()
+        acc_v = None
+        for _ in range(n_steps):
+            p_v, v_v, acc_v = velocity_verlet(masses, p_v, v_v, dt, acc_prev=acc_v)
+
+        # Should be identical to machine precision
+        np.testing.assert_allclose(p_l, p_v, atol=1e-12,
+                                   err_msg="Positions differ between Leapfrog and Verlet")
+        np.testing.assert_allclose(v_l, v_v, atol=1e-12,
+                                   err_msg="Velocities differ between Leapfrog and Verlet")
+
+    def test_bounded_energy_error(self):
+        """Velocity Verlet should have bounded energy error like Leapfrog."""
+        from sim.diagnostics import total_energy
+        masses, pos, vel = kepler_circular()
+        E0 = total_energy(masses, pos, vel)
+        dt = 0.01
+        n_steps = 5000
+        acc = None
+        max_err = 0.0
+        for _ in range(n_steps):
+            pos, vel, acc = velocity_verlet(masses, pos, vel, dt, acc_prev=acc)
+            E = total_energy(masses, pos, vel)
+            rel_err = abs((E - E0) / E0)
+            if rel_err > max_err:
+                max_err = rel_err
+        assert max_err < 1e-5, f"Expected bounded error < 1e-5, got {max_err:.2e}"
