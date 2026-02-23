@@ -196,8 +196,8 @@
           "id": "item_018",
           "description": "Performance scaling benchmark: wall time vs N for direct and tree methods",
           "acceptance_criteria": "Measure wall-clock time for direct summation and Barnes-Hut at N = 64, 128, 256, 512, 1024 particles for a single force evaluation. Fit power-law exponents. Direct must show exponent ~2.0; Barnes-Hut must show exponent < 1.5. Results saved to results/scaling_benchmark.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Direct: exponent=2.00, BH: exponent=1.36. BH is 7.1x faster at N=1024. Results in results/scaling_benchmark.json",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 17,
+    "completed": 18,
     "in_progress": 0,
     "failed": 0,
-    "pending": 8
+    "pending": 7
   }
 }
