@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Create reproducibility package",
           "acceptance_criteria": "Create: (a) requirements.txt listing all Python dependencies with pinned versions, (b) Makefile with targets: install, test, benchmark, figures, clean, (c) docs/REPRODUCIBILITY.md with step-by-step instructions to reproduce all results from a clean environment. Running 'make test' must execute all unit tests. Running 'make benchmark' must regenerate all results/ files. Running 'make figures' must regenerate all figures/ files.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "requirements.txt with 4 pinned deps, Makefile with install/test/benchmark/figures/clean targets, REPRODUCIBILITY.md with full instructions. make test: 78 passed. scripts/run_benchmarks.py and scripts/generate_figures.py created.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 2
+    "pending": 1
   }
 }
