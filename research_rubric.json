@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T20:40:00Z",
+  "updated_at": "2026-02-23T20:41:40.992141+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T20:39:00Z",
+      "completed_at": "2026-02-23T20:41:40.992113+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scope for minimal gravity simulation",
+          "acceptance_criteria": "Written document (ANALYSIS.md) listing: (1) all existing repo files and directories with purposes, (2) chosen programming language with justification, (3) definition of 'minimal' scope \u2014 which gravitational physics to include (Newtonian point-mass only vs. extensions), target particle counts, and output format",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct literature review on N-body gravitational simulation methods via web search",
+          "acceptance_criteria": "Web search performed for at least 3 distinct query topics: (1) N-body gravitational simulation algorithms, (2) symplectic integrators for orbital mechanics, (3) efficient force computation methods (Barnes-Hut, FMM). Summary of findings written in ANALYSIS.md with at least 5 key papers identified by title and authors",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Survey existing open-source gravity simulation codebases and libraries",
+          "acceptance_criteria": "Web search performed for open-source N-body simulators (e.g., REBOUND, Gadget, nbody6). At least 4 existing codebases identified with notes on: language, integration method, force algorithm, and license. Comparison table added to ANALYSIS.md",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted references",
+          "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. At least 10 relevant papers/references cited, covering: gravitational N-body methods, numerical integration schemes (Verlet, leapfrog, symplectic), force computation algorithms, and energy conservation analysis. Each entry has complete author, title, year, and venue fields",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Define mathematical formulation of the Newtonian gravitational N-body problem",
+          "acceptance_criteria": "ANALYSIS.md contains: (1) Newton's law of universal gravitation equation, (2) equations of motion for N point masses, (3) definitions of gravitational potential energy and kinetic energy, (4) statement of total energy conservation property, (5) identification of the softening parameter and its role in avoiding singularities",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Survey and compare numerical integration methods applicable to gravity simulation",
+          "acceptance_criteria": "ANALYSIS.md contains comparison of at least 4 integration methods: Forward Euler, Velocity Verlet, Leapfrog, and one higher-order method (e.g., RK4 or Yoshida 4th-order). Each method described with: order of accuracy, symplectic property (yes/no), time-reversibility, and expected energy drift behavior. Recommended method for baseline identified with justification citing sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement particle/body data structure and simulation state representation",
+          "acceptance_criteria": "Source file (e.g., gravity_sim.py or gravity_sim.js) exists with: (1) data structure for a body with mass, position (2D or 3D vector), and velocity vector, (2) function to initialize N bodies with given parameters, (3) function to initialize a simple 2-body system with known Keplerian orbit parameters. Unit test confirming initialization produces correct state",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement direct-summation O(N^2) pairwise gravitational force computation",
+          "acceptance_criteria": "Function that computes gravitational acceleration on each body from all other bodies using direct pairwise summation. Includes softening parameter (default epsilon > 0). Unit test: for 2 equal masses separated by distance d, computed force magnitude equals G*m^2/(d^2 + epsilon^2). Newton's third law verified (equal and opposite forces)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement Forward Euler integration as the initial baseline integrator",
+          "acceptance_criteria": "Function that advances simulation state by one time step dt using Forward Euler (x += v*dt, v += a*dt). Integration loop that runs for N_steps. Test: circular 2-body orbit with dt=0.001 runs for 100 steps without NaN or overflow. Energy measured at start and end",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement energy computation for conservation tracking",
+          "acceptance_criteria": "Functions to compute: (1) total kinetic energy (sum of 0.5*m*v^2), (2) total gravitational potential energy (sum of -G*m_i*m_j/r_ij for all pairs), (3) total energy (KE + PE). Unit test: for a known 2-body configuration, computed energies match hand-calculated values to within 1e-10 relative error",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Create test harness with known analytical solutions for validation",
+          "acceptance_criteria": "Test script that: (1) sets up a circular 2-body Keplerian orbit with known period T, (2) runs simulation for exactly 1 orbital period, (3) measures position error (distance from expected return position), (4) measures relative energy error |dE/E0|. Baseline Euler results recorded in results/ directory as JSON. Position error and energy error values documented",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Implement Velocity Verlet (St\u00f6rmer-Verlet) symplectic integrator",
+          "acceptance_criteria": "Function implementing the Velocity Verlet algorithm: x(t+dt) = x(t) + v(t)*dt + 0.5*a(t)*dt^2, v(t+dt) = v(t) + 0.5*(a(t)+a(t+dt))*dt. Same test harness as item_011 executed; relative energy error after 1 orbit is at least 100x smaller than Forward Euler at same dt. Results saved to results/ directory",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement Leapfrog integration and compare with Velocity Verlet",
+          "acceptance_criteria": "Function implementing kick-drift-kick Leapfrog: v(t+dt/2) = v(t) + a(t)*dt/2, x(t+dt) = x(t) + v(t+dt/2)*dt, v(t+dt) = v(t+dt/2) + a(t+dt)*dt/2. Comparison table generated showing energy error for Euler, Verlet, and Leapfrog on the 2-body orbit test at identical dt. Results saved to results/",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement adaptive time-stepping based on local acceleration magnitude",
+          "acceptance_criteria": "Time step selection rule: dt = min(dt_max, eta * sqrt(epsilon / max(|a_i|))) where eta is a dimensionless accuracy parameter. Test on a highly eccentric (e=0.9) 2-body orbit. Compare energy conservation of adaptive vs. fixed time-step Verlet over 10 orbits. Adaptive version achieves comparable energy error with fewer total force evaluations (measured and reported)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement gravitational softening and analyze its effect on close encounters",
+          "acceptance_criteria": "Softened potential: F = -G*m1*m2*r / (|r|^2 + eps^2)^(3/2). Test with 3 bodies in a close encounter scenario. Run with 3 different softening values (eps = 0.001, 0.01, 0.1) and measure: (1) maximum acceleration encountered, (2) energy conservation over the encounter, (3) trajectory divergence from eps=0.001 baseline. Results table and trajectory plots saved to results/ and figures/",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Investigate minimal Barnes-Hut tree approximation for O(N log N) force computation",
+          "acceptance_criteria": "Implementation of 2D quad-tree (or 3D oct-tree) with monopole approximation and opening angle parameter theta. For N=100 random bodies: (1) force error vs. direct summation measured as RMS relative error for theta = 0.3, 0.5, 0.7, 1.0, (2) wall-clock speedup over direct summation measured for N = 100, 500, 1000. Results compared against Barnes & Hut (1986) expected O(N log N) scaling cited in sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_017",
+          "description": "Benchmark energy conservation across all integrators over long time spans",
+          "acceptance_criteria": "Run circular 2-body orbit for 10,000 time steps with each integrator (Euler, Verlet, Leapfrog) at dt = 0.01. Record |dE/E0| at every 100th step. Generate energy drift plot (time vs. relative energy error) saved to figures/energy_drift.png. Euler shows linear drift, Verlet/Leapfrog show bounded oscillation \u2014 both behaviors quantified and compared against expected behavior from literature (cited in sources.bib)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Measure wall-clock performance scaling with particle count",
+          "acceptance_criteria": "Timing benchmark for N = 10, 50, 100, 200, 500, 1000 particles, each run for 100 time steps using Velocity Verlet. Wall-clock time measured and recorded. Log-log plot of N vs. time saved to figures/scaling.png. Direct summation shows O(N^2) slope confirmed by linear regression on log-log data (R^2 > 0.95). If Barnes-Hut implemented, its scaling included on same plot",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Run standard multi-body test cases: figure-8 three-body orbit and inner solar system",
+          "acceptance_criteria": "Two test cases executed: (1) Chenciner-Montgomery figure-8 three-body orbit with initial conditions from literature \u2014 trajectory plot saved to figures/figure8.png, periodicity error measured after 1 period, (2) inner solar system (Sun + 4 planets) with real masses and orbital parameters \u2014 run for 1 Earth year, compare final planet positions against expected positions. Both tests reference initial conditions from sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Compare simulation accuracy and performance against results reported in prior work",
+          "acceptance_criteria": "Comparison table in results/comparison_vs_literature.json containing: (1) energy conservation results vs. values reported in at least 2 cited papers for equivalent test problems, (2) performance scaling vs. theoretical complexity from literature. Discrepancies > 10% explained with identified causes. At least 3 entries from sources.bib directly referenced in the comparison",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Generate trajectory visualizations for key simulation scenarios",
+          "acceptance_criteria": "At least 3 visualization plots saved to figures/: (1) 2-body elliptical orbit trajectories, (2) 3-body figure-8 trajectories, (3) N=50 random cluster evolution snapshots at t=0, t=T/4, t=T/2, t=T. Each plot has labeled axes, title, and legend. Plots saved as PNG files at minimum 300 DPI resolution",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_022",
+          "description": "Produce quantitative summary table of integrator performance characteristics",
+          "acceptance_criteria": "File results/integrator_summary.json containing a table with columns: integrator name, order of accuracy, symplectic (yes/no), energy error after 10k steps (2-body test), wall-clock time per step (N=100), and recommended use case. All 3+ integrators included. Values are numeric (not qualitative) and reproducible from the experiment scripts",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Write findings document with methodology, results, and conclusions",
+          "acceptance_criteria": "File FINDINGS.md in repo root containing: (1) Introduction stating the problem and goals, (2) Methodology section describing each integrator and force computation method, (3) Results section with embedded references to figures/ and results/ outputs, (4) Discussion comparing findings to prior work cited in sources.bib (at least 5 citations referenced), (5) Conclusions with recommendations for which integrator to use and when. Minimum 500 words",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Document codebase with module-level descriptions and usage examples",
+          "acceptance_criteria": "Each source file has a module-level docstring/comment explaining its purpose. At least 3 inline comments on non-obvious algorithmic steps (e.g., softening, half-step velocity update). A USAGE section in README.md with: (1) installation/dependency instructions, (2) command to run the basic 2-body simulation, (3) command to run the full benchmark suite, (4) expected output description",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Final README update with project overview, reproduction steps, and results summary",
+          "acceptance_criteria": "README.md updated to contain: (1) project title and one-paragraph description, (2) list of implemented features (integrators, force methods), (3) key results summary (best energy conservation achieved, scaling behavior), (4) reproduction instructions (single command to regenerate all results and figures), (5) references section pointing to sources.bib. README is valid Markdown and renders correctly",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
