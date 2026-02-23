@@ -235,8 +235,8 @@
           "id": "item_022",
           "description": "Create quantitative integrator comparison summary table",
           "acceptance_criteria": "A table (in results/integrator_summary.md) with columns: Integrator, Order, Symplectic, Max |dE/E| at 10k steps, Wall Time per Step, and Recommended Use Case. Covers all implemented integrators. Values drawn from experiments in Phase 4",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table in results/integrator_summary.md with all 3 integrators, 6 columns, and key findings.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 21,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 4
+    "pending": 3
   }
 }
