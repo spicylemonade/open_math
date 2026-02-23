@@ -105,6 +105,32 @@ For our minimal gravity simulator, we select:
 5. **Plummer softening** — simplest and most common approach
 6. **Acceleration-based adaptive dt** — simple and effective for eccentric orbits
 
+## 6. Survey of Open-Source N-Body Codebases
+
+| Code | Language | Integrators | Force Algorithm | License | Key Reference |
+|------|----------|-------------|-----------------|---------|---------------|
+| **REBOUND** | C core + Python API | IAS15 (15th-order adaptive), WHFast (Wisdom-Holman), Leapfrog, Mercurius (hybrid), SABA family | Direct summation, tree code | GPL v3 | Rein & Liu (2012) |
+| **GADGET-2** | C (MPI parallel) | Leapfrog (KDK) with individual time steps | TreePM (tree + particle-mesh hybrid) | GPL v2 | Springel (2005) |
+| **NBODY6** | Fortran | 4th-order Hermite with block time steps, KS regularization for binaries | Direct summation with neighbor scheme | Public domain | Aarseth (1999, 2003) |
+| **GravHopper** | Python + C backend | Leapfrog | Barnes-Hut tree or direct summation | MIT | Bailin (2023) |
+| **galpy** | Python + C extensions | Various orbit integrators (symplectic, DOP853, etc.) | Analytic potentials (not particle-based) | BSD 3-Clause | Bovy (2015) |
+| **grav_sim** | C + Python API | Euler, RK4, Leapfrog, Yoshida, IAS15-like | Direct summation | MIT | Ng (2024) |
+
+### REBOUND
+The most feature-rich Python-accessible N-body code. Ships with >10 integrators including the 15th-order IAS15 (machine-precision accuracy with adaptive steps) and WHFast (fast Wisdom-Holman mapping). Supports collision detection, additional forces, and has extensive documentation. Our implementation draws design inspiration from REBOUND's modular integrator architecture.
+
+### GADGET-2
+The standard code for cosmological simulations. Uses a TreePM algorithm combining Barnes-Hut tree for short-range forces with a particle-mesh FFT for long-range forces. Massively parallel via MPI. Successor GADGET-4 is available but less widely used. Our Barnes-Hut implementation follows the same octree/quadtree approach used in GADGET's tree module.
+
+### NBODY6
+The gold standard for collisional stellar dynamics (star clusters). Uses direct summation with Ahmad-Cohen neighbor scheme, 4th-order Hermite integration, KS regularization for close binaries, and chain regularization for few-body subsystems. GPU-accelerated version (NBODY6++GPU) scales to million-body simulations.
+
+### GravHopper
+A pedagogical Python+C code that bridges galpy and pynbody ecosystems. Supports both direct summation and Barnes-Hut tree. Includes initial condition generators for Plummer, Hernquist, and exponential disk profiles. Its simplicity makes it a useful reference for our implementation.
+
+### galpy
+Focused on galactic dynamics in analytic potentials rather than particle-particle interactions. Provides orbit integration, distribution function sampling, and action-angle coordinate computation. Relevant as a comparison point for orbit integration accuracy.
+
 ## References
 
 1. Aarseth, S.J. (2003). *Gravitational N-Body Simulations*. Cambridge University Press.
