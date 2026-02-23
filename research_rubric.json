@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T04:12:47.171111+00:00",
+  "updated_at": "2026-02-23T04:13:31.161295+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -267,8 +267,8 @@
           "id": "item_026",
           "description": "Structured comparison table against at least 5 prior approaches from the literature",
           "acceptance_criteria": "File docs/comparison_table.csv (and rendered in research report) with columns: Method, Source (BibTeX key), Approx_Ratio_Theoretical, Approx_Ratio_Empirical_Mean, Approx_Ratio_Empirical_Worst, Runtime_Complexity, Runtime_Empirical_Mean_1K, Runtime_Empirical_Mean_10K. At least 6 rows: greedy, modified-greedy, Baker PTAS, one distributed algorithm, one prior LP approach, and the novel hybrid. All source entries reference sources.bib.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table in docs/comparison_table.csv with 8 rows (greedy, modified_greedy, LP rounding, Baker PTAS, distributed, separator, planar LP, hybrid). Columns: Method, Source, theoretical/empirical ratios, runtime complexity, empirical runtimes at 1K and 10K.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 25,
+    "completed": 26,
     "in_progress": 0,
     "failed": 0,
-    "pending": 2
+    "pending": 1
   }
 }
