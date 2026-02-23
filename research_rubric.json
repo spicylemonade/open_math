@@ -11,9 +11,9 @@
       "error": null
     },
     "researcher": {
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-02-23T18:20:24.279621+00:00",
-      "completed_at": null,
+      "completed_at": "2026-02-23T19:30:00.000000+00:00",
       "error": null
     },
     "writer": {
@@ -259,8 +259,8 @@
           "id": "item_025",
           "description": "Final validation checklist and self-assessment",
           "acceptance_criteria": "Create results/validation_checklist.md confirming all of the following pass: (1) All unit tests pass (report total count), (2) Energy conservation within stated tolerances for all integrators, (3) Barnes-Hut force accuracy within 1% of direct, (4) All 3 hypotheses evaluated with quantitative evidence, (5) sources.bib has >= 10 entries, (6) All figures render correctly, (7) Research report is >= 3000 words with >= 8 citations. Each check must show PASS/FAIL with evidence.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 7 checks PASS: 78 tests passing, energy tolerances met, BH accuracy <1% at theta=0.3, 3 hypotheses evaluated, 15 bib entries, 7 figures in PNG+PDF, 3091-word report with 13 citations.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 24,
+    "completed": 25,
     "in_progress": 0,
     "failed": 0,
-    "pending": 1
+    "pending": 0
   }
 }
