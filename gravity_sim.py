@@ -223,6 +223,103 @@ def step_leapfrog_kdk(state, dt, G=G_DEFAULT, softening=1e-4, acc_old=None):
     return state, acc_new
 
 
+def compute_adaptive_dt(acc, dt_max, eta, softening):
+    """
+    Adaptive time-step: dt = min(dt_max, eta * sqrt(epsilon / max(|a_i|))).
+
+    Parameters
+    ----------
+    acc : ndarray (N, 2) — current accelerations
+    dt_max : float — maximum allowed time step
+    eta : float — dimensionless accuracy parameter
+    softening : float — softening length epsilon
+
+    Returns
+    -------
+    dt : float
+    """
+    acc_mag = np.sqrt(np.sum(acc**2, axis=1))
+    max_acc = np.max(acc_mag)
+    if max_acc == 0:
+        return dt_max
+    dt = eta * np.sqrt(softening / max_acc)
+    return min(dt, dt_max)
+
+
+def init_eccentric_binary(m1=1.0, m2=1.0, a=1.0, e=0.9, G=G_DEFAULT):
+    """
+    Initialize a 2-body system on an elliptical Keplerian orbit at periapsis.
+
+    Parameters
+    ----------
+    m1, m2 : float — masses
+    a : float — semi-major axis
+    e : float — eccentricity (0 = circular, <1 = elliptical)
+    G : float
+
+    Returns
+    -------
+    state : dict
+    T : float — orbital period
+    """
+    M = m1 + m2
+    # Periapsis distance
+    r_peri = a * (1 - e)
+    # Velocity at periapsis (vis-viva equation)
+    v_peri = np.sqrt(G * M * (1 + e) / (a * (1 - e)))
+
+    # Positions relative to COM at periapsis (along x-axis)
+    r1 = -r_peri * m2 / M
+    r2 = r_peri * m1 / M
+    v1 = -v_peri * m2 / M
+    v2 = v_peri * m1 / M
+
+    masses = np.array([m1, m2])
+    positions = np.array([[r1, 0.0], [r2, 0.0]])
+    velocities = np.array([[0.0, v1], [0.0, v2]])
+
+    T = 2.0 * np.pi * np.sqrt(a**3 / (G * M))
+    return init_bodies(masses, positions, velocities), T
+
+
+def run_simulation_adaptive(state, dt_max, t_end, eta=0.01, G=G_DEFAULT,
+                            softening=1e-4, record_energy_every_t=0.0):
+    """
+    Run simulation with adaptive time-stepping using Velocity Verlet.
+
+    Returns (state, energy_trace, n_force_evals).
+    """
+    energy_trace = []
+    t = 0.0
+    n_evals = 0
+
+    acc = compute_accelerations(state, G, softening)
+    n_evals += 1
+
+    if record_energy_every_t > 0:
+        E0 = total_energy(state, G, softening)
+        energy_trace.append((t, float(E0)))
+
+    next_record_t = record_energy_every_t
+
+    while t < t_end:
+        dt = compute_adaptive_dt(acc, dt_max, eta, softening)
+        # Don't overshoot t_end
+        if t + dt > t_end:
+            dt = t_end - t
+
+        state, acc = step_velocity_verlet(state, dt, G, softening, acc)
+        n_evals += 1
+        t += dt
+
+        if record_energy_every_t > 0 and t >= next_record_t:
+            E = total_energy(state, G, softening)
+            energy_trace.append((t, float(E)))
+            next_record_t += record_energy_every_t
+
+    return state, energy_trace, n_evals
+
+
 # ---------------------------------------------------------------------------
 # Simulation runner
 # ---------------------------------------------------------------------------

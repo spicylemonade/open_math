@@ -1,0 +1,20 @@
+{
+  "test": "eccentric_binary_e0.9_10_orbits",
+  "eccentricity": 0.9,
+  "n_orbits": 10,
+  "softening": 0.0001,
+  "fixed_verlet": {
+    "dt": 0.001,
+    "n_steps": 44429,
+    "n_force_evals": 44430,
+    "energy_error": 0.0046718138808378665
+  },
+  "adaptive_verlet": {
+    "dt_max": 0.01,
+    "eta": 0.1,
+    "n_force_evals": 44401,
+    "energy_error": 2.1909045843086374e-06
+  },
+  "adaptive_fewer_evals": true,
+  "comparable_energy": true
+}

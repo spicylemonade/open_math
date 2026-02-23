@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T20:55:46.664533+00:00",
+  "updated_at": "2026-02-23T20:58:55.599191+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -157,8 +157,8 @@
           "id": "item_014",
           "description": "Implement adaptive time-stepping based on local acceleration magnitude",
           "acceptance_criteria": "Time step selection rule: dt = min(dt_max, eta * sqrt(epsilon / max(|a_i|))) where eta is a dimensionless accuracy parameter. Test on a highly eccentric (e=0.9) 2-body orbit. Compare energy conservation of adaptive vs. fixed time-step Verlet over 10 orbits. Adaptive version achieves comparable energy error with fewer total force evaluations (measured and reported)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Adaptive Verlet (eta=0.1): 44401 evals, energy error 2.2e-6 vs fixed dt=0.001 Verlet: 44430 evals, energy error 4.7e-3. Fewer evals AND ~2000x better energy conservation on e=0.9 orbit over 10 periods.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 13,
+    "completed": 14,
     "in_progress": 0,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
