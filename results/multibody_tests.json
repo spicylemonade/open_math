@@ -1,0 +1,68 @@
+{
+  "figure_8": {
+    "test": "figure_8_three_body",
+    "period": 6.3259,
+    "dt": 0.0001,
+    "n_steps": 63259,
+    "max_position_error": 1.788813836503682e-05,
+    "energy_error": 4.226490064939891e-14,
+    "initial_conditions": "Simo via Montgomery (Chenciner & Montgomery 2000)"
+  },
+  "solar_system": {
+    "test": "inner_solar_system_1year",
+    "G_astro": 39.47841760435743,
+    "dt": 0.0001,
+    "n_steps": 10000,
+    "energy_error": 1.0624073750478991e-11,
+    "planets": {
+      "Mercury": {
+        "period_years": 0.24075008411213486,
+        "expected_pos": [
+          0.2201635481388328,
+          0.3182719153034396
+        ],
+        "actual_pos": [
+          0.22015470387437622,
+          0.31832137926365156
+        ],
+        "position_error_AU": 5.0248426578610066e-05
+      },
+      "Venus": {
+        "period_years": 0.6147626102813996,
+        "expected_pos": [
+          -0.5059296909855009,
+          -0.5164921565515933
+        ],
+        "actual_pos": [
+          -0.5057501449426056,
+          -0.5165731450728549
+        ],
+        "position_error_AU": 0.00019696680455216537
+      },
+      "Earth": {
+        "period_years": 1.0,
+        "expected_pos": [
+          1.0,
+          -2.4492935982947064e-16
+        ],
+        "actual_pos": [
+          0.9999941194996789,
+          7.507676332017024e-05
+        ],
+        "position_error_AU": 7.530671068833418e-05
+      },
+      "Mars": {
+        "period_years": 1.8813840182163768,
+        "expected_pos": [
+          -1.4942034526437287,
+          -0.299886715456955
+        ],
+        "actual_pos": [
+          -1.4941095998868172,
+          -0.3000432021835497
+        ],
+        "position_error_AU": 0.00018247310919747905
+      }
+    }
+  }
+}

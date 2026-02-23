@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T21:08:34.497973+00:00",
+  "updated_at": "2026-02-23T21:10:36.406080+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -204,8 +204,8 @@
           "id": "item_019",
           "description": "Run standard multi-body test cases: figure-8 three-body orbit and inner solar system",
           "acceptance_criteria": "Two test cases executed: (1) Chenciner-Montgomery figure-8 three-body orbit with initial conditions from literature \u2014 trajectory plot saved to figures/figure8.png, periodicity error measured after 1 period, (2) inner solar system (Sun + 4 planets) with real masses and orbital parameters \u2014 run for 1 Earth year, compare final planet positions against expected positions. Both tests reference initial conditions from sources.bib",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Figure-8: pos error 1.8e-5, energy 4.2e-14. Solar system (1yr): planet positions within ~1e-4 AU, energy 1.1e-11. Both tests pass. Trajectory plot at figures/figure8.png.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 18,
+    "completed": 19,
     "in_progress": 0,
     "failed": 0,
-    "pending": 7
+    "pending": 6
   }
 }
