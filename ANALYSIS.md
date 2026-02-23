@@ -141,3 +141,61 @@ Symplectic integrators preserve the geometric structure of Hamiltonian systems �
 **NBODY6++GPU** (Wang et al., 2015): State-of-the-art direct N-body code for star clusters. Uses 4th-order Hermite integration with block time-steps and Ahmad-Cohen neighbor schemes. GPU acceleration provides ~33x speedup for regular force computation. Handles close encounters via Kustaanheimo-Stiefel regularization — far beyond our minimal scope.
 
 **GravHopper** (Bailin, 2023): Closest in spirit to our project — a simple Python interface with C backend, supporting both direct summation and Barnes-Hut. Uses leapfrog integration and can generate equilibrium initial conditions (Plummer, Hernquist profiles). Good reference for Python/C hybrid design.
+
+## 6. Mathematical Formulation of the Newtonian N-body Problem
+
+### 6.1 Newton's Law of Universal Gravitation
+
+The gravitational force between two point masses m_i and m_j separated by displacement vector **r**_ij = **r**_j - **r**_i is:
+
+**F**_ij = G * m_i * m_j * **r**_ij / |**r**_ij|³
+
+where G is Newton's gravitational constant (G ≈ 6.674 × 10⁻¹¹ m³ kg⁻¹ s⁻² in SI units).
+
+### 6.2 Equations of Motion for N Point Masses
+
+For a system of N point masses {m_1, m_2, ..., m_N} at positions {**r**_1, **r**_2, ..., **r**_N}, the acceleration of the i-th body is:
+
+**a**_i = d²**r**_i/dt² = G * Σ_{j≠i} m_j * (**r**_j - **r**_i) / |**r**_j - **r**_i|³
+
+This gives 2N second-order ODEs (or equivalently 4N first-order ODEs in 2D) that must be integrated simultaneously.
+
+### 6.3 Gravitational Potential Energy
+
+The total gravitational potential energy of the system is:
+
+U = -G * Σ_{i<j} m_i * m_j / |**r**_i - **r**_j|
+
+The sum runs over all unique pairs (i, j) with i < j to avoid double counting.
+
+### 6.4 Kinetic Energy
+
+The total kinetic energy is:
+
+T = Σ_i (1/2) * m_i * |**v**_i|²
+
+where **v**_i = d**r**_i/dt is the velocity of the i-th body.
+
+### 6.5 Total Energy Conservation
+
+The total mechanical energy E = T + U is a conserved quantity (constant of motion) for the exact solution of the Newtonian N-body problem. This follows from the conservative nature of the gravitational force (it can be derived from a potential).
+
+In numerical simulation, the relative energy error |ΔE/E₀| = |E(t) - E(0)| / |E(0)| serves as the primary diagnostic for integration accuracy. For symplectic integrators, this error remains bounded; for non-symplectic integrators (e.g., Forward Euler), it exhibits secular growth.
+
+### 6.6 Gravitational Softening
+
+When two bodies approach closely, |**r**_ij| → 0, the force diverges as 1/|**r**_ij|². This singularity causes numerical problems (extremely large accelerations, tiny required time steps). The standard remedy is **gravitational softening** — replacing the distance with a softened distance:
+
+|**r**_ij|² → |**r**_ij|² + ε²
+
+where ε > 0 is the softening length. The softened acceleration becomes:
+
+**a**_i = G * Σ_{j≠i} m_j * (**r**_j - **r**_i) / (|**r**_j - **r**_i|² + ε²)^(3/2)
+
+**Properties of softening:**
+- ε = 0 recovers exact Newtonian gravity
+- For |**r**_ij| >> ε, the force is essentially Newtonian
+- For |**r**_ij| << ε, the force is approximately linear (harmonic), preventing divergence
+- The softened potential is: Φ_soft = -G * m_j / √(|**r**_ij|² + ε²)
+- Softening introduces a systematic bias in the potential energy; the energy is no longer exactly conserved even analytically, but the softened system has its own conserved energy
+- Choosing ε involves a tradeoff: too large suppresses real dynamics; too small allows near-singular behavior (Dehnen & Read 2011)
