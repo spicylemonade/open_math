@@ -1,0 +1,13 @@
+{
+  "test": "circular_binary_1_orbit",
+  "verlet": {
+    "dt": 0.001,
+    "n_steps": 4443,
+    "position_error": 8.068085601420503e-05,
+    "energy_error": 1.1546319456101631e-14,
+    "E0": -0.4999999999999999,
+    "E_final": -0.4999999999999941
+  },
+  "euler_baseline_energy_error": 0.01716441081469056,
+  "improvement_ratio": 1486569887482.202
+}

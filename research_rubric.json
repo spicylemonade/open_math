@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T20:40:00Z",
-  "updated_at": "2026-02-23T20:54:42.384948+00:00",
+  "updated_at": "2026-02-23T20:55:20.497487+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -141,8 +141,8 @@
           "id": "item_012",
           "description": "Implement Velocity Verlet (St\u00f6rmer-Verlet) symplectic integrator",
           "acceptance_criteria": "Function implementing the Velocity Verlet algorithm: x(t+dt) = x(t) + v(t)*dt + 0.5*a(t)*dt^2, v(t+dt) = v(t) + 0.5*(a(t)+a(t+dt))*dt. Same test harness as item_011 executed; relative energy error after 1 orbit is at least 100x smaller than Forward Euler at same dt. Results saved to results/ directory",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Verlet energy error 1.15e-14 vs Euler 1.72e-2 \u2014 improvement ~1.5e12x (far exceeds 100x requirement). Position error 8.1e-5 vs Euler 4.2e-2. Results in results/verlet_test.json.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 11,
+    "completed": 12,
     "in_progress": 0,
     "failed": 0,
-    "pending": 14
+    "pending": 13
   }
 }
