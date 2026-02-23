@@ -90,3 +90,31 @@ For simplicity, we work in units where $G = 1$. For a two-body circular orbit of
 - Orbital velocity: $v = \sqrt{GM / r}$
 
 With $G = 1$, $M = 1$, $r = 1$: the orbital period is $P = 2\pi$ and velocity is $v = 1$.
+
+## Comparison of Numerical Integration Methods
+
+| Property | Forward Euler | Leapfrog (Störmer-Verlet KDK) | Velocity Verlet | RK4 (Runge-Kutta 4th order) |
+|---|---|---|---|---|
+| **Order of accuracy** | 1st | 2nd | 2nd | 4th |
+| **Symplectic** | No | Yes | Yes | No |
+| **Time-reversible** | No | Yes | Yes | No |
+| **Energy drift behavior** | Secular (monotonic) drift; energy grows linearly or exponentially | Bounded oscillation; no secular drift (Hairer et al., 2003) | Bounded oscillation; identical to Leapfrog (Jacobs, 2019) | Slow secular drift; much less than Euler but not bounded |
+| **Force evaluations per step** | 1 | 1 (when KDK steps are composed) | 1 (reuses previous acceleration) | 4 |
+| **Storage requirement** | $\mathbf{r}, \mathbf{v}$ | $\mathbf{r}, \mathbf{v}$ (+ half-step velocity) | $\mathbf{r}, \mathbf{v}, \mathbf{a}$ | $\mathbf{r}, \mathbf{v}$ + 4 intermediate $k$-values |
+| **Computational cost per step** | Lowest | Low | Low | 4× force cost |
+| **Suitability for gravity** | Poor — energy drift makes long-term integration meaningless | Excellent — the standard choice for gravitational dynamics | Excellent — mathematically equivalent to Leapfrog | Good for short integrations; energy drift is problematic for long-term |
+
+### Selection and Justification
+
+We select the following **three methods** for implementation:
+
+1. **Forward Euler** (1st order, non-symplectic)
+   - *Rationale*: Serves as the baseline to demonstrate the importance of symplecticity. Its secular energy drift provides a stark contrast to symplectic methods. Simple to implement and understand.
+
+2. **Leapfrog / Störmer-Verlet (KDK)** (2nd order, symplectic)
+   - *Rationale*: The workhorse of gravitational N-body simulation. Symplectic and time-reversible, with bounded energy error. Only one force evaluation per step. Used in GADGET (Springel, 2005), REBOUND (Rein & Liu, 2012), and most astrophysical N-body codes. The kick-drift-kick formulation naturally integrates with adaptive time-stepping.
+
+3. **Velocity Verlet** (2nd order, symplectic)
+   - *Rationale*: Mathematically equivalent to Leapfrog but positions and velocities are synchronized at each step (useful for diagnostics). Demonstrates the equivalence proven by Jacobs (2019) and Hairer et al. (2003). Slightly different implementation provides a cross-check.
+
+**RK4 is excluded** from implementation. While 4th-order accurate, it requires 4 force evaluations per step (4× the cost) and is not symplectic, making it unsuitable for long-term gravitational dynamics. For problems requiring higher-order accuracy, Yoshida (1990) compositions of symplectic integrators or the IAS15 method (as in REBOUND) are preferred.

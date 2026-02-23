@@ -79,8 +79,8 @@
           "id": "item_006",
           "description": "Compare numerical integration methods and select candidates for implementation",
           "acceptance_criteria": "A comparison table in FORMULATION.md listing Forward Euler, Leapfrog (St\u00f6rmer-Verlet), Velocity Verlet, and RK4 with columns for: order of accuracy, symplecticity (yes/no), energy drift behavior, computational cost per step, and suitability for gravitational dynamics. Justified selection of at least 3 methods to implement",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table added to FORMULATION.md with all 4 methods and 7 properties. Selected Forward Euler, Leapfrog, and Velocity Verlet for implementation. RK4 excluded with justification.",
           "error": null
         }
       ]
@@ -268,9 +268,10 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 5,
-    "in_progress": 1,
+    "completed": 6,
+    "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 19,
+    "in_progress_note": "Phase 1 complete"
   }
 }
