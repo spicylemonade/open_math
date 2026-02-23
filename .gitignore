@@ -11,3 +11,20 @@
 TASK_*.md
 agent_*.log
 orchestration.log
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Large binary files
+*.pkl
+*.pt
+*.h5
+*.weights
