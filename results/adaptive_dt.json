@@ -1,0 +1,21 @@
+{
+  "eccentricity": 0.9,
+  "semi_major_axis": 1.0,
+  "orbital_period": 6.283185307179586,
+  "n_orbits": 10,
+  "adaptive": {
+    "eta": 0.02,
+    "n_steps": 2975,
+    "final_relative_energy_error": 0.003670160957405244,
+    "dt_min": 0.00018809783235695932,
+    "dt_max": 0.07418734228423142,
+    "dt_mean": 0.021119950612368387
+  },
+  "fixed_dt": {
+    "dt": 0.01,
+    "n_steps": 6283,
+    "max_relative_energy_error": 0.2591546994191045,
+    "final_relative_energy_error": 0.24141163968226498
+  },
+  "adaptive_uses_fewer_steps": true
+}

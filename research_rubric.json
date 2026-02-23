@@ -165,8 +165,8 @@
           "id": "item_015",
           "description": "Implement adaptive time-stepping for eccentric orbits",
           "acceptance_criteria": "An adaptive time-step scheme (e.g., based on acceleration magnitude or nearest-neighbor distance) that reduces dt during close approaches and increases dt during slow phases. Tested on an e=0.9 elliptical orbit: completes 10 orbits with bounded energy error and fewer total steps than fixed-dt. Results saved to results/adaptive_dt.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Adaptive dt with eta=0.02 on e=0.9 orbit: 2975 steps (vs 6283 fixed), |dE/E|=3.7e-3 (vs 0.26 fixed). 53% fewer steps with much better energy conservation.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 14,
+    "completed": 15,
     "in_progress": 0,
     "failed": 0,
-    "pending": 11
+    "pending": 10
   }
 }
