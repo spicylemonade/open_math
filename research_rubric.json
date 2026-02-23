@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T01:14:25.511347+00:00",
+  "updated_at": "2026-02-23T01:15:20.579900+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -47,8 +47,8 @@
           "id": "item_002",
           "description": "Formalize the research problem: Minimum Dominating Set on planar graphs \u2014 closing the gap between PTAS and practical constant-factor algorithms",
           "acceptance_criteria": "Written problem statement (docs/problem_statement.md) with: (1) formal definition of MDS and planar graphs, (2) NP-hardness citation (Garey & Johnson), (3) statement of Baker's PTAS giving (1+2/k)-approximation in O(2^{ck}\u00b7n) time, (4) identification that standard greedy gives O(log n) even on planar graphs while modified greedy achieves only loose constant factors, (5) concrete research question: 'Can we design a practical O(n\u00b7polylog(n))-time algorithm achieving approximation ratio \u2264 5 on planar graphs, combining separator decomposition with LP rounding?'",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Problem statement written in docs/problem_statement.md with all required elements: formal MDS/planar definitions, NP-hardness citation, Baker PTAS statement, greedy limitations, and concrete research question.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 1,
+    "completed": 2,
     "in_progress": 0,
     "failed": 0,
-    "pending": 26
+    "pending": 25
   }
 }
