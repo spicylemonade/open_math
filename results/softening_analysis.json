@@ -1,0 +1,31 @@
+{
+  "test": "3body_close_encounter_softening",
+  "dt": 0.0005,
+  "n_steps": 20000,
+  "results": {
+    "0.001": {
+      "softening": 0.001,
+      "max_acceleration": 353620.36173521035,
+      "energy_error": 144995.94084146435,
+      "E0": -0.2437276877054626,
+      "E_final": 35339.28166028045,
+      "trajectory_divergence_from_baseline": 0.0
+    },
+    "0.01": {
+      "softening": 0.01,
+      "max_acceleration": 6142.944110071596,
+      "energy_error": 18.810959521357685,
+      "E0": -0.24371993500705125,
+      "E_final": 4.340885896958516,
+      "trajectory_divergence_from_baseline": 1560.9985161301547
+    },
+    "0.1": {
+      "softening": 0.1,
+      "max_acceleration": 38.81230796681626,
+      "energy_error": 1.8624209929872312e-08,
+      "E0": -0.24294594005942938,
+      "E_final": -0.24294594458410557,
+      "trajectory_divergence_from_baseline": 1555.74159986749
+    }
+  }
+}
