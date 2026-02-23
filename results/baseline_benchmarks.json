@@ -6,7 +6,7 @@
     "periods": 100,
     "final_energy_error": 0.4059377727551322,
     "max_energy_error": 0.4059377727551322,
-    "wall_time_seconds": 11.875,
+    "wall_time_seconds": 11.254,
     "energy_errors_per_period": [
       0.0122588659524365,
       0.02393819236094821,
@@ -27,7 +27,7 @@
     "periods": 100,
     "final_energy_error": 1.9058241313221758e-14,
     "max_energy_error": 9.507944832929521e-14,
-    "wall_time_seconds": 15.502,
+    "wall_time_seconds": 15.121,
     "energy_errors_per_period": [
       4.446922973085077e-15,
       2.159934015498466e-14,
@@ -48,6 +48,6 @@
     "N": 3,
     "periods": 10,
     "final_energy_error": 1.4370066168747156e-13,
-    "wall_time_seconds": 2.253
+    "wall_time_seconds": 2.229
   }
 ]
