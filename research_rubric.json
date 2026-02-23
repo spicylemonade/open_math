@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T02:08:54.808985+00:00",
+  "updated_at": "2026-02-23T02:09:46.133417+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -165,8 +165,8 @@
           "id": "item_015",
           "description": "Implement k-swap local search post-processing to reduce dominating set size",
           "acceptance_criteria": "Module src/local_search.py with: (1) 1-swap: try removing each vertex and check if domination maintained, (2) 2-swap: try replacing pairs with single vertices, (3) configurable iteration limit and convergence criterion, (4) measured improvement: reduces dominating set size by \u2265 2% on average across at least 50 benchmark instances when applied to greedy output, (5) runtime overhead < 5x the base algorithm time on instances up to 10000 nodes.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/local_search.py with 1-swap and 2-swap. 8 tests pass. Average \u22652% improvement over greedy on 50 Delaunay instances confirmed.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 14,
+    "completed": 15,
     "in_progress": 0,
     "failed": 0,
-    "pending": 13
+    "pending": 12
   }
 }
