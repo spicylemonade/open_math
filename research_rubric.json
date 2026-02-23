@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-23T22:30:00Z",
+  "updated_at": "2026-02-23T22:32:21.216408+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-23T22:30:00Z",
+      "completed_at": "2026-02-23T22:32:21.216382+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scope for the minimal gravity simulator",
+          "acceptance_criteria": "A document (PROJECT_SCOPE.md) listing all existing repo files, the chosen programming language (Python), target capabilities (2D/3D N-body gravitational simulation), and a module map showing planned source files and their responsibilities",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct literature review on N-body gravitational simulation methods using web search",
+          "acceptance_criteria": "A written summary (literature_review.md) covering at least: (1) direct-summation methods, (2) symplectic integrators (leapfrog, Verlet), (3) tree-based methods (Barnes-Hut), (4) softening techniques, and (5) adaptive time-stepping. Must cite at least 10 papers by author and year",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Survey existing open-source N-body simulation codebases via web search",
+          "acceptance_criteria": "A summary of at least 5 open-source N-body projects (e.g., REBOUND, Gadget, NBODY6, AstroSim) noting their language, integrator choices, force algorithms, and licensing. Documented in literature_review.md or a separate survey section",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted references",
+          "acceptance_criteria": "sources.bib exists in repo root with at least 10 valid BibTeX entries covering: Aarseth (gravitational N-body), Verlet (1967 integration), Barnes & Hut (1986 tree code), Wisdom & Holman (symplectic maps), Springel (Gadget), Rein & Liu (REBOUND), and at least 4 additional relevant references",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Formalize the mathematical formulation of the N-body gravitational problem",
+          "acceptance_criteria": "A document (FORMULATION.md) containing: Newton's law of gravitation for N particles, equations of motion as a system of ODEs, definitions of total energy (kinetic + potential), total linear momentum, and total angular momentum as conserved quantities, with LaTeX-style notation",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Compare numerical integration methods and select candidates for implementation",
+          "acceptance_criteria": "A comparison table in FORMULATION.md listing Forward Euler, Leapfrog (St\u00f6rmer-Verlet), Velocity Verlet, and RK4 with columns for: order of accuracy, symplecticity (yes/no), energy drift behavior, computational cost per step, and suitability for gravitational dynamics. Justified selection of at least 3 methods to implement",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement particle data structures and initialization routines",
+          "acceptance_criteria": "A Python module (sim/body.py or similar) defining a Body/Particle class with mass, position (2D or 3D vector), and velocity attributes. An initialization function that can set up: (1) a two-body Kepler orbit, (2) a random N-body system. All code passes at least 3 unit tests verifying attribute storage and initialization correctness",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement direct-summation O(N^2) pairwise gravitational force computation",
+          "acceptance_criteria": "A function computing gravitational acceleration on each particle via direct pairwise summation. Verified against hand-calculated values for a 2-body and 3-body configuration. At least 3 unit tests passing, including a test that confirms O(N^2) scaling by timing N=100 vs N=200",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement Forward Euler time integration as the baseline integrator",
+          "acceptance_criteria": "A Forward Euler integrator that advances positions and velocities by one time step. Verified on a circular two-body orbit: orbit completes approximately one period with visible energy drift. At least 2 unit tests confirming position update correctness",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement energy and momentum conservation diagnostics",
+          "acceptance_criteria": "Functions computing total kinetic energy, total gravitational potential energy, total linear momentum, and total angular momentum of the system. Verified against hand calculations for a 2-body system. At least 3 unit tests passing",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Establish baseline benchmarks on a two-body Kepler orbit",
+          "acceptance_criteria": "Run Forward Euler on a circular Kepler orbit for 1000 steps. Record: (1) relative energy error vs time, (2) wall-clock time. Save numerical results to results/baseline_euler.json. Energy error magnitude and growth rate documented",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Implement symplectic Leapfrog (kick-drift-kick) integrator",
+          "acceptance_criteria": "A Leapfrog/St\u00f6rmer-Verlet integrator using the kick-drift-kick formulation. On the same circular Kepler orbit as item_011, energy error must remain bounded (no secular drift) over 10,000 steps. At least 2 unit tests passing. Energy error should be orders of magnitude better than Forward Euler",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement Velocity Verlet integrator and compare with Leapfrog",
+          "acceptance_criteria": "A Velocity Verlet integrator implemented and verified to produce identical trajectories to Leapfrog (to machine precision) on a test orbit. Documented equivalence in a comparison note. At least 2 unit tests passing",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement gravitational softening to handle close encounters",
+          "acceptance_criteria": "A configurable softening parameter epsilon added to the force computation (r^2 + eps^2 denominator). Demonstrated on a 3-body near-collision scenario: simulation completes without NaN/Inf. Analysis of softening parameter's effect on energy conservation at 3 different epsilon values saved to results/softening_analysis.json",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement adaptive time-stepping for eccentric orbits",
+          "acceptance_criteria": "An adaptive time-step scheme (e.g., based on acceleration magnitude or nearest-neighbor distance) that reduces dt during close approaches and increases dt during slow phases. Tested on an e=0.9 elliptical orbit: completes 10 orbits with bounded energy error and fewer total steps than fixed-dt. Results saved to results/adaptive_dt.json",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Implement Barnes-Hut tree algorithm for O(N log N) force computation",
+          "acceptance_criteria": "A Barnes-Hut octree (3D) or quadtree (2D) with configurable opening angle theta. Force accuracy within 1% of direct summation for theta=0.5 on a 500-particle random system. Timing demonstrates sub-quadratic scaling: wall time for N=1000 is less than 4x wall time for N=500. At least 3 unit tests passing",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_017",
+          "description": "Energy conservation benchmark: compare all integrators over 10,000 steps",
+          "acceptance_criteria": "Run Forward Euler, Leapfrog, and Velocity Verlet on a circular Kepler orbit for 10,000 steps with the same dt. Record max |dE/E| for each. Results saved to results/energy_benchmark.json. Leapfrog and Verlet must show bounded oscillating error; Euler must show secular drift. Results compared against expected convergence orders from literature (cite sources.bib)",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Performance scaling benchmark: wall time vs N for direct and tree methods",
+          "acceptance_criteria": "Measure wall-clock time for direct summation and Barnes-Hut at N = 64, 128, 256, 512, 1024 particles for a single force evaluation. Fit power-law exponents. Direct must show exponent ~2.0; Barnes-Hut must show exponent < 1.5. Results saved to results/scaling_benchmark.json",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Test canonical gravitational scenarios: circular orbit, elliptical orbit, and figure-8 three-body",
+          "acceptance_criteria": "Three test scenarios run successfully: (1) circular two-body orbit maintains radius within 1% over 100 orbits, (2) elliptical orbit (e=0.5) preserves eccentricity within 5% over 50 orbits, (3) figure-8 three-body choreography (Chenciner-Montgomery initial conditions) remains stable for at least 5 periods. Results saved to results/canonical_tests.json",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Compare quantitative results against published literature values",
+          "acceptance_criteria": "For each canonical scenario, compare obtained energy conservation and orbital elements against at least 2 published reference values from sources.bib. Discrepancies documented and explained. Comparison table saved to results/literature_comparison.md",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Generate trajectory and energy-drift visualizations",
+          "acceptance_criteria": "At least 4 publication-quality figures saved to figures/ as PNG: (1) 2-body orbit trajectory, (2) energy error vs time for all integrators, (3) scaling benchmark log-log plot, (4) figure-8 three-body trajectory. Each figure has axis labels, legend, and title",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_022",
+          "description": "Create quantitative integrator comparison summary table",
+          "acceptance_criteria": "A table (in results/integrator_summary.md) with columns: Integrator, Order, Symplectic, Max |dE/E| at 10k steps, Wall Time per Step, and Recommended Use Case. Covers all implemented integrators. Values drawn from experiments in Phase 4",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Write FINDINGS.md with methodology, results, and conclusions",
+          "acceptance_criteria": "FINDINGS.md in repo root with sections: (1) Introduction and problem statement, (2) Methods (integrators, force algorithms, softening, adaptive stepping), (3) Results (referencing figures/ and results/), (4) Discussion comparing against prior work cited in sources.bib, (5) Conclusions. At least 2000 words, citing at least 8 references from sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Document codebase with docstrings and usage instructions",
+          "acceptance_criteria": "Every public function and class has a docstring describing purpose, parameters, and return value. A USAGE.md file explains how to run the simulator, run benchmarks, and generate figures with example command lines",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Final README with project overview, results summary, and reproduction instructions",
+          "acceptance_criteria": "README.md updated with: (1) project title and one-paragraph description, (2) key results (best energy conservation, scaling exponents), (3) repository structure listing, (4) installation and reproduction instructions (requirements.txt with dependencies, run commands), (5) references to FINDINGS.md and sources.bib",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
