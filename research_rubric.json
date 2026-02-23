@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T02:09:46.133417+00:00",
+  "updated_at": "2026-02-23T02:10:41.224962+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -173,8 +173,8 @@
           "id": "item_016",
           "description": "Write proof sketch establishing approximation ratio bound for the novel algorithm",
           "acceptance_criteria": "Document (docs/proof_sketch.md) with: (1) formal theorem statement: 'Algorithm X returns a dominating set of size at most \u03b1\u00b7OPT + \u03b2\u00b7sqrt(n) on any n-vertex planar graph' (with specific constants \u03b1, \u03b2), (2) key lemma on separator cost overhead, (3) key lemma on sub-problem solution quality, (4) proof outline combining lemmas to obtain the bound, (5) comparison showing the bound is strictly better than baseline greedy O(log n) ratio on planar graphs, (6) identification of where the bound is tight or loose.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Proof sketch in docs/proof_sketch.md with theorem (4*OPT + 3*sqrt(n)), Lemma 1 (separator cost), Lemma 2 (sub-problem quality via integrality gap), comparison table showing improvement over O(log n) greedy.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 15,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
