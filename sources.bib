@@ -1,1 +1,252 @@
-% Bibliography for research project
+% Bibliography for N-body gravitational simulation research project
+% Contains at least 15 references covering integration methods, force algorithms,
+% gravitational softening, adaptive time-stepping, and validation benchmarks.
+
+@book{Aarseth2003,
+  author    = {Aarseth, Sverre J.},
+  title     = {Gravitational {N}-Body Simulations: Tools and Algorithms},
+  year      = {2003},
+  publisher = {Cambridge University Press},
+  series    = {Cambridge Monographs on Mathematical Physics},
+  isbn      = {978-0521432726},
+  doi       = {10.1017/CBO9780511535246},
+  note      = {Comprehensive treatment of numerical methods for the classical
+               N-body problem, including predictor-corrector methods, neighbour
+               schemes, regularization, tree codes, and applications to star
+               clusters, galaxies, and planetary systems.}
+}
+
+@article{BarnesHut1986,
+  author  = {Barnes, Josh and Hut, Piet},
+  title   = {A Hierarchical {O}({N} log {N}) Force-Calculation Algorithm},
+  journal = {Nature},
+  year    = {1986},
+  volume  = {324},
+  number  = {4},
+  pages   = {446--449},
+  doi     = {10.1038/324446a0},
+  note    = {Introduces the Barnes-Hut tree algorithm for gravitational
+             N-body simulations. Bodies are organized in a spatial octree
+             (quadtree in 2D); distant groups are approximated by their
+             center of mass, reducing force computation from O(N^2) to
+             O(N log N). The opening-angle parameter theta controls the
+             accuracy-speed tradeoff.}
+}
+
+@article{Verlet1967,
+  author  = {Verlet, Loup},
+  title   = {Computer ``Experiments'' on Classical Fluids. {I}.
+             Thermodynamical Properties of {Lennard-Jones} Molecules},
+  journal = {Physical Review},
+  year    = {1967},
+  volume  = {159},
+  number  = {1},
+  pages   = {98--103},
+  doi     = {10.1103/PhysRev.159.98},
+  note    = {Introduces the Verlet (Stoermer-Verlet) integration method:
+             r(t+dt) = 2r(t) - r(t-dt) + a(t)*dt^2. The method is
+             time-reversible, symplectic, and second-order accurate with
+             only one force evaluation per step. Foundational for molecular
+             dynamics and gravitational N-body simulations.}
+}
+
+@article{WisdomHolman1991,
+  author  = {Wisdom, Jack and Holman, Matthew J.},
+  title   = {Symplectic Maps for the {N}-Body Problem},
+  journal = {The Astronomical Journal},
+  year    = {1991},
+  volume  = {102},
+  pages   = {1528--1538},
+  doi     = {10.1086/115978},
+  note    = {Generalizes the symplectic mapping method to all gravitational
+             N-body problems with a dominant central mass. The Wisdom-Holman
+             map splits the Hamiltonian into Keplerian and interaction parts,
+             enabling long-term integrations of planetary systems. Used to
+             confirm the chaotic motion of Pluto over a billion years.}
+}
+
+@article{Springel2005,
+  author  = {Springel, Volker},
+  title   = {The Cosmological Simulation Code {GADGET-2}},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2005},
+  volume  = {364},
+  number  = {4},
+  pages   = {1105--1134},
+  doi     = {10.1111/j.1365-2966.2005.09655.x},
+  eprint  = {astro-ph/0505010},
+  note    = {Describes the massively parallel TreeSPH code GADGET-2 for
+             cosmological simulations. Features hierarchical multipole
+             expansion (optionally TreePM), quasi-symplectic time integration
+             with individual adaptive timesteps, SPH for gas dynamics, and
+             space-filling curve domain decomposition. Publicly released;
+             used for the first 10^{10}-particle cosmological simulation.}
+}
+
+@article{ReinLiu2012,
+  author  = {Rein, Hanno and Liu, Shang-Fei},
+  title   = {{REBOUND}: An Open-Source Multi-Purpose {N}-Body Code for
+             Collisional Dynamics},
+  journal = {Astronomy \& Astrophysics},
+  year    = {2012},
+  volume  = {537},
+  pages   = {A128},
+  doi     = {10.1051/0004-6361/201118085},
+  eprint  = {1110.4876},
+  note    = {Introduces the REBOUND N-body code, a modular open-source
+             framework supporting leapfrog, symplectic epicycle (SEI), and
+             Wisdom-Holman integrators. Includes Barnes-Hut tree for
+             self-gravity and collision detection. Parallelized with MPI
+             and OpenMP. Designed for planetary rings and collisional dynamics.}
+}
+
+@article{ChencinerMontgomery2000,
+  author  = {Chenciner, Alain and Montgomery, Richard},
+  title   = {A Remarkable Periodic Solution of the Three-Body Problem in
+             the Case of Equal Masses},
+  journal = {Annals of Mathematics},
+  year    = {2000},
+  volume  = {152},
+  number  = {3},
+  pages   = {881--901},
+  doi     = {10.2307/2661357},
+  note    = {Proves the existence of a figure-eight periodic orbit for the
+             Newtonian three-body problem with equal masses using variational
+             methods. The three bodies chase each other around a fixed
+             eight-shaped curve with zero angular momentum. A key benchmark
+             for validating N-body integrators.}
+}
+
+@article{DehnenRead2011,
+  author  = {Dehnen, Walter and Read, Justin I.},
+  title   = {{N}-Body Simulations of Gravitational Dynamics},
+  journal = {The European Physical Journal Plus},
+  year    = {2011},
+  volume  = {126},
+  pages   = {55},
+  doi     = {10.1140/epjp/i2011-11055-3},
+  eprint  = {1105.1082},
+  note    = {Comprehensive review of N-body simulation methods for both
+             collisional (star clusters) and collisionless (galaxies,
+             large-scale structure) stellar dynamics. Covers force
+             computation algorithms, time integration, softening, and
+             parallelization. Discusses state-of-the-art and future
+             directions.}
+}
+
+@book{HairerLubichWanner2006,
+  author    = {Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
+  title     = {Geometric Numerical Integration: Structure-Preserving
+               Algorithms for Ordinary Differential Equations},
+  year      = {2006},
+  edition   = {2nd},
+  publisher = {Springer},
+  series    = {Springer Series in Computational Mathematics},
+  volume    = {31},
+  isbn      = {978-3-642-05157-9},
+  doi       = {10.1007/3-540-30666-8},
+  note      = {Definitive reference on structure-preserving numerical methods.
+               Covers symplectic integrators, symmetric methods, Runge-Kutta
+               and composition methods, backward error analysis, and KAM
+               theory. Essential mathematical foundation for understanding
+               why symplectic integrators excel at long-term Hamiltonian
+               integration.}
+}
+
+@article{GreengardRokhlin1987,
+  author  = {Greengard, Leslie and Rokhlin, Vladimir},
+  title   = {A Fast Algorithm for Particle Simulations},
+  journal = {Journal of Computational Physics},
+  year    = {1987},
+  volume  = {73},
+  number  = {2},
+  pages   = {325--348},
+  doi     = {10.1016/0021-9991(87)90140-9},
+  note    = {Introduces the Fast Multipole Method (FMM), reducing N-body
+             force evaluation from O(N^2) to O(N) via hierarchical multipole
+             expansions. Named one of the top ten algorithms of the 20th
+             century. Applicable to gravitational, electrostatic, and other
+             inverse-square-law interactions.}
+}
+
+@article{ReinSpiegel2015,
+  author  = {Rein, Hanno and Spiegel, David S.},
+  title   = {{IAS15}: A Fast, Adaptive, High-Order Integrator for
+             Gravitational Dynamics, Accurate to Machine Precision over
+             a Billion Orbits},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2015},
+  volume  = {446},
+  number  = {2},
+  pages   = {1424--1437},
+  doi     = {10.1093/mnras/stu2164},
+  eprint  = {1409.4779},
+  note    = {Presents the IAS15 integrator, a 15th-order method based on
+             Gauss-Radau quadrature with automatic adaptive step-size
+             control. Achieves machine-precision energy conservation over
+             10^9 orbits following Brouwer's law (random-walk error growth).
+             Handles close encounters and non-conservative forces.
+             Implemented in REBOUND.}
+}
+
+@article{Plummer1911,
+  author  = {Plummer, H. C.},
+  title   = {On the Problem of Distribution in Globular Star Clusters},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {1911},
+  volume  = {71},
+  number  = {5},
+  pages   = {460--470},
+  doi     = {10.1093/mnras/71.5.460},
+  note    = {Introduces the Plummer density profile for globular clusters.
+             The Plummer sphere is now universally used as a softening
+             kernel in N-body simulations: F = G*m1*m2*r / (r^2 + eps^2)^{3/2},
+             replacing point-mass singularities with smooth force profiles.}
+}
+
+@article{Dehnen2001,
+  author  = {Dehnen, Walter},
+  title   = {Towards Optimal Softening in Three-Dimensional {N}-Body Codes.
+             {I}. {M}inimizing the Force Error},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2001},
+  volume  = {324},
+  number  = {2},
+  pages   = {273--291},
+  doi     = {10.1046/j.1365-8711.2001.04237.x},
+  note    = {Analyzes optimal softening lengths for N-body simulations by
+             minimizing the mean integrated square force error. Shows that
+             optimal softening scales as N^{-0.3}, spline kernels outperform
+             Plummer softening, and adaptive softening requires careful
+             treatment to preserve momentum conservation.}
+}
+
+@article{Quinn1997,
+  author  = {Quinn, Thomas and Katz, Neal and Stadel, Joachim and Lake, George},
+  title   = {Time Stepping {N}-Body Simulations},
+  year    = {1997},
+  eprint  = {astro-ph/9710043},
+  archiveprefix = {arXiv},
+  note    = {Analyzes adaptive time-stepping for leapfrog N-body integrators.
+             Introduces a leapfrog variant with individual particle timesteps
+             and demonstrates that naive adaptive stepping can break
+             symplecticity. The loss of accuracy is attributed to timestep
+             selection rather than the integrator itself. Establishes
+             accuracy criteria for both fixed and adaptive leapfrog methods.}
+}
+
+@article{MakinoAarseth1992,
+  author  = {Makino, Junichiro and Aarseth, Sverre J.},
+  title   = {On a {Hermite} Integrator with {Ahmad-Cohen} Scheme for
+             Gravitational Many-Body Problems},
+  journal = {Publications of the Astronomical Society of Japan},
+  year    = {1992},
+  volume  = {44},
+  pages   = {141--151},
+  note    = {Introduces the Hermite integration scheme for N-body problems,
+             using both acceleration and its time derivative (jerk) for
+             prediction and correction. Combined with individual block
+             timesteps and the Ahmad-Cohen neighbour scheme, this forms
+             the basis of modern high-accuracy direct N-body codes such
+             as NBODY6.}
+}

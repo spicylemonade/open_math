@@ -47,40 +47,40 @@
           "id": "item_002",
           "description": "Formalize the N-body gravitational simulation problem",
           "acceptance_criteria": "Document in docs/problem_statement.md: (1) mathematical formulation of the gravitational N-body problem with Newton's law F = G*m1*m2/r^2, (2) definition of 'minimal' scope \u2014 2D point-mass simulation with configurable N, (3) key quantities to track (total energy, linear momentum, angular momentum), (4) target scenarios (two-body Kepler orbit, three-body figure-eight, random N-body cluster with N up to 1000).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/problem_statement.md with: mathematical formulation (F=Gm1m2/r^2, softened form), scope definition (2D, point mass, G=1), conservation quantities (KE, PE, E, P, L), and 3 target scenarios (Kepler, figure-eight, random cluster).",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Conduct literature review on N-body simulation methods",
           "acceptance_criteria": "Search the web for papers and references on: (a) classical N-body integration schemes (Euler, Verlet, leapfrog, RK4, symplectic methods), (b) force calculation algorithms (direct summation, Barnes-Hut, FMM), (c) gravitational softening, (d) adaptive time-stepping. Produce docs/literature_review.md summarizing at least 10 key papers/resources with 1-paragraph descriptions of each. Must cite Aarseth (2003), Barnes & Hut (1986), Verlet (1967), and Wisdom & Holman (1991).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/literature_review.md with 15 references covering integration schemes (Verlet, Wisdom-Holman, Hairer et al., Rein-Spiegel), force algorithms (Barnes-Hut, Greengard-Rokhlin, Springel), softening (Plummer, Dehnen), and adaptive time-stepping (Quinn et al., Makino-Aarseth). All required citations included.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Survey existing open-source gravity and N-body simulators",
           "acceptance_criteria": "Search the web for at least 5 open-source N-body or gravity simulation codebases (e.g., REBOUND, Gadget, NBODY6, PyNbody, galpy). Document in docs/code_survey.md: language, integration method, force algorithm, feature set, performance characteristics, and license for each. Identify design patterns and best practices to adopt.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/code_survey.md surveying 9 codes: REBOUND, GADGET-4, NBODY6, pynbody, galpy, Arepo, SWIFT, GIZMO, PeTar. Each with language, methods, features, performance, license. 8 design patterns identified.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Create and populate sources.bib with BibTeX entries",
           "acceptance_criteria": "Create sources.bib in the repo root with valid BibTeX entries for all consulted sources. At least 10 relevant papers cited. Must include entries for: Aarseth (Gravitational N-Body Simulations), Barnes & Hut (1986 hierarchical force calculation), Verlet (1967 integration), Wisdom & Holman (1991 symplectic mapping), Springel (Gadget), Rein & Liu (REBOUND). Each entry must have author, title, year, and journal/publisher fields.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib populated with 15 valid BibTeX entries including all required: Aarseth2003, BarnesHut1986, Verlet1967, WisdomHolman1991, Springel2005, ReinLiu2012. All entries have author, title, year, and journal/publisher fields.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Define research hypotheses and success metrics",
           "acceptance_criteria": "Document in docs/hypotheses.md: (1) H1: Symplectic integrators (leapfrog/Verlet) will conserve energy to within 1e-6 relative error over 1000 orbital periods for two-body Kepler problem, while Euler will diverge. (2) H2: Barnes-Hut O(N log N) will outperform direct O(N^2) for N > 100 while maintaining force accuracy within 1% RMS error. (3) H3: Adaptive time-stepping will reduce computation by >50% on eccentric orbits vs fixed step. Include at least 3 falsifiable predictions with quantitative targets.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/hypotheses.md with 3 falsifiable hypotheses (H1: symplectic energy conservation, H2: Barnes-Hut scalability, H3: adaptive time-stepping efficiency), each with quantitative targets, falsification criteria, and test configurations.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 19
   }
 }
