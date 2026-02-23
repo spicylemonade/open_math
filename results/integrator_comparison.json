@@ -1,0 +1,27 @@
+{
+  "test": "circular_binary_1_orbit_comparison",
+  "dt": 0.001,
+  "integrators": {
+    "euler": {
+      "position_error": 0.042164830912505745,
+      "energy_error": 0.01716441081469056,
+      "E0": -0.4999999999999999,
+      "E_final": -0.4914177945926546,
+      "n_steps": 4443
+    },
+    "verlet": {
+      "position_error": 8.068085601420503e-05,
+      "energy_error": 1.1546319456101631e-14,
+      "E0": -0.4999999999999999,
+      "E_final": -0.4999999999999941,
+      "n_steps": 4443
+    },
+    "leapfrog": {
+      "position_error": 8.068085600085537e-05,
+      "energy_error": 5.440092820663269e-15,
+      "E0": -0.4999999999999999,
+      "E_final": -0.49999999999999717,
+      "n_steps": 4443
+    }
+  }
+}
