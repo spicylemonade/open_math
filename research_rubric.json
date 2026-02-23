@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Document codebase with docstrings and usage instructions",
           "acceptance_criteria": "Every public function and class has a docstring describing purpose, parameters, and return value. A USAGE.md file explains how to run the simulator, run benchmarks, and generate figures with example command lines",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 17 public functions/classes have docstrings. USAGE.md with installation, examples, tests, benchmarks, and file structure.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 2
+    "pending": 1
   }
 }
