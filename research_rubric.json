@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-02-23T12:00:00Z",
-  "updated_at": "2026-02-23T01:31:30.145104+00:00",
+  "updated_at": "2026-02-23T01:32:23.041708+00:00",
   "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
@@ -110,8 +110,8 @@
           "id": "item_009",
           "description": "Implement LP-relaxation based MDS algorithm with rounding",
           "acceptance_criteria": "Module src/lp_solver.py with: (1) LP relaxation of MDS ILP formulation (minimize sum x_v subject to sum_{u in N[v]} x_u >= 1, 0 <= x_v <= 1), (2) deterministic rounding scheme (threshold at 1/(\u0394+1) or similar), (3) produces feasible dominating sets on all test instances, (4) optionally: ILP exact solver for small instances (\u2264 500 nodes) to compute OPT for ratio measurement, (5) unit tests passing.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/lp_solver.py with LP relaxation, threshold rounding, and ILP exact solver. All 16 tests pass. LP provides valid lower bounds, rounding produces valid dominating sets, ILP finds optimal solutions on small instances.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 8,
+    "completed": 9,
     "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 18
   }
 }
