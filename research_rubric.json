@@ -118,8 +118,8 @@
           "id": "item_010",
           "description": "Implement energy and momentum conservation diagnostics",
           "acceptance_criteria": "Functions computing total kinetic energy, total gravitational potential energy, total linear momentum, and total angular momentum of the system. Verified against hand calculations for a 2-body system. At least 3 unit tests passing",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sim/diagnostics.py with kinetic_energy, potential_energy, total_energy, linear_momentum, angular_momentum. 6 tests passing including hand calculations and Kepler verification",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 9,
+    "completed": 10,
     "in_progress": 0,
     "failed": 0,
-    "pending": 16
+    "pending": 15
   }
 }
