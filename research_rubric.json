@@ -126,8 +126,8 @@
           "id": "item_011",
           "description": "Establish baseline benchmarks on a two-body Kepler orbit",
           "acceptance_criteria": "Run Forward Euler on a circular Kepler orbit for 1000 steps. Record: (1) relative energy error vs time, (2) wall-clock time. Save numerical results to results/baseline_euler.json. Energy error magnitude and growth rate documented",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Baseline: dt=0.01, 1000 steps (~1.6 orbits). Max |dE/E|=1.47e-1, growth rate=1.43e-2 per time unit. Wall time=0.027s. Results in results/baseline_euler.json",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 10,
+    "completed": 11,
     "in_progress": 0,
     "failed": 0,
-    "pending": 15
+    "pending": 14
   }
 }
