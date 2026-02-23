@@ -94,39 +94,39 @@
           "id": "item_007",
           "description": "Implement 2D vector math and particle/body data structures",
           "acceptance_criteria": "Create src/vector.py with a Vec2 class supporting addition, subtraction, scalar multiply, dot product, magnitude, and unit vector. Create src/body.py with a Body class holding mass, position (Vec2), velocity (Vec2). All operations must have unit tests in tests/test_vector.py and tests/test_body.py with at least 15 passing tests total.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Vec2 and Body classes implemented. 26 passing tests.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Implement direct O(N^2) pairwise gravitational force computation",
           "acceptance_criteria": "Create src/force.py with a direct_gravity(bodies, G, softening) function that computes gravitational acceleration for each body via pairwise summation. Must handle softening parameter to avoid singularities. Unit tests in tests/test_force.py verifying: (a) two-body force matches analytical F=Gm1m2/r^2, (b) net force on symmetric configurations is zero, (c) softening prevents NaN/inf. At least 8 passing tests.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "direct_gravity() with Plummer softening. 10 passing tests.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Implement Euler and leapfrog (Stormer-Verlet) integrators",
           "acceptance_criteria": "Create src/integrators.py with: (a) euler_step(bodies, dt, force_func) implementing forward Euler, (b) leapfrog_step(bodies, dt, force_func) implementing the kick-drift-kick leapfrog scheme. Both return updated body states without mutating inputs. Unit tests in tests/test_integrators.py verifying: single step produces correct positions for known force, at least 10 passing tests.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "euler_step() and leapfrog_step() (KDK). 11 passing tests.",
           "error": null
         },
         {
           "id": "item_010",
           "description": "Implement simulation loop and state recording",
           "acceptance_criteria": "Create src/simulation.py with a Simulation class that: (a) accepts bodies, integrator, force function, dt, and total time, (b) steps the simulation and records position/velocity history, (c) computes total kinetic energy, potential energy, and total energy at each step, (d) computes total linear and angular momentum at each step. Unit tests verifying energy and momentum computation against analytical values for a simple two-body case. At least 6 passing tests.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Simulation class with energy, momentum, angular momentum tracking. 8 passing tests.",
           "error": null
         },
         {
           "id": "item_011",
           "description": "Establish baseline benchmarks on canonical test problems",
           "acceptance_criteria": "Create tests/test_benchmarks.py that runs: (a) two-body circular orbit for 100 periods with Euler and leapfrog at dt=0.001, recording relative energy error at each period, (b) three-body figure-eight solution (Chenciner & Montgomery 2000) for 10 periods. Record results to results/baseline_benchmarks.json with fields: integrator, dt, N, periods, final_energy_error, wall_time_seconds. Euler energy error must be measurably worse than leapfrog, confirming the setup is correct.",
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
           "error": null
         }
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
-    "in_progress": 0,
+    "completed": 10,
+    "in_progress": 1,
     "failed": 0,
-    "pending": 19
+    "pending": 14
   }
 }
