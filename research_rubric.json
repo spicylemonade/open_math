@@ -196,8 +196,8 @@
           "id": "item_018",
           "description": "Performance benchmark: wall-clock time vs accuracy tradeoff",
           "acceptance_criteria": "Measure wall-clock execution time for each integrator at each dt value from item_015. Scatter plot of RMS error vs computation time saved to figures/perf_accuracy.png. Results CSV saved to results/performance.csv with columns: method, dt, wall_time_ms, rms_error, energy_drift",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Wall-clock timing for 4 methods x 5 dt values. RK4 ~3-4x slower per step but highest accuracy. Verlet best cost/accuracy for symplectic. CSV and scatter plot saved.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 17,
+    "completed": 18,
     "in_progress": 0,
     "failed": 0,
-    "pending": 8
+    "pending": 7
   }
 }
