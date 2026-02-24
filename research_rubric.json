@@ -125,8 +125,8 @@
           "id": "item_010",
           "description": "Implement symplectic Euler integrator",
           "acceptance_criteria": "New integrator function using symplectic (semi-implicit) Euler method: omega_{n+1} = omega_n - (g/L)*sin(theta_n)*dt, theta_{n+1} = theta_n + omega_{n+1}*dt. Runs on same parameter set as baseline. Energy drift measured and compared to forward Euler from item_009",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "step_symplectic_euler() implemented. Energy drift 0.002% vs forward Euler 0.21% (~105x improvement). Symplectic property confirmed.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 9,
+    "completed": 10,
     "in_progress": 0,
     "failed": 0,
-    "pending": 16
+    "pending": 15
   }
 }
