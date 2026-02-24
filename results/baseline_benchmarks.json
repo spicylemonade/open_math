@@ -1,0 +1,12 @@
+{
+  "item_id": "item_011",
+  "method": "euler",
+  "wall_time_s": 0.027088,
+  "steps": 10000,
+  "dt": 0.01,
+  "energy_drift_ratio": 5.31681263,
+  "memory_bytes": 320480,
+  "theta0": 0.5,
+  "L": 1.0,
+  "g": 9.81
+}

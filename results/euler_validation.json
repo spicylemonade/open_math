@@ -1,0 +1,13 @@
+{
+  "item_id": "item_010",
+  "method": "euler",
+  "theta0_rad": 0.1,
+  "L": 1.0,
+  "g": 9.81,
+  "dt": 0.01,
+  "n_steps": 5000,
+  "total_time_s": 50.0,
+  "max_absolute_error": 1.19525172120947,
+  "mean_absolute_error": 0.22669926118133815,
+  "note": "Small-angle approximation valid for theta0=0.1 rad. Error grows over time due to Euler energy drift and slight nonlinearity mismatch."
+}

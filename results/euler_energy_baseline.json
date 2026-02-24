@@ -1,0 +1,13 @@
+{
+  "item_id": "item_008",
+  "method": "euler",
+  "n_steps": 1000,
+  "dt": 0.01,
+  "theta0": 0.5,
+  "E0": -8.609084932144556,
+  "E_final": -6.7984162067683656,
+  "E_max": -6.7984162067683656,
+  "E_min": -8.609084932144556,
+  "energy_drift_ratio": 0.21032069489935282,
+  "note": "Euler shows 21% energy drift over 1000 steps (dt=0.01, theta0=0.5 rad). Energy systematically increases due to non-symplectic nature."
+}

@@ -94,40 +94,40 @@
           "id": "item_007",
           "description": "Implement simple pendulum physics module with Euler integration",
           "acceptance_criteria": "Python file (e.g., pendulum.py) exists with: Pendulum class or function accepting parameters (L, g, theta0, omega0, dt), Euler method integration step, and state getter returning (theta, omega, t). Module runs without errors when imported",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "pendulum.py created with simulate() function, Euler/RK4/Verlet integrators, energy tracking, period extraction. Module imports and runs successfully.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Implement energy computation and conservation metric",
           "acceptance_criteria": "Function that computes total mechanical energy E(theta, omega) for given pendulum parameters. A conservation metric defined as max|E(t) - E(0)| / |E(0)| over a simulation run. Euler baseline energy drift quantified over 1000 steps",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "energy() and energy_drift() functions in pendulum.py. Euler baseline: 21% energy drift over 1000 steps (dt=0.01, theta0=0.5). Results in results/euler_energy_baseline.json.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Implement basic visualization of pendulum trajectory",
           "acceptance_criteria": "Script that generates and saves to figures/ at least two plots: (1) theta(t) time series, (2) phase portrait (theta vs omega). Plots saved as PNG files with axis labels and title",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Two publication-quality figures saved: figures/theta_timeseries.png (theta vs t) and figures/phase_portrait.png (theta vs omega). Both PNG and PDF formats.",
           "error": null
         },
         {
           "id": "item_010",
           "description": "Validate baseline against small-angle analytical solution",
           "acceptance_criteria": "Comparison of Euler-integrated trajectory vs analytical solution theta(t) = theta0*cos(sqrt(g/L)*t) for theta0 = 0.1 rad. Maximum absolute error computed and reported. Error value documented in results/",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Euler vs analytical (theta0=0.1, dt=0.01, 5000 steps): max error=1.20e+00, mean error=2.27e-01. Error grows over time due to Euler energy drift. Results in results/euler_validation.json.",
           "error": null
         },
         {
           "id": "item_011",
           "description": "Establish baseline performance benchmarks",
           "acceptance_criteria": "Timing measurement for 10,000-step simulation run. Memory usage recorded. Results saved to results/baseline_benchmarks.json with fields: wall_time_s, steps, dt, method, energy_drift_ratio",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Euler 10k steps: wall_time=0.027s, energy_drift=5.32, memory=320KB. Results in results/baseline_benchmarks.json.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
+    "completed": 11,
     "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 14
   }
 }
