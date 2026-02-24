@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Generate publication-quality figures and result tables",
           "acceptance_criteria": "At least 6 figures saved in figures/ directory: (1) benchmark comparison bar chart (all solvers x instance sizes), (2) Pareto front plot, (3) scalability curves, (4) ablation heatmap, (5) example tour visualizations on real road networks (at least 2 cities), (6) GNN attention/score visualization on edges. All figures use consistent styling (matplotlib with a defined style), have axis labels, legends, and captions. A summary table (figures/results_table.tex or .md) formatted for inclusion in a paper.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 6 figures generated: (1) benchmark_comparison.png, (2) pareto_front.png, (3) scalability.png, (4) ablation_heatmap.png, (5) tour_visualization.png (Manhattan n=20 + Boston n=30, NN vs LKH, directed arrows colored by asymmetry), (6) gnn_edge_scores.png (3-panel: all edge scores, top-K candidates, score distribution). Results table in figures/results_table.md with 5 tables covering solver overview, LKH comparison, time budgets, scalability, and ablation.",
           "error": null
         },
         {
@@ -292,9 +292,9 @@
   ],
   "summary": {
     "total_items": 28,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 5
+    "pending": 4
   }
 }
