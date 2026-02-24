@@ -13,3 +13,20 @@ __pycache__/
 TASK_*.md
 agent_*.log
 orchestration.log
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Large files (model weights, etc.)
+*.h5
+*.pt
+*.onnx
+*.pkl
