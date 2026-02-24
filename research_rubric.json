@@ -196,40 +196,40 @@
           "id": "item_018",
           "description": "Energy conservation benchmark across all integrators",
           "acceptance_criteria": "Run circular Kepler orbit (e=0) for 10,000 steps with Euler, Leapfrog, and Velocity Verlet at 3 different dt values each. Record |dE/E0| at each step. Results saved to results/energy_benchmark.json. Confirm Euler shows linear drift, symplectic integrators show bounded oscillation. Compare quantitatively against drift rates reported in literature (cite sources.bib).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Euler: linear drift 1.9-47.8% depending on dt. Leapfrog/Verlet: bounded oscillation 2.3e-13 to 2.5e-9 (symplectic). Results confirm literature predictions (Dehnen & Read 2011). Saved to results/energy_benchmark.json.",
           "error": null
         },
         {
           "id": "item_019",
           "description": "Performance scaling benchmark: direct summation vs Barnes-Hut",
           "acceptance_criteria": "Measure wall-clock time per step for direct O(N^2) and Barnes-Hut at N = 50, 100, 500, 1000, 2000, 5000. Fit power-law to confirm O(N^2) and O(N log N) scaling respectively. Crossover point identified (N at which Barnes-Hut becomes faster). Results in results/scaling_benchmark.json. Plot saved to figures/scaling_comparison.png.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Direct: exponent 2.00. BH: exponent 1.24. Crossover at N~100. Figure saved to figures/scaling_comparison.png. Results in results/scaling_benchmark.json.",
           "error": null
         },
         {
           "id": "item_020",
           "description": "Validate canonical gravitational scenarios against known solutions",
           "acceptance_criteria": "At least 3 canonical tests implemented: (1) Circular Kepler orbit matches analytical period to < 0.1%, (2) Eccentric orbit (e=0.5) matches analytical trajectory to < 1% position error after 5 orbits, (3) Figure-eight three-body choreography (Chenciner & Montgomery 2000, cited in sources.bib) remains stable for at least 5 periods with energy error < 1e-4. Results saved to results/canonical_tests.json.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "All 3 tests pass. Circular Kepler period error ~0%. Eccentric orbit position error ~0%. Figure-eight energy error 5.9e-9 (well below 1e-4).",
           "error": null
         },
         {
           "id": "item_021",
           "description": "Compare simulation results against published literature values",
           "acceptance_criteria": "Quantitative comparison of at least 3 metrics against values reported in surveyed papers from sources.bib: (1) energy conservation rates for symplectic integrators, (2) Barnes-Hut force accuracy vs theta, (3) scaling exponents. Deviations from literature values explained. Comparison table written to results/literature_comparison.md.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 comparison tables in results/literature_comparison.md: energy conservation, BH accuracy vs theta, scaling exponents, and figure-eight stability. All metrics match literature within expected ranges.",
           "error": null
         },
         {
           "id": "item_022",
           "description": "Generate publication-quality figures for all experiments",
           "acceptance_criteria": "At least 5 figures saved to figures/ in PNG format: (1) energy error vs time for all integrators, (2) scaling comparison plot, (3) Kepler orbit trajectory, (4) figure-eight three-body trajectory, (5) Barnes-Hut accuracy vs opening angle. All figures have labeled axes, legends, titles, and consistent styling.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "5 publication-quality figures saved: energy_error_comparison.png, scaling_comparison.png, kepler_orbits.png, figure_eight.png, barneshut_accuracy.png. All with proper axes labels, legends, seaborn styling.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 17,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 8
+    "pending": 3
   }
 }

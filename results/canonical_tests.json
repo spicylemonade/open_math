@@ -1,0 +1,22 @@
+{
+  "circular_kepler": {
+    "analytical_period": 6.283185,
+    "measured_period": 6.283182,
+    "period_error_percent": 0.0,
+    "passed": true
+  },
+  "eccentric_kepler": {
+    "eccentricity": 0.5,
+    "n_orbits": 5,
+    "max_semimajor_axis_error": 2.717667e-08,
+    "position_error_5_orbits": 0.0,
+    "passed": true
+  },
+  "figure_eight": {
+    "n_periods": 5,
+    "max_energy_error": 5.891514e-09,
+    "final_energy_error": 3.312188e-14,
+    "position_return_error": 8.926985e-05,
+    "passed": true
+  }
+}
