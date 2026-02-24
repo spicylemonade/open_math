@@ -259,8 +259,8 @@
           "id": "item_025",
           "description": "Write comprehensive research report",
           "acceptance_criteria": "A research report (docs/research_report.md, >=3000 words) structured as: (1) Abstract, (2) Introduction with motivation for real-road-network TSP, (3) Related Work citing at least 10 papers from sources.bib, (4) Problem Formulation, (5) Methodology (all novel approaches described), (6) Experimental Setup, (7) Results with references to all figures and tables, (8) Discussion of when/why novel approaches outperform or underperform LKH-3, (9) Conclusion with concrete findings and recommendations for practitioners.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Research report written: 3,911 words across 8 sections (Abstract, Introduction, Related Work, Problem Formulation, Methodology, Experimental Setup, Results, Discussion, Conclusion). Cites 18 papers from sources.bib. Addresses all 4 research questions with quantitative results. Includes practical recommendations for practitioners.",
           "error": null
         },
         {
@@ -292,9 +292,9 @@
   ],
   "summary": {
     "total_items": 28,
-    "completed": 24,
+    "completed": 25,
     "in_progress": 0,
     "failed": 0,
-    "pending": 4
+    "pending": 3
   }
 }
