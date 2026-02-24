@@ -94,40 +94,40 @@
           "id": "item_007",
           "description": "Implement particle data structures and initialization routines",
           "acceptance_criteria": "Python module (src/body.py or src/particle.py) with: Body/Particle class storing mass, position (2D or 3D vector), velocity, acceleration. Factory functions for creating circular Kepler orbits and random N-body configurations. Unit tests pass confirming correct initialization of at least 3 test cases.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/body.py with Body dataclass, create_kepler_orbit, create_circular_orbit_simple, create_random_bodies, create_figure_eight. 11 tests pass in tests/test_body.py.",
           "error": null
         },
         {
           "id": "item_008",
           "description": "Implement direct-summation O(N^2) pairwise gravitational force computation",
           "acceptance_criteria": "Python module (src/force.py) computing gravitational acceleration on each body via direct pairwise summation. Newton's third law exploited (each pair computed once). Unit test verifying force on a 2-body system matches analytical F = Gm1m2/r^2 to within 1e-12 relative error. Complexity confirmed as O(N^2) by counting force evaluations.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/force.py with compute_accelerations (loop) and compute_accelerations_vectorized. Newton's 3rd law exploited. 6 tests pass including analytical force verification and complexity count.",
           "error": null
         },
         {
           "id": "item_009",
           "description": "Implement Forward Euler integrator as baseline",
           "acceptance_criteria": "Python module (src/integrators.py) with a forward_euler(bodies, dt) function. Integration of a circular Kepler orbit for 1 period shows visible energy drift (>1% relative error). Test confirms positions update correctly for a single timestep against hand calculation.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/integrators.py with forward_euler, leapfrog_kdk, velocity_verlet, run_simulation, run_simulation_adaptive. Tests confirm single-step correctness and >1% energy drift over 1 orbit.",
           "error": null
         },
         {
           "id": "item_010",
           "description": "Implement energy and momentum conservation diagnostics",
           "acceptance_criteria": "Python module (src/diagnostics.py) computing: total kinetic energy, total gravitational potential energy, total energy, total linear momentum vector, and total angular momentum vector. Unit tests verify conservation quantities are computed correctly for a known 2-body configuration against hand-calculated values (relative error < 1e-10).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/diagnostics.py with kinetic_energy, potential_energy, total_energy, linear_momentum, angular_momentum, compute_energy_error. 7 tests pass with hand-calculated verification.",
           "error": null
         },
         {
           "id": "item_011",
           "description": "Establish baseline benchmark on Kepler orbit with Forward Euler",
           "acceptance_criteria": "Simulation of a Sun-Earth-like 2-body Kepler orbit for 10 orbital periods using Forward Euler with dt = 0.001 (normalized units). Record: final energy error (|dE/E0|), final angular momentum error, position error vs analytical ellipse, and wall-clock time. Results saved to results/baseline_euler.json. Energy drift expected to exceed 10% over 10 orbits.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Euler baseline: |dE/E0| = 10.1% over 10 orbits (exceeds 10% threshold). Angular momentum error 5.5%, position error 11%. Wall time 0.86s. Results in results/baseline_euler.json.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 6,
+    "completed": 11,
     "in_progress": 0,
     "failed": 0,
-    "pending": 19
+    "pending": 14
   }
 }
