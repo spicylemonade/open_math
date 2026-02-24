@@ -180,8 +180,8 @@
           "id": "item_016",
           "description": "Long-time stability test for symplectic vs non-symplectic methods",
           "acceptance_criteria": "Run forward Euler, symplectic Euler, and Verlet for total_time=1000s with dt=0.01 and theta_0=1.0 rad. Plot E(t) for all three on one figure saved to figures/long_time_energy.png. Symplectic methods must show bounded energy oscillation while forward Euler shows monotonic drift. Numerical values saved to results/stability.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "1000s simulation: Euler drift 9090%, symplectic Euler 1.3% (bounded), Verlet 0.02% (bounded). Forward Euler shows monotonic growth, symplectic methods oscillate around true energy.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 15,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 10
+    "pending": 9
   }
 }
