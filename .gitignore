@@ -11,3 +11,18 @@
 TASK_*.md
 agent_*.log
 orchestration.log
+
+# Model weights (large files)
+models/*.pt
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Large benchmark/cache files
+cache/
