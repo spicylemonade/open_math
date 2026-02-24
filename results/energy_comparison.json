@@ -1,0 +1,20 @@
+{
+  "item_id": "item_018",
+  "n_steps": 1000000,
+  "dt": 0.01,
+  "theta0": 0.5,
+  "methods": {
+    "euler": {
+      "max_energy_deviation": 4624.9253657219215,
+      "energy_drift_ratio": 537.2145125962691
+    },
+    "rk4": {
+      "max_energy_deviation": 1.4290475345291043e-05,
+      "energy_drift_ratio": 1.6599296508196058e-06
+    },
+    "verlet": {
+      "max_energy_deviation": 0.00028851533858542666,
+      "energy_drift_ratio": 3.3512892584921496e-05
+    }
+  }
+}

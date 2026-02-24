@@ -1,0 +1,60 @@
+{
+  "item_id": "item_020",
+  "theta0": 0.7853981633974483,
+  "L": 1.0,
+  "g": 9.81,
+  "b_values": [
+    0,
+    0.1,
+    0.5,
+    1.0,
+    2.0,
+    5.0
+  ],
+  "b_crit_theoretical": 6.264184,
+  "results": {
+    "0": {
+      "b": 0,
+      "regime": "undamped",
+      "n_peaks": 19,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": -0.6744730090173877
+    },
+    "0.1": {
+      "b": 0.1,
+      "regime": "underdamped",
+      "n_peaks": 19,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": 0.09171860968114853
+    },
+    "0.5": {
+      "b": 0.5,
+      "regime": "underdamped",
+      "n_peaks": 19,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": 0.003937521434298765
+    },
+    "1.0": {
+      "b": 1.0,
+      "regime": "underdamped",
+      "n_peaks": 19,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": 9.753704148531143e-06
+    },
+    "2.0": {
+      "b": 2.0,
+      "regime": "underdamped",
+      "n_peaks": 18,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": -1.2354324322181684e-09
+    },
+    "5.0": {
+      "b": 5.0,
+      "regime": "underdamped",
+      "n_peaks": 11,
+      "initial_amplitude": 0.7853981633974483,
+      "final_theta": 1.4013352189417722e-22
+    }
+  },
+  "note": "Critical damping b_crit = 2*sqrt(g/L) = 6.2642. b < b_crit: underdamped oscillation. b > b_crit: overdamped exponential decay."
+}

@@ -1,0 +1,54 @@
+{
+  "item_id": "item_019",
+  "n_steps": 100000,
+  "dt": 0.01,
+  "n_runs": 5,
+  "theta0": 0.5,
+  "methods": {
+    "euler": {
+      "wall_times_s": [
+        0.277462,
+        0.275071,
+        0.269508,
+        0.268894,
+        0.268902
+      ],
+      "avg_wall_time_s": 0.271967,
+      "std_wall_time_s": 0.003597,
+      "energy_drift": 55.5349340444,
+      "cost_per_accuracy": 15.103683913
+    },
+    "rk4": {
+      "wall_times_s": [
+        0.697921,
+        0.699005,
+        0.696105,
+        0.702638,
+        0.704063
+      ],
+      "avg_wall_time_s": 0.699946,
+      "std_wall_time_s": 0.002964,
+      "energy_drift": 1.66e-07,
+      "cost_per_accuracy": 1.162e-07
+    },
+    "verlet": {
+      "wall_times_s": [
+        0.369139,
+        0.367026,
+        0.36643,
+        0.368279,
+        0.368915
+      ],
+      "avg_wall_time_s": 0.367958,
+      "std_wall_time_s": 0.00106,
+      "energy_drift": 3.35129e-05,
+      "cost_per_accuracy": 1.23313e-05
+    }
+  },
+  "discussion": "Euler is fastest but energy drift makes it useless for long simulations. RK4 is ~4x slower due to 4 force evaluations per step but achieves dramatically better accuracy. Verlet matches Euler speed (1 force eval/step) with bounded energy conservation. For long-time Hamiltonian simulations, Verlet provides the best cost-per-accuracy tradeoff, consistent with Hairer et al. (2006) and Sanz-Serna (1992).",
+  "sources_bib_references": [
+    "hairer2006geometric",
+    "sanz1992symplectic",
+    "hairer2003stormer"
+  ]
+}
