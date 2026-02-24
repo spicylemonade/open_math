@@ -141,48 +141,48 @@
           "id": "item_012",
           "description": "Implement Leapfrog (Kick-Drift-Kick) symplectic integrator",
           "acceptance_criteria": "Leapfrog KDK integrator added to src/integrators.py. Same Kepler orbit benchmark as item_011 shows energy error bounded below 1e-6 over 10 orbits (demonstrating symplectic advantage). Test confirms leapfrog is 2nd-order by halving dt and verifying ~4x error reduction.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Leapfrog energy error bounded at 2.8e-13 over 10 orbits (well below 1e-6). Radial error convergence ratio exactly 4.0x when halving dt, confirming 2nd order. Test in test_integrators.py passes.",
           "error": null
         },
         {
           "id": "item_013",
           "description": "Implement Velocity Verlet integrator and verify equivalence to Leapfrog",
           "acceptance_criteria": "Velocity Verlet integrator added to src/integrators.py. Running identical initial conditions as Leapfrog produces positions matching to machine precision (< 1e-14 difference). Both integrators produce identical energy error trajectories.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Velocity Verlet matches Leapfrog KDK to machine precision (<1e-14) after 1000 steps. Test TestVelocityVerlet::test_matches_leapfrog passes.",
           "error": null
         },
         {
           "id": "item_014",
           "description": "Implement gravitational softening for close encounters",
           "acceptance_criteria": "Plummer softening parameter epsilon added to force computation: F = Gm1m2 / (r^2 + eps^2)^(3/2). Test with two bodies on collision course shows no singularity (force remains finite). Analysis of softening bias: energy error vs epsilon for at least 5 values of epsilon in [0.001, 0.1]. Results saved to results/softening_analysis.json.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Plummer softening implemented. Collision test shows finite forces (max acc = 2.2e3 with eps=0.01). Energy bias scales as eps^2 as expected. Results in results/softening_analysis.json.",
           "error": null
         },
         {
           "id": "item_015",
           "description": "Implement adaptive time-stepping for eccentric orbits",
           "acceptance_criteria": "Adaptive timestep controller added (e.g., based on acceleration magnitude or pairwise separation). Test on e=0.9 eccentric Kepler orbit: adaptive stepper uses fewer total steps than fixed dt while achieving equal or better energy conservation. Comparison saved to results/adaptive_stepping.json with columns: method, total_steps, final_energy_error, wall_time.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Adaptive stepping: 6245 steps vs 31415 fixed (5x fewer), energy error 7.8e-4 vs 2.4e-3 (better). Uses acceleration-based dt = eta/sqrt(a_max) criterion. Results in results/adaptive_stepping.json.",
           "error": null
         },
         {
           "id": "item_016",
           "description": "Implement Barnes-Hut tree algorithm for O(N log N) force approximation",
           "acceptance_criteria": "Barnes-Hut octree (3D) or quadtree (2D) in src/tree.py with configurable opening angle theta. For N=1000 random particles: force error vs direct summation < 1% for theta=0.5. Timing confirms O(N log N) scaling by measuring wall time at N = 100, 500, 1000, 5000. Results saved to results/barneshut_accuracy.json and results/barneshut_scaling.json.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "2D quadtree in src/tree.py. Median force error 0.8% at theta=0.5. Scaling: 1.5x at N=100, 4.0x at N=500, 6.9x at N=1000, 22.8x at N=5000. Results saved.",
           "error": null
         },
         {
           "id": "item_017",
           "description": "Implement simple real-time or post-hoc visualization of particle trajectories",
           "acceptance_criteria": "Visualization module (src/visualize.py) using matplotlib that can: (a) plot particle trajectories in 2D projection, (b) animate a simulation run, (c) plot energy error over time. At least one PNG figure saved to figures/ showing a multi-body trajectory. Script callable as `python -m src.visualize <results_file>`.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/visualize.py with trajectory plotting, energy error plotting, and figure-eight demo generation. figures/figure_eight_demo.png saved. Callable via python -m src.visualize.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 11,
+    "completed": 17,
     "in_progress": 0,
     "failed": 0,
-    "pending": 14
+    "pending": 8
   }
 }

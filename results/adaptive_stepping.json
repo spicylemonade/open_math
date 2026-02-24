@@ -1,0 +1,24 @@
+{
+  "eccentricity": 0.9,
+  "n_orbits": 5,
+  "comparisons": [
+    {
+      "method": "Fixed dt Leapfrog",
+      "dt": 0.001,
+      "total_steps": 31415,
+      "final_energy_error": 0.0023777457058031357,
+      "wall_time": 0.45940160751342773
+    },
+    {
+      "method": "Adaptive dt Leapfrog",
+      "eta": 0.005,
+      "dt_range": [
+        0.0004999999999999998,
+        0.009504544971054601
+      ],
+      "total_steps": 6245,
+      "final_energy_error": 0.0007835617044426084,
+      "wall_time": 0.21726727485656738
+    }
+  ]
+}

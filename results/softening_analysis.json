@@ -1,0 +1,44 @@
+{
+  "collision_test": {
+    "softening": 0.01,
+    "max_acceleration": 2234.644174798301,
+    "singularity_free": true
+  },
+  "softening_analysis": [
+    {
+      "epsilon": 0.001,
+      "max_energy_conservation_error": 1.8122288028780198e-12,
+      "energy_bias_from_unsoftened": 9.999992501916871e-07,
+      "n_orbits": 10,
+      "dt": 0.001
+    },
+    {
+      "epsilon": 0.005,
+      "max_energy_conservation_error": 3.773774353373592e-11,
+      "energy_bias_from_unsoftened": 2.4999531259645104e-05,
+      "n_orbits": 10,
+      "dt": 0.001
+    },
+    {
+      "epsilon": 0.01,
+      "max_energy_conservation_error": 1.5005905633162117e-10,
+      "energy_bias_from_unsoftened": 9.999250062461417e-05,
+      "n_orbits": 10,
+      "dt": 0.001
+    },
+    {
+      "epsilon": 0.05,
+      "max_energy_conservation_error": 3.6518679860949904e-09,
+      "energy_bias_from_unsoftened": 0.002495322244310719,
+      "n_orbits": 10,
+      "dt": 0.001
+    },
+    {
+      "epsilon": 0.1,
+      "max_energy_conservation_error": 1.3523949567286019e-08,
+      "energy_bias_from_unsoftened": 0.009925619580021455,
+      "n_orbits": 10,
+      "dt": 0.001
+    }
+  ]
+}
