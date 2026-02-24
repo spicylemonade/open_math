@@ -149,8 +149,8 @@
           "id": "item_013",
           "description": "Create unified integrator interface allowing method selection",
           "acceptance_criteria": "Single entry point (function or CLI argument) to select integrator by name: 'euler', 'symplectic_euler', 'rk4', 'verlet'. All methods share the same function signature step(state, params, dt) -> new_state. At least one test demonstrating all four run with identical initial conditions",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "simulate(method=name) provides unified entry point. INTEGRATORS dict maps names to step functions. All four verified with identical ICs (theta_0=1.0, dt=0.01, 10s).",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 12,
+    "completed": 13,
     "in_progress": 0,
     "failed": 0,
-    "pending": 13
+    "pending": 12
   }
 }
