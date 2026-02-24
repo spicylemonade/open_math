@@ -227,8 +227,8 @@
           "id": "item_021",
           "description": "Update README.md with project description, usage instructions, and results summary",
           "acceptance_criteria": "README.md contains: project title, one-paragraph description, installation requirements (Python 3, matplotlib, numpy), usage examples showing how to run sim with different integrators and parameters, and a results section with embedded figure references. Word count >= 300",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "README.md: 471 words. Includes title, description, requirements, usage examples (CLI + library), project structure, key results with figure refs, and bibliography pointer.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 20,
+    "completed": 21,
     "in_progress": 0,
     "failed": 0,
-    "pending": 5
+    "pending": 4
   }
 }
