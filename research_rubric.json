@@ -1,0 +1,300 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-24T07:25:00Z",
+  "updated_at": "2026-02-24T07:24:11.385454+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-24T07:20:00Z",
+      "completed_at": "2026-02-24T07:24:11.385431+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and define project scaffold",
+          "acceptance_criteria": "A markdown document (docs/repo_structure.md) listing all directories (figures/, results/, etc.), their purposes, and a proposed project layout with directories for src/, data/, benchmarks/, and models/. The scaffold must include a requirements.txt or pyproject.toml with initial dependency stubs (networkx, osmnx, numpy, etc.).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the research problem: ATSP with real-world constraints on road networks",
+          "acceptance_criteria": "A document (docs/problem_statement.md) that formally defines: (1) the Asymmetric TSP on road graphs, (2) the distinction from Euclidean TSP (triangle inequality violations, one-way streets, turn penalties), (3) time-window and traffic-dependent edge weight formulations, and (4) at least 3 concrete research questions with measurable success criteria (e.g., 'beat LKH-3 tour cost by >=0.5% on instances with >=200 nodes').",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review on classical TSP/ATSP solvers",
+          "acceptance_criteria": "Web search conducted for papers and repositories on Concorde, LKH-3, OR-Tools routing, and Helsgaun's ATSP transformations. At least 5 papers on classical solvers cited in sources.bib with full BibTeX entries. A summary table (docs/lit_review_classical.md) listing each solver, its key algorithmic ideas, known performance on benchmark sets (TSPLIB, ATSPLIB), and limitations on real road networks.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Conduct literature review on learned/neural TSP heuristics",
+          "acceptance_criteria": "Web search conducted for papers on attention-based models (Kool et al. 2019), reinforcement learning for routing (Nazari et al. 2018, Bello et al. 2017), POMO, MatNet for ATSP, and hybrid neuro-heuristic approaches. At least 5 papers on learned heuristics cited in sources.bib. Summary document (docs/lit_review_neural.md) with a comparison table of method, problem variant handled (symmetric/asymmetric/time-windows), reported gap to optimal, instance sizes tested, and inference time.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Survey real-world road network routing tools and datasets",
+          "acceptance_criteria": "Web search conducted for OSRM, Valhalla, GraphHopper APIs and their distance matrix capabilities, plus OpenStreetMap data extraction tools (osmnx, pyrosm). At least 3 sources cited in sources.bib. Document (docs/lit_review_routing_tools.md) listing each tool, data format, how to extract asymmetric travel-time matrices, traffic data availability, and licensing constraints.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Create and populate sources.bib with all consulted references",
+          "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. Contains at least 12 relevant papers spanning: classical TSP solvers (>=4), neural/learned heuristics (>=4), road network routing (>=2), and benchmark methodology (>=2). Each entry has complete fields (author, title, year, venue/journal). The file parses without errors using a BibTeX validator.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Build OSRM-based benchmark instance generator from OpenStreetMap data",
+          "acceptance_criteria": "A Python script (src/data/instance_generator.py) that: (1) takes a city/region name or bounding box as input, (2) extracts road network via osmnx, (3) generates N random depot+customer locations on the network, (4) queries OSRM for an asymmetric travel-time/distance matrix, (5) outputs instances in a standardized JSON or TSPLIB-compatible format. Must successfully generate at least 3 instances of sizes 50, 100, and 200 nodes for a test city (e.g., Manhattan). Unit tests pass.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Create benchmark suite with instances at multiple scales and cities",
+          "acceptance_criteria": "A benchmark suite (benchmarks/) containing at least 15 instances: 5 small (20-50 nodes), 5 medium (100-200 nodes), 5 large (500-1000 nodes), drawn from at least 3 different cities/regions with varying road network topology (grid-like, radial, mixed). Each instance file includes metadata: city, node count, density, asymmetry ratio (max(d_ij/d_ji)), and timestamp of OSRM query. A manifest file (benchmarks/manifest.json) indexes all instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement LKH-3 baseline wrapper with standardized interface",
+          "acceptance_criteria": "A Python wrapper (src/baselines/lkh_baseline.py) that: (1) converts instances to LKH input format (handles ATSP via Jonker-Volgenant transformation or LKH-3 native ATSP), (2) runs LKH-3 with configurable parameters (max trials, time limit), (3) parses output tour and cost, (4) returns results in a standard dict format {tour, cost, runtime_seconds, solver_params}. Wrapper tested on at least 3 benchmark instances and produces valid tours (all nodes visited exactly once, costs match matrix lookups).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement Google OR-Tools baseline wrapper",
+          "acceptance_criteria": "A Python wrapper (src/baselines/ortools_baseline.py) using OR-Tools routing library that: (1) accepts the same instance format as LKH wrapper, (2) configures the solver with guided local search and configurable time limits, (3) supports asymmetric cost matrices natively, (4) returns results in the same standard dict format. Tested on the same 3 instances as LKH. Tour validity verified.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Implement nearest-neighbor and greedy construction heuristic baselines",
+          "acceptance_criteria": "Python implementations (src/baselines/construction_heuristics.py) of: (1) nearest-neighbor starting from each node (best-of-N), (2) greedy edge-insertion heuristic, (3) savings algorithm (Clarke-Wright). Each returns tours in the standard format. All three tested on 3 benchmark instances. Results logged with tour cost and construction time.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Define evaluation metrics and implement benchmarking harness",
+          "acceptance_criteria": "A benchmarking module (src/evaluation/benchmark_runner.py) that: (1) runs any solver on any instance and records tour cost, wall-clock runtime, and peak memory, (2) computes gap-to-best-known (% above best solution found by any solver), (3) computes asymmetry exploitation score (% of edges where the solver chose the cheaper direction vs. the reverse), (4) outputs results to results/ as CSV and JSON. A config file (benchmarks/eval_config.yaml) specifies which solvers and instances to run. Harness tested end-to-end on at least 2 solvers x 3 instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_013",
+          "description": "Design and implement asymmetry-aware edge scoring via graph neural network",
+          "acceptance_criteria": "A GNN model (src/models/edge_scorer.py) that: (1) takes an ATSP instance (asymmetric cost matrix + node coordinates) as input, (2) uses a graph attention network or message-passing architecture that explicitly encodes directed edge weights (d_ij != d_ji), (3) outputs a probability/score for each directed edge indicating likelihood of being in the optimal tour, (4) architecture documented in docs/model_architecture.md. Model compiles and runs forward pass on a 50-node instance without errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Train the edge scoring model on generated ATSP instances",
+          "acceptance_criteria": "Training pipeline (src/training/train_edge_scorer.py) that: (1) generates or loads training instances (at least 1000 small instances, 20-50 nodes, solved near-optimally by LKH to get labels), (2) trains the GNN with supervised learning (binary cross-entropy on edge membership in near-optimal tours), (3) achieves >=75% precision and >=60% recall on a held-out validation set of 200 instances, (4) training loss curve saved to figures/training_loss.png. Model checkpoint saved to models/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement hybrid heuristic: GNN-guided LK-style local search for ATSP",
+          "acceptance_criteria": "A solver (src/solvers/hybrid_gnn_lk.py) that: (1) uses trained GNN edge scores to bias the candidate edge set in a Lin-Kernighan style local search, (2) specifically: during k-opt moves, prioritizes edges scored highly by the GNN, reducing the search neighborhood, (3) handles asymmetric costs correctly in move evaluation (directed edges), (4) accepts a time limit parameter, (5) returns tours in the standard format. Solver produces valid tours on 3 test instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Implement traffic-aware perturbation scheme with time-dependent edge weights",
+          "acceptance_criteria": "An extension module (src/solvers/traffic_perturbation.py) that: (1) accepts time-dependent edge weight functions (e.g., travel time varies by departure time), (2) implements an iterated local search with perturbations that account for temporal cost changes (re-evaluating tour segments when departure times shift), (3) integrates with the hybrid solver from item_015 as an optional enhancement. Tested on at least 2 instances with synthetic time-varying weights (rush hour multipliers). Tours are valid and respect temporal cost evaluation.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement adaptive large neighborhood search (ALNS) with learned destroy/repair operators",
+          "acceptance_criteria": "An ALNS solver (src/solvers/alns_learned.py) that: (1) implements at least 3 destroy operators (random removal, worst removal, cluster removal based on road-network proximity), (2) implements at least 3 repair operators (greedy insertion, regret-2 insertion, GNN-guided insertion using edge scores), (3) uses adaptive weight adjustment to select operators based on historical improvement, (4) accepts configurable iteration count and time limit. Solver produces valid tours and improves on construction heuristic solutions by at least 5% on medium instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Implement ensemble strategy combining multiple solver outputs",
+          "acceptance_criteria": "An ensemble module (src/solvers/ensemble.py) that: (1) runs multiple solvers (LKH, OR-Tools, hybrid GNN-LK, ALNS) on the same instance, (2) selects the best tour by cost, (3) optionally merges tours by extracting good sub-tours and recombining (EAX-style crossover adapted for ATSP), (4) returns the best or recombined tour. Tested on 3 instances, producing tours at least as good as the best individual solver on each.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_019",
+          "description": "Run full benchmark: all solvers on all instances with statistical replication",
+          "acceptance_criteria": "Complete benchmark results in results/full_benchmark.csv covering: all solvers (nearest-neighbor, greedy, savings, LKH-3, OR-Tools, hybrid GNN-LK, ALNS, ensemble) run on all benchmark instances (>=15 instances from item_008). Each stochastic solver run at least 5 times with different seeds. Columns include: instance_id, solver, run_id, seed, tour_cost, runtime_seconds, gap_to_best_pct. No missing entries.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Compare novel approaches against LKH-3 baseline with statistical significance",
+          "acceptance_criteria": "A statistical analysis (results/lkh_comparison.json) showing: (1) mean and std gap of each novel solver vs LKH-3 across all instances, (2) paired Wilcoxon signed-rank test p-values for each novel solver vs LKH-3, (3) identification of instance categories (size, city, asymmetry ratio) where novel solvers outperform LKH-3, (4) at least one novel solver configuration achieves mean gap <= -0.5% vs LKH-3 on medium or large instances, OR a documented analysis explaining why and what the closest gap achieved was. Results reference prior work from sources.bib for context.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Runtime vs. solution quality Pareto analysis",
+          "acceptance_criteria": "A Pareto analysis (results/pareto_analysis.json and figures/pareto_front.png) showing: (1) for each solver, the trade-off between runtime budget (1s, 10s, 60s, 300s) and solution quality (gap to best known), (2) identification of Pareto-optimal solvers at each time budget, (3) comparison with runtime-quality trade-offs reported in literature (from sources.bib). Plot includes error bars from replicated runs.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Ablation study on hybrid solver components",
+          "acceptance_criteria": "Ablation results (results/ablation_study.csv) testing the hybrid GNN-LK solver with: (1) GNN guidance on vs. off (random candidate edges), (2) asymmetry-aware moves on vs. off, (3) traffic-aware perturbation on vs. off, (4) different GNN training set sizes (100, 500, 1000 instances). Each configuration run on at least 5 medium instances x 3 seeds. A clear table showing which components contribute most to performance. Results documented in results/ablation_summary.md.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Scalability experiment: performance as instance size grows",
+          "acceptance_criteria": "Scalability results (results/scalability.csv and figures/scalability.png) testing all solvers on instances of size 20, 50, 100, 200, 500, 1000 nodes from the same city. Metrics: tour cost gap to best known, and wall-clock runtime. Plots show both metrics vs. instance size with log scales where appropriate. Analysis identifies at which instance size each solver's advantage emerges or degrades. Comparison with scaling behavior reported in literature.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_024",
+          "description": "Generate publication-quality figures and result tables",
+          "acceptance_criteria": "At least 6 figures saved in figures/ directory: (1) benchmark comparison bar chart (all solvers x instance sizes), (2) Pareto front plot, (3) scalability curves, (4) ablation heatmap, (5) example tour visualizations on real road networks (at least 2 cities), (6) GNN attention/score visualization on edges. All figures use consistent styling (matplotlib with a defined style), have axis labels, legends, and captions. A summary table (figures/results_table.tex or .md) formatted for inclusion in a paper.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Write comprehensive research report",
+          "acceptance_criteria": "A research report (docs/research_report.md, >=3000 words) structured as: (1) Abstract, (2) Introduction with motivation for real-road-network TSP, (3) Related Work citing at least 10 papers from sources.bib, (4) Problem Formulation, (5) Methodology (all novel approaches described), (6) Experimental Setup, (7) Results with references to all figures and tables, (8) Discussion of when/why novel approaches outperform or underperform LKH-3, (9) Conclusion with concrete findings and recommendations for practitioners.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Package code for reproducibility",
+          "acceptance_criteria": "Repository contains: (1) a README.md updated with project description, installation instructions, and usage examples, (2) requirements.txt or pyproject.toml with pinned dependency versions, (3) a Makefile or run script (run_experiments.sh) that reproduces all experiments from a clean install, (4) a Docker or conda environment file for full reproducibility, (5) all random seeds documented and configurable. A fresh clone + install + run of the small benchmark completes without errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_027",
+          "description": "Document limitations, failure modes, and future work",
+          "acceptance_criteria": "A section in the research report (or standalone docs/limitations.md) that: (1) identifies at least 3 limitations of the approach (e.g., GNN generalization to unseen city topologies, OSRM server dependency, scalability ceiling), (2) documents failure modes observed during experiments (instance types where novel solvers performed worst), (3) proposes at least 3 concrete directions for future work with specific hypotheses (e.g., 'fine-tuning GNN per-city may close the generalization gap by X%'), (4) honest assessment of whether the 0.5% improvement target was met and under what conditions.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_028",
+          "description": "Final validation: end-to-end reproducibility check and sources.bib completeness",
+          "acceptance_criteria": "A checklist document (docs/validation_checklist.md) confirming: (1) all experiments can be rerun from the benchmark runner, (2) all figures regenerate from saved result data, (3) sources.bib contains >=12 entries and all citations in the report have matching BibTeX keys, (4) no hardcoded absolute paths in any script, (5) all solver wrappers handle edge cases (single-node, two-node instances) gracefully. Checklist signed off with pass/fail for each item.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 28,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 28
+  }
+}
