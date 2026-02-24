@@ -1,0 +1,90 @@
+{
+  "FF_google_like": {
+    "heuristic": "FF",
+    "trace": "google_like",
+    "avg_utilization": 0.8655375665040786,
+    "std_utilization": 0.0,
+    "avg_waste_pct": 12.947490232385151,
+    "std_waste_pct": 0.0,
+    "avg_fragmentation": 0.36248724946455796,
+    "avg_active_hosts": 368.860349127182,
+    "avg_afr": 0.0
+  },
+  "BF_google_like": {
+    "heuristic": "BF",
+    "trace": "google_like",
+    "avg_utilization": 0.882667265547609,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 11.23452032803211,
+    "std_waste_pct": 1.7763568394002505e-15,
+    "avg_fragmentation": 0.32244412074234385,
+    "avg_active_hosts": 361.4912718204489,
+    "avg_afr": 0.0
+  },
+  "FFD_google_like": {
+    "heuristic": "FFD",
+    "trace": "google_like",
+    "avg_utilization": 0.8851192382003837,
+    "std_utilization": 0.0,
+    "avg_waste_pct": 10.989323062754645,
+    "std_waste_pct": 1.7763568394002505e-15,
+    "avg_fragmentation": 0.34393131899139434,
+    "avg_active_hosts": 360.34912718204487,
+    "avg_afr": 0.0
+  },
+  "BFD_google_like": {
+    "heuristic": "BFD",
+    "trace": "google_like",
+    "avg_utilization": 0.882667265547609,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 11.23452032803211,
+    "std_waste_pct": 1.7763568394002505e-15,
+    "avg_fragmentation": 0.32244412074234385,
+    "avg_active_hosts": 361.4912718204489,
+    "avg_afr": 0.0
+  },
+  "FF_azure_like": {
+    "heuristic": "FF",
+    "trace": "azure_like",
+    "avg_utilization": 0.9049769514496996,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 8.507279979408146,
+    "std_waste_pct": 0.0,
+    "avg_fragmentation": 0.38036429963321156,
+    "avg_active_hosts": 620.7860696517413,
+    "avg_afr": 0.0
+  },
+  "BF_azure_like": {
+    "heuristic": "BF",
+    "trace": "azure_like",
+    "avg_utilization": 0.9299513872101027,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 6.009836403367846,
+    "std_waste_pct": 0.0,
+    "avg_fragmentation": 0.23364431966889856,
+    "avg_active_hosts": 603.6517412935324,
+    "avg_afr": 0.0
+  },
+  "FFD_azure_like": {
+    "heuristic": "FFD",
+    "trace": "azure_like",
+    "avg_utilization": 0.924467852379221,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 6.558189886455998,
+    "std_waste_pct": 0.0,
+    "avg_fragmentation": 0.2873687143872738,
+    "avg_active_hosts": 607.3134328358209,
+    "avg_afr": 0.0
+  },
+  "BFD_azure_like": {
+    "heuristic": "BFD",
+    "trace": "azure_like",
+    "avg_utilization": 0.9299513872101027,
+    "std_utilization": 1.1102230246251565e-16,
+    "avg_waste_pct": 6.009836403367846,
+    "std_waste_pct": 0.0,
+    "avg_fragmentation": 0.23364431966889856,
+    "avg_active_hosts": 603.6517412935324,
+    "avg_afr": 0.0
+  }
+}

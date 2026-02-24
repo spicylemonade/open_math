@@ -1,0 +1,18 @@
+{
+  "heuristic": "FF",
+  "trace": "google_like",
+  "seed": 42,
+  "total_allocations": 100000,
+  "failed_allocations": 0,
+  "allocation_failure_rate": 0.0,
+  "avg_host_utilization": 0.8655375665040786,
+  "avg_fragmentation_index": 0.362487249464558,
+  "avg_active_hosts": 368.860349127182,
+  "max_active_hosts": 443,
+  "avg_waste_pct": 12.947490232385151,
+  "final_waste_pct": 0,
+  "cpu_waste_pct": 8.612739213552532,
+  "ram_waste_pct": 17.41204065204369,
+  "wall_clock_seconds": 8.713569402694702,
+  "events_per_second": 22952.706377497754
+}
