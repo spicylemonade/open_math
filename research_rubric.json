@@ -1,0 +1,284 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-24T12:00:00Z",
+  "updated_at": "2026-02-24T07:26:33.500684+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-24T12:00:00Z",
+      "completed_at": "2026-02-24T07:26:33.500650+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Formally define the JSSP-SDST problem: mathematical formulation, notation, and complexity analysis",
+          "acceptance_criteria": "A document or module docstring containing the formal three-field notation (J|STsd|Cmax), the mixed-integer programming formulation with decision variables, objective function (minimize makespan), and constraints (precedence, capacity, setup time insertion). Must reference the NP-hardness proof and distinguish JSSP-SDST from standard JSSP and FJSP-SDST variants.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct a comprehensive literature review on metaheuristics for JSSP-SDST using web search",
+          "acceptance_criteria": "At least 10 relevant papers cited in sources.bib covering: (1) Tabu search approaches (e.g., Belvaux & Wolsey, Artigues & Feillet), (2) Simulated annealing methods, (3) Genetic algorithm + local search hybrids (Vela, Varela & Gonz\u00e1lez 2010; Gonz\u00e1lez et al. 2013), (4) High-performing metaheuristics for SDST (Naderi & Zandieh 2014), (5) Recent hybrid GA+TS and GA+VNS approaches (2020-2025), and (6) GNN/DRL-based scheduling methods (Smit et al. 2024 survey; Farahani et al. ERGAT-DRL). Each entry must have complete BibTeX fields (author, title, journal/conference, year, DOI where available).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted references",
+          "acceptance_criteria": "A valid sources.bib file in the repo root containing at least 15 BibTeX entries. Entries must span: classic JSSP formulations (e.g., Adams, Balas & Zawack 1988; Taillard 1993), SDST-specific works, metaheuristic approaches, GNN/DRL methods, and benchmark instance papers. Each entry must compile without errors in standard BibTeX parsers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey and catalog available JSSP-SDST benchmark instances and evaluation protocols",
+          "acceptance_criteria": "A written summary identifying at least 3 benchmark sources: (1) Taillard ta01-ta80 instances augmented with SDST matrices (as done by Vela et al.), (2) The TU Eindhoven unified benchmark platform (arXiv:2308.12794, GitHub ai-for-decision-making-tue), (3) SDST-HUdata instances from Gonz\u00e1lez et al. 2013. For each benchmark set, document: number of instances, size ranges (jobs x machines), how setup times are generated, and known best solutions or bounds where available.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Analyze state-of-the-art performance gaps and identify opportunities for novel contributions",
+          "acceptance_criteria": "A gap analysis document identifying at least 3 concrete opportunities for improvement, supported by literature evidence. Must address: (1) where current tabu search and SA approaches plateau, (2) whether hybrid metaheuristic + ML approaches have been tested on SDST specifically, (3) whether adaptive neighborhood selection has been explored for SDST, (4) the generalization limitations of current GNN/DRL methods. Each gap must cite at least one source from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Define the disjunctive graph model extended with setup time arcs for JSSP-SDST",
+          "acceptance_criteria": "A formal specification of the extended disjunctive graph G = (V, C, D, S) where S represents setup time arcs. Must include: node definitions (operations + dummy source/sink), conjunctive arcs (processing times), disjunctive arcs (machine sharing), and setup arcs (sequence-dependent transition costs). Must define the critical path computation on this extended graph and prove that makespan equals the longest path from source to sink.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Implement JSSP-SDST instance parser and data structures",
+          "acceptance_criteria": "A Python module that: (1) Parses standard JSSP instance formats (Taillard, OR-Library) and FJSPLIB format, (2) Accepts or generates SDST matrices per machine, (3) Represents the problem as the extended disjunctive graph from item_006, (4) Includes at least 5 unit tests verifying correct parsing of known instances, (5) Supports instance sizes from 6x6 to 100x20.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement makespan and schedule evaluation engine",
+          "acceptance_criteria": "A schedule evaluator that: (1) Computes makespan via critical path on the extended disjunctive graph in O(V+E) time, (2) Validates schedule feasibility (precedence constraints, no machine overlap, correct setup time insertion), (3) Reports per-machine utilization, total setup time, and idle time metrics, (4) Passes correctness tests against at least 3 known optimal solutions from literature.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement baseline constructive heuristics (priority dispatching rules)",
+          "acceptance_criteria": "Implementation of at least 4 priority dispatching rules adapted for SDST: (1) SPT (Shortest Processing Time), (2) LPT (Longest Processing Time), (3) MDD (Modified Due Date) or similar, (4) SDST-aware rule (e.g., minimum setup time first or composite SPT+setup). Each rule must produce a feasible schedule. Performance must be evaluated on at least 20 Taillard instances with SDST, reporting makespan and computation time.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement baseline Tabu Search for JSSP-SDST",
+          "acceptance_criteria": "A tabu search implementation that: (1) Uses the N7 or N5 neighborhood structure adapted for SDST (swap or insert moves on the critical path with setup time recalculation), (2) Maintains a tabu list with configurable tenure, (3) Includes aspiration criteria, (4) Runs for configurable iteration/time limits, (5) Reproduces results within 5% of published tabu search results on at least 10 benchmark instances from Vela et al. or equivalent SDST benchmarks.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Implement baseline Simulated Annealing for JSSP-SDST",
+          "acceptance_criteria": "A simulated annealing implementation that: (1) Uses the same neighborhood structures as the tabu search baseline for fair comparison, (2) Implements geometric cooling schedule with configurable parameters, (3) Includes reheating mechanism, (4) Reproduces results within 5% of published SA results on at least 10 SDST benchmark instances. Must log temperature, acceptance rate, and best solution trajectory for analysis.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Establish performance baselines and statistical testing framework",
+          "acceptance_criteria": "A benchmarking harness that: (1) Runs each algorithm 30 times per instance with different random seeds, (2) Reports mean, standard deviation, best, and worst makespan, (3) Reports average computation time, (4) Implements Wilcoxon signed-rank test for pairwise algorithm comparison, (5) Generates baseline results table for all dispatching rules, TS, and SA on the full benchmark suite. Results stored in results/ directory as CSV files.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_013",
+          "description": "Design and implement SDST-aware adaptive neighborhood structures",
+          "acceptance_criteria": "At least 3 novel or adapted neighborhood operators that exploit setup time structure: (1) Setup-critical-path targeted swap (moves that specifically address setup bottlenecks on the critical path), (2) Family-aware block insertion (groups jobs with low inter-setup costs), (3) Setup-cost-guided perturbation (large neighborhood search move weighted by setup reduction potential). Each operator must be proven to preserve schedule feasibility. Must include empirical comparison showing at least one operator improves over standard N5/N7 on 10+ instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement an adaptive metaheuristic with online operator selection",
+          "acceptance_criteria": "A metaheuristic framework that: (1) Maintains a portfolio of at least 5 neighborhood operators (including those from item_013), (2) Uses an adaptive operator selection mechanism (e.g., roulette wheel with credit assignment, UCB1, or reinforcement-learning-based selection), (3) Tracks operator success rates and adjusts selection probabilities during the search, (4) Demonstrates statistically significant improvement (p < 0.05 via Wilcoxon test) over the best fixed-operator baseline from Phase 2 on at least 60% of benchmark instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Design and implement a hybrid metaheuristic combining global and local search with setup-aware intensification",
+          "acceptance_criteria": "A hybrid algorithm that: (1) Combines a population-based method (GA or scatter search) with local search (TS or SA), (2) Uses setup-time-aware crossover that respects job family groupings, (3) Implements a setup-cost-guided intensification phase that re-sequences jobs within critical machine blocks to minimize setup overhead, (4) Achieves lower mean makespan than both baseline TS and SA on at least 70% of benchmark instances with statistical significance (p < 0.05).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Develop a GNN-based solution representation and learned initialization strategy",
+          "acceptance_criteria": "A graph neural network module that: (1) Encodes the JSSP-SDST instance as a heterogeneous graph with operation nodes, machine nodes, and setup-weighted edges, (2) Is trained on solved instances to predict promising operation orderings, (3) Generates initial solutions that are at least 10% better in makespan than random initialization and at least 5% better than the best dispatching rule from item_009, evaluated on held-out test instances. Must include training code, saved model weights, and evaluation script.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement setup time decomposition strategy for large instances",
+          "acceptance_criteria": "A decomposition approach that: (1) Partitions jobs into families based on setup time similarity (using clustering on the setup time matrix), (2) Solves sub-problems per family or machine group, (3) Merges sub-solutions with a repair heuristic that handles inter-family transitions, (4) Scales to instances with 100+ jobs where monolithic metaheuristics slow down, achieving solutions within 3% of monolithic approach quality in less than 50% of computation time on instances with 50+ jobs.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Run comprehensive experiments on small and medium SDST benchmark instances",
+          "acceptance_criteria": "Complete experimental results on: (1) All Taillard instances ta01-ta40 (sizes 15x15 to 30x15) augmented with SDST, (2) At least 10 SDST-HUdata instances from Gonz\u00e1lez et al., (3) Instances from the TU Eindhoven benchmark platform FJSP-SDST category. For each instance, all algorithms (dispatching rules, TS, SA, adaptive metaheuristic, hybrid, GNN-initialized hybrid) must be run 30 times. Results stored as structured CSV in results/ with columns: instance, algorithm, run, makespan, computation_time_seconds, best_known_solution.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Run scalability experiments on large instances",
+          "acceptance_criteria": "Experiments on large instances (ta41-ta80, sizes 30x20 to 100x20 with SDST, plus custom-generated instances up to 200x20). Must report: (1) Solution quality vs. computation time trade-off curves for each algorithm, (2) Scaling behavior analysis showing how each method degrades with instance size, (3) Demonstration that decomposition strategy (item_017) provides practical benefits on instances where monolithic approaches exceed 600s runtime. All raw results in results/ directory.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Compare novel approaches against published state-of-the-art results from literature",
+          "acceptance_criteria": "A comparison table showing: (1) Best known solutions from literature (cited in sources.bib) for each benchmark instance, (2) Results from this work's best algorithm, (3) Relative percentage deviation (RPD) from best known for each instance, (4) Number of instances where this work matches or improves the best known solution, (5) Statistical comparison using Friedman test across all algorithms and instances. The novel approach must achieve mean RPD < 2% from best known solutions on small/medium instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Perform ablation study on novel components",
+          "acceptance_criteria": "Ablation experiments isolating the contribution of each novel component: (1) SDST-aware neighborhoods vs. standard neighborhoods, (2) Adaptive operator selection vs. fixed operator, (3) GNN initialization vs. dispatching rule initialization vs. random initialization, (4) Hybrid combination vs. standalone methods, (5) Decomposition vs. monolithic on large instances. Each ablation must show mean makespan difference with 95% confidence intervals on at least 20 instances. Results must clearly identify which components provide the most improvement.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Analyze setup time impact: vary SDST magnitude and structure",
+          "acceptance_criteria": "Sensitivity analysis experiments with: (1) Setup times scaled at 0%, 25%, 50%, 100%, and 200% of processing times, (2) Structured setup times (family-based with low intra-family and high inter-family costs) vs. unstructured (uniformly random), (3) Analysis of how each algorithm's relative performance changes across these conditions. Must include at least 5 base instances tested under all setup configurations (minimum 50 experimental conditions). Findings must identify which setup time regimes favor which algorithmic strategies.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality figures and visualizations",
+          "acceptance_criteria": "At least 6 figures saved in figures/ directory: (1) Convergence curves comparing all metaheuristics on representative instances, (2) Box plots of makespan distributions across 30 runs for each algorithm, (3) Gantt chart visualization of best schedules showing setup times as distinct colored blocks, (4) Heatmap of algorithm performance (RPD) across all instances, (5) Scalability plot (solution quality vs. instance size), (6) Operator selection frequency evolution over search iterations for the adaptive metaheuristic. All figures must be vector format (PDF or SVG) with proper axis labels, legends, and font sizes suitable for academic publication.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write a comprehensive research report with methodology, results, and analysis",
+          "acceptance_criteria": "A report (LaTeX or Markdown) containing: (1) Abstract summarizing the contribution and key results, (2) Introduction with motivation (semiconductor fab / CNC machining context, economic impact), (3) Problem definition with formal model from item_001/item_006, (4) Literature review citing all entries in sources.bib, (5) Methodology describing all implemented algorithms with pseudocode, (6) Experimental setup and results with all tables and figures from Phase 4, (7) Discussion analyzing why certain approaches work better and under what conditions, (8) Conclusion with concrete throughput improvement quantification. Minimum 15 pages of content.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Document code, create reproducibility package, and update README",
+          "acceptance_criteria": "Repository must include: (1) Updated README.md with project description, installation instructions, and usage examples, (2) requirements.txt or pyproject.toml with all dependencies pinned to specific versions, (3) A single command (e.g., make reproduce or python run_experiments.py) that reproduces all experimental results, (4) Docstrings on all public functions and classes, (5) At least 20 passing unit tests covering parsing, evaluation, and core algorithm components. Repository must be runnable from a clean clone.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Quantify practical impact: translate makespan improvements to throughput gains",
+          "acceptance_criteria": "An analysis section that: (1) Converts makespan reduction percentages to estimated throughput improvements using standard fab utilization models, (2) Provides concrete dollar-value estimates based on published semiconductor fab economics (cite sources), (3) Compares the computational cost of the proposed approach (hardware, runtime) against the economic benefit, (4) Identifies the instance characteristics (size, setup ratio, family structure) where the proposed methods provide the largest practical benefit. Must reference at least 2 industry sources on fab economics.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 26,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 26
+  }
+}
