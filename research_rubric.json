@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-24T12:00:00Z",
+  "updated_at": "2026-02-24T07:26:18.225894+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-24T12:00:00Z",
+      "completed_at": "2026-02-24T07:26:18.225864+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Formalize the 2D vector bin packing problem for cloud VM scheduling",
+          "acceptance_criteria": "Produce a written problem definition (in a markdown or LaTeX document) that formally specifies: (a) bins as physical hosts with CPU and RAM capacities, (b) items as VM requests with CPU and RAM demands, (c) the online arrival/departure model, (d) the optimization objective (minimize hosts used / minimize fragmentation), and (e) key constraints (no overcommit per dimension, dynamic departures). Must reference the standard vector bin packing formulation from Christensen et al. survey.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Conduct comprehensive literature review on bin packing heuristics for VM placement via web search",
+          "acceptance_criteria": "Search the web for and read at least 15 papers/resources covering: (a) classical 1D and 2D online bin packing competitive ratios (Harmonic++, H\u2297C by Seiden & van Stee, Han et al. 2.5545 upper bound), (b) vector bin packing heuristics (Panigrahy et al. DotProduct/L2 from Microsoft Research), (c) production systems (Protean OSDI'20 by Hadary et al., Borg scheduler), (d) ML-augmented approaches (MLSys'23 lifetime-aware placement, MiCo LLM-driven heuristics 2025), (e) metaheuristic approaches (GA+BFD hybrids). Document each paper with a 2-3 sentence summary in a literature review document.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
+          "acceptance_criteria": "A valid sources.bib file exists in the repo root containing well-formed BibTeX entries for at least 10 relevant papers. Must include entries for: Hadary et al. (Protean, OSDI'20), Panigrahy et al. (Heuristics for Vector Bin Packing), Han et al. (2.5545 upper bound on 2D online bin packing), Christensen et al. (Multidimensional Bin Packing survey), and at least 6 additional relevant works. Each entry must have correct author, title, year, and venue fields.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Survey and document available public workload trace datasets",
+          "acceptance_criteria": "Produce a document cataloging at least 4 public datasets: (a) Google Cluster Trace v3 (ClusterData2019, 8 Borg cells, May 2019), (b) Azure Traces for Packing 2020 (from Protean paper), (c) Azure VM Traces 2017/2019, (d) Huawei Cloud VM Scheduling Dataset (Huawei-East-1). For each dataset document: source URL, schema (columns/fields), size, time span, and relevance to 2D bin packing evaluation. Identify which datasets will be used for primary evaluation and why.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Define evaluation metrics and success criteria for fragmentation reduction",
+          "acceptance_criteria": "Document at least 5 quantitative metrics with precise mathematical definitions: (a) host utilization ratio (used CPU+RAM / total CPU+RAM), (b) fragmentation index (percentage of hosts with stranded resources in one dimension), (c) number of active hosts for a given workload, (d) resource waste percentage (unallocated capacity on active hosts), (e) allocation failure rate. Define the target: a novel heuristic must reduce resource waste by at least 2 percentage points compared to the best baseline (FFD/BFD) on at least one production trace.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_006",
+          "description": "Implement workload trace parser for Google Cluster Trace and Azure Packing Trace",
+          "acceptance_criteria": "Python module that: (a) downloads or reads Google ClusterData2019 task_events and machine_events tables, extracting normalized CPU and RAM requests per task, (b) reads Azure Traces for Packing 2020 CSV extracting VM type resource vectors, (c) produces a unified internal format: list of VM requests with (arrival_time, departure_time, cpu_demand, ram_demand) and host inventory with (cpu_capacity, ram_capacity). Include unit tests verifying parsing of at least 1000 records from each trace with no errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_007",
+          "description": "Build discrete-event simulation framework for online VM-to-host packing",
+          "acceptance_criteria": "Python simulation engine that: (a) processes VM arrival/departure events in chronological order, (b) maintains host state tracking allocated CPU and RAM per host, (c) supports pluggable placement policies via a common interface (a function taking VM request and host list, returning host assignment), (d) collects per-event metrics (hosts used, utilization per host, failed allocations), (e) handles at least 100,000 events per minute on a single core. Include integration test with a synthetic 1000-VM trace and a trivial First-Fit policy.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement classical baseline heuristics: First Fit, Best Fit, First Fit Decreasing, Best Fit Decreasing",
+          "acceptance_criteria": "Four placement policies implemented conforming to the simulation framework's pluggable interface: (a) First Fit (FF) - assign to first host with sufficient CPU and RAM, (b) Best Fit (BF) - assign to host that minimizes remaining capacity (using L2 norm of residual), (c) First Fit Decreasing (FFD) - sort VMs by resource demand descending then apply FF, (d) Best Fit Decreasing (BFD) - sort VMs by resource demand descending then apply BF. Each must pass unit tests verifying correct placement on a 10-host, 50-VM synthetic scenario where optimal packing is known.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement evaluation metrics collection and reporting module",
+          "acceptance_criteria": "Module that computes and reports all 5 metrics defined in item_005 at configurable intervals (per-event, per-time-window, end-of-trace). Output results as: (a) JSON summary file in results/ directory, (b) CSV time-series file for per-interval metrics. Include validation test confirming metrics are mathematically correct on a hand-computed 5-host, 20-VM example where expected values are pre-calculated.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Run baseline heuristics on both traces and validate against published results",
+          "acceptance_criteria": "Execute FF, BF, FFD, BFD on both Google Cluster Trace (subset of at least 50,000 VM events) and Azure Packing Trace (full dataset). Record all metrics. Compare host utilization and waste percentage against numbers reported in prior work: Protean reports 85-90% utilization on Azure; Panigrahy et al. report FFD performance on various input classes. Baseline results must be within 5% of published figures (accounting for trace subset differences). Store all results in results/baselines/ directory.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_011",
+          "description": "Implement advanced existing heuristics: DotProduct, L2 Norm, and Harmonic-based approaches",
+          "acceptance_criteria": "Implement at least 3 advanced heuristics from the literature as pluggable policies: (a) DotProduct heuristic (Panigrahy et al.) - score hosts by dot product of VM demand vector and host residual capacity vector, (b) L2 Norm heuristic (Panigrahy et al.) - minimize L2 norm of residual capacity after placement, (c) a Harmonic-class algorithm adapted for the 2D VM setting. Each must cite the source paper in sources.bib. Run on both traces and store results in results/advanced_baselines/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_012",
+          "description": "Analyze fragmentation patterns in baseline results to identify improvement opportunities",
+          "acceptance_criteria": "Produce a quantitative analysis document with: (a) distribution of stranded resource types (hosts with free CPU but no RAM vs. free RAM but no CPU), (b) temporal patterns (does fragmentation worsen over time or stabilize?), (c) VM size distribution analysis (which VM sizes cause the most fragmentation?), (d) correlation between resource imbalance of VM requests and resulting fragmentation. Include at least 4 figures saved in figures/ directory. Identify at least 2 specific fragmentation patterns that a novel heuristic could exploit.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Design a novel fragmentation-aware heuristic that explicitly targets identified fragmentation patterns",
+          "acceptance_criteria": "Produce a written design document describing a novel heuristic that: (a) has a clearly stated algorithmic description (pseudocode), (b) explicitly addresses at least one fragmentation pattern identified in item_012, (c) operates in online mode (decisions based only on current state and arriving VM, not future arrivals), (d) has O(n log n) or better time complexity per allocation decision where n is number of active hosts, (e) is theoretically motivated with an argument for why it should reduce fragmentation compared to BFD. The design must reference and differentiate from at least 3 prior approaches cited in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Implement the novel heuristic and integrate into the simulation framework",
+          "acceptance_criteria": "Working Python implementation of the novel heuristic as a pluggable simulation policy. Must: (a) conform to the same interface as baseline heuristics, (b) pass the same unit tests as baselines (correct placement, no capacity violations), (c) include at least 5 unit tests specific to the novel heuristic's distinguishing behavior (e.g., verifying it makes different choices than BFD in scenarios where fragmentation patterns exist), (d) handle edge cases (empty cluster, single host, VM larger than any host).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Design and implement an adaptive/hybrid approach that combines multiple heuristics based on cluster state",
+          "acceptance_criteria": "Implement a meta-heuristic that: (a) monitors current cluster state (overall utilization, fragmentation index, resource imbalance), (b) dynamically switches between or blends scoring functions from existing heuristics (e.g., DotProduct at low utilization, novel fragmentation-aware heuristic at high utilization), (c) has configurable thresholds for switching. Include a parameter sweep script that tests at least 10 threshold configurations. Document the adaptive logic with a state diagram or decision tree.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Implement VM migration/defragmentation as an optional post-placement optimization pass",
+          "acceptance_criteria": "Implement an offline defragmentation module that: (a) periodically scans active hosts for consolidation opportunities, (b) proposes VM migrations that reduce total active hosts without violating capacity constraints, (c) respects a configurable migration budget (max migrations per pass), (d) integrates with the simulation framework as an optional periodic event. Evaluate the marginal benefit of defragmentation on top of each heuristic. Store results in results/defrag/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_017",
+          "description": "Run full experimental evaluation of all heuristics on Google Cluster Trace",
+          "acceptance_criteria": "Execute all implemented heuristics (FF, BF, FFD, BFD, DotProduct, L2, Harmonic-based, novel heuristic, adaptive hybrid) on Google ClusterData2019 with at least 100,000 VM events. Record all 5 defined metrics. Each experiment must be run with 3 different random seeds (for tie-breaking) to assess variance. Store raw results in results/google_trace/ as CSV files with columns: heuristic, seed, metric_name, metric_value.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_018",
+          "description": "Run full experimental evaluation of all heuristics on Azure Packing Trace",
+          "acceptance_criteria": "Execute all implemented heuristics on Azure Traces for Packing 2020 (full dataset). Record all 5 defined metrics with 3 random seeds per heuristic. Store raw results in results/azure_trace/ as CSV files. Compare resource waste reduction of the novel heuristic against the best baseline - the target is at least 2 percentage points improvement on at least one trace.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Perform statistical significance testing on experimental results",
+          "acceptance_criteria": "For each pair of (novel heuristic, baseline), perform: (a) paired t-test or Wilcoxon signed-rank test on per-time-window metric values, (b) report p-values and confidence intervals for the difference in resource waste percentage, (c) compute effect size (Cohen's d). Results must be presented in a summary table. If the novel heuristic's improvement is not statistically significant (p > 0.05), document this honestly and analyze why.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Evaluate scalability: vary cluster size and workload intensity",
+          "acceptance_criteria": "Run experiments varying: (a) number of hosts (100, 500, 1000, 5000, 10000) with proportionally scaled workload, (b) load factor (0.5, 0.7, 0.85, 0.95 of total cluster capacity). Measure: (i) resource waste percentage at each scale, (ii) wall-clock time per allocation decision, (iii) memory usage of the heuristic. The novel heuristic must maintain O(n log n) or better per-decision time. Store results in results/scalability/ and produce scaling plots in figures/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Sensitivity analysis on VM size distribution and resource ratio skew",
+          "acceptance_criteria": "Generate at least 4 synthetic workload variants: (a) CPU-heavy VMs (CPU:RAM ratio > 2:1), (b) RAM-heavy VMs (RAM:CPU ratio > 2:1), (c) uniform small VMs, (d) bimodal (mix of very small and very large VMs). Run all heuristics on each synthetic workload (at least 50,000 events each). Identify which workload characteristics most benefit the novel heuristic vs. baselines. Store results in results/sensitivity/ and document findings.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_022",
+          "description": "Produce comparative analysis against prior work from literature review",
+          "acceptance_criteria": "Write a comparative analysis section that: (a) positions the novel heuristic's results against published numbers from Protean (85-90% utilization), Panigrahy et al. (DotProduct/L2 within few percent of optimal), and other cited works, (b) explains where the novel approach improves and where it does not, (c) provides an honest assessment of whether the 2% fragmentation reduction target was met, (d) references at least 5 papers from sources.bib in the comparison. If the target was not met, analyze the gap and propose concrete next steps.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality figures and visualizations",
+          "acceptance_criteria": "Create at least 6 figures saved in figures/ directory: (a) bar chart comparing resource waste % across all heuristics on each trace, (b) time-series plot of fragmentation index over trace duration for top 3 heuristics, (c) heatmap of host utilization (CPU vs RAM) showing fragmentation patterns, (d) scaling plot of allocation time vs cluster size, (e) box plot of per-window waste % distribution across seeds, (f) sensitivity analysis radar/spider chart across workload types. All figures must have labeled axes, legends, and be saved as both PNG and PDF.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write comprehensive research report documenting methodology, results, and conclusions",
+          "acceptance_criteria": "A structured report (markdown or PDF) containing: (a) Abstract summarizing the problem and key findings, (b) Introduction with motivation and contribution statement, (c) Related Work section citing at least 10 papers from sources.bib, (d) Problem Formulation matching item_001, (e) Methodology describing simulation framework and all heuristics, (f) Results with tables and figure references, (g) Discussion interpreting results and comparing to prior work, (h) Conclusion with summary of findings. Report must be at least 3000 words.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Document reproducibility: instructions, dependencies, and artifact packaging",
+          "acceptance_criteria": "Create: (a) requirements.txt or pyproject.toml listing all Python dependencies with pinned versions, (b) a README.md with step-by-step instructions to reproduce all experiments (data download, running simulations, generating figures), (c) a Makefile or shell script that runs the complete pipeline end-to-end, (d) document any hardware requirements or expected runtime. Verify that running the pipeline from a clean checkout produces results consistent with the report (within statistical variance of random seeds).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
