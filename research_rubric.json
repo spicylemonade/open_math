@@ -110,8 +110,8 @@
           "id": "item_009",
           "description": "Establish baseline quantitative metrics for forward Euler",
           "acceptance_criteria": "Results file (results/baseline_euler.json or .csv) containing: dt used, total simulation time, final energy drift percentage, maximum angular displacement error vs small-angle analytical solution (for theta_0 < 0.1 rad). At least one test run with dt=0.01 and total_time=10s documented",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "results/baseline_euler.json: dt=0.01, 10s, energy drift 0.21%, max angular error 0.031 rad vs analytical small-angle solution (theta_0=0.05). RMS error 0.012 rad.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 8,
+    "completed": 9,
     "in_progress": 0,
     "failed": 0,
-    "pending": 17
+    "pending": 16
   }
 }

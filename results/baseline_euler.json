@@ -1,0 +1,13 @@
+{
+  "method": "euler",
+  "dt": 0.01,
+  "total_time": 10.0,
+  "theta_0": 0.05,
+  "omega_0": 0.0,
+  "g": 9.81,
+  "L": 1.0,
+  "energy_drift_abs": 0.020401941022074155,
+  "energy_drift_pct": 0.20823109113572172,
+  "max_angular_error_vs_analytical": 0.03132476049702075,
+  "rms_error_vs_analytical": 0.012067992315758011
+}
