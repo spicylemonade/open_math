@@ -1,0 +1,27 @@
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Graph and network analysis
+networkx>=3.1
+
+# OpenStreetMap data extraction
+osmnx>=1.6.0
+
+# Optimization solvers
+ortools>=9.7
+
+# Machine learning
+torch>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Configuration and data formats
+pyyaml>=6.0
+pyproj>=3.5.0
+
+# Utilities
+tqdm>=4.65.0
