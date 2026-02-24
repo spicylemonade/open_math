@@ -1,0 +1,18 @@
+# Evaluation configuration for ATSP benchmark suite
+solvers:
+  - nearest_neighbor
+  - greedy
+  - savings
+  - ortools
+  - lkh
+
+time_limit: 30  # seconds per solver per instance
+
+seeds:
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+
+output_dir: results
