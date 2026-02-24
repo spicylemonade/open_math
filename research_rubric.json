@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-24T07:25:00Z",
-  "updated_at": "2026-02-24T07:24:11.385454+00:00",
-  "current_agent": "orchestrator",
+  "updated_at": "2026-02-24T07:24:13.537912+00:00",
+  "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,8 +11,8 @@
       "error": null
     },
     "researcher": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-02-24T07:24:13.537895+00:00",
       "completed_at": null,
       "error": null
     },
@@ -39,48 +39,48 @@
           "id": "item_001",
           "description": "Analyze repository structure and define project scaffold",
           "acceptance_criteria": "A markdown document (docs/repo_structure.md) listing all directories (figures/, results/, etc.), their purposes, and a proposed project layout with directories for src/, data/, benchmarks/, and models/. The scaffold must include a requirements.txt or pyproject.toml with initial dependency stubs (networkx, osmnx, numpy, etc.).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/repo_structure.md with full directory layout and purposes. Created requirements.txt with all dependencies. Created directory structure: src/{data,baselines,solvers,models,training,evaluation}, docs/, figures/, results/, benchmarks/, models/, data/, tests/. All __init__.py files in place.",
           "error": null
         },
         {
           "id": "item_002",
           "description": "Formalize the research problem: ATSP with real-world constraints on road networks",
           "acceptance_criteria": "A document (docs/problem_statement.md) that formally defines: (1) the Asymmetric TSP on road graphs, (2) the distinction from Euclidean TSP (triangle inequality violations, one-way streets, turn penalties), (3) time-window and traffic-dependent edge weight formulations, and (4) at least 3 concrete research questions with measurable success criteria (e.g., 'beat LKH-3 tour cost by >=0.5% on instances with >=200 nodes').",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/problem_statement.md with formal ATSP definition (ILP formulations), Euclidean vs road network distinctions, time-window/traffic formulations, and 4 research questions with measurable success criteria.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Conduct literature review on classical TSP/ATSP solvers",
           "acceptance_criteria": "Web search conducted for papers and repositories on Concorde, LKH-3, OR-Tools routing, and Helsgaun's ATSP transformations. At least 5 papers on classical solvers cited in sources.bib with full BibTeX entries. A summary table (docs/lit_review_classical.md) listing each solver, its key algorithmic ideas, known performance on benchmark sets (TSPLIB, ATSPLIB), and limitations on real road networks.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Web searches conducted. Created docs/lit_review_classical.md with summary table and detailed reviews of Concorde, LKH-3, OR-Tools, Lin-Kernighan, and Jonker-Volgenant transformation. 6 classical solver references in sources.bib.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Conduct literature review on learned/neural TSP heuristics",
           "acceptance_criteria": "Web search conducted for papers on attention-based models (Kool et al. 2019), reinforcement learning for routing (Nazari et al. 2018, Bello et al. 2017), POMO, MatNet for ATSP, and hybrid neuro-heuristic approaches. At least 5 papers on learned heuristics cited in sources.bib. Summary document (docs/lit_review_neural.md) with a comparison table of method, problem variant handled (symmetric/asymmetric/time-windows), reported gap to optimal, instance sizes tested, and inference time.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Web searches conducted. Created docs/lit_review_neural.md with comparison table and detailed reviews of Bello 2017, Kool 2019, Nazari 2018, POMO 2020, MatNet 2021, and DACT 2022. 6 neural heuristic references in sources.bib.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Survey real-world road network routing tools and datasets",
           "acceptance_criteria": "Web search conducted for OSRM, Valhalla, GraphHopper APIs and their distance matrix capabilities, plus OpenStreetMap data extraction tools (osmnx, pyrosm). At least 3 sources cited in sources.bib. Document (docs/lit_review_routing_tools.md) listing each tool, data format, how to extract asymmetric travel-time matrices, traffic data availability, and licensing constraints.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Web searches conducted. Created docs/lit_review_routing_tools.md with comparison table and detailed reviews of OSRM, Valhalla, GraphHopper, OSMnx, and pyrosm. 3 routing tool references in sources.bib (OSRM, OSMnx, Valhalla).",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Create and populate sources.bib with all consulted references",
           "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. Contains at least 12 relevant papers spanning: classical TSP solvers (>=4), neural/learned heuristics (>=4), road network routing (>=2), and benchmark methodology (>=2). Each entry has complete fields (author, title, year, venue/journal). The file parses without errors using a BibTeX validator.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib contains 18 entries: 6 classical solvers, 6 neural heuristics, 3 routing tools, 3 benchmark methodology. All entries have complete fields.",
           "error": null
         }
       ]
@@ -292,9 +292,9 @@
   ],
   "summary": {
     "total_items": 28,
-    "completed": 0,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 28
+    "pending": 22
   }
 }

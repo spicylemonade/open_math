@@ -1,2 +1,196 @@
 % Bibliography for research project
 % Better Heuristics for TSP on Real Road Networks
+
+% ============================================================
+% Classical TSP Solvers (>=4)
+% ============================================================
+
+@book{applegate2006traveling,
+  author    = {Applegate, David L. and Bixby, Robert E. and Chv{\'a}tal, Va{\v{s}}ek and Cook, William J.},
+  title     = {The Traveling Salesman Problem: A Computational Study},
+  publisher = {Princeton University Press},
+  year      = {2006},
+  isbn      = {978-0691129938}
+}
+
+@article{helsgaun2017extension,
+  author  = {Helsgaun, Keld},
+  title   = {An Extension of the {Lin-Kernighan-Helsgaun} {TSP} Solver for Constrained Traveling Salesman and Vehicle Routing Problems},
+  journal = {Technical Report, Roskilde University},
+  year    = {2017},
+  url     = {http://webhotel4.ruc.dk/~keld/research/LKH-3/LKH-3_REPORT.pdf}
+}
+
+@article{helsgaun2000effective,
+  author  = {Helsgaun, Keld},
+  title   = {An Effective Implementation of the {Lin--Kernighan} Traveling Salesman Heuristic},
+  journal = {European Journal of Operational Research},
+  volume  = {126},
+  number  = {1},
+  pages   = {106--130},
+  year    = {2000},
+  doi     = {10.1016/S0377-2217(99)00284-2}
+}
+
+@article{lin1973effective,
+  author  = {Lin, Shen and Kernighan, Brian W.},
+  title   = {An Effective Heuristic Algorithm for the Traveling-Salesman Problem},
+  journal = {Operations Research},
+  volume  = {21},
+  number  = {2},
+  pages   = {498--516},
+  year    = {1973},
+  doi     = {10.1287/opre.21.2.498}
+}
+
+@article{jonker1983transforming,
+  author  = {Jonker, Roy and Volgenant, Ton},
+  title   = {Transforming Asymmetric into Symmetric Traveling Salesman Problems},
+  journal = {Operations Research Letters},
+  volume  = {2},
+  number  = {4},
+  pages   = {161--163},
+  year    = {1983},
+  doi     = {10.1016/0167-6377(83)90048-2}
+}
+
+@inproceedings{perron2023ortools,
+  author    = {Perron, Laurent and Furnon, Vincent},
+  title     = {{OR-Tools}' Vehicle Routing Solver: A Generic Constraint-Programming Solver with Heuristic Search for Routing Problems},
+  booktitle = {Proceedings of the 24th Conference of the French Society of Operations Research and Decision Support (ROADEF)},
+  year      = {2023},
+  url       = {https://research.google/pubs/or-tools-vehicle-routing-solver-a-generic-constraint-programming-solver-with-heuristic-search-for-routing-problems/}
+}
+
+% ============================================================
+% Neural/Learned Heuristics (>=4)
+% ============================================================
+
+@inproceedings{bello2017neural,
+  author    = {Bello, Irwan and Pham, Hieu and Le, Quoc V. and Norouzi, Mohammad and Bengio, Samy},
+  title     = {Neural Combinatorial Optimization with Reinforcement Learning},
+  booktitle = {International Conference on Learning Representations (ICLR), Workshop Track},
+  year      = {2017},
+  url       = {https://arxiv.org/abs/1611.09940}
+}
+
+@inproceedings{kool2019attention,
+  author    = {Kool, Wouter and van Hoof, Herke and Welling, Max},
+  title     = {Attention, Learn to Solve Routing Problems!},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2019},
+  url       = {https://arxiv.org/abs/1803.08475}
+}
+
+@inproceedings{nazari2018reinforcement,
+  author    = {Nazari, Mohammadreza and Oroojlooy, Afshin and Snyder, Lawrence V. and Tak{\'a}{\v{c}}, Martin},
+  title     = {Reinforcement Learning for Solving the Vehicle Routing Problem},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {31},
+  year      = {2018},
+  url       = {https://arxiv.org/abs/1802.04240}
+}
+
+@inproceedings{kwon2020pomo,
+  author    = {Kwon, Yeong-Dae and Choo, Jinho and Kim, Byoungjip and Yoon, Iljoo and Gwon, Youngjune and Min, Seungjai},
+  title     = {{POMO}: Policy Optimization with Multiple Optima for Reinforcement Learning},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {33},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2010.16011}
+}
+
+@inproceedings{kwon2021matnet,
+  author    = {Kwon, Yeong-Dae and Choo, Jinho and Oh, Munsang and Park, Inwoo and Gwon, Youngjune},
+  title     = {Matrix Encoding Networks for Neural Combinatorial Optimization},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {34},
+  year      = {2021},
+  url       = {https://github.com/yd-kwon/MatNet}
+}
+
+@article{ma2022dact,
+  author  = {Ma, Yining and Li, Jingwen and Cao, Zhiguang and Song, Wen and Zhang, Le and Chen, Zhenghua and Tang, Jian},
+  title   = {Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer},
+  journal = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume  = {35},
+  year    = {2022}
+}
+
+% ============================================================
+% Road Network Routing Tools (>=2)
+% ============================================================
+
+@inproceedings{luxen2011realtime,
+  author    = {Luxen, Dennis and Vetter, Christian},
+  title     = {Real-time Routing with {OpenStreetMap} Data},
+  booktitle = {Proceedings of the 19th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems},
+  pages     = {513--516},
+  year      = {2011},
+  doi       = {10.1145/2093973.2094062}
+}
+
+@article{boeing2017osmnx,
+  author  = {Boeing, Geoff},
+  title   = {{OSMnx}: New Methods for Acquiring, Constructing, Analyzing, and Visualizing Complex Street Networks},
+  journal = {Computers, Environment and Urban Systems},
+  volume  = {65},
+  pages   = {126--139},
+  year    = {2017},
+  doi     = {10.1016/j.compenvurbsys.2017.05.004}
+}
+
+@misc{valhalla2024,
+  author  = {{Valhalla Contributors}},
+  title   = {Valhalla: Open Source Routing Engine for {OpenStreetMap}},
+  year    = {2024},
+  url     = {https://github.com/valhalla/valhalla},
+  note    = {GitHub repository}
+}
+
+% ============================================================
+% Benchmark Methodology (>=2)
+% ============================================================
+
+@article{ropke2006adaptive,
+  author  = {Ropke, Stefan and Pisinger, David},
+  title   = {An Adaptive Large Neighbourhood Search Heuristic for the Pickup and Delivery Problem with Time Windows},
+  journal = {Transportation Science},
+  volume  = {40},
+  number  = {4},
+  pages   = {455--472},
+  year    = {2006},
+  doi     = {10.1287/trsc.1050.0135}
+}
+
+@article{pisinger2007general,
+  author  = {Pisinger, David and Ropke, Stefan},
+  title   = {A General Heuristic for Vehicle Routing Problems},
+  journal = {Computers \& Operations Research},
+  volume  = {34},
+  number  = {8},
+  pages   = {2403--2435},
+  year    = {2007},
+  doi     = {10.1016/j.cor.2005.09.012}
+}
+
+@article{reinelt1991tsplib,
+  author  = {Reinelt, Gerhard},
+  title   = {{TSPLIB} -- A Traveling Salesman Problem Library},
+  journal = {ORSA Journal on Computing},
+  volume  = {3},
+  number  = {4},
+  pages   = {376--384},
+  year    = {1991},
+  doi     = {10.1287/ijoc.3.4.376}
+}
+
+@article{johnson2007experimental,
+  author  = {Johnson, David S. and McGeoch, Lyle A.},
+  title   = {Experimental Analysis of Heuristics for the {STSP}},
+  journal = {The Traveling Salesman Problem and Its Variations},
+  pages   = {369--443},
+  year    = {2007},
+  publisher = {Springer},
+  doi     = {10.1007/0-306-48213-4_9}
+}
