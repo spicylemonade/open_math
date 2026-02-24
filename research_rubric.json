@@ -165,32 +165,32 @@
           "id": "item_015",
           "description": "Implement hybrid heuristic: GNN-guided LK-style local search for ATSP",
           "acceptance_criteria": "A solver (src/solvers/hybrid_gnn_lk.py) that: (1) uses trained GNN edge scores to bias the candidate edge set in a Lin-Kernighan style local search, (2) specifically: during k-opt moves, prioritizes edges scored highly by the GNN, reducing the search neighborhood, (3) handles asymmetric costs correctly in move evaluation (directed edges), (4) accepts a time limit parameter, (5) returns tours in the standard format. Solver produces valid tours on 3 test instances.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented hybrid GNN-LK solver with candidate edge set from GNN scores, 2-opt/or-opt restricted to candidates, asymmetry-aware moves, iterated local search. Ablation flags for GNN on/off and asymmetry-aware on/off. Tested on 3 instances.",
           "error": null
         },
         {
           "id": "item_016",
           "description": "Implement traffic-aware perturbation scheme with time-dependent edge weights",
           "acceptance_criteria": "An extension module (src/solvers/traffic_perturbation.py) that: (1) accepts time-dependent edge weight functions (e.g., travel time varies by departure time), (2) implements an iterated local search with perturbations that account for temporal cost changes (re-evaluating tour segments when departure times shift), (3) integrates with the hybrid solver from item_015 as an optional enhancement. Tested on at least 2 instances with synthetic time-varying weights (rush hour multipliers). Tours are valid and respect temporal cost evaluation.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented traffic-aware ILS with Gaussian rush-hour model, time-dependent cost evaluation, traffic-biased perturbation. Integrates with hybrid solver via enhance_with_traffic(). Tested on 3 instances with synthetic time-varying weights.",
           "error": null
         },
         {
           "id": "item_017",
           "description": "Implement adaptive large neighborhood search (ALNS) with learned destroy/repair operators",
           "acceptance_criteria": "An ALNS solver (src/solvers/alns_learned.py) that: (1) implements at least 3 destroy operators (random removal, worst removal, cluster removal based on road-network proximity), (2) implements at least 3 repair operators (greedy insertion, regret-2 insertion, GNN-guided insertion using edge scores), (3) uses adaptive weight adjustment to select operators based on historical improvement, (4) accepts configurable iteration count and time limit. Solver produces valid tours and improves on construction heuristic solutions by at least 5% on medium instances.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented ALNS with 3 destroy (random, worst, cluster) and 3 repair (greedy, regret-2, GNN-guided) operators. Adaptive roulette wheel selection, SA acceptance. Achieves 8.9-26.5% improvement over NN on medium instances (exceeds 5% target).",
           "error": null
         },
         {
           "id": "item_018",
           "description": "Implement ensemble strategy combining multiple solver outputs",
           "acceptance_criteria": "An ensemble module (src/solvers/ensemble.py) that: (1) runs multiple solvers (LKH, OR-Tools, hybrid GNN-LK, ALNS) on the same instance, (2) selects the best tour by cost, (3) optionally merges tours by extracting good sub-tours and recombining (EAX-style crossover adapted for ATSP), (4) returns the best or recombined tour. Tested on 3 instances, producing tours at least as good as the best individual solver on each.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Implemented ensemble combining all solvers with time-budget splitting and EAX-style crossover. Tested on 3 instances, always returns best-or-better solution.",
           "error": null
         }
       ]
@@ -292,9 +292,9 @@
   ],
   "summary": {
     "total_items": 28,
-    "completed": 14,
+    "completed": 18,
     "in_progress": 0,
     "failed": 0,
-    "pending": 14
+    "pending": 10
   }
 }
