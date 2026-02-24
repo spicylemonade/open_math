@@ -1,0 +1,50 @@
+{
+  "item_id": "item_022",
+  "title": "Quantitative Results Summary",
+  "convergence_orders": {
+    "euler": {"observed": 1.61, "expected": 1},
+    "rk4": {"observed": 4.05, "expected": 4},
+    "verlet": {"observed": 1.99, "expected": 2}
+  },
+  "energy_drift_by_steps": {
+    "euler": {
+      "10k_steps": 5.317,
+      "100k_steps": 55.535,
+      "1M_steps": 537.215
+    },
+    "rk4": {
+      "10k_steps": 1.66e-08,
+      "100k_steps": 1.66e-07,
+      "1M_steps": 1.66e-06
+    },
+    "verlet": {
+      "10k_steps": 3.35e-05,
+      "100k_steps": 3.35e-05,
+      "1M_steps": 3.35e-05
+    }
+  },
+  "performance_timings_100k_steps": {
+    "euler": {"avg_s": 0.272, "std_s": 0.004},
+    "rk4": {"avg_s": 0.700, "std_s": 0.003},
+    "verlet": {"avg_s": 0.368, "std_s": 0.001}
+  },
+  "large_angle_period_errors": {
+    "theta0_pi_over_2": {
+      "T_numerical": 2.36784195,
+      "T_exact": 2.36784195,
+      "relative_error": 1.77e-12
+    },
+    "theta0_3_rad": {
+      "T_numerical": 5.15806675,
+      "T_exact": 5.15806675,
+      "relative_error": 1.65e-12
+    }
+  },
+  "key_findings": [
+    "Euler is fastest (0.27s/100k) but useless for accuracy: energy grows linearly",
+    "RK4 is most accurate (O(h^4)) but slowest (0.70s/100k) and not symplectic",
+    "Verlet is the best compromise: symplectic (bounded energy), fast (0.37s/100k), O(h^2) accuracy",
+    "RK4 period extraction achieves ~1e-12 relative error for large angles",
+    "Verlet energy oscillation is truly bounded: same max deviation at 10k, 100k, and 1M steps"
+  ]
+}
