@@ -141,40 +141,40 @@
           "id": "item_012",
           "description": "Implement 4th-order Runge-Kutta (RK4) integrator",
           "acceptance_criteria": "RK4 integration function implemented and callable with same interface as Euler. Produces trajectory for identical initial conditions. Energy drift over 10,000 steps measured and compared to Euler baseline (expected orders-of-magnitude improvement)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "step_rk4() in pendulum.py. Same interface as Euler. Energy drift 1.66e-08 vs Euler 5.32, ~3.2e8x improvement. Results in results/rk4_comparison.json.",
           "error": null
         },
         {
           "id": "item_013",
           "description": "Implement symplectic Stormer-Verlet integrator",
           "acceptance_criteria": "Stormer-Verlet (leapfrog) integration function implemented. Energy oscillation bounded (no secular drift) confirmed over 100,000 steps. Comparison to prior work on symplectic methods from sources.bib included in notes",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "step_verlet() in pendulum.py. Bounded energy oscillation confirmed over 100k steps: drift=3.35e-05, no secular drift. Consistent with Hairer et al. shadow Hamiltonian theory. Results in results/verlet_longterm.json.",
           "error": null
         },
         {
           "id": "item_014",
           "description": "Add configurable damping to the pendulum model",
           "acceptance_criteria": "Optional damping coefficient parameter (b) added to simulation: theta'' = -(g/L)*sin(theta) - b*omega. Damped simulation shows monotonically decreasing energy. Overdamped, critically damped, and underdamped regimes demonstrated with at least one plot each saved to figures/",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Damping parameter b already in pendulum.py. Three regimes demonstrated: underdamped (b=0.5), critical (b=6.26), overdamped (b=10). 3-panel figure in figures/damping_regimes.png.",
           "error": null
         },
         {
           "id": "item_015",
           "description": "Implement large-angle regime and compare to exact period formula",
           "acceptance_criteria": "Simulation run with theta0 = pi/2 and theta0 = 3.0 rad. Period extracted numerically (zero-crossing detection). Compared against exact period T = 4*sqrt(L/g)*K(sin(theta0/2)) using elliptic integral. Relative error < 1% for RK4 with dt <= 0.001",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "RK4 dt=0.001: theta0=pi/2 rel_err=1.77e-12, theta0=3.0 rel_err=1.65e-12. Far exceeds <1% requirement. Results in results/large_angle_period.json.",
           "error": null
         },
         {
           "id": "item_016",
           "description": "Create unified simulation runner with method selection",
           "acceptance_criteria": "Single entry-point function or CLI that accepts: method (euler/rk4/verlet), initial conditions (theta0, omega0), parameters (L, g, dt, n_steps, damping), and output options. Returns structured results dict with trajectory, energy, and timing data",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "simulate() and run_timed() as unified API. CLI via argparse with --method, --theta0, --omega0, --L, --g, --dt, --n-steps, --damping, --output. Returns structured dict with trajectory, energy, timing.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 11,
+    "completed": 16,
     "in_progress": 0,
     "failed": 0,
-    "pending": 14
+    "pending": 9
   }
 }

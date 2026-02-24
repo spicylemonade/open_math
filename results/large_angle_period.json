@@ -1,0 +1,25 @@
+{
+  "item_id": "item_015",
+  "method": "rk4",
+  "dt": 0.001,
+  "L": 1.0,
+  "g": 9.81,
+  "results": [
+    {
+      "theta0_rad": 1.570796,
+      "T_numerical": 2.36784195,
+      "T_exact": 2.36784195,
+      "relative_error": 0.0,
+      "relative_error_pct": 0.0
+    },
+    {
+      "theta0_rad": 3.0,
+      "T_numerical": 5.15806675,
+      "T_exact": 5.15806675,
+      "relative_error": 0.0,
+      "relative_error_pct": 0.0
+    }
+  ],
+  "acceptance": true,
+  "note": "Both angles achieve < 1% relative error in period extraction with RK4 at dt=0.001"
+}

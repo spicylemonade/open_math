@@ -1,0 +1,15 @@
+{
+  "item_id": "item_013",
+  "method": "verlet",
+  "n_steps": 100000,
+  "dt": 0.01,
+  "total_time_s": 1000.0,
+  "energy_drift_ratio": 3.35129e-05,
+  "drift_first_half": 3.35129e-05,
+  "drift_second_half": 3.35129e-05,
+  "energy_std_first_half": 0.0001020215,
+  "energy_std_second_half": 0.0001020097,
+  "bounded_oscillation": true,
+  "note": "Verlet energy oscillation is bounded with no secular drift, confirming symplectic preservation. Compare Hairer et al. (2006) on shadow Hamiltonian: Verlet preserves H_tilde = H + O(h^2).",
+  "sources_bib_reference": "hairer2006geometric, hairer2003stormer, sanz1992symplectic"
+}

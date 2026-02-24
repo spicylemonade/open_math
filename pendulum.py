@@ -174,13 +174,52 @@ def extract_period(result):
     return np.mean(periods)
 
 
+def run_timed(method='euler', theta0=0.5, omega0=0.0, L=1.0, g=9.81,
+              m=1.0, dt=0.01, n_steps=10000, b=0.0):
+    """Run simulate() with wall-clock timing. Returns result dict with 'wall_time_s' added."""
+    import time
+    t0 = time.perf_counter()
+    result = simulate(method=method, theta0=theta0, omega0=omega0,
+                      L=L, g=g, m=m, dt=dt, n_steps=n_steps, b=b)
+    result['wall_time_s'] = time.perf_counter() - t0
+    return result
+
+
 if __name__ == '__main__':
-    # Quick smoke test
-    result = simulate(method='euler', theta0=0.5, n_steps=1000, dt=0.01)
-    print(f"Euler: final theta={result['theta'][-1]:.4f}, energy drift={energy_drift(result):.6f}")
+    import argparse, json
 
-    result = simulate(method='rk4', theta0=0.5, n_steps=1000, dt=0.01)
-    print(f"RK4:   final theta={result['theta'][-1]:.4f}, energy drift={energy_drift(result):.6f}")
+    parser = argparse.ArgumentParser(description='Simple pendulum simulation')
+    parser.add_argument('--method', choices=['euler', 'rk4', 'verlet'], default='rk4')
+    parser.add_argument('--theta0', type=float, default=0.5)
+    parser.add_argument('--omega0', type=float, default=0.0)
+    parser.add_argument('--L', type=float, default=1.0)
+    parser.add_argument('--g', type=float, default=9.81)
+    parser.add_argument('--m', type=float, default=1.0)
+    parser.add_argument('--dt', type=float, default=0.01)
+    parser.add_argument('--n-steps', type=int, default=10000)
+    parser.add_argument('--damping', type=float, default=0.0)
+    parser.add_argument('--output', type=str, default=None, help='Save results JSON to file')
+    args = parser.parse_args()
 
-    result = simulate(method='verlet', theta0=0.5, n_steps=1000, dt=0.01)
-    print(f"Verlet: final theta={result['theta'][-1]:.4f}, energy drift={energy_drift(result):.6f}")
+    result = run_timed(method=args.method, theta0=args.theta0, omega0=args.omega0,
+                       L=args.L, g=args.g, m=args.m, dt=args.dt,
+                       n_steps=args.n_steps, b=args.damping)
+
+    drift = energy_drift(result)
+    print(f"Method: {args.method}")
+    print(f"Steps: {args.n_steps}, dt: {args.dt}")
+    print(f"Final theta: {result['theta'][-1]:.6f}")
+    print(f"Energy drift: {drift:.6e}")
+    print(f"Wall time: {result['wall_time_s']:.4f}s")
+
+    if args.output:
+        out = {
+            'params': result['params'],
+            'wall_time_s': result['wall_time_s'],
+            'energy_drift': drift,
+            'final_theta': float(result['theta'][-1]),
+            'final_omega': float(result['omega'][-1]),
+        }
+        with open(args.output, 'w') as f:
+            json.dump(out, f, indent=2)
+        print(f"Results saved to {args.output}")
