@@ -1,0 +1,130 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bel{\'e}ndez et~al.(2007)Bel{\'e}ndez, Pascual, M{\'e}ndez,
+  Bel{\'e}ndez, and Neipp]{belendez2007exact}
+Augusto Bel{\'e}ndez, Carolina Pascual, David~I M{\'e}ndez, Tarsicio
+  Bel{\'e}ndez, and Cristian Neipp.
+\newblock Exact solution for the nonlinear pendulum.
+\newblock \emph{Revista Brasileira de Ensino de F{\'\i}sica}, 29\penalty0
+  (4):\penalty0 645--648, 2007.
+\newblock \doi{10.1590/S1806-11172007000400024}.
+\newblock Derives exact closed-form solution for the nonlinear pendulum using
+  Jacobi elliptic functions.
+
+\bibitem[Butikov(2012)]{butikov2012oscillations}
+Eugene~I Butikov.
+\newblock Oscillations of a simple pendulum with extremely large amplitudes.
+\newblock \emph{European Journal of Physics}, 33\penalty0 (6):\penalty0
+  1555--1563, 2012.
+\newblock \doi{10.1088/0143-0807/33/6/1555}.
+\newblock Analyzes pendulum for amplitudes near pi, covering separatrix
+  behavior and rotational regime.
+
+\bibitem[{Demiz1}(2024)]{github_demiz1}
+{Demiz1}.
+\newblock Simplependulum: A simple pendulum simulation, 2024.
+\newblock URL \url{https://github.com/Demiz1/SimplePendulum}.
+\newblock NumPy-based pendulum with angle, angular rate, and visual state
+  plots.
+
+\bibitem[Goldstein et~al.(2002)Goldstein, Poole, and
+  Safko]{goldstein2002classical}
+Herbert Goldstein, Charles~P Poole, and John~L Safko.
+\newblock \emph{Classical Mechanics}.
+\newblock Addison-Wesley, 3rd edition, 2002.
+\newblock Standard graduate textbook covering Lagrangian and Hamiltonian
+  mechanics, including the simple pendulum as a canonical example.
+
+\bibitem[Hairer et~al.(2003)Hairer, Lubich, and Wanner]{hairer2003stormer}
+Ernst Hairer, Christian Lubich, and Gerhard Wanner.
+\newblock Geometric numerical integration illustrated by the
+  {S}t{\"o}rmer--{V}erlet method.
+\newblock \emph{Acta Numerica}, 12:\penalty0 399--450, 2003.
+\newblock \doi{10.1017/S0962492902000144}.
+\newblock Detailed analysis of Stormer-Verlet: symplecticity, backward error
+  analysis, shadow Hamiltonian.
+
+\bibitem[Hairer et~al.(2006)Hairer, Lubich, and Wanner]{hairer2006geometric}
+Ernst Hairer, Christian Lubich, and Gerhard Wanner.
+\newblock \emph{Geometric Numerical Integration: Structure-Preserving
+  Algorithms for Ordinary Differential Equations}, volume~31 of \emph{Springer
+  Series in Computational Mathematics}.
+\newblock Springer, 2nd edition, 2006.
+\newblock \doi{10.1007/3-540-30666-8}.
+\newblock Definitive textbook on symplectic and geometric integrators for
+  Hamiltonian systems.
+
+\bibitem[Herman(2024)]{herman_libretexts}
+Russell Herman.
+\newblock A first course in differential equations for scientists and engineers
+  -- ch. 7.9: The period of the nonlinear pendulum, 2024.
+\newblock URL
+  \url{https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/07:_Nonlinear_Systems/7.09:_The_Period_of_the_Nonlinear_Pendulum}.
+\newblock Derives exact period T = (2*T0/pi)*K(sin(theta0/2)) and series
+  expansion.
+
+\bibitem[Sanz-Serna(1992)]{sanz1992symplectic}
+JM~Sanz-Serna.
+\newblock Symplectic integrators for {H}amiltonian problems: an overview.
+\newblock \emph{Acta Numerica}, 1:\penalty0 243--286, 1992.
+\newblock \doi{10.1017/S0962492900002282}.
+\newblock Foundational review of symplectic integration methods for Hamiltonian
+  ODEs.
+
+\bibitem[{SiliconWit}(2024)]{github_siliconwit}
+{SiliconWit}.
+\newblock Modelling and simulation in python, 2024.
+\newblock URL
+  \url{https://github.com/SiliconWit/modelling-and-simulation-in-python}.
+\newblock Educational toolkit with Euler and RK4 pendulum implementations.
+
+\bibitem[Tedrake(2024)]{tedrake_underactuated}
+Russ Tedrake.
+\newblock Underactuated robotics -- ch. 2: The simple pendulum, 2024.
+\newblock URL \url{https://underactuated.mit.edu/pend.html}.
+\newblock Lagrangian derivation of pendulum EOM with damping and control
+  torques, state-space formulation and phase portrait analysis.
+
+\bibitem[{thecodebeatz}(2024)]{github_thecodebeatz}
+{thecodebeatz}.
+\newblock pendulum-simulation: Python pendulum ode solver with {S}ci{P}y and
+  {M}atplotlib, 2024.
+\newblock URL \url{https://github.com/thecodebeatz/pendulum-simulation}.
+\newblock Single pendulum using scipy.integrate.solve\_ivp with RK45,
+  demonstrates amplitude-dependent period.
+
+\bibitem[VanderPlas(2017)]{vanderplas2017triple}
+Jake VanderPlas.
+\newblock Triple pendulum {CHAOS}!, 2017.
+\newblock URL
+  \url{https://jakevdp.github.io/blog/2017/03/08/triple-pendulum-chaos/}.
+\newblock Triple pendulum using SymPy Kane's method and scipy.integrate.odeint
+  with Matplotlib animation.
+
+\bibitem[{Wikipedia contributors}(2026{\natexlab{a}})]{wikipedia_rk}
+{Wikipedia contributors}.
+\newblock Runge--kutta methods, 2026{\natexlab{a}}.
+\newblock URL \url{https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods}.
+\newblock Overview of RK family including classical RK4, convergence order
+  O(h^4), and Butcher tableau formulation.
+
+\bibitem[{Wikipedia contributors}(2026{\natexlab{b}})]{wikipedia_symplectic}
+{Wikipedia contributors}.
+\newblock Symplectic integrator, 2026{\natexlab{b}}.
+\newblock URL \url{https://en.wikipedia.org/wiki/Symplectic_integrator}.
+\newblock Overview of symplectic methods including Stormer-Verlet, leapfrog,
+  and higher-order variants.
+
+\bibitem[{Wikipedia contributors}(2026{\natexlab{c}})]{wikipedia_verlet}
+{Wikipedia contributors}.
+\newblock Verlet integration, 2026{\natexlab{c}}.
+\newblock URL \url{https://en.wikipedia.org/wiki/Verlet_integration}.
+\newblock History and derivation of Verlet/Stormer-Verlet method, symplecticity
+  and time-reversibility properties.
+
+\end{thebibliography}
