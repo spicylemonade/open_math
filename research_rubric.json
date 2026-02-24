@@ -172,8 +172,8 @@
           "id": "item_015",
           "description": "Convergence study: energy drift vs timestep size across all integrators",
           "acceptance_criteria": "Run all 4 integrators with dt in {0.1, 0.05, 0.01, 0.005, 0.001} for total_time=50s with theta_0=pi/3. Save energy drift values to results/convergence.json. Log-log plot of energy drift vs dt saved to figures/convergence.png showing expected convergence orders (1st for Euler, 2nd for Verlet/symplectic Euler, 4th for RK4)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Convergence orders confirmed: Euler~O(dt^1), Symplectic Euler~O(dt^1) bounded, Verlet~O(dt^2), RK4~O(dt^4). Results in convergence.json, log-log plot in convergence.png.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 14,
+    "completed": 15,
     "in_progress": 0,
     "failed": 0,
-    "pending": 11
+    "pending": 10
   }
 }
