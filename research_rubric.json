@@ -219,8 +219,8 @@
           "id": "item_020",
           "description": "Write summary analysis comparing all integrator methods",
           "acceptance_criteria": "Markdown file results/analysis.md containing: (1) table of integrator properties (order, symplecticity, cost per step), (2) summary of convergence results with references to figures, (3) recommendation for which integrator to use in different scenarios (real-time vs high-accuracy). Cites at least 3 papers from sources.bib",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created results/analysis.md with integrator property table, convergence summary, scenario recommendations, and 6 citations from sources.bib.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 19,
+    "completed": 20,
     "in_progress": 0,
     "failed": 0,
-    "pending": 6
+    "pending": 5
   }
 }
