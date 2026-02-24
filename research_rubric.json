@@ -86,8 +86,8 @@
           "id": "item_006",
           "description": "Implement simple pendulum ODE using forward Euler integration",
           "acceptance_criteria": "Python file (pendulum.py or sim.py) in repo root containing: (1) state vector [theta, omega], (2) forward Euler stepper function, (3) configurable parameters g, L, dt, total_time, theta_0, omega_0. Script runs without errors and produces a time-series of theta values printed or saved to results/",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created pendulum.py with forward Euler stepper, state vector [theta,omega], configurable params. Runs without errors, saves results to results/euler_baseline.json. Energy drift 23% over 10s confirms expected non-symplectic behavior.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 5,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 20
+    "pending": 19
   }
 }
