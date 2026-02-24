@@ -71,8 +71,8 @@
           "id": "item_005",
           "description": "Create and populate sources.bib with all consulted references",
           "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. At least 10 total references covering pendulum physics, numerical methods, energy conservation in symplectic integrators, and existing simulation code. Each entry has author, title, year, and URL or DOI fields",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib contains 19 BibTeX entries covering pendulum physics (6), numerical methods (8), and existing simulations/tutorials (5). All entries have author, title, year, and URL/DOI.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 4,
+    "completed": 5,
     "in_progress": 0,
     "failed": 0,
-    "pending": 21
+    "pending": 20
   }
 }
