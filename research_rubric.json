@@ -47,8 +47,8 @@
           "id": "item_002",
           "description": "Literature review: simple pendulum physics and equations of motion",
           "acceptance_criteria": "Web search conducted for simple pendulum derivations (Lagrangian and Newtonian formulations). At least 3 references on pendulum dynamics added to sources.bib with proper BibTeX entries. Summary notes recorded covering the nonlinear ODE theta'' + (g/L)*sin(theta) = 0",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Added 6 references covering Newtonian and Lagrangian derivations, elliptic integral exact period, and classical mechanics textbooks. Key equation: theta'' + (g/L)*sin(theta) = 0. Exact period: T = 4*sqrt(L/g)*K(sin(theta_0/2)).",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 2,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 23
   }
 }
