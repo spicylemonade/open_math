@@ -235,8 +235,8 @@
           "id": "item_022",
           "description": "Verify all figures and results files are generated and self-consistent",
           "acceptance_criteria": "Running the simulation script end-to-end regenerates all files in figures/ and results/. At least 5 PNG files in figures/ and at least 4 JSON/CSV files in results/. No file references in documentation point to missing files",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "7 PNG figures, 9 results files (JSON/CSV/MD). All 9 file references in docs point to existing files. Both Python files compile without errors.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 21,
+    "completed": 22,
     "in_progress": 0,
     "failed": 0,
-    "pending": 4
+    "pending": 3
   }
 }
