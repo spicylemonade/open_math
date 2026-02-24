@@ -102,8 +102,8 @@
           "id": "item_008",
           "description": "Implement basic matplotlib visualization of pendulum trajectory",
           "acceptance_criteria": "Script generates and saves to figures/ at least two plots: (1) theta(t) vs time, (2) energy E(t) vs time. Plots have labeled axes, title, and legend. Output files are PNG format with minimum 150 DPI",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created plots.py with publication-quality setup (seaborn, 300 DPI). Generated theta_time_euler and energy_time_euler as PNG+PDF. Labeled axes, bold titles, colorblind-safe palette, legends with shadow.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 7,
+    "completed": 8,
     "in_progress": 0,
     "failed": 0,
-    "pending": 18
+    "pending": 17
   }
 }
