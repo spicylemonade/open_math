@@ -47,40 +47,40 @@
           "id": "item_002",
           "description": "Conduct literature review on N-body gravitational simulation methods",
           "acceptance_criteria": "Web search performed for at least 15 queries covering: N-body simulation algorithms, symplectic integrators, Barnes-Hut treecode, gravitational softening, adaptive time-stepping, and energy conservation in numerical orbits. Summary document (LITERATURE_REVIEW.md) written with at least 10 key findings organized by topic.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "15+ web searches performed. LITERATURE_REVIEW.md written with 10 sections covering: N-body problem, direct summation, Barnes-Hut, symplectic integrators (leapfrog/Verlet/Yoshida), non-symplectic (Euler/RK4), softening, adaptive stepping, conservation diagnostics, canonical tests, and open-source codebases.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Survey existing open-source N-body simulation codebases",
           "acceptance_criteria": "Web search performed for open-source gravity simulators (e.g., REBOUND, Gadget, NBODY6, PyNbody). At least 5 codebases surveyed with notes on language, algorithms used, and design patterns. Summary appended to LITERATURE_REVIEW.md.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "6 codebases surveyed in LITERATURE_REVIEW.md Section 10: REBOUND, GADGET-2, NBODY6, PyNbody, AMUSE, and Brutus. Each entry includes language, algorithms, design patterns, and references.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Populate sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "File sources.bib exists at repo root with valid BibTeX entries. At least 12 relevant references cited including: Aarseth (2003) gravitational N-body simulations, Barnes & Hut (1986) treecode, Verlet (1967), Wisdom & Holman (1991) symplectic mapping, Dehnen & Read (2011) N-body review, and Springel (2005) cosmological simulations. Each entry has author, title, year, and journal/source fields.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib populated with 20 BibTeX entries including all required references: Aarseth (2003), Barnes & Hut (1986), Verlet (1967), Wisdom & Holman (1991), Yoshida (1990), Dehnen & Read (2011), Springel (2005), Rein & Liu (2012), Chenciner & Montgomery (2000), Hernandez & Bertschinger (2015), and more.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Formalize mathematical formulation of the N-body gravitational problem",
           "acceptance_criteria": "Document (FORMULATION.md) with: Newton's law of gravitation formula, equations of motion for N particles, definition of gravitational potential energy, total energy (kinetic + potential), linear and angular momentum conservation laws, and dimensional analysis. All equations typeset in LaTeX-compatible markdown.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "FORMULATION.md written with 9 sections: Newton's law, equations of motion, potential energy (with softening), total energy, linear/angular momentum conservation, Hamiltonian formulation, dimensional analysis, and virial theorem. All in LaTeX-compatible markdown.",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Compare numerical integration methods and select approaches for implementation",
           "acceptance_criteria": "Table comparing at least 5 integration methods (Forward Euler, Symplectic Euler, Leapfrog/Verlet, RK4, Yoshida 4th-order) on: order of accuracy, symplecticity, time-reversibility, cost per step, and energy drift behavior. Justification for selecting at least 3 methods to implement. References to sources.bib entries included.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comparison table of 5 methods added to LITERATURE_REVIEW.md Section 11. Selected 4 methods for implementation: Forward Euler, Leapfrog KDK, Velocity Verlet, and adaptive time-stepping. References to sources.bib included.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 19
   }
 }
