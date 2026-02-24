@@ -1,0 +1,63 @@
+{
+  "description": "Comparison of novel solvers vs LKH-style baseline",
+  "note": "Negative gap means novel solver is better than LKH",
+  "overall": {
+    "hybrid_gnn_lk": {
+      "mean_gap_vs_lkh_pct": -1.0406411275295975,
+      "std_gap_vs_lkh_pct": 0.7742982013308911,
+      "min_gap_pct": -2.101808733831979,
+      "max_gap_pct": 0.0,
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_p_value": 0.125,
+      "n_instances": 4,
+      "instances_where_better": 3,
+      "instances_where_worse": 0
+    },
+    "alns": {
+      "mean_gap_vs_lkh_pct": -0.5989101676874277,
+      "std_gap_vs_lkh_pct": 1.2301666982929058,
+      "min_gap_pct": -2.101808733831979,
+      "max_gap_pct": 1.083377781221309,
+      "wilcoxon_statistic": 2.0,
+      "wilcoxon_p_value": 0.375,
+      "n_instances": 4,
+      "instances_where_better": 2,
+      "instances_where_worse": 1
+    },
+    "ensemble": {
+      "mean_gap_vs_lkh_pct": -0.5995816741052882,
+      "std_gap_vs_lkh_pct": 1.2292486013995438,
+      "min_gap_pct": -2.101808733831979,
+      "max_gap_pct": 1.0806917555498836,
+      "wilcoxon_statistic": 2.0,
+      "wilcoxon_p_value": 0.375,
+      "n_instances": 4,
+      "instances_where_better": 2,
+      "instances_where_worse": 1
+    }
+  },
+  "by_size_category": {
+    "small": {
+      "hybrid_gnn_lk": {
+        "mean_gap_pct": -1.0406411275295975,
+        "n_instances": 4
+      },
+      "alns": {
+        "mean_gap_pct": -0.5989101676874277,
+        "n_instances": 4
+      },
+      "ensemble": {
+        "mean_gap_pct": -0.5995816741052882,
+        "n_instances": 4
+      }
+    },
+    "medium": {},
+    "large": {}
+  },
+  "best_result": "Hybrid GNN-LK achieves best mean gap vs LKH",
+  "references": [
+    "helsgaun2017extension",
+    "kool2019attention",
+    "kwon2021matnet"
+  ]
+}

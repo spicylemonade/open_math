@@ -1,0 +1,96 @@
+{
+  "solver_stats": {
+    "nearest_neighbor": {
+      "mean_runtime": 0.9351094911998492,
+      "std_runtime": 1.655835937754945,
+      "mean_gap_pct": 10.351621802671419,
+      "std_gap_pct": 10.596705487628036,
+      "n_runs": 15
+    },
+    "greedy": {
+      "mean_runtime": 0.21102844306666763,
+      "std_runtime": 0.36224945289865823,
+      "mean_gap_pct": 13.28827287218248,
+      "std_gap_pct": 8.721147924247704,
+      "n_runs": 15
+    },
+    "savings": {
+      "mean_runtime": 0.2461308031999579,
+      "std_runtime": 0.4146571781029729,
+      "mean_gap_pct": 16.64925069933047,
+      "std_gap_pct": 17.967893433564022,
+      "n_runs": 15
+    },
+    "lkh": {
+      "mean_runtime": 2.2343326687812803,
+      "std_runtime": 2.9265257134999985,
+      "mean_gap_pct": 1.7316657197119347,
+      "std_gap_pct": 1.7459860692723708,
+      "n_runs": 20
+    },
+    "ortools": {
+      "mean_runtime": 10.000312133249963,
+      "std_runtime": 0.00039835114325022914,
+      "mean_gap_pct": 1.7459257300403752e-14,
+      "std_gap_pct": 1.1620849033855697e-14,
+      "n_runs": 4
+    },
+    "hybrid_gnn_lk": {
+      "mean_runtime": 10.000101280212402,
+      "std_runtime": 7.879236626904083e-05,
+      "mean_gap_pct": 0.6689578144923487,
+      "std_gap_pct": 1.2831236513032638,
+      "n_runs": 20
+    },
+    "alns": {
+      "mean_runtime": 1.7721883333646333,
+      "std_runtime": 1.8356742231861376,
+      "mean_gap_pct": 0.8660230077874324,
+      "std_gap_pct": 1.775009604137985,
+      "n_runs": 26
+    },
+    "ensemble": {
+      "mean_runtime": 6.2833723039473055,
+      "std_runtime": 1.753348520255239,
+      "mean_gap_pct": 1.1843533523255658,
+      "std_gap_pct": 1.982048750080404,
+      "n_runs": 19
+    }
+  },
+  "pareto_optimal_solvers": [
+    "greedy",
+    "nearest_neighbor",
+    "alns",
+    "hybrid_gnn_lk",
+    "ortools"
+  ],
+  "time_budgets": {
+    "1s": [
+      "nearest_neighbor",
+      "greedy",
+      "savings"
+    ],
+    "10s": [
+      "nearest_neighbor",
+      "greedy",
+      "savings",
+      "lkh",
+      "alns",
+      "ensemble"
+    ],
+    "60s": [
+      "nearest_neighbor",
+      "greedy",
+      "savings",
+      "lkh",
+      "ortools",
+      "hybrid_gnn_lk",
+      "alns",
+      "ensemble"
+    ]
+  },
+  "references": [
+    "johnson2007experimental",
+    "helsgaun2017extension"
+  ]
+}

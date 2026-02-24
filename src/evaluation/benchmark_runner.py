@@ -18,6 +18,9 @@ from src.baselines.ortools_baseline import solve_ortools
 from src.baselines.construction_heuristics import (
     solve_nearest_neighbor, solve_greedy, solve_savings
 )
+from src.solvers.hybrid_gnn_lk import solve_hybrid_gnn_lk
+from src.solvers.alns_learned import solve_alns
+from src.solvers.ensemble import solve_ensemble
 
 # Registry of available solvers
 SOLVER_REGISTRY = {
@@ -26,6 +29,9 @@ SOLVER_REGISTRY = {
     "savings": solve_savings,
     "ortools": solve_ortools,
     "lkh": solve_lkh,
+    "hybrid_gnn_lk": solve_hybrid_gnn_lk,
+    "alns": solve_alns,
+    "ensemble": solve_ensemble,
 }
 
 
