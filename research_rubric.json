@@ -188,8 +188,8 @@
           "id": "item_017",
           "description": "Accuracy comparison against analytical small-angle solution",
           "acceptance_criteria": "For theta_0=0.05 rad, compute analytical solution theta(t)=theta_0*cos(sqrt(g/L)*t). Measure RMS error between each integrator and analytical solution over 10 seconds. Results table saved to results/accuracy.json with RMS error for each method and dt combination. Compare against accuracy benchmarks found in literature review",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "RMS errors for 4 methods x 5 dt values saved. RK4/Verlet converge to ~1e-4 floor (linearization error). Euler shows O(dt) convergence. Consistent with scientific_python_pendulum tutorial benchmarks.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 16,
+    "completed": 17,
     "in_progress": 0,
     "failed": 0,
-    "pending": 9
+    "pending": 8
   }
 }
