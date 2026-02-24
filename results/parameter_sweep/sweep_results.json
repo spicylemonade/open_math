@@ -1,0 +1,98 @@
+[
+  {
+    "util_threshold": 0.5,
+    "frag_threshold": 0.1,
+    "waste_pct": 6.91673260705086,
+    "utilization": 0.9061413159048,
+    "fragmentation": 0.1496769137477093,
+    "active_hosts": 247.17283950617283
+  },
+  {
+    "util_threshold": 0.5,
+    "frag_threshold": 0.2,
+    "waste_pct": 7.332354276116007,
+    "utilization": 0.9019850992141487,
+    "fragmentation": 0.20032600375018308,
+    "active_hosts": 248.45679012345678
+  },
+  {
+    "util_threshold": 0.5,
+    "frag_threshold": 0.3,
+    "waste_pct": 7.35227403136109,
+    "utilization": 0.9017859016616977,
+    "fragmentation": 0.23883657891203644,
+    "active_hosts": 248.34567901234567
+  },
+  {
+    "util_threshold": 0.6,
+    "frag_threshold": 0.1,
+    "waste_pct": 6.91673260705086,
+    "utilization": 0.9061413159048,
+    "fragmentation": 0.1496769137477093,
+    "active_hosts": 247.17283950617283
+  },
+  {
+    "util_threshold": 0.6,
+    "frag_threshold": 0.2,
+    "waste_pct": 7.332354276116007,
+    "utilization": 0.9019850992141487,
+    "fragmentation": 0.20032600375018308,
+    "active_hosts": 248.45679012345678
+  },
+  {
+    "util_threshold": 0.6,
+    "frag_threshold": 0.3,
+    "waste_pct": 7.35227403136109,
+    "utilization": 0.9017859016616977,
+    "fragmentation": 0.23883657891203644,
+    "active_hosts": 248.34567901234567
+  },
+  {
+    "util_threshold": 0.7,
+    "frag_threshold": 0.1,
+    "waste_pct": 6.91673260705086,
+    "utilization": 0.9061413159048,
+    "fragmentation": 0.1496769137477093,
+    "active_hosts": 247.17283950617283
+  },
+  {
+    "util_threshold": 0.7,
+    "frag_threshold": 0.2,
+    "waste_pct": 7.332354276116007,
+    "utilization": 0.9019850992141487,
+    "fragmentation": 0.20032600375018308,
+    "active_hosts": 248.45679012345678
+  },
+  {
+    "util_threshold": 0.7,
+    "frag_threshold": 0.3,
+    "waste_pct": 7.35227403136109,
+    "utilization": 0.9017859016616977,
+    "fragmentation": 0.23883657891203644,
+    "active_hosts": 248.34567901234567
+  },
+  {
+    "util_threshold": 0.8,
+    "frag_threshold": 0.15,
+    "waste_pct": 7.160262516561477,
+    "utilization": 0.9037060168096939,
+    "fragmentation": 0.17103949462734858,
+    "active_hosts": 247.92592592592592
+  },
+  {
+    "util_threshold": 0.8,
+    "frag_threshold": 0.25,
+    "waste_pct": 7.331605406915086,
+    "utilization": 0.9019925879061579,
+    "fragmentation": 0.2250660174905618,
+    "active_hosts": 248.34567901234567
+  },
+  {
+    "util_threshold": 0.9,
+    "frag_threshold": 0.1,
+    "waste_pct": 6.864163990550929,
+    "utilization": 0.9066670020697992,
+    "fragmentation": 0.15464901761112515,
+    "active_hosts": 247.02469135802468
+  }
+]

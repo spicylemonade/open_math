@@ -1,0 +1,18 @@
+{
+  "heuristic": "Harmonic2D",
+  "trace": "azure_like",
+  "seed": 42,
+  "total_allocations": 50000,
+  "failed_allocations": 0,
+  "allocation_failure_rate": 0.0,
+  "avg_host_utilization": 0.9285844435414251,
+  "avg_fragmentation_index": 0.24173509191648926,
+  "avg_active_hosts": 604.7114427860696,
+  "max_active_hosts": 687,
+  "avg_waste_pct": 6.146530770235602,
+  "final_waste_pct": 0,
+  "cpu_waste_pct": 5.39200505576532,
+  "ram_waste_pct": 7.024604841896546,
+  "wall_clock_seconds": 20.533857583999634,
+  "events_per_second": 4870.005530666672
+}

@@ -1,0 +1,18 @@
+{
+  "heuristic": "DotProduct",
+  "trace": "azure_like",
+  "seed": 123,
+  "total_allocations": 50000,
+  "failed_allocations": 0,
+  "allocation_failure_rate": 0.0,
+  "avg_host_utilization": 0.9317208355944048,
+  "avg_fragmentation_index": 0.23053394883630512,
+  "avg_active_hosts": 602.5820895522388,
+  "max_active_hosts": 685,
+  "avg_waste_pct": 5.832891564937624,
+  "final_waste_pct": 0,
+  "cpu_waste_pct": 5.072525245288274,
+  "ram_waste_pct": 6.710501936143508,
+  "wall_clock_seconds": 18.351879358291626,
+  "events_per_second": 5449.033205137034
+}

@@ -1,0 +1,18 @@
+{
+  "heuristic": "DotProduct",
+  "trace": "google_like",
+  "seed": 42,
+  "total_allocations": 100000,
+  "failed_allocations": 0,
+  "allocation_failure_rate": 0.0,
+  "avg_host_utilization": 0.8828216454050638,
+  "avg_fragmentation_index": 0.30311597572516635,
+  "avg_active_hosts": 361.30423940149626,
+  "max_active_hosts": 429,
+  "avg_waste_pct": 11.219082342286637,
+  "final_waste_pct": 0,
+  "cpu_waste_pct": 6.787482721328213,
+  "ram_waste_pct": 15.763153966676505,
+  "wall_clock_seconds": 38.034263610839844,
+  "events_per_second": 5258.416517442435
+}

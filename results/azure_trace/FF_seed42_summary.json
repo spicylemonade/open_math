@@ -1,0 +1,18 @@
+{
+  "heuristic": "FF",
+  "trace": "azure_like",
+  "seed": 42,
+  "total_allocations": 50000,
+  "failed_allocations": 0,
+  "allocation_failure_rate": 0.0,
+  "avg_host_utilization": 0.9049769514496997,
+  "avg_fragmentation_index": 0.3803642996332116,
+  "avg_active_hosts": 620.7860696517413,
+  "max_active_hosts": 712,
+  "avg_waste_pct": 8.507279979408146,
+  "final_waste_pct": 0,
+  "cpu_waste_pct": 7.797788838100112,
+  "ram_waste_pct": 9.387771723317348,
+  "wall_clock_seconds": 8.250221252441406,
+  "events_per_second": 12120.887057472306
+}

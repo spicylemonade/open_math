@@ -87,9 +87,13 @@ def best_fit_decreasing(vm: VMRequest, hosts: List[HostState], rng: np.random.Ra
 def dot_product(vm: VMRequest, hosts: List[HostState], rng: np.random.RandomState) -> Optional[int]:
     """DotProduct heuristic (Panigrahy et al., 2011).
 
-    Score each host by the dot product of VM demand vector and host residual
-    capacity vector. Higher dot product means the VM's resource profile aligns
-    better with the host's available resources.
+    Score hosts by alignment (cosine similarity) between VM demand and host
+    residual, weighted by host fullness to prefer tighter packing.
+
+    score = cosine_similarity(demand, residual) * fullness_factor
+
+    This avoids the pathological worst-fit behavior of raw dot-product on
+    empty hosts while preserving the geometric alignment insight.
 
     Reference: panigrahy2011heuristics in sources.bib
     """
@@ -98,13 +102,21 @@ def dot_product(vm: VMRequest, hosts: List[HostState], rng: np.random.RandomStat
 
     for i, h in enumerate(hosts):
         if h.can_fit(vm.cpu_demand, vm.ram_demand):
-            # Normalize to [0,1]
             cpu_res = h.cpu_free / h.cpu_capacity if h.cpu_capacity > 0 else 0
             ram_res = h.ram_free / h.ram_capacity if h.ram_capacity > 0 else 0
             cpu_dem = vm.cpu_demand / h.cpu_capacity if h.cpu_capacity > 0 else 0
             ram_dem = vm.ram_demand / h.ram_capacity if h.ram_capacity > 0 else 0
 
-            score = cpu_dem * cpu_res + ram_dem * ram_res
+            # Cosine similarity between demand and residual
+            dot = cpu_dem * cpu_res + ram_dem * ram_res
+            norm_d = math.sqrt(cpu_dem**2 + ram_dem**2)
+            norm_r = math.sqrt(cpu_res**2 + ram_res**2)
+            cos_sim = dot / (norm_d * norm_r + 1e-12)
+
+            # Fullness factor: prefer hosts that are already partially filled
+            fullness = 1.0 - (cpu_res + ram_res) / 2.0
+
+            score = cos_sim * (fullness + 0.01)  # +0.01 to avoid zero for empty hosts
             if score > best_score:
                 best_score = score
                 best_idx = i
@@ -240,8 +252,9 @@ def fragmentation_aware(vm: VMRequest, hosts: List[HostState], rng: np.random.Ra
         # Component 3: L2 norm of residual (tiebreaker, like Panigrahy L2)
         l2_residual = math.sqrt(cpu_res_norm**2 + ram_res_norm**2)
 
-        # Weighted combination: balance is most important, then fullness, then L2
-        score = 2.0 * balance + 1.0 * fullness + 0.5 * l2_residual
+        # Weighted combination: fullness and balance are equally important, L2 tiebreaker
+        # This balances tight packing (fewer hosts) with resource balance (less stranding)
+        score = 1.5 * balance + 1.5 * fullness + 0.5 * l2_residual
 
         if score < best_score:
             best_score = score

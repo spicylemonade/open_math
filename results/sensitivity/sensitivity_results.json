@@ -1,0 +1,242 @@
+[
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "FF",
+    "waste_pct": 70.48316660593288,
+    "utilization": 0.5262390259191736,
+    "fragmentation": 0.8967190036686288,
+    "active_hosts": 487.5323383084577
+  },
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "BFD",
+    "waste_pct": 70.34383266606143,
+    "utilization": 0.527929974184926,
+    "fragmentation": 0.9012293820416749,
+    "active_hosts": 487.51741293532336
+  },
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "DotProduct",
+    "waste_pct": 71.76625221845535,
+    "utilization": 0.5046688457838016,
+    "fragmentation": 0.823465898443962,
+    "active_hosts": 487.9004975124378
+  },
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "L2",
+    "waste_pct": 70.34252920608313,
+    "utilization": 0.5279846110188721,
+    "fragmentation": 0.9030777272825344,
+    "active_hosts": 487.23383084577114
+  },
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "FARB",
+    "waste_pct": 71.36683153121103,
+    "utilization": 0.5126574534508594,
+    "fragmentation": 0.8213229689236863,
+    "active_hosts": 490.6517412935323
+  },
+  {
+    "distribution": "cpu_heavy",
+    "heuristic": "AdaptiveHybrid",
+    "waste_pct": 71.76625221845535,
+    "utilization": 0.5046688457838016,
+    "fragmentation": 0.823465898443962,
+    "active_hosts": 487.9004975124378
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "FF",
+    "waste_pct": 18.696244201003953,
+    "utilization": 0.6225534474336356,
+    "fragmentation": 0.8743481297350869,
+    "active_hosts": 482.49751243781094
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "BFD",
+    "waste_pct": 18.05718021737769,
+    "utilization": 0.6273490261647972,
+    "fragmentation": 0.8953093498466367,
+    "active_hosts": 482.9651741293532
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "DotProduct",
+    "waste_pct": 19.736461152977377,
+    "utilization": 0.6148126461925416,
+    "fragmentation": 0.8426145764162982,
+    "active_hosts": 482.363184079602
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "L2",
+    "waste_pct": 18.52774608310296,
+    "utilization": 0.6239436078785141,
+    "fragmentation": 0.8789437552661356,
+    "active_hosts": 482.21890547263683
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "FARB",
+    "waste_pct": 19.08150263818461,
+    "utilization": 0.6196133642226433,
+    "fragmentation": 0.8656456291719228,
+    "active_hosts": 483.7910447761194
+  },
+  {
+    "distribution": "ram_heavy",
+    "heuristic": "AdaptiveHybrid",
+    "waste_pct": 19.736461152977377,
+    "utilization": 0.6148126461925416,
+    "fragmentation": 0.8426145764162982,
+    "active_hosts": 482.363184079602
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "FF",
+    "waste_pct": 46.47417319278994,
+    "utilization": 0.6802636551403648,
+    "fragmentation": 0.9009040865256885,
+    "active_hosts": 227.72139303482587
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "BFD",
+    "waste_pct": 46.46838337472181,
+    "utilization": 0.6803387277195306,
+    "fragmentation": 0.900731618790202,
+    "active_hosts": 227.71641791044777
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "DotProduct",
+    "waste_pct": 47.14006837614061,
+    "utilization": 0.671642145702507,
+    "fragmentation": 0.8989972023189106,
+    "active_hosts": 230.9452736318408
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "L2",
+    "waste_pct": 46.46688404137649,
+    "utilization": 0.6803580539402677,
+    "fragmentation": 0.9002227146336531,
+    "active_hosts": 227.75621890547265
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "FARB",
+    "waste_pct": 47.39645077797434,
+    "utilization": 0.6683121934781178,
+    "fragmentation": 0.8843766665547688,
+    "active_hosts": 230.51243781094527
+  },
+  {
+    "distribution": "uniform_small",
+    "heuristic": "AdaptiveHybrid",
+    "waste_pct": 46.89376680475542,
+    "utilization": 0.6748286324245016,
+    "fragmentation": 0.8945632403918119,
+    "active_hosts": 229.26865671641792
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "FF",
+    "waste_pct": 25.408569465254715,
+    "utilization": 0.796214532357522,
+    "fragmentation": 0.6375635316873852,
+    "active_hosts": 484.3532338308458
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "BFD",
+    "waste_pct": 21.151021817403056,
+    "utilization": 0.8316297765915946,
+    "fragmentation": 0.6260194615050415,
+    "active_hosts": 488.44278606965173
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "DotProduct",
+    "waste_pct": 22.076632697592554,
+    "utilization": 0.822742694763428,
+    "fragmentation": 0.6228235663641553,
+    "active_hosts": 488.6169154228856
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "L2",
+    "waste_pct": 21.198213038759995,
+    "utilization": 0.8315669334066379,
+    "fragmentation": 0.6410494378945647,
+    "active_hosts": 488.72636815920396
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "FARB",
+    "waste_pct": 21.42903969524245,
+    "utilization": 0.8293784361037586,
+    "fragmentation": 0.6306308265236997,
+    "active_hosts": 488.681592039801
+  },
+  {
+    "distribution": "bimodal",
+    "heuristic": "AdaptiveHybrid",
+    "waste_pct": 21.42903969524245,
+    "utilization": 0.8293784361037586,
+    "fragmentation": 0.6306308265236997,
+    "active_hosts": 488.681592039801
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "FF",
+    "waste_pct": 21.55127747732438,
+    "utilization": 0.8250466438338568,
+    "fragmentation": 0.5965494541984724,
+    "active_hosts": 470.2437810945274
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "BFD",
+    "waste_pct": 17.8622179501895,
+    "utilization": 0.8562671472047437,
+    "fragmentation": 0.6437918210686655,
+    "active_hosts": 471.4726368159204
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "DotProduct",
+    "waste_pct": 19.102624957484085,
+    "utilization": 0.8448723586221204,
+    "fragmentation": 0.6909354171811211,
+    "active_hosts": 471.83084577114425
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "L2",
+    "waste_pct": 17.770120957039616,
+    "utilization": 0.8572190041325846,
+    "fragmentation": 0.6463891370819861,
+    "active_hosts": 471.69154228855723
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "FARB",
+    "waste_pct": 17.931607067111543,
+    "utilization": 0.855555228059056,
+    "fragmentation": 0.6518344471832205,
+    "active_hosts": 471.6517412935323
+  },
+  {
+    "distribution": "realistic",
+    "heuristic": "AdaptiveHybrid",
+    "waste_pct": 17.931607067111543,
+    "utilization": 0.855555228059056,
+    "fragmentation": 0.6518344471832205,
+    "active_hosts": 471.6517412935323
+  }
+]

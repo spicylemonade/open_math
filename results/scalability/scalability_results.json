@@ -1,0 +1,642 @@
+[
+  {
+    "n_hosts": 100,
+    "n_vms": 500,
+    "load_factor": 0.5,
+    "heuristic": "BFD",
+    "waste_pct": 13.411458333333334,
+    "utilization": 0.19921875,
+    "time_per_alloc_ms": 0.03130912780761719,
+    "wall_clock_s": 0.015654563903808594
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 500,
+    "load_factor": 0.5,
+    "heuristic": "FARB",
+    "waste_pct": 13.411458333333334,
+    "utilization": 0.19921875,
+    "time_per_alloc_ms": 0.03572416305541992,
+    "wall_clock_s": 0.01786208152770996
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 500,
+    "load_factor": 0.5,
+    "heuristic": "DotProduct",
+    "waste_pct": 10.56547619047619,
+    "utilization": 0.22767857142857142,
+    "time_per_alloc_ms": 0.04177427291870117,
+    "wall_clock_s": 0.020887136459350586
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 500,
+    "load_factor": 0.5,
+    "heuristic": "L2",
+    "waste_pct": 13.411458333333334,
+    "utilization": 0.19921875,
+    "time_per_alloc_ms": 0.03262615203857422,
+    "wall_clock_s": 0.01631307601928711
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 700,
+    "load_factor": 0.7,
+    "heuristic": "BFD",
+    "waste_pct": 25.260416666666668,
+    "utilization": 0.4140625,
+    "time_per_alloc_ms": 0.03355332783290318,
+    "wall_clock_s": 0.023487329483032227
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 700,
+    "load_factor": 0.7,
+    "heuristic": "FARB",
+    "waste_pct": 24.944760101010104,
+    "utilization": 0.4172190656565657,
+    "time_per_alloc_ms": 0.03889492579868862,
+    "wall_clock_s": 0.02722644805908203
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 700,
+    "load_factor": 0.7,
+    "heuristic": "DotProduct",
+    "waste_pct": 18.958333333333332,
+    "utilization": 0.4770833333333333,
+    "time_per_alloc_ms": 0.04368884222848075,
+    "wall_clock_s": 0.030582189559936523
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 700,
+    "load_factor": 0.7,
+    "heuristic": "L2",
+    "waste_pct": 25.260416666666668,
+    "utilization": 0.4140625,
+    "time_per_alloc_ms": 0.03574507577078683,
+    "wall_clock_s": 0.02502155303955078
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 850,
+    "load_factor": 0.85,
+    "heuristic": "BFD",
+    "waste_pct": 18.324748168498168,
+    "utilization": 0.5667525183150183,
+    "time_per_alloc_ms": 0.034110125373391545,
+    "wall_clock_s": 0.028993606567382812
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 850,
+    "load_factor": 0.85,
+    "heuristic": "FARB",
+    "waste_pct": 15.34855769230769,
+    "utilization": 0.596514423076923,
+    "time_per_alloc_ms": 0.03971716936896829,
+    "wall_clock_s": 0.03375959396362305
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 850,
+    "load_factor": 0.85,
+    "heuristic": "DotProduct",
+    "waste_pct": 16.640625,
+    "utilization": 0.58359375,
+    "time_per_alloc_ms": 0.04555000978357652,
+    "wall_clock_s": 0.03871750831604004
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 850,
+    "load_factor": 0.85,
+    "heuristic": "L2",
+    "waste_pct": 18.324748168498168,
+    "utilization": 0.5667525183150183,
+    "time_per_alloc_ms": 0.03643877366009881,
+    "wall_clock_s": 0.030972957611083984
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 950,
+    "load_factor": 0.95,
+    "heuristic": "BFD",
+    "waste_pct": 22.444650937298,
+    "utilization": 0.5255534906270201,
+    "time_per_alloc_ms": 0.034889672931871916,
+    "wall_clock_s": 0.03314518928527832
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 950,
+    "load_factor": 0.95,
+    "heuristic": "FARB",
+    "waste_pct": 21.07960972850679,
+    "utilization": 0.5392039027149321,
+    "time_per_alloc_ms": 0.04074197066457648,
+    "wall_clock_s": 0.038704872131347656
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 950,
+    "load_factor": 0.95,
+    "heuristic": "DotProduct",
+    "waste_pct": 22.230021816418876,
+    "utilization": 0.5276997818358112,
+    "time_per_alloc_ms": 0.04669063969662315,
+    "wall_clock_s": 0.04435610771179199
+  },
+  {
+    "n_hosts": 100,
+    "n_vms": 950,
+    "load_factor": 0.95,
+    "heuristic": "L2",
+    "waste_pct": 22.444650937298,
+    "utilization": 0.5255534906270201,
+    "time_per_alloc_ms": 0.03714712042557566,
+    "wall_clock_s": 0.035289764404296875
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 2500,
+    "load_factor": 0.5,
+    "heuristic": "BFD",
+    "waste_pct": 11.815688531420617,
+    "utilization": 0.700024932867612,
+    "time_per_alloc_ms": 0.04608945846557617,
+    "wall_clock_s": 0.11522364616394043
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 2500,
+    "load_factor": 0.5,
+    "heuristic": "FARB",
+    "waste_pct": 11.989481292623005,
+    "utilization": 0.6982870052555882,
+    "time_per_alloc_ms": 0.05402603149414062,
+    "wall_clock_s": 0.13506507873535156
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 2500,
+    "load_factor": 0.5,
+    "heuristic": "DotProduct",
+    "waste_pct": 11.219260950534478,
+    "utilization": 0.7059892086764734,
+    "time_per_alloc_ms": 0.060636138916015624,
+    "wall_clock_s": 0.15159034729003906
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 2500,
+    "load_factor": 0.5,
+    "heuristic": "L2",
+    "waste_pct": 11.815688531420617,
+    "utilization": 0.700024932867612,
+    "time_per_alloc_ms": 0.04924163818359375,
+    "wall_clock_s": 0.12310409545898438
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 3500,
+    "load_factor": 0.7,
+    "heuristic": "BFD",
+    "waste_pct": 9.863704751014778,
+    "utilization": 0.7680296191565188,
+    "time_per_alloc_ms": 0.05446086611066546,
+    "wall_clock_s": 0.1906130313873291
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 3500,
+    "load_factor": 0.7,
+    "heuristic": "FARB",
+    "waste_pct": 10.323075110909981,
+    "utilization": 0.7634359155575668,
+    "time_per_alloc_ms": 0.061954702649797716,
+    "wall_clock_s": 0.216841459274292
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 3500,
+    "load_factor": 0.7,
+    "heuristic": "DotProduct",
+    "waste_pct": 10.169801300918612,
+    "utilization": 0.7649686536574805,
+    "time_per_alloc_ms": 0.07947690146309988,
+    "wall_clock_s": 0.2781691551208496
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 3500,
+    "load_factor": 0.7,
+    "heuristic": "L2",
+    "waste_pct": 9.863704751014778,
+    "utilization": 0.7680296191565188,
+    "time_per_alloc_ms": 0.05634001323154994,
+    "wall_clock_s": 0.1971900463104248
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4250,
+    "load_factor": 0.85,
+    "heuristic": "BFD",
+    "waste_pct": 9.80971711805863,
+    "utilization": 0.7907917177083026,
+    "time_per_alloc_ms": 0.05959780075970818,
+    "wall_clock_s": 0.25329065322875977
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4250,
+    "load_factor": 0.85,
+    "heuristic": "FARB",
+    "waste_pct": 10.026584694801013,
+    "utilization": 0.7886230419408788,
+    "time_per_alloc_ms": 0.06922177707447726,
+    "wall_clock_s": 0.2941925525665283
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4250,
+    "load_factor": 0.85,
+    "heuristic": "DotProduct",
+    "waste_pct": 9.421105733883223,
+    "utilization": 0.7946778315500567,
+    "time_per_alloc_ms": 0.08447456359863281,
+    "wall_clock_s": 0.35901689529418945
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4250,
+    "load_factor": 0.85,
+    "heuristic": "L2",
+    "waste_pct": 9.80971711805863,
+    "utilization": 0.7907917177083026,
+    "time_per_alloc_ms": 0.06305139205035042,
+    "wall_clock_s": 0.26796841621398926
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4750,
+    "load_factor": 0.95,
+    "heuristic": "BFD",
+    "waste_pct": 9.457354175233094,
+    "utilization": 0.8054264582476689,
+    "time_per_alloc_ms": 0.06239118074115954,
+    "wall_clock_s": 0.2963581085205078
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4750,
+    "load_factor": 0.95,
+    "heuristic": "FARB",
+    "waste_pct": 9.21619422694239,
+    "utilization": 0.8078380577305759,
+    "time_per_alloc_ms": 0.08034550516228926,
+    "wall_clock_s": 0.381641149520874
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4750,
+    "load_factor": 0.95,
+    "heuristic": "DotProduct",
+    "waste_pct": 9.80926773022412,
+    "utilization": 0.8019073226977588,
+    "time_per_alloc_ms": 0.07968671698319285,
+    "wall_clock_s": 0.378511905670166
+  },
+  {
+    "n_hosts": 500,
+    "n_vms": 4750,
+    "load_factor": 0.95,
+    "heuristic": "L2",
+    "waste_pct": 9.457354175233094,
+    "utilization": 0.8054264582476689,
+    "time_per_alloc_ms": 0.06661430158113178,
+    "wall_clock_s": 0.316417932510376
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 5000,
+    "load_factor": 0.5,
+    "heuristic": "BFD",
+    "waste_pct": 9.481366467423575,
+    "utilization": 0.809948240087669,
+    "time_per_alloc_ms": 0.07380213737487794,
+    "wall_clock_s": 0.36901068687438965
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 5000,
+    "load_factor": 0.5,
+    "heuristic": "FARB",
+    "waste_pct": 9.106298387738628,
+    "utilization": 0.8136989208845185,
+    "time_per_alloc_ms": 0.07475786209106446,
+    "wall_clock_s": 0.37378931045532227
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 5000,
+    "load_factor": 0.5,
+    "heuristic": "DotProduct",
+    "waste_pct": 9.389494227059064,
+    "utilization": 0.8108669624913141,
+    "time_per_alloc_ms": 0.08229584693908693,
+    "wall_clock_s": 0.41147923469543457
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 5000,
+    "load_factor": 0.5,
+    "heuristic": "L2",
+    "waste_pct": 9.481366467423575,
+    "utilization": 0.809948240087669,
+    "time_per_alloc_ms": 0.07595882415771485,
+    "wall_clock_s": 0.3797941207885742
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 7000,
+    "load_factor": 0.7,
+    "heuristic": "BFD",
+    "waste_pct": 9.500445193691728,
+    "utilization": 0.8360300308217035,
+    "time_per_alloc_ms": 0.08037025587899344,
+    "wall_clock_s": 0.5625917911529541
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 7000,
+    "load_factor": 0.7,
+    "heuristic": "FARB",
+    "waste_pct": 8.624871816312432,
+    "utilization": 0.8447857645954964,
+    "time_per_alloc_ms": 0.09540343284606934,
+    "wall_clock_s": 0.6678240299224854
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 7000,
+    "load_factor": 0.7,
+    "heuristic": "DotProduct",
+    "waste_pct": 9.283258331356473,
+    "utilization": 0.838201899445056,
+    "time_per_alloc_ms": 0.09916322571890694,
+    "wall_clock_s": 0.6941425800323486
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 7000,
+    "load_factor": 0.7,
+    "heuristic": "L2",
+    "waste_pct": 9.500445193691728,
+    "utilization": 0.8360300308217035,
+    "time_per_alloc_ms": 0.09053138324192593,
+    "wall_clock_s": 0.6337196826934814
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 8500,
+    "load_factor": 0.85,
+    "heuristic": "BFD",
+    "waste_pct": 8.825548753754239,
+    "utilization": 0.8546016553196004,
+    "time_per_alloc_ms": 0.08985525019028608,
+    "wall_clock_s": 0.7637696266174316
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 8500,
+    "load_factor": 0.85,
+    "heuristic": "FARB",
+    "waste_pct": 8.671541621884307,
+    "utilization": 0.8561417266382997,
+    "time_per_alloc_ms": 0.10608900294584386,
+    "wall_clock_s": 0.9017565250396729
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 8500,
+    "load_factor": 0.85,
+    "heuristic": "DotProduct",
+    "waste_pct": 8.906456440051752,
+    "utilization": 0.8537925784566254,
+    "time_per_alloc_ms": 0.11380728553323184,
+    "wall_clock_s": 0.9673619270324707
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 8500,
+    "load_factor": 0.85,
+    "heuristic": "L2",
+    "waste_pct": 8.825548753754239,
+    "utilization": 0.8546016553196004,
+    "time_per_alloc_ms": 0.09295135385849897,
+    "wall_clock_s": 0.7900865077972412
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 9500,
+    "load_factor": 0.95,
+    "heuristic": "BFD",
+    "waste_pct": 8.581774719107898,
+    "utilization": 0.8629002015268696,
+    "time_per_alloc_ms": 0.10100520284552322,
+    "wall_clock_s": 0.9595494270324707
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 9500,
+    "load_factor": 0.95,
+    "heuristic": "FARB",
+    "waste_pct": 8.439291604268433,
+    "utilization": 0.8643250326752644,
+    "time_per_alloc_ms": 0.10678931286460475,
+    "wall_clock_s": 1.0144984722137451
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 9500,
+    "load_factor": 0.95,
+    "heuristic": "DotProduct",
+    "waste_pct": 8.197088670308348,
+    "utilization": 0.8667470620148652,
+    "time_per_alloc_ms": 0.117220728020919,
+    "wall_clock_s": 1.1135969161987305
+  },
+  {
+    "n_hosts": 1000,
+    "n_vms": 9500,
+    "load_factor": 0.95,
+    "heuristic": "L2",
+    "waste_pct": 8.581774719107898,
+    "utilization": 0.8629002015268696,
+    "time_per_alloc_ms": 0.10382597069991262,
+    "wall_clock_s": 0.9863467216491699
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 25000,
+    "load_factor": 0.5,
+    "heuristic": "BFD",
+    "waste_pct": 7.2187812913392095,
+    "utilization": 0.9080102068885881,
+    "time_per_alloc_ms": 0.19936744689941405,
+    "wall_clock_s": 4.984186172485352
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 25000,
+    "load_factor": 0.5,
+    "heuristic": "FARB",
+    "waste_pct": 6.2586877627990125,
+    "utilization": 0.9176111421739901,
+    "time_per_alloc_ms": 0.21034708023071289,
+    "wall_clock_s": 5.258677005767822
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 25000,
+    "load_factor": 0.5,
+    "heuristic": "DotProduct",
+    "waste_pct": 6.7392464383658455,
+    "utilization": 0.9128055554183218,
+    "time_per_alloc_ms": 0.21974639892578127,
+    "wall_clock_s": 5.493659973144531
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 25000,
+    "load_factor": 0.5,
+    "heuristic": "L2",
+    "waste_pct": 7.2187812913392095,
+    "utilization": 0.9080102068885881,
+    "time_per_alloc_ms": 0.202492733001709,
+    "wall_clock_s": 5.062318325042725
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 35000,
+    "load_factor": 0.7,
+    "heuristic": "BFD",
+    "waste_pct": 6.422285407621205,
+    "utilization": 0.9215927487606672,
+    "time_per_alloc_ms": 0.25845898900713243,
+    "wall_clock_s": 9.046064615249634
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 35000,
+    "load_factor": 0.7,
+    "heuristic": "FARB",
+    "waste_pct": 5.674269501554963,
+    "utilization": 0.9290729078213298,
+    "time_per_alloc_ms": 0.26879095349993026,
+    "wall_clock_s": 9.407683372497559
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 35000,
+    "load_factor": 0.7,
+    "heuristic": "DotProduct",
+    "waste_pct": 6.152251045421498,
+    "utilization": 0.9242930923826644,
+    "time_per_alloc_ms": 0.28537936891828264,
+    "wall_clock_s": 9.988277912139893
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 35000,
+    "load_factor": 0.7,
+    "heuristic": "L2",
+    "waste_pct": 6.422285407621205,
+    "utilization": 0.9215927487606672,
+    "time_per_alloc_ms": 0.26300552231924873,
+    "wall_clock_s": 9.205193281173706
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 42500,
+    "load_factor": 0.85,
+    "heuristic": "BFD",
+    "waste_pct": 6.173551219177512,
+    "utilization": 0.9265685813754765,
+    "time_per_alloc_ms": 0.30189426646513096,
+    "wall_clock_s": 12.830506324768066
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 42500,
+    "load_factor": 0.85,
+    "heuristic": "FARB",
+    "waste_pct": 5.456565657657014,
+    "utilization": 0.9337384369906815,
+    "time_per_alloc_ms": 0.31846404917099896,
+    "wall_clock_s": 13.534722089767456
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 42500,
+    "load_factor": 0.85,
+    "heuristic": "DotProduct",
+    "waste_pct": 6.005007598990021,
+    "utilization": 0.9282540175773513,
+    "time_per_alloc_ms": 0.33070241142721735,
+    "wall_clock_s": 14.054852485656738
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 42500,
+    "load_factor": 0.85,
+    "heuristic": "L2",
+    "waste_pct": 6.173551219177512,
+    "utilization": 0.9265685813754765,
+    "time_per_alloc_ms": 0.3061274752897375,
+    "wall_clock_s": 13.010417699813843
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 47500,
+    "load_factor": 0.95,
+    "heuristic": "BFD",
+    "waste_pct": 6.103443250522838,
+    "utilization": 0.9284943633062899,
+    "time_per_alloc_ms": 0.33462819551166734,
+    "wall_clock_s": 15.8948392868042
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 47500,
+    "load_factor": 0.95,
+    "heuristic": "FARB",
+    "waste_pct": 5.498776411336351,
+    "utilization": 0.9345410316981547,
+    "time_per_alloc_ms": 0.34690225500809524,
+    "wall_clock_s": 16.47785711288452
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 47500,
+    "load_factor": 0.95,
+    "heuristic": "DotProduct",
+    "waste_pct": 5.915432631947443,
+    "utilization": 0.9303744694920439,
+    "time_per_alloc_ms": 0.3605415896365517,
+    "wall_clock_s": 17.125725507736206
+  },
+  {
+    "n_hosts": 5000,
+    "n_vms": 47500,
+    "load_factor": 0.95,
+    "heuristic": "L2",
+    "waste_pct": 6.103443250522838,
+    "utilization": 0.9284943633062899,
+    "time_per_alloc_ms": 0.3398561025920667,
+    "wall_clock_s": 16.14316487312317
+  }
+]
