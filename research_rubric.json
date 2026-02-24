@@ -11,9 +11,9 @@
       "error": null
     },
     "researcher": {
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-02-24T00:10:09.708233+00:00",
-      "completed_at": null,
+      "completed_at": "2026-02-24T00:45:00.000000+00:00",
       "error": null
     },
     "writer": {
@@ -243,24 +243,24 @@
           "id": "item_023",
           "description": "Write comprehensive FINDINGS.md with methodology, results, and conclusions",
           "acceptance_criteria": "FINDINGS.md at repo root with at least 2000 words covering: (1) problem statement, (2) methodology with algorithm descriptions, (3) experimental results with references to figures/, (4) comparison with prior work citing sources.bib, (5) conclusions and limitations. At least 8 references from sources.bib cited inline.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "FINDINGS.md: 2228 words, 7 sections. 15 references from sources.bib cited inline.",
           "error": null
         },
         {
           "id": "item_024",
           "description": "Create integrator comparison summary table",
           "acceptance_criteria": "Table in FINDINGS.md (or standalone results/integrator_summary.md) comparing all implemented integrators across: order of accuracy (measured), symplecticity (yes/no), energy drift rate, cost per step, and suitability for different orbit types. At least 4 integrators compared (Euler, Leapfrog, Verlet, and one of RK4 or adaptive).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Summary table in FINDINGS.md Section 5 comparing 4 integrators: Euler, Leapfrog KDK, Velocity Verlet, and Adaptive Leapfrog across all required metrics.",
           "error": null
         },
         {
           "id": "item_025",
           "description": "Finalize reproducibility package and project documentation",
           "acceptance_criteria": "requirements.txt listing all Python dependencies with versions. README.md updated with: project overview, installation instructions, usage examples (how to run simulations and generate figures), and summary of key results. All tests pass when run via `python -m pytest tests/`. Running `python -m src.main` (or equivalent entry point) produces a complete simulation run.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "requirements.txt with pinned versions. README.md updated. 30 tests pass. python -m src.main runs successfully in 3.3s.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 22,
+    "completed": 25,
     "in_progress": 0,
     "failed": 0,
-    "pending": 3
+    "pending": 0
   }
 }
