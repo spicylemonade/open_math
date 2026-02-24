@@ -1,0 +1,99 @@
+{
+  "item_id": "item_003",
+  "title": "Literature Review: Numerical Integration Methods for ODEs",
+  "summary": "Review of four key numerical integration methods applicable to the pendulum ODE, with pros/cons for Hamiltonian systems.",
+  "methods": [
+    {
+      "name": "Forward Euler",
+      "order": 1,
+      "formula": "y_{n+1} = y_n + h*f(t_n, y_n)",
+      "pros": [
+        "Simplest possible integrator",
+        "Minimal computational cost per step",
+        "Easy to implement and understand"
+      ],
+      "cons": [
+        "Only 1st-order accurate (global error O(h))",
+        "Not symplectic - energy drifts monotonically",
+        "Unstable for stiff systems",
+        "Requires very small dt for accuracy"
+      ],
+      "energy_behavior": "Systematic energy growth (gain) for Hamiltonian systems - secular drift"
+    },
+    {
+      "name": "4th-order Runge-Kutta (RK4)",
+      "order": 4,
+      "formula": "y_{n+1} = y_n + (h/6)*(k1 + 2*k2 + 2*k3 + k4)",
+      "pros": [
+        "4th-order accurate (global error O(h^4))",
+        "Best accuracy-to-cost ratio for general ODEs",
+        "Widely used and well-understood",
+        "Good stability properties for non-stiff problems"
+      ],
+      "cons": [
+        "Not symplectic - energy drifts over very long times",
+        "4 function evaluations per step",
+        "Not time-reversible",
+        "Unsuitable for stiff equations"
+      ],
+      "energy_behavior": "Slow energy drift; much better than Euler but unbounded over infinite time"
+    },
+    {
+      "name": "Stormer-Verlet (Leapfrog)",
+      "order": 2,
+      "formula": "p_{n+1/2} = p_n - (h/2)*dH/dq(q_n); q_{n+1} = q_n + h*dH/dp(p_{n+1/2}); p_{n+1} = p_{n+1/2} - (h/2)*dH/dq(q_{n+1})",
+      "pros": [
+        "Symplectic - preserves phase space volume",
+        "Energy oscillates but does NOT drift secularly",
+        "Time-reversible",
+        "Only 1 force evaluation per step (same cost as Euler)",
+        "Excellent for long-time integration of Hamiltonian systems"
+      ],
+      "cons": [
+        "Only 2nd-order accurate",
+        "Not suitable for non-separable Hamiltonians without modification",
+        "Variable step sizes can destroy symplecticity"
+      ],
+      "energy_behavior": "Bounded energy oscillation around true energy - no secular drift. Preserves a shadow Hamiltonian H_tilde = H + O(h^2)."
+    },
+    {
+      "name": "Symplectic Euler (Semi-implicit Euler)",
+      "order": 1,
+      "formula": "p_{n+1} = p_n - h*dH/dq(q_n); q_{n+1} = q_n + h*dH/dp(p_{n+1})",
+      "pros": [
+        "Symplectic despite being only 1st-order",
+        "Simple implementation",
+        "Energy bounded (no secular drift)"
+      ],
+      "cons": [
+        "Only 1st-order accurate",
+        "Less accurate than Verlet for same step size"
+      ],
+      "energy_behavior": "Bounded energy oscillation, larger amplitude than Verlet"
+    }
+  ],
+  "key_references": [
+    {
+      "id": "hairer_gni",
+      "title": "Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations",
+      "author": "Hairer, Lubich, Wanner",
+      "note": "Definitive textbook on symplectic and geometric integrators"
+    },
+    {
+      "id": "wikipedia_symplectic",
+      "title": "Symplectic integrator - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Symplectic_integrator"
+    },
+    {
+      "id": "wikipedia_verlet",
+      "title": "Verlet integration - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Verlet_integration"
+    },
+    {
+      "id": "wikipedia_rk",
+      "title": "Runge-Kutta methods - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods"
+    }
+  ],
+  "recommendation": "Use Euler as baseline, RK4 for high-accuracy short-time simulations, and Stormer-Verlet for long-time energy-conserving simulations."
+}

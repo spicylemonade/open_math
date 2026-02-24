@@ -1,0 +1,52 @@
+{
+  "item_id": "item_006",
+  "title": "Mathematical Model and Numerical Method Selection",
+  "model": {
+    "system": "Simple pendulum with optional damping",
+    "ode_2nd_order": "theta'' = -(g/L)*sin(theta) - b*omega",
+    "state_space_form": {
+      "state_vector": "[theta, omega]",
+      "equations": [
+        "d(theta)/dt = omega",
+        "d(omega)/dt = -(g/L)*sin(theta) - b*omega"
+      ],
+      "note": "b=0 for undamped case"
+    },
+    "parameters": {
+      "L": {"description": "Pendulum length", "unit": "m", "default": 1.0},
+      "g": {"description": "Gravitational acceleration", "unit": "m/s^2", "default": 9.81},
+      "m": {"description": "Bob mass (cancels in EOM, kept for energy)", "unit": "kg", "default": 1.0},
+      "b": {"description": "Damping coefficient", "unit": "1/s", "default": 0.0},
+      "theta0": {"description": "Initial angle", "unit": "rad"},
+      "omega0": {"description": "Initial angular velocity", "unit": "rad/s", "default": 0.0}
+    },
+    "energy_function": "E = 0.5*m*L^2*omega^2 - m*g*L*cos(theta)",
+    "energy_conservation_metric": "max|E(t) - E(0)| / |E(0)|",
+    "exact_period": "T = 4*sqrt(L/g)*K(sin(theta0/2)), where K is the complete elliptic integral of the first kind",
+    "small_angle_period": "T0 = 2*pi*sqrt(L/g)",
+    "small_angle_solution": "theta(t) = theta0*cos(sqrt(g/L)*t)"
+  },
+  "integrators_selected": [
+    {
+      "name": "Euler",
+      "role": "Baseline",
+      "order": 1,
+      "description": "Forward Euler method. Simple but accumulates energy drift. Used as baseline for comparison.",
+      "update_rule": "theta_{n+1} = theta_n + dt*omega_n; omega_{n+1} = omega_n + dt*f(theta_n)"
+    },
+    {
+      "name": "RK4",
+      "role": "Primary high-accuracy",
+      "order": 4,
+      "description": "Classical 4th-order Runge-Kutta. Best accuracy per step for short/medium simulations. 4 function evaluations per step.",
+      "update_rule": "Standard RK4 with k1-k4 slope evaluations"
+    },
+    {
+      "name": "Stormer-Verlet",
+      "role": "Primary long-time",
+      "order": 2,
+      "description": "Symplectic leapfrog integrator. Energy oscillates but never drifts. Ideal for long-term simulations. Kick-drift-kick form.",
+      "update_rule": "omega_{n+1/2} = omega_n + (dt/2)*f(theta_n); theta_{n+1} = theta_n + dt*omega_{n+1/2}; omega_{n+1} = omega_{n+1/2} + (dt/2)*f(theta_{n+1})"
+    }
+  ]
+}

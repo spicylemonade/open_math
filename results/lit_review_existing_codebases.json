@@ -1,0 +1,46 @@
+{
+  "item_id": "item_004",
+  "title": "Literature Review: Existing Open-Source Pendulum Simulation Codebases",
+  "summary": "Review of existing GitHub repositories implementing pendulum simulations in Python.",
+  "implementations_reviewed": [
+    {
+      "name": "thecodebeatz/pendulum-simulation",
+      "url": "https://github.com/thecodebeatz/pendulum-simulation",
+      "description": "Single pendulum ODE solver using SciPy's RK45 (dopri5) integrator with Matplotlib visualization",
+      "architecture": "Single script, uses scipy.integrate.solve_ivp for ODE solving, Matplotlib for plotting angle vs time",
+      "strengths": ["Clean SciPy integration", "Shows amplitude-dependent period"],
+      "weaknesses": ["No energy tracking", "Single integrator only", "No comparison across methods"]
+    },
+    {
+      "name": "SiliconWit/modelling-and-simulation-in-python",
+      "url": "https://github.com/SiliconWit/modelling-and-simulation-in-python",
+      "description": "Educational toolkit with both Euler and RK4 pendulum implementations",
+      "architecture": "Separate files for each method (1pendulum.py for Euler, 1pendulum-rk4.py for RK4). Uses raw NumPy arrays and Matplotlib.",
+      "strengths": ["Side-by-side comparison of Euler vs RK4", "Educational focus"],
+      "weaknesses": ["No symplectic integrators", "No energy conservation analysis", "No phase portraits"]
+    },
+    {
+      "name": "Demiz1/SimplePendulum",
+      "url": "https://github.com/Demiz1/SimplePendulum",
+      "description": "Simple pendulum simulation with angle, angular rate, and visual state plots",
+      "architecture": "NumPy-based implementation with Matplotlib animation. Plots theta(t), omega(t), and pendulum visualization.",
+      "strengths": ["Clean visualization", "Shows both angle and angular rate"],
+      "weaknesses": ["Single integration method", "No quantitative validation", "No energy tracking"]
+    },
+    {
+      "name": "jakevdp triple pendulum blog",
+      "url": "https://jakevdp.github.io/blog/2017/03/08/triple-pendulum-chaos/",
+      "description": "Triple pendulum using SymPy's Kane's method and scipy.integrate.odeint",
+      "architecture": "Symbolic derivation with SymPy, numerical integration with SciPy, Matplotlib animation",
+      "strengths": ["Rigorous Lagrangian derivation", "Excellent visualization"],
+      "weaknesses": ["Overcomplicated for simple pendulum", "No integrator comparison"]
+    }
+  ],
+  "design_lessons": [
+    "Keep the core physics separate from visualization",
+    "Support multiple integration methods with a common interface",
+    "Track and plot energy conservation as a key diagnostic",
+    "Include phase portrait (theta vs omega) as standard output",
+    "Use fixed random seeds and save all parameters for reproducibility"
+  ]
+}

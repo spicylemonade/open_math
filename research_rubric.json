@@ -47,40 +47,40 @@
           "id": "item_002",
           "description": "Literature review: classical pendulum dynamics and equations of motion",
           "acceptance_criteria": "Web search conducted for pendulum physics references (Lagrangian/Newtonian formulations, small-angle approximation, exact elliptic-integral solution). At least 3 textbook or paper references identified and summarized in a notes document",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "5 references identified: Herman (LibreTexts), Tedrake (MIT Underactuated), Wikipedia Pendulum, Belendez et al., Butikov. Notes saved to results/lit_review_pendulum_dynamics.json",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Literature review: numerical integration methods for ODEs",
           "acceptance_criteria": "Web search conducted for papers and resources on Euler, RK4, Verlet/Stormer-Verlet, and symplectic integrators applied to Hamiltonian systems. At least 4 distinct methods identified with pros/cons documented",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 methods documented: Euler (O(h)), RK4 (O(h^4)), Stormer-Verlet (O(h^2), symplectic), Symplectic Euler (O(h), symplectic). Notes saved to results/lit_review_numerical_methods.json",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Literature review: existing open-source pendulum simulation codebases",
           "acceptance_criteria": "Web search conducted for GitHub repositories and educational codebases implementing pendulum simulations (e.g., matplotlib animations, Pygame demos, Vpython models). At least 3 existing implementations reviewed with architecture notes",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "4 codebases reviewed: thecodebeatz/pendulum-simulation, SiliconWit/modelling-and-simulation-in-python, Demiz1/SimplePendulum, jakevdp triple pendulum blog. Notes saved to results/lit_review_existing_codebases.json",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Create and populate sources.bib with all consulted references",
           "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. At least 10 relevant references cited covering: classical mechanics textbooks, numerical methods papers, symplectic integrator literature, and existing simulation codebases",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib created with 16 BibTeX entries covering: classical mechanics (Goldstein, Belendez, Butikov), numerical methods (Hairer GNI, Sanz-Serna, RK/Verlet/symplectic Wikipedia), and existing codebases (4 GitHub repos/blogs).",
           "error": null
         },
         {
           "id": "item_006",
           "description": "Define mathematical model and select numerical methods",
           "acceptance_criteria": "Written specification documenting: (1) the nonlinear ODE theta'' = -(g/L)*sin(theta), (2) state-space form [theta, omega], (3) selection of at least two integrators (Euler as baseline, RK4 or symplectic as primary), (4) energy function E = 0.5*m*L^2*omega^2 - m*g*L*cos(theta)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Mathematical model spec saved to results/mathematical_model_spec.json. Three integrators selected: Euler (baseline), RK4 (high-accuracy), Stormer-Verlet (symplectic long-time).",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 1,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 19
   }
 }

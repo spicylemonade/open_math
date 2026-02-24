@@ -1,2 +1,158 @@
 % Bibliography for research project
 % Pendulum simulation: classical mechanics, numerical methods, and visualization
+
+% === Classical Mechanics & Pendulum Dynamics ===
+
+@book{goldstein2002classical,
+  title={Classical Mechanics},
+  author={Goldstein, Herbert and Poole, Charles P and Safko, John L},
+  edition={3rd},
+  year={2002},
+  publisher={Addison-Wesley},
+  note={Standard graduate textbook covering Lagrangian and Hamiltonian mechanics, including the simple pendulum as a canonical example}
+}
+
+@article{belendez2007exact,
+  title={Exact solution for the nonlinear pendulum},
+  author={Bel{\'e}ndez, Augusto and Pascual, Carolina and M{\'e}ndez, David I and Bel{\'e}ndez, Tarsicio and Neipp, Cristian},
+  journal={Revista Brasileira de Ensino de F{\'\i}sica},
+  volume={29},
+  number={4},
+  pages={645--648},
+  year={2007},
+  doi={10.1590/S1806-11172007000400024},
+  note={Derives exact closed-form solution for the nonlinear pendulum using Jacobi elliptic functions}
+}
+
+@misc{wikipedia_pendulum,
+  title={Pendulum (mechanics)},
+  author={{Wikipedia contributors}},
+  year={2026},
+  url={https://en.wikipedia.org/wiki/Pendulum_(mechanics)},
+  note={Comprehensive reference covering Newtonian derivation, energy conservation, exact period via elliptic integrals, and AGM computation}
+}
+
+@misc{tedrake_underactuated,
+  title={Underactuated Robotics -- Ch. 2: The Simple Pendulum},
+  author={Tedrake, Russ},
+  year={2024},
+  institution={MIT},
+  url={https://underactuated.mit.edu/pend.html},
+  note={Lagrangian derivation of pendulum EOM with damping and control torques, state-space formulation and phase portrait analysis}
+}
+
+@misc{herman_libretexts,
+  title={A First Course in Differential Equations for Scientists and Engineers -- Ch. 7.9: The Period of the Nonlinear Pendulum},
+  author={Herman, Russell},
+  year={2024},
+  url={https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/07:_Nonlinear_Systems/7.09:_The_Period_of_the_Nonlinear_Pendulum},
+  note={Derives exact period T = (2*T0/pi)*K(sin(theta0/2)) and series expansion}
+}
+
+@article{butikov2012oscillations,
+  title={Oscillations of a simple pendulum with extremely large amplitudes},
+  author={Butikov, Eugene I},
+  journal={European Journal of Physics},
+  volume={33},
+  number={6},
+  pages={1555--1563},
+  year={2012},
+  doi={10.1088/0143-0807/33/6/1555},
+  note={Analyzes pendulum for amplitudes near pi, covering separatrix behavior and rotational regime}
+}
+
+% === Numerical Methods ===
+
+@book{hairer2006geometric,
+  title={Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential Equations},
+  author={Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
+  edition={2nd},
+  year={2006},
+  publisher={Springer},
+  series={Springer Series in Computational Mathematics},
+  volume={31},
+  doi={10.1007/3-540-30666-8},
+  note={Definitive textbook on symplectic and geometric integrators for Hamiltonian systems}
+}
+
+@article{sanz1992symplectic,
+  title={Symplectic integrators for {H}amiltonian problems: an overview},
+  author={Sanz-Serna, JM},
+  journal={Acta Numerica},
+  volume={1},
+  pages={243--286},
+  year={1992},
+  publisher={Cambridge University Press},
+  doi={10.1017/S0962492900002282},
+  note={Foundational review of symplectic integration methods for Hamiltonian ODEs}
+}
+
+@misc{wikipedia_symplectic,
+  title={Symplectic integrator},
+  author={{Wikipedia contributors}},
+  year={2026},
+  url={https://en.wikipedia.org/wiki/Symplectic_integrator},
+  note={Overview of symplectic methods including Stormer-Verlet, leapfrog, and higher-order variants}
+}
+
+@misc{wikipedia_verlet,
+  title={Verlet integration},
+  author={{Wikipedia contributors}},
+  year={2026},
+  url={https://en.wikipedia.org/wiki/Verlet_integration},
+  note={History and derivation of Verlet/Stormer-Verlet method, symplecticity and time-reversibility properties}
+}
+
+@misc{wikipedia_rk,
+  title={Runge--Kutta methods},
+  author={{Wikipedia contributors}},
+  year={2026},
+  url={https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods},
+  note={Overview of RK family including classical RK4, convergence order O(h^4), and Butcher tableau formulation}
+}
+
+@article{hairer2003stormer,
+  title={Geometric numerical integration illustrated by the {S}t{\"o}rmer--{V}erlet method},
+  author={Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
+  journal={Acta Numerica},
+  volume={12},
+  pages={399--450},
+  year={2003},
+  publisher={Cambridge University Press},
+  doi={10.1017/S0962492902000144},
+  note={Detailed analysis of Stormer-Verlet: symplecticity, backward error analysis, shadow Hamiltonian}
+}
+
+% === Existing Simulation Codebases ===
+
+@misc{github_thecodebeatz,
+  title={pendulum-simulation: Python pendulum ODE solver with {S}ci{P}y and {M}atplotlib},
+  author={{thecodebeatz}},
+  year={2024},
+  url={https://github.com/thecodebeatz/pendulum-simulation},
+  note={Single pendulum using scipy.integrate.solve\_ivp with RK45, demonstrates amplitude-dependent period}
+}
+
+@misc{github_siliconwit,
+  title={Modelling and Simulation in Python},
+  author={{SiliconWit}},
+  year={2024},
+  url={https://github.com/SiliconWit/modelling-and-simulation-in-python},
+  note={Educational toolkit with Euler and RK4 pendulum implementations}
+}
+
+@misc{github_demiz1,
+  title={SimplePendulum: A simple pendulum simulation},
+  author={{Demiz1}},
+  year={2024},
+  url={https://github.com/Demiz1/SimplePendulum},
+  note={NumPy-based pendulum with angle, angular rate, and visual state plots}
+}
+
+@misc{vanderplas2017triple,
+  title={Triple Pendulum {CHAOS}!},
+  author={VanderPlas, Jake},
+  year={2017},
+  url={https://jakevdp.github.io/blog/2017/03/08/triple-pendulum-chaos/},
+  note={Triple pendulum using SymPy Kane's method and scipy.integrate.odeint with Matplotlib animation}
+}

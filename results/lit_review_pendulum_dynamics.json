@@ -1,0 +1,51 @@
+{
+  "item_id": "item_002",
+  "title": "Literature Review: Classical Pendulum Dynamics and Equations of Motion",
+  "summary": "Comprehensive review of simple pendulum physics covering Newtonian and Lagrangian formulations, small-angle approximation, and exact elliptic-integral solutions.",
+  "references": [
+    {
+      "id": "herman_libretexts",
+      "title": "A First Course in Differential Equations for Scientists and Engineers - Ch. 7: Nonlinear Systems",
+      "author": "R. Herman",
+      "key_content": "Derives the exact period T = (2*T0/pi)*K(k) where k=sin(theta0/2) and K is the complete elliptic integral of the first kind. Provides series expansion T = 2*pi*sqrt(L/g)*[1 + (1/4)k^2 + (9/64)k^4 + ...]. Also covers exact solution using Jacobi elliptic function sn.",
+      "url": "https://math.libretexts.org/Bookshelves/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientists_and_Engineers_(Herman)/07:_Nonlinear_Systems/7.09:_The_Period_of_the_Nonlinear_Pendulum"
+    },
+    {
+      "id": "tedrake_underactuated",
+      "title": "Underactuated Robotics - Ch. 2: The Simple Pendulum",
+      "author": "R. Tedrake (MIT)",
+      "key_content": "Derives equations of motion via Lagrangian: m*L^2*theta_ddot + m*g*L*sin(theta) = Q, where Q includes damping and control torques. Covers state-space formulation and phase portrait analysis.",
+      "url": "https://underactuated.mit.edu/pend.html"
+    },
+    {
+      "id": "wikipedia_pendulum",
+      "title": "Pendulum (mechanics) - Wikipedia",
+      "author": "Wikipedia contributors",
+      "key_content": "Comprehensive reference covering: Newtonian derivation (F=ma), energy conservation, exact period via elliptic integrals, AGM-based computation T = 2*pi/M(1,cos(theta0/2))*sqrt(L/g), and the full nonlinear solution using Jacobi elliptic functions.",
+      "url": "https://en.wikipedia.org/wiki/Pendulum_(mechanics)"
+    },
+    {
+      "id": "belendez_exact",
+      "title": "Exact solution for the nonlinear pendulum",
+      "author": "Belendez et al.",
+      "key_content": "Derives exact closed-form solutions for the nonlinear pendulum using Jacobi elliptic functions. Demonstrates that the effect of nonlinearity appears only in the amplitude-dependent frequency.",
+      "url": "https://www.researchgate.net/publication/39575612_Exact_solution_for_the_nonlinear_pendulum"
+    },
+    {
+      "id": "butikov_large_amplitude",
+      "title": "Oscillations of a simple pendulum with extremely large amplitudes",
+      "author": "E.I. Butikov",
+      "key_content": "Analyzes pendulum behavior for amplitudes approaching pi, including the separatrix behavior where the period diverges to infinity. Covers both oscillatory and rotational regimes.",
+      "url": "http://butikov.faculty.ifmo.ru/LargeAmplitude.pdf"
+    }
+  ],
+  "key_equations": {
+    "equation_of_motion": "theta'' = -(g/L)*sin(theta)",
+    "lagrangian": "L = 0.5*m*L^2*theta_dot^2 + m*g*L*cos(theta)",
+    "energy": "E = 0.5*m*L^2*omega^2 - m*g*L*cos(theta)",
+    "small_angle_solution": "theta(t) = theta0*cos(sqrt(g/L)*t)",
+    "small_angle_period": "T0 = 2*pi*sqrt(L/g)",
+    "exact_period": "T = (2*T0/pi)*K(sin(theta0/2))",
+    "exact_solution": "theta(t) = 2*arcsin(sin(theta0/2)*sn(omega*t + K; k))"
+  }
+}
