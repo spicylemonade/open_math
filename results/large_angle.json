@@ -1,0 +1,14 @@
+{
+  "theta_0": 3.0,
+  "g": 9.81,
+  "L": 1.0,
+  "dt": 0.001,
+  "total_time": 30.0,
+  "method": "rk4",
+  "T_exact": 5.158066754267864,
+  "T_numerical": 5.15800000000212,
+  "relative_period_error_pct": 0.001294172195216263,
+  "T_small_angle": 2.0060666807106475,
+  "k_elliptic": 0.9974949866040544,
+  "num_periods_measured": 4
+}

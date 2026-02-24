@@ -204,8 +204,8 @@
           "id": "item_019",
           "description": "Large-angle regime test to verify nonlinear behavior",
           "acceptance_criteria": "Run simulation with theta_0=3.0 rad (near inverted) using RK4 with dt=0.001. Plot theta(t) showing non-sinusoidal oscillation. Compare period against the exact elliptic-integral period formula T=4*sqrt(L/g)*K(sin(theta_0/2)). Relative period error < 1% documented in results/large_angle.json",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "T_exact=5.158s (elliptic integral), T_numerical=5.158s. Relative error 0.001% << 1%. Non-sinusoidal behavior clearly visible in plot. T/T_0=2.57x shows large-angle period elongation.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 18,
+    "completed": 19,
     "in_progress": 0,
     "failed": 0,
-    "pending": 7
+    "pending": 6
   }
 }
