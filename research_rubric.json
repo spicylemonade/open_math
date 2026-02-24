@@ -251,8 +251,8 @@
           "id": "item_024",
           "description": "Final validation: reproduce key results from literature",
           "acceptance_criteria": "At least one quantitative result (e.g., energy drift scaling order, period vs amplitude relationship) matches a published result cited in sources.bib to within stated tolerances. Comparison documented in results/analysis.md with explicit citation",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Two results reproduced: (1) elliptic integral period to 0.001% [herman_elliptic_period], (2) Verlet O(dt^2) energy scaling confirmed with ratio 3.99≈4.0 [hairer_geometric]. Both documented in analysis.md Section 7.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 23,
+    "completed": 24,
     "in_progress": 0,
     "failed": 0,
-    "pending": 2
+    "pending": 1
   }
 }

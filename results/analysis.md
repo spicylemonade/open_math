@@ -55,6 +55,20 @@ From `results/performance.csv` and `figures/perf_accuracy.png`:
 
 4. **The nonlinear pendulum period** matches the exact elliptic-integral formula to high precision, confirming correct implementation of the equations of motion [herman_elliptic_period].
 
+## 7. Reproduction of Published Results
+
+### 7a. Elliptic Integral Period Formula
+
+**Published result** [herman_elliptic_period]: The exact period of a nonlinear pendulum is T = 4*sqrt(L/g)*K(sin(theta_0/2)), where K is the complete elliptic integral of the first kind.
+
+**Our result**: At theta_0 = 3.0 rad with RK4 (dt=0.001), the simulated period T_numerical = 5.158 s matches the analytical T_exact = 5.158067 s to **0.001% relative error**. This validates both the equation of motion implementation and the RK4 integrator accuracy.
+
+### 7b. Verlet Energy Conservation Scaling
+
+**Published result** [hairer_geometric, Ch. VI]: For the Stormer-Verlet method applied to separable Hamiltonian systems, the energy error is bounded by O(dt^2) for all time (not growing secularly).
+
+**Our result**: The convergence study confirms O(dt^2) scaling for Verlet energy drift. At dt=0.01 (50s), drift = 1.10e-3 J; at dt=0.005, drift = 2.76e-4 J. The ratio 1.10e-3 / 2.76e-4 = 3.99 ≈ (0.01/0.005)^2 = 4.0, confirming exact second-order scaling. Over 1000 s, the drift remains bounded at 0.02%, consistent with Hairer et al.'s theoretical guarantee.
+
 ## References
 
 - [hairer_geometric] Hairer, Lubich, Wanner. *Geometric Numerical Integration*, 2nd ed. Springer, 2006.
