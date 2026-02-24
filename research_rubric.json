@@ -157,8 +157,8 @@
           "id": "item_014",
           "description": "Add phase-space visualization (theta vs omega)",
           "acceptance_criteria": "Phase portrait plot saved to figures/phase_space.png showing trajectories for at least two different initial conditions. Plot demonstrates closed orbits for the simple pendulum. Compared qualitatively against phase portraits in literature (cite relevant source from sources.bib)",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Phase portrait with 3 ICs (theta_0=0.5,1.5,2.5 rad) showing closed orbits. Consistent with phase portraits in tedrake_underactuated and phaseportrait_pkg references.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 13,
+    "completed": 14,
     "in_progress": 0,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
