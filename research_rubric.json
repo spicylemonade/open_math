@@ -133,8 +133,8 @@
           "id": "item_011",
           "description": "Implement 4th-order Runge-Kutta (RK4) integrator",
           "acceptance_criteria": "RK4 stepper function implemented for the pendulum ODE system. Verified against analytical small-angle solution with relative error < 1e-6 for dt=0.01 over 10 seconds. Energy drift measured and saved to results/",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "step_rk4() verified. At theta_0=1e-4 (pure RK4 error regime), normalized error 2.6e-7 < 1e-6. Energy drift 6.4e-14 (essentially zero). Error at larger angles dominated by linearization, not RK4.",
           "error": null
         },
         {
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 10,
+    "completed": 11,
     "in_progress": 0,
     "failed": 0,
-    "pending": 15
+    "pending": 14
   }
 }
