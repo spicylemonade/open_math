@@ -267,16 +267,16 @@
           "id": "item_026",
           "description": "Package code for reproducibility",
           "acceptance_criteria": "Repository contains: (1) a README.md updated with project description, installation instructions, and usage examples, (2) requirements.txt or pyproject.toml with pinned dependency versions, (3) a Makefile or run script (run_experiments.sh) that reproduces all experiments from a clean install, (4) a Docker or conda environment file for full reproducibility, (5) all random seeds documented and configurable. A fresh clone + install + run of the small benchmark completes without errors.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created README.md (project description, installation, quick start, directory structure, results summary, citation), run_experiments.sh (5-step pipeline with configurable seed and skip flags), environment.yml (conda env with Python 3.10). All random seeds documented and configurable via --seed flag.",
           "error": null
         },
         {
           "id": "item_027",
           "description": "Document limitations, failure modes, and future work",
           "acceptance_criteria": "A section in the research report (or standalone docs/limitations.md) that: (1) identifies at least 3 limitations of the approach (e.g., GNN generalization to unseen city topologies, OSRM server dependency, scalability ceiling), (2) documents failure modes observed during experiments (instance types where novel solvers performed worst), (3) proposes at least 3 concrete directions for future work with specific hypotheses (e.g., 'fine-tuning GNN per-city may close the generalization gap by X%'), (4) honest assessment of whether the 0.5% improvement target was met and under what conditions.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Created docs/limitations.md with 5 limitations (GNN generalization, scalability ceiling, small benchmark, OSRM dependency, synthetic traffic), 4 failure modes (OR-Tools overhead, savings degradation, training bottleneck, ensemble underperformance), 5 future work directions with hypotheses, and honest assessment of 0.5% target (met on small instances but not at intended 200+ node scale).",
           "error": null
         },
         {
@@ -292,9 +292,9 @@
   ],
   "summary": {
     "total_items": 28,
-    "completed": 25,
+    "completed": 27,
     "in_progress": 0,
     "failed": 0,
-    "pending": 3
+    "pending": 1
   }
 }

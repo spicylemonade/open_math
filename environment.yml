@@ -1,0 +1,55 @@
+# Conda environment for full reproducibility
+# Project: Better Heuristics for TSP on Real Road Networks
+#
+# Create the environment:
+#   conda env create -f environment.yml
+#
+# Activate the environment:
+#   conda activate road-tsp
+#
+# Update after changes:
+#   conda env update -f environment.yml --prune
+
+name: road-tsp
+
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  # Python version
+  - python=3.10
+
+  # Core scientific computing
+  - numpy>=1.24.0
+  - scipy>=1.10.0
+  - pandas>=2.0.0
+
+  # Graph and network analysis
+  - networkx>=3.1
+
+  # OpenStreetMap data extraction
+  - osmnx>=1.6.0
+
+  # Machine learning (PyTorch via conda for optimal platform support)
+  - pytorch>=2.0.0
+  - cpuonly  # Use 'pytorch-cuda=11.8' instead for GPU support
+
+  # Visualization
+  - matplotlib>=3.7.0
+  - seaborn>=0.12.0
+
+  # Configuration and data formats
+  - pyyaml>=6.0
+  - pyproj>=3.5.0
+
+  # Utilities
+  - tqdm>=4.65.0
+
+  # Development and testing
+  - pip
+
+  # Install remaining packages via pip (those not available on conda-forge)
+  - pip:
+      - ortools>=9.7
