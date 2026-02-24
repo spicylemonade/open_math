@@ -1,8 +1,8 @@
 {
   "version": "1.0",
   "created_at": "2026-02-24T12:00:00Z",
-  "updated_at": "2026-02-24T07:26:18.225894+00:00",
-  "current_agent": "orchestrator",
+  "updated_at": "2026-02-24T08:30:00.000000+00:00",
+  "current_agent": "researcher",
   "agent_status": {
     "orchestrator": {
       "status": "completed",
@@ -11,8 +11,8 @@
       "error": null
     },
     "researcher": {
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-02-24T07:26:20.652140+00:00",
       "completed_at": null,
       "error": null
     },
@@ -39,40 +39,40 @@
           "id": "item_001",
           "description": "Formalize the 2D vector bin packing problem for cloud VM scheduling",
           "acceptance_criteria": "Produce a written problem definition (in a markdown or LaTeX document) that formally specifies: (a) bins as physical hosts with CPU and RAM capacities, (b) items as VM requests with CPU and RAM demands, (c) the online arrival/departure model, (d) the optimization objective (minimize hosts used / minimize fragmentation), and (e) key constraints (no overcommit per dimension, dynamic departures). Must reference the standard vector bin packing formulation from Christensen et al. survey.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Produced problem_formulation.md with formal specification of bins, items, online model, objectives, and constraints. References Christensen et al. (2017) survey throughout.",
           "error": null
         },
         {
           "id": "item_002",
           "description": "Conduct comprehensive literature review on bin packing heuristics for VM placement via web search",
-          "acceptance_criteria": "Search the web for and read at least 15 papers/resources covering: (a) classical 1D and 2D online bin packing competitive ratios (Harmonic++, H\u2297C by Seiden & van Stee, Han et al. 2.5545 upper bound), (b) vector bin packing heuristics (Panigrahy et al. DotProduct/L2 from Microsoft Research), (c) production systems (Protean OSDI'20 by Hadary et al., Borg scheduler), (d) ML-augmented approaches (MLSys'23 lifetime-aware placement, MiCo LLM-driven heuristics 2025), (e) metaheuristic approaches (GA+BFD hybrids). Document each paper with a 2-3 sentence summary in a literature review document.",
-          "status": "pending",
-          "notes": null,
+          "acceptance_criteria": "Search the web for and read at least 15 papers/resources covering: (a) classical 1D and 2D online bin packing competitive ratios (Harmonic++, H⊗C by Seiden & van Stee, Han et al. 2.5545 upper bound), (b) vector bin packing heuristics (Panigrahy et al. DotProduct/L2 from Microsoft Research), (c) production systems (Protean OSDI'20 by Hadary et al., Borg scheduler), (d) ML-augmented approaches (MLSys'23 lifetime-aware placement, MiCo LLM-driven heuristics 2025), (e) metaheuristic approaches (GA+BFD hybrids). Document each paper with a 2-3 sentence summary in a literature review document.",
+          "status": "completed",
+          "notes": "Produced literature_review.md covering 18+ papers/resources across all required categories: classical 1D/2D algorithms (Seiden, Han et al.), vector packing heuristics (Panigrahy et al.), production systems (Borg, Protean, Tetris), ML-augmented (Barbalho et al. MLSys'23, VMAgent), metaheuristics (GA+BFD hybrids, Song et al. adaptive). Includes gap analysis identifying research opportunities.",
           "error": null
         },
         {
           "id": "item_003",
           "description": "Create and populate sources.bib with BibTeX entries for all consulted sources",
           "acceptance_criteria": "A valid sources.bib file exists in the repo root containing well-formed BibTeX entries for at least 10 relevant papers. Must include entries for: Hadary et al. (Protean, OSDI'20), Panigrahy et al. (Heuristics for Vector Bin Packing), Han et al. (2.5545 upper bound on 2D online bin packing), Christensen et al. (Multidimensional Bin Packing survey), and at least 6 additional relevant works. Each entry must have correct author, title, year, and venue fields.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "sources.bib contains 19 well-formed BibTeX entries including all 4 required papers plus 15 additional works. All entries have correct author, title, year, and venue fields.",
           "error": null
         },
         {
           "id": "item_004",
           "description": "Survey and document available public workload trace datasets",
           "acceptance_criteria": "Produce a document cataloging at least 4 public datasets: (a) Google Cluster Trace v3 (ClusterData2019, 8 Borg cells, May 2019), (b) Azure Traces for Packing 2020 (from Protean paper), (c) Azure VM Traces 2017/2019, (d) Huawei Cloud VM Scheduling Dataset (Huawei-East-1). For each dataset document: source URL, schema (columns/fields), size, time span, and relevance to 2D bin packing evaluation. Identify which datasets will be used for primary evaluation and why.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Produced datasets_survey.md cataloging all 4 required datasets with URLs, schema, size, time span, and relevance. Identified Azure Packing 2020 as primary and Google ClusterData2019 as secondary evaluation datasets with rationale.",
           "error": null
         },
         {
           "id": "item_005",
           "description": "Define evaluation metrics and success criteria for fragmentation reduction",
           "acceptance_criteria": "Document at least 5 quantitative metrics with precise mathematical definitions: (a) host utilization ratio (used CPU+RAM / total CPU+RAM), (b) fragmentation index (percentage of hosts with stranded resources in one dimension), (c) number of active hosts for a given workload, (d) resource waste percentage (unallocated capacity on active hosts), (e) allocation failure rate. Define the target: a novel heuristic must reduce resource waste by at least 2 percentage points compared to the best baseline (FFD/BFD) on at least one production trace.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Produced evaluation_metrics.md with precise mathematical definitions for all 5 metrics. Defined success target: 2pp waste reduction vs best baseline. Includes measurement protocol with configurable intervals, statistical robustness via 3 random seeds, and output format specifications.",
           "error": null
         }
       ]
@@ -268,9 +268,9 @@
   ],
   "summary": {
     "total_items": 25,
-    "completed": 0,
+    "completed": 5,
     "in_progress": 0,
     "failed": 0,
-    "pending": 25
+    "pending": 20
   }
 }
