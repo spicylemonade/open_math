@@ -1,0 +1,292 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-25T07:10:00Z",
+  "updated_at": "2026-02-25T07:12:25.061335+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-25T07:10:00Z",
+      "completed_at": "2026-02-25T07:12:25.061295+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and establish project scaffold",
+          "acceptance_criteria": "A written document (e.g. ARCHITECTURE.md) listing all directories (figures/, results/, etc.), their intended purposes, and a proposed module layout for the project (data pipeline, solvers, evaluation, visualization). Must include a dependency list (Python packages, OSRM, etc.).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the ATSP-TW problem definition for real road networks",
+          "acceptance_criteria": "A document (problem_definition.md) containing: (1) formal mathematical definition of the Asymmetric TSP with Time Windows on road networks, (2) explicit enumeration of how real road networks differ from Euclidean TSP (asymmetry, one-way streets, turn penalties, traffic-varying edge weights, time windows), (3) definition of the objective function and constraints, (4) at least 3 specific real-world scenarios illustrating these differences.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Conduct literature review on exact and heuristic TSP solvers",
+          "acceptance_criteria": "Web search conducted for papers and repositories on Concorde, LKH-3, OR-Tools routing, and Gurobi/CPLEX ATSP formulations. Summary document (lit_review_solvers.md) covering at least 8 solver approaches with their strengths, weaknesses, and performance on standard benchmarks (TSPLIB, DIMACS). Must cite each source in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Conduct literature review on learned and hybrid TSP heuristics",
+          "acceptance_criteria": "Web search conducted for neural/ML approaches to TSP: attention-based models (Kool et al. 2019), reinforcement learning methods (Bello et al. 2017), graph neural network approaches (Joshi et al. 2019), and hybrid neuro-heuristic methods (e.g. DACT, SGBS, neural LKH). Summary document (lit_review_ml.md) covering at least 8 learned approaches with reported performance gaps vs. optimal. Must cite each source in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Conduct literature review on real-world road network routing and OSRM integration",
+          "acceptance_criteria": "Web search conducted for papers and tools on OSRM-based routing, OpenStreetMap data for vehicle routing, real-world ATSP benchmarks, and industry routing approaches (Google OR-Tools CVRPTW, Vroom, Routific). Summary document (lit_review_routing.md) covering at least 6 sources on practical road network routing. Must cite each source in sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted literature",
+          "acceptance_criteria": "File sources.bib exists in repo root with valid BibTeX entries. At least 15 relevant papers/sources cited, spanning: (a) classic TSP solvers (>=3), (b) learned/neural TSP methods (>=5), (c) real-world routing and OSRM (>=3), (d) ATSP-specific methods (>=2), (e) benchmark datasets (>=2). Each entry must have author, title, year, and venue fields.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Build OSRM data extraction and distance matrix pipeline",
+          "acceptance_criteria": "A Python module (src/data/osrm_pipeline.py or equivalent) that: (1) downloads and preprocesses OSM extracts for at least 3 geographic regions of varying size, (2) queries OSRM table service to compute asymmetric travel-time and travel-distance matrices, (3) handles OSRM rate limits and batching for matrices up to 1000x1000, (4) stores matrices in a reproducible format (e.g. .npz). Tested with a small region producing a valid asymmetric matrix where M[i][j] != M[j][i] for at least 10% of pairs.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Generate benchmark instance suite from OpenStreetMap data",
+          "acceptance_criteria": "At least 15 benchmark instances generated across 3 size categories: small (20-50 nodes), medium (100-200 nodes), large (500-1000 nodes). Each instance stored with: (1) full asymmetric cost matrix, (2) node coordinates (lat/lon), (3) optional time windows for TW variants, (4) metadata (region, extraction date, OSRM profile). Instance format documented. All instances stored in results/ or data/ directory.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement LKH-3 baseline solver wrapper",
+          "acceptance_criteria": "A Python wrapper module (src/solvers/lkh_wrapper.py or equivalent) that: (1) converts asymmetric cost matrices to ATSP format readable by LKH-3, (2) invokes LKH-3 with configurable parameters (max trials, time limit, seed), (3) parses LKH-3 output to extract tour and cost, (4) handles both symmetric and asymmetric instances via Jonker-Volgenant transformation if needed. Successfully solves at least 3 benchmark instances and returns valid tours.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement additional baseline solvers (OR-Tools, nearest-neighbor, greedy)",
+          "acceptance_criteria": "At least 3 additional baseline solvers implemented: (1) Google OR-Tools routing solver with configurable search strategies, (2) nearest-neighbor construction heuristic adapted for asymmetric costs, (3) greedy/savings heuristic (Clarke-Wright or similar). Each solver produces valid tours on all benchmark instances. All solvers share a common interface (input: cost matrix, output: tour + cost + runtime).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Implement evaluation metrics and benchmarking harness",
+          "acceptance_criteria": "An evaluation module (src/evaluation/metrics.py or equivalent) computing: (1) total tour cost (travel time and distance), (2) percentage gap to best-known solution, (3) solver wall-clock runtime, (4) asymmetry exploitation score (how much the tour exploits directional cost differences), (5) time window violation count (for TW instances). A benchmark runner script that executes all solvers on all instances, stores results in structured JSON/CSV in results/, and produces a summary table. Baseline results table generated for all instances x all baseline solvers.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Design and extract road-network-aware edge features for ML models",
+          "acceptance_criteria": "A feature extraction module producing per-edge feature vectors including: (1) travel time, (2) travel distance, (3) asymmetry ratio (cost[i,j]/cost[j,i]), (4) road type encoding from OSM tags, (5) estimated congestion level, (6) geographic bearing, (7) detour factor (road distance / Haversine distance). Features computed and stored for all benchmark instances. Feature correlation analysis document showing which features most distinguish road-network ATSP from Euclidean TSP.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Develop asymmetry-aware local search operators",
+          "acceptance_criteria": "At least 3 novel or adapted local search operators implemented that specifically exploit asymmetric cost structure: (1) direction-aware or-opt moves that consider reversing sub-path direction, (2) asymmetric 3-opt with directional evaluation (not just symmetric 3-opt applied to asymmetric costs), (3) a regret-based reinsertion operator that uses asymmetry ratios. Each operator tested in isolation on at least 5 benchmark instances, showing measurable improvement over symmetric equivalents on asymmetric instances. Performance comparison table generated.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Build ML-based initial tour construction model",
+          "acceptance_criteria": "A neural network model (e.g. attention-based encoder-decoder or GNN) trained to produce initial tour constructions for ATSP instances, using the edge features from item_012. Model: (1) takes asymmetric cost matrix + edge features as input, (2) outputs a valid tour via autoregressive or non-autoregressive decoding, (3) trained on at least 1000 generated ATSP instances (can include synthetic + OSRM-derived), (4) produces tours within 15% of LKH-3 quality before any local search. Training loss curve and validation performance documented.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement hybrid solver combining ML construction with local search",
+          "acceptance_criteria": "A hybrid solver pipeline that: (1) uses the ML model from item_014 for initial tour construction, (2) applies the asymmetry-aware local search operators from item_013, (3) includes a perturbation/restart mechanism (e.g. ruin-and-recreate or double-bridge adapted for ATSP), (4) has configurable time budget. The hybrid solver tested on at least 5 medium instances, producing tours within 5% of LKH-3 quality. Solver architecture diagram created.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Develop adaptive perturbation strategy using reinforcement learning",
+          "acceptance_criteria": "An RL-based operator selection mechanism that: (1) learns to choose among local search operators based on current solution state, (2) uses solution features (tour cost, improvement history, asymmetry statistics) as state representation, (3) trained via bandit or policy gradient on the benchmark instances, (4) demonstrates at least 2% improvement in converged solution quality compared to uniform random operator selection on at least 3 medium-sized instances. Training curves and operator selection frequency analysis documented.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement time-window and traffic-aware extensions",
+          "acceptance_criteria": "Extensions to the hybrid solver supporting: (1) hard time windows with feasibility checking integrated into local search moves, (2) time-dependent edge costs (morning/afternoon/evening profiles) loaded from OSRM or synthetic schedules, (3) penalty-based soft time window handling. Solver correctly handles TW-constrained instances, producing feasible solutions with 0 hard constraint violations. Tested on at least 3 TW benchmark instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Run full experiments on small instances (n<=100) comparing all solvers",
+          "acceptance_criteria": "Complete results for all small instances (n=20-50-100) across all solvers: LKH-3, OR-Tools, nearest-neighbor, greedy, ML-construction-only, hybrid (ML+local search), hybrid+RL-selection. Each solver run 5 times with different seeds. Results table with columns: instance, solver, mean cost, std dev, mean runtime, best cost, gap to best-known. Results stored in results/small_instances.csv. Hybrid solver achieves mean gap <=2% vs LKH-3 on these instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Run full experiments on medium and large instances (n=200-1000)",
+          "acceptance_criteria": "Complete results for medium (n=200) and large (n=500-1000) instances across all applicable solvers (LKH-3 and hybrid variants; OR-Tools may be included if feasible). Each solver given equal time budgets (e.g. 60s for medium, 300s for large). Results table analogous to item_018. On at least 3 large instances, the hybrid solver must match or beat LKH-3 tour cost (gap <= 0.0%), or beat it by any margin on at least 1 instance. Results stored in results/medium_large_instances.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Conduct ablation studies on hybrid solver components",
+          "acceptance_criteria": "Ablation experiments isolating the contribution of each component: (1) ML construction vs. random/nearest-neighbor construction followed by same local search, (2) asymmetry-aware operators vs. standard symmetric operators, (3) RL operator selection vs. uniform random selection, (4) with vs. without perturbation/restart. Results for at least 5 instances per ablation. A table showing the marginal contribution (% gap change) of each component. Documented in results/ablation_study.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Measure the asymmetry exploitation gap between methods",
+          "acceptance_criteria": "Analysis comparing how well each solver exploits directional asymmetry: (1) compute fraction of edges where tour uses the cheaper direction, (2) compare this fraction across solvers, (3) correlate asymmetry exploitation with tour quality improvement. Generate scatter plot (figures/asymmetry_exploitation.png) of asymmetry exploitation score vs. gap to best-known. Show that the hybrid solver exploits asymmetry measurably more than LKH-3 on at least 50% of instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Perform statistical significance testing on key comparisons",
+          "acceptance_criteria": "Wilcoxon signed-rank tests (or equivalent non-parametric test) comparing: (1) hybrid solver vs. LKH-3 across all instances, (2) hybrid+RL vs. hybrid without RL, (3) asymmetric operators vs. symmetric operators. p-values reported. Results deemed significant at alpha=0.05. If the hybrid solver does not significantly beat LKH-3 overall, identify and report the instance subsets where it does (e.g. high-asymmetry instances). Statistical test results stored in results/statistical_tests.json.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality figures and visualizations",
+          "acceptance_criteria": "At least 5 figures saved in figures/ directory: (1) convergence curves showing solution quality over time for all solvers on representative instances, (2) bar chart comparing mean gaps across solver variants, (3) map visualization of tours on at least 2 geographic regions overlaid on road networks, (4) heatmap of asymmetry ratios for a representative cost matrix, (5) ablation component contribution chart. All figures have labeled axes, legends, and are saved as both PNG and PDF.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write technical report summarizing research findings",
+          "acceptance_criteria": "A comprehensive technical report (report.md or report.pdf) containing: (1) Introduction and motivation, (2) Problem formulation, (3) Related work section citing at least 10 papers from sources.bib, (4) Method description with architecture diagrams, (5) Experimental setup and results, (6) Ablation analysis, (7) Discussion of when and why the hybrid solver outperforms LKH-3, (8) Limitations and future work. Report is at least 3000 words.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Create reproducibility package and instructions",
+          "acceptance_criteria": "A REPRODUCE.md file with: (1) complete environment setup instructions (Python version, package requirements in requirements.txt, OSRM installation), (2) step-by-step commands to regenerate all benchmark instances, (3) commands to run all baselines and the hybrid solver, (4) commands to regenerate all figures and tables. A Makefile or shell script (run_all.sh) that automates the full pipeline. Verified that instructions are complete by listing every external dependency.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_026",
+          "description": "Archive benchmark data and final results",
+          "acceptance_criteria": "All benchmark instances, solver outputs, and result CSVs committed to the repository. A data manifest (DATA_MANIFEST.md) listing every data file, its format, size, and how it was generated. Final best-known solutions for each instance recorded in results/best_known.json. Total data size documented.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_027",
+          "description": "Final comparative analysis against prior work from literature review",
+          "acceptance_criteria": "A summary table (results/literature_comparison.md) comparing the hybrid solver's performance against published results from at least 5 methods identified in the literature review (Phase 1). For each method: (1) reported benchmark, (2) reported gap to optimal/best-known, (3) our solver's gap on comparable instances, (4) discussion of whether comparison is apples-to-apples or approximate. Honest assessment of where the hybrid solver advances the state of the art and where it falls short.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 27,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 27
+  }
+}
