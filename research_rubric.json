@@ -55,8 +55,8 @@
           "id": "item_003",
           "description": "Literature review: learned and hybrid TSP heuristics",
           "acceptance_criteria": "Produce a document (docs/lit_review_learned.md) covering at minimum: NeuroLKH (Xin et al. NeurIPS 2021), VSR-LKH (Zheng et al. 2022), Attention Model (Kool et al. 2019), POMO (Kwon et al. 2020), GREAT architecture (2024), Embed-LKH (2025), MAB-backbone-LKH (Journal of Heuristics 2025), UNiCS (Liu et al. 2025), DualOpt, and H-TSP. Each entry summarizes the method, training procedure, and reported results. At least 10 distinct papers cited.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive review covering all 10 required methods: AM, POMO, NeuroLKH, VSR-LKH, GREAT, Embed-LKH, MABB-LKH, UNiCS, DualOpt, H-TSP. 12 new BibTeX entries added (total 24 in sources.bib).",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 2,
+    "completed": 3,
     "in_progress": 0,
     "failed": 0,
-    "pending": 25
+    "pending": 24
   }
 }
