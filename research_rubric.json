@@ -94,8 +94,8 @@
           "id": "item_007",
           "description": "Build OSM/OSRM data pipeline to generate asymmetric distance/duration matrices",
           "acceptance_criteria": "A Python module (src/data_pipeline.py or src/osrm_client.py) that: (1) accepts a bounding box or city name and a list of coordinates; (2) queries OSRM Table API to produce an asymmetric NxN duration matrix and an NxN distance matrix; (3) caches results to disk in a standard format (JSON or NumPy .npz); (4) alternatively loads from osmnx graph for offline use. Module includes at least 3 unit tests verifying matrix asymmetry and correct dimensions. Tested on at least one real city (e.g., Manhattan).",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/data_pipeline.py with 3 backends: OSRM API, OSMnx graph, synthetic road-network. Caches to .npz + .json. 4 unit tests pass (asymmetry, dimensions, diagonal, save/load).",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 6,
+    "completed": 7,
     "in_progress": 0,
     "failed": 0,
-    "pending": 21
+    "pending": 20
   }
 }
