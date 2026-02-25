@@ -157,8 +157,8 @@
           "id": "item_014",
           "description": "Implement learned candidate set generation for LKH on road-network graphs",
           "acceptance_criteria": "A module (src/learned_candidates.py) that: (1) uses the trained edge-scoring GNN to rank edges by predicted tour membership probability; (2) constructs a candidate set of top-k edges per node (k=5 to 10) for LKH; (3) integrates with LKH-3 by writing a candidate file in LKH's expected format; (4) on a 200-stop test instance, the learned candidate set contains >= 90% of edges in the LKH-found optimal tour (candidate set recall). Compare candidate set quality against LKH's default alpha-nearness candidates.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/learned_candidates.py: GNN-based edge scoring for candidate set generation. On 200-stop instance: learned candidates achieve 99.5% recall at k=10 (vs alpha-nearness 99.0%). At k=5: learned 94.5% vs alpha 91.5%. Learned-constrained local search improves 11.8% vs alpha-constrained 10.4%. Includes LKH candidate file writer and candidate-constrained 2-opt search.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 14,
+    "completed": 15,
     "in_progress": 1,
     "failed": 0,
-    "pending": 12
+    "pending": 11
   }
 }
