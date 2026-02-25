@@ -63,8 +63,8 @@
           "id": "item_004",
           "description": "Survey real-world ATSP datasets, OSRM APIs, and OSM data pipelines",
           "acceptance_criteria": "Produce a document (docs/data_survey.md) covering: TSPLIB95 ATSP instances, DIMACS ATSP challenge, Waterloo TSP data, Ascheuer TSPTW instances, OSRM Table/Trip API capabilities, osmnx library for graph extraction, and at least 2 real-world road network sources (e.g., OpenStreetMap extracts for specific metro areas). Document data formats, sizes, and accessibility.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Comprehensive survey covering all required topics: TSPLIB95 ATSP (19 instances), DIMACS, Waterloo data, Ascheuer TSPTW (50 instances), OSRM Table/Trip APIs, OSMnx, Geofabrik, Interline metro extracts. 3 new BibTeX entries added.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 3,
+    "completed": 4,
     "in_progress": 0,
     "failed": 0,
-    "pending": 24
+    "pending": 23
   }
 }
