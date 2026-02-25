@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-25T07:38:00Z",
+  "updated_at": "2026-02-25T07:41:37.390336+00:00",
+  "current_agent": "orchestrator",
+  "agent_status": {
+    "orchestrator": {
+      "status": "completed",
+      "started_at": "2026-02-25T07:38:00Z",
+      "completed_at": "2026-02-25T07:41:37.390306+00:00",
+      "error": null
+    },
+    "researcher": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "writer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    },
+    "reviewer": {
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "error": null
+    }
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Problem Analysis & Literature Review",
+      "order": 1,
+      "items": [
+        {
+          "id": "item_001",
+          "description": "Analyze repository structure and establish project scaffold",
+          "acceptance_criteria": "A written document (PROJECT_STRUCTURE.md) listing all directories (figures/, results/), configuration files (.gitignore, .gitattributes), and a proposed directory layout for source code (src/), data (data/), benchmarks (benchmarks/), and notebooks (notebooks/). The scaffold directories must be created in the repo.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_002",
+          "description": "Formalize the Asymmetric TSP on real road networks",
+          "acceptance_criteria": "A written problem definition (in results/problem_definition.md) that: (1) formally defines the ATSP with asymmetric travel-time costs derived from OSRM, (2) specifies how traffic variability and turn penalties create asymmetry, (3) defines the time-windowed variant (ATSPTW), and (4) clearly states the optimization objective (minimize total travel time on real road network). Must include mathematical notation for the cost matrix c_{ij} != c_{ji}.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_003",
+          "description": "Literature review: classical TSP/ATSP solvers and their limitations on road networks",
+          "acceptance_criteria": "Web search conducted for at least the following topics: Concorde TSP solver, LKH/LKH-3 heuristic (Helsgaun), ATSP transformations (Jonker-Volgenant, Noon-Bean), OR-Tools routing solver, and OSRM-based routing benchmarks. A written summary (results/lit_review_classical.md) covering each solver's approach, computational complexity, known performance on road networks, and identified gaps when applied to real asymmetric road graphs. At least 6 specific papers cited with full bibliographic details.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_004",
+          "description": "Literature review: neural and learned approaches to combinatorial routing",
+          "acceptance_criteria": "Web search conducted for: attention-based TSP models (Kool et al. 2019), graph neural network approaches for routing (Joshi et al. 2019), reinforcement learning for VRP (Nazari et al. 2018), POMO (Kwon et al. 2020), hybrid neural + local-search methods (Wu et al. 2021, Costa et al. 2020), and any approaches specifically targeting asymmetric or road-network TSP. A written summary (results/lit_review_learned.md) covering architectures, training strategies, generalization performance, and scalability limitations. At least 6 specific papers cited.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_005",
+          "description": "Survey existing open-source routing tools, OSRM integration, and benchmark datasets",
+          "acceptance_criteria": "Web search conducted for: OSRM API and table service, OpenStreetMap data extraction tools (osmium, osm2pgsql), TSPLIB and ATSP benchmark instances, real-world routing benchmark suites (e.g., DIMACS challenge instances, Li & Tian road-network TSP benchmarks). A written summary (results/tools_and_datasets_survey.md) listing each tool/dataset with: URL, license, data format, coverage, and relevance to this project. At least 3 code repositories and 3 benchmark datasets identified.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_006",
+          "description": "Create and populate sources.bib with BibTeX entries for all consulted literature",
+          "acceptance_criteria": "A valid BibTeX file (sources.bib) in the repo root containing at least 15 entries covering: (1) classical TSP/ATSP solvers (Concorde, LKH, OR-Tools), (2) neural/learned TSP approaches (attention models, GNNs, RL-based), (3) OSRM and OpenStreetMap routing tools, (4) real-world routing benchmarks. Each entry must have complete fields (author, title, year, venue/journal). The file must parse without errors using a BibTeX validator.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Baseline Implementation & Metrics",
+      "order": 2,
+      "items": [
+        {
+          "id": "item_007",
+          "description": "Set up OSRM backend and build asymmetric distance/time matrices from OpenStreetMap",
+          "acceptance_criteria": "A working pipeline (src/osrm_pipeline.py or equivalent) that: (1) downloads an OSM extract for a configurable region (default: a US metro area), (2) builds an OSRM routing profile, (3) given a set of N GPS coordinates, queries the OSRM table service to produce an NxN asymmetric travel-time matrix, (4) serializes the matrix to a standard format (NumPy .npy or CSV). Must demonstrate asymmetry: for at least 10% of pairs, |c_{ij} - c_{ji}| > 5% of max(c_{ij}, c_{ji}). Pipeline must run end-to-end and produce a verified 50-node test matrix.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_008",
+          "description": "Implement benchmark instance generator with configurable size, region, and traffic profiles",
+          "acceptance_criteria": "A script (src/instance_generator.py) that generates ATSP instances in at least 3 size categories: small (20-50 nodes), medium (100-200 nodes), and large (500-1000 nodes). Each instance must include: (1) GPS coordinates sampled from a configurable OSM region, (2) asymmetric cost matrix from OSRM, (3) optional time-window constraints per node. Must generate at least 10 instances per size category (30 total) for the primary benchmark region. Instance files stored in data/ with a manifest CSV listing instance metadata.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_009",
+          "description": "Implement LKH-3 baseline wrapper with standardized interface",
+          "acceptance_criteria": "A wrapper module (src/baselines/lkh_wrapper.py) that: (1) accepts an asymmetric cost matrix, (2) converts it to TSPLIB ATSP format using the standard Noon-Bean or direct ATSP format, (3) invokes LKH-3 with configurable parameters (RUNS, MAX_TRIALS, SEED), (4) parses the output tour and computes total cost. Must reproduce known LKH results on at least 2 TSPLIB ATSP instances (e.g., ft53, ftv70) within 1% of published best-known values. Runtime and solution cost logged to results/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_010",
+          "description": "Implement additional baseline solvers: OR-Tools, nearest-neighbor, and greedy heuristics",
+          "acceptance_criteria": "Modules in src/baselines/ implementing: (1) OR-Tools routing solver with configurable time limits and metaheuristic strategy, (2) nearest-neighbor construction heuristic (both deterministic and randomized variants), (3) greedy edge-insertion heuristic. Each solver must conform to a common interface: accept cost matrix, return (tour, cost, runtime). All baselines must successfully solve instances from Phase 2 instance generator. Comparative results on at least 5 instances logged to results/baseline_comparison.csv.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_011",
+          "description": "Define evaluation metrics framework and benchmarking harness",
+          "acceptance_criteria": "A benchmarking module (src/evaluation.py) that computes and records: (1) absolute tour cost (travel time in seconds), (2) optimality gap relative to best-known solution (% above BKS), (3) gap relative to LKH-3 baseline (% improvement or degradation), (4) wall-clock runtime in seconds, (5) scalability ratio (runtime per node). Must output results to a structured CSV/JSON format in results/. Must include a CLI entry point that runs any registered solver on any instance set and produces a standardized results table. Verified by running all Phase 2 baselines on at least 5 instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Core Research & Novel Approaches",
+      "order": 3,
+      "items": [
+        {
+          "id": "item_012",
+          "description": "Design road-network-aware edge feature representation for learned models",
+          "acceptance_criteria": "A feature engineering module (src/features.py) that, for each edge (i,j) in the OSRM cost matrix, computes at minimum: (1) forward travel time c_{ij}, (2) reverse travel time c_{ji}, (3) asymmetry ratio |c_{ij}-c_{ji}|/max(c_{ij},c_{ji}), (4) Euclidean distance between GPS coordinates, (5) ratio of road-network distance to Euclidean distance (detour factor), (6) bearing/direction between nodes. Feature matrix must be exportable as a tensor for ML model input. Validated on 5+ instances showing feature distributions are non-degenerate (variance > 0 for each feature).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_013",
+          "description": "Implement attention-based neural constructor adapted for asymmetric road-network TSP",
+          "acceptance_criteria": "A neural model (src/models/attention_constructor.py) based on the Transformer architecture (referencing Kool et al. 2019 from sources.bib) that: (1) encodes node features and asymmetric edge features using multi-head attention, (2) uses an autoregressive decoder to construct tours, (3) is modified from standard symmetric TSP attention models to handle asymmetric costs by encoding both c_{ij} and c_{ji} as separate edge features. Model must train on small instances (20-50 nodes) and produce valid tours. Training loss must decrease over 100 epochs. Initial solution quality need not beat baselines yet.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_014",
+          "description": "Develop hybrid approach: ML-guided initial solution with LKH-style local search refinement",
+          "acceptance_criteria": "A hybrid solver (src/solvers/hybrid_ml_lkh.py) that: (1) uses the neural constructor from item_013 to generate k initial solutions (k >= 8), (2) feeds each initial solution to LKH-3 as a starting tour (using INITIAL_TOUR_FILE), (3) returns the best tour found across all k runs. Must demonstrate that ML-guided initialization produces better LKH results than random restarts: on at least 10 medium-sized instances, hybrid must achieve lower average tour cost than LKH-3 with the same number of restarts but random initialization. Improvement threshold: statistically measurable difference (p < 0.05 via paired t-test).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_015",
+          "description": "Implement road-network-specific perturbation operators for local search",
+          "acceptance_criteria": "A module (src/solvers/perturbation_ops.py) implementing at least 4 perturbation operators designed for road-network ATSP: (1) asymmetry-aware or-opt (relocates segments considering directional cost differences), (2) traffic-corridor swap (swaps nodes that share high-traffic corridors), (3) detour-factor-guided 3-opt (prioritizes removing edges with high detour factors), (4) time-window-feasible insertion (for ATSPTW variant). Each operator must: accept a tour and cost matrix, return a modified tour, and verify tour validity. Unit tests demonstrating each operator improves or maintains solution quality on at least 3 test instances.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_016",
+          "description": "Design adaptive operator selection using reinforcement learning on search trajectory",
+          "acceptance_criteria": "An adaptive local search controller (src/solvers/adaptive_lns.py) that: (1) maintains a portfolio of the perturbation operators from item_015 plus standard 2-opt and or-opt, (2) uses an RL-based selection policy (e.g., multi-armed bandit with UCB1 or a simple Q-learning agent) to choose which operator to apply at each step based on recent improvement history, (3) accepts/rejects moves using simulated annealing. Must run a complete local search trajectory on medium instances. Must demonstrate that adaptive selection outperforms uniform-random operator selection on at least 5 instances (measured by final tour cost after equal runtime budgets).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_017",
+          "description": "Implement ensemble solver combining neural construction, adaptive local search, and LKH refinement",
+          "acceptance_criteria": "An ensemble solver (src/solvers/ensemble.py) that: (1) generates diverse initial solutions via the neural constructor, nearest-neighbor variants, and random construction, (2) applies adaptive local search from item_016 to each, (3) feeds the top-m solutions to LKH-3 for final refinement, (4) returns the overall best tour. Must implement a configurable time budget that allocates computation across the three stages. On at least 5 medium instances, must produce solutions at least as good as standalone LKH-3 given the same total runtime budget.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Experiments & Evaluation",
+      "order": 4,
+      "items": [
+        {
+          "id": "item_018",
+          "description": "Generate comprehensive benchmark suite from multiple OSM regions",
+          "acceptance_criteria": "Benchmark instances generated from at least 3 distinct geographic regions (e.g., Manhattan NYC, Chicago metro, Los Angeles metro) using the instance generator from item_008. Total benchmark suite contains: at least 30 small (20-50 node), 20 medium (100-200 node), and 10 large (500-1000 node) instances. Each instance stored with metadata (region, node count, asymmetry statistics, timestamp). A manifest file (data/benchmark_manifest.csv) listing all instances with their properties. Asymmetry verified: mean asymmetry ratio across all instances > 0.05.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_019",
+          "description": "Run full comparative experiments: all baselines vs all novel approaches",
+          "acceptance_criteria": "Complete experimental results for all solvers (LKH-3, OR-Tools, nearest-neighbor, greedy, neural constructor, hybrid ML+LKH, adaptive local search, ensemble) on the full benchmark suite from item_018. Each solver run with 3 random seeds per instance. Results recorded in results/full_comparison.csv with columns: instance_id, solver, seed, tour_cost, runtime_seconds, gap_vs_bks. Total experiment covers at least 60 instances x 8 solvers x 3 seeds = 1440 solver runs. All runs must complete without errors.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_020",
+          "description": "Ablation study isolating each novel component's contribution",
+          "acceptance_criteria": "Ablation experiments on at least 20 medium instances testing: (1) neural constructor alone vs random construction, (2) hybrid ML+LKH vs LKH with random starts, (3) adaptive operator selection vs uniform random selection, (4) road-network features vs Euclidean-only features in the neural model, (5) ensemble vs best single method. Results in results/ablation_study.csv showing the marginal contribution of each component. Each ablation must show the mean and standard deviation of tour cost across instances. Referenced against relevant methods from sources.bib.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_021",
+          "description": "Scalability and runtime analysis across problem sizes",
+          "acceptance_criteria": "Runtime scaling analysis for all solvers across instance sizes (20, 50, 100, 200, 500, 1000 nodes). Results in results/scalability_analysis.csv with: solver, instance_size, mean_runtime, std_runtime, mean_tour_quality_gap. At least 5 instances per size category. Log-log plot of runtime vs instance size saved to figures/scalability_plot.png showing empirical scaling exponents. Analysis must identify which solver achieves best quality-runtime tradeoff at each scale and compare scaling behavior against theoretical complexity reported in literature (from sources.bib).",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_022",
+          "description": "Statistical significance testing for all pairwise solver comparisons",
+          "acceptance_criteria": "Statistical analysis using paired Wilcoxon signed-rank tests (or paired t-tests with normality check) for all pairwise solver comparisons on medium instances. Results in results/statistical_tests.csv with: solver_a, solver_b, test_statistic, p_value, effect_size, significant_at_005. A summary table identifying which novel approaches achieve statistically significant improvement over LKH-3 (the primary baseline). The critical 0.5% improvement threshold over LKH must be explicitly tested with a one-sided test. Must report whether the ensemble solver achieves the target 0.5% improvement with p < 0.05.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    },
+    {
+      "id": "phase_5",
+      "name": "Analysis & Documentation",
+      "order": 5,
+      "items": [
+        {
+          "id": "item_023",
+          "description": "Generate publication-quality figures and results tables",
+          "acceptance_criteria": "At least 6 figures saved to figures/ including: (1) box plot comparing all solvers' tour cost gaps vs BKS across instance sizes, (2) convergence curves showing solution quality vs runtime for top 3 solvers, (3) scalability log-log plot from item_021, (4) heatmap of pairwise statistical significance from item_022, (5) bar chart of ablation study marginal contributions, (6) map visualization of example tours on at least one OSM region overlaid on road network. All figures must use consistent styling (matplotlib or equivalent), have labeled axes, legends, and be at least 300 DPI resolution.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_024",
+          "description": "Write comprehensive research report with methodology, results, and analysis",
+          "acceptance_criteria": "A research report (results/research_report.md) of at least 3000 words containing: (1) Abstract summarizing the problem, approach, and key findings, (2) Introduction motivating TSP on real road networks with references to sources.bib, (3) Related Work section citing at least 10 papers from sources.bib and positioning this work relative to prior art, (4) Methodology describing the OSRM pipeline, feature engineering, neural constructor, hybrid approach, adaptive local search, and ensemble, (5) Experimental Setup detailing benchmark generation and evaluation protocol, (6) Results section with all tables and figure references from item_023, (7) Analysis section discussing when and why the novel approaches succeed or fail relative to LKH, (8) Conclusion stating whether the 0.5% improvement target was achieved and identifying future work directions.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        },
+        {
+          "id": "item_025",
+          "description": "Document full reproducibility: environment, scripts, data pipelines, and instructions",
+          "acceptance_criteria": "Reproducibility artifacts including: (1) requirements.txt or pyproject.toml listing all Python dependencies with pinned versions, (2) a Makefile or run_all.sh script that executes the full pipeline from data download through final results, (3) a REPRODUCIBILITY.md file with step-by-step instructions for: installing OSRM, downloading OSM data, generating instances, running all experiments, and producing all figures, (4) all random seeds documented and configurable, (5) expected runtime estimates for the full pipeline. A fresh clone of the repo with these instructions must be sufficient to reproduce all results in results/ and figures/.",
+          "status": "pending",
+          "notes": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 25,
+    "completed": 0,
+    "in_progress": 0,
+    "failed": 0,
+    "pending": 25
+  }
+}
