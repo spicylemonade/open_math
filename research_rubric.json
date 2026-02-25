@@ -79,8 +79,8 @@
           "id": "item_006",
           "description": "Formalize research problem statement and hypotheses",
           "acceptance_criteria": "Produce a document (docs/problem_statement.md) that: (1) formally defines the Asymmetric TSP on road networks with time-dependent edge weights; (2) identifies the specific gap \u2014 LKH/Concorde assume metric/Euclidean distances while real road networks have asymmetric costs, one-way streets, turn penalties, and traffic; (3) states at least 3 falsifiable hypotheses (e.g., 'A GNN-based candidate set trained on OSRM features will reduce LKH tour cost by >= 0.5% on 200-stop road-network instances compared to default LKH alpha-nearness candidates'); (4) defines success criteria for the project.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "Formal ATSP and TD-ATSP definitions. Gap analysis identifying LKH alpha-nearness limitations on road networks. 4 falsifiable hypotheses (H1-H4). Primary/secondary/minimum success criteria defined.",
           "error": null
         }
       ]
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 5,
+    "completed": 6,
     "in_progress": 0,
     "failed": 0,
-    "pending": 22
+    "pending": 21
   }
 }
