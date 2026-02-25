@@ -1,0 +1,134 @@
+[
+  {
+    "instance_id": "manhattan_1000_s42",
+    "city": "manhattan",
+    "n_stops": 1000,
+    "solver": "nearest_neighbor",
+    "seed": 42,
+    "tour_cost": 17980.26,
+    "time_s": 0.0303,
+    "valid": true,
+    "gap_pct": 12.4417
+  },
+  {
+    "instance_id": "manhattan_1000_s42",
+    "city": "manhattan",
+    "n_stops": 1000,
+    "solver": "farthest_insertion",
+    "seed": 42,
+    "tour_cost": 16138.3,
+    "time_s": 28.5068,
+    "valid": true,
+    "gap_pct": 0.9228
+  },
+  {
+    "instance_id": "manhattan_1000_s42",
+    "city": "manhattan",
+    "n_stops": 1000,
+    "solver": "ortools",
+    "seed": 42,
+    "tour_cost": 15990.74,
+    "time_s": 30.1393,
+    "valid": true,
+    "gap_pct": -0.0
+  },
+  {
+    "instance_id": "manhattan_1000_s42",
+    "city": "manhattan",
+    "n_stops": 1000,
+    "solver": "lkh_style",
+    "seed": 42,
+    "tour_cost": Infinity,
+    "time_s": 100,
+    "valid": false,
+    "gap_pct": null
+  },
+  {
+    "instance_id": "london_1000_s42",
+    "city": "london",
+    "n_stops": 1000,
+    "solver": "nearest_neighbor",
+    "seed": 42,
+    "tour_cost": 23973.68,
+    "time_s": 0.0332,
+    "valid": true,
+    "gap_pct": 12.5156
+  },
+  {
+    "instance_id": "london_1000_s42",
+    "city": "london",
+    "n_stops": 1000,
+    "solver": "farthest_insertion",
+    "seed": 42,
+    "tour_cost": 21517.73,
+    "time_s": 29.7522,
+    "valid": true,
+    "gap_pct": 0.9891
+  },
+  {
+    "instance_id": "london_1000_s42",
+    "city": "london",
+    "n_stops": 1000,
+    "solver": "ortools",
+    "seed": 42,
+    "tour_cost": 21306.99,
+    "time_s": 30.0213,
+    "valid": true,
+    "gap_pct": 0.0
+  },
+  {
+    "instance_id": "london_1000_s42",
+    "city": "london",
+    "n_stops": 1000,
+    "solver": "lkh_style",
+    "seed": 42,
+    "tour_cost": Infinity,
+    "time_s": 100,
+    "valid": false,
+    "gap_pct": null
+  },
+  {
+    "instance_id": "berlin_1000_s42",
+    "city": "berlin",
+    "n_stops": 1000,
+    "solver": "nearest_neighbor",
+    "seed": 42,
+    "tour_cost": 29967.11,
+    "time_s": 0.0316,
+    "valid": true,
+    "gap_pct": 12.4071
+  },
+  {
+    "instance_id": "berlin_1000_s42",
+    "city": "berlin",
+    "n_stops": 1000,
+    "solver": "farthest_insertion",
+    "seed": 42,
+    "tour_cost": 26897.16,
+    "time_s": 28.9212,
+    "valid": true,
+    "gap_pct": 0.8917
+  },
+  {
+    "instance_id": "berlin_1000_s42",
+    "city": "berlin",
+    "n_stops": 1000,
+    "solver": "ortools",
+    "seed": 42,
+    "tour_cost": 26659.45,
+    "time_s": 30.0117,
+    "valid": true,
+    "gap_pct": 0.0
+  },
+  {
+    "instance_id": "berlin_1000_s42",
+    "city": "berlin",
+    "n_stops": 1000,
+    "solver": "lkh_style",
+    "seed": 42,
+    "tour_cost": Infinity,
+    "time_s": 100,
+    "valid": false,
+    "gap_pct": null
+  }
+]
