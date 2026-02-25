@@ -1,0 +1,25 @@
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Graph and network
+networkx>=3.1
+
+# Deep learning
+torch>=2.0.0
+
+# Optimization
+ortools>=9.7
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Geospatial / OSM
+osmnx>=1.6.0
+requests>=2.31.0
+
+# Utilities
+tqdm>=4.65.0
