@@ -1,0 +1,212 @@
+[
+  {
+    "instance_id": "manhattan_50_s42",
+    "city": "manhattan",
+    "n_stops": 50,
+    "seed": 42,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 0.15,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_200_s42",
+    "city": "manhattan",
+    "n_stops": 200,
+    "seed": 42,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.36,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_1000_s42",
+    "city": "manhattan",
+    "n_stops": 1000,
+    "seed": 42,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 90.08,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_50_s42",
+    "city": "london",
+    "n_stops": 50,
+    "seed": 42,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 0.15,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_200_s42",
+    "city": "london",
+    "n_stops": 200,
+    "seed": 42,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.35,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_1000_s42",
+    "city": "london",
+    "n_stops": 1000,
+    "seed": 42,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 101.55,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_50_s42",
+    "city": "berlin",
+    "n_stops": 50,
+    "seed": 42,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 0.15,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_200_s42",
+    "city": "berlin",
+    "n_stops": 200,
+    "seed": 42,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.33,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_1000_s42",
+    "city": "berlin",
+    "n_stops": 1000,
+    "seed": 42,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 92.23,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_200_s123",
+    "city": "manhattan",
+    "n_stops": 200,
+    "seed": 123,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.37,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_200_s456",
+    "city": "manhattan",
+    "n_stops": 200,
+    "seed": 456,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.3,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_200_s789",
+    "city": "manhattan",
+    "n_stops": 200,
+    "seed": 789,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.33,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "manhattan_200_s1024",
+    "city": "manhattan",
+    "n_stops": 200,
+    "seed": 1024,
+    "area_km": 6.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.31,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_200_s123",
+    "city": "london",
+    "n_stops": 200,
+    "seed": 123,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.36,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_200_s456",
+    "city": "london",
+    "n_stops": 200,
+    "seed": 456,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.31,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_200_s789",
+    "city": "london",
+    "n_stops": 200,
+    "seed": 789,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.48,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "london_200_s1024",
+    "city": "london",
+    "n_stops": 200,
+    "seed": 1024,
+    "area_km": 8.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.3,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_200_s123",
+    "city": "berlin",
+    "n_stops": 200,
+    "seed": 123,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.3,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_200_s456",
+    "city": "berlin",
+    "n_stops": 200,
+    "seed": 456,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.3,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_200_s789",
+    "city": "berlin",
+    "n_stops": 200,
+    "seed": 789,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.29,
+    "source": "synthetic_road_network"
+  },
+  {
+    "instance_id": "berlin_200_s1024",
+    "city": "berlin",
+    "n_stops": 200,
+    "seed": 1024,
+    "area_km": 10.0,
+    "asymmetric_pairs_fraction": 1.0,
+    "generation_time_s": 2.3,
+    "source": "synthetic_road_network"
+  }
+]

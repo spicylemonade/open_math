@@ -1,0 +1,21 @@
+
+# Archivara: prevent secrets from being committed
+.env
+.env.*
+.env.local
+*.key
+*.pem
+.claude/
+.codex/
+.archivara/
+TASK_*.md
+agent_*.log
+orchestration.log
+
+# Large binary files (model weights, benchmark data)
+models/*.pt
+models/*.pth
+models/*.pkl
+benchmarks/*.npz
+__pycache__/
+*.pyc
