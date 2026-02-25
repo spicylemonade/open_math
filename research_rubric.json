@@ -118,8 +118,8 @@
           "id": "item_010",
           "description": "Define evaluation metrics and benchmarking harness",
           "acceptance_criteria": "A Python module (src/metrics.py) and a runner script (scripts/run_benchmarks.py) that: (1) computes tour cost on the asymmetric matrix; (2) computes optimality gap relative to best-known solution; (3) records wall-clock time and peak memory usage; (4) outputs results to a CSV or JSON file with columns: instance_id, solver, tour_cost, gap_pct, time_sec, memory_mb. Harness supports running all solvers on all instances with configurable time limits and random seeds.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/metrics.py with tour_cost, gap, validation, and memory measurement. scripts/run_benchmarks.py harness runs all solvers on all instances with configurable time limits, seeds, and outputs CSV+JSON.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 9,
+    "completed": 10,
     "in_progress": 0,
     "failed": 0,
-    "pending": 18
+    "pending": 17
   }
 }
