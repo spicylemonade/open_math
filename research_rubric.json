@@ -141,8 +141,8 @@
           "id": "item_012",
           "description": "Design and implement asymmetry-aware edge-scoring GNN for road-network graphs",
           "acceptance_criteria": "A PyTorch module (src/models/edge_scorer.py) implementing a directed graph neural network that: (1) takes as input node features (lat, lon, degree, betweenness centrality) and directed edge features (duration, distance, speed, asymmetry ratio d(i,j)/d(j,i)); (2) outputs per-edge scores predicting probability of edge being in optimal tour; (3) uses at least 3 message-passing layers with attention or gating; (4) architecture documented in docs/model_architecture.md. Model compiles and runs forward pass on a 50-node test graph without errors.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "src/models/edge_scorer.py: DirectedEdgeAttentionLayer + EdgeScorerGNN. 3 attention layers, 4 heads, 64-dim hidden. Takes node features (lat,lon,degree,centrality) and edge features (duration,distance,speed,asymmetry). 150K params. Forward pass and gradient verified on 50-node test. docs/model_architecture.md written.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 11,
+    "completed": 12,
     "in_progress": 0,
     "failed": 0,
-    "pending": 16
+    "pending": 15
   }
 }
