@@ -1,0 +1,179 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anonymous(2025)]{embedlkh2025}
+Anonymous.
+\newblock From graph embedding to {LKH}: Bridging learning and heuristics for a
+  streamlined general {TSP} solver, 2025.
+\newblock URL \url{https://openreview.net/forum?id=iXBYYbYTvX}.
+\newblock Withdrawn from ICLR 2025.
+
+\bibitem[Applegate et~al.(2006)Applegate, Bixby, Chv{\'a}tal, and
+  Cook]{applegate2006traveling}
+David~L. Applegate, Robert~E. Bixby, Va{\v{s}}ek Chv{\'a}tal, and William~J.
+  Cook.
+\newblock \emph{The Traveling Salesman Problem: A Computational Study}.
+\newblock Princeton University Press, Princeton, NJ, 2006.
+\newblock URL \url{https://www.math.uwaterloo.ca/tsp/concorde.html}.
+
+\bibitem[Ascheuer et~al.(2001)Ascheuer, Fischetti, and
+  Gr{\"o}tschel]{ascheuer2001solving}
+Norbert Ascheuer, Matteo Fischetti, and Martin Gr{\"o}tschel.
+\newblock Solving the asymmetric travelling salesman problem with time windows
+  by branch-and-cut.
+\newblock \emph{Mathematical Programming}, 90\penalty0 (3):\penalty0 475--506,
+  2001.
+\newblock URL \url{https://doi.org/10.1007/PL00011432}.
+
+\bibitem[Boeing(2017)]{boeing2017osmnx}
+Geoff Boeing.
+\newblock {OSMnx}: New methods for acquiring, constructing, analyzing, and
+  visualizing complex street networks.
+\newblock \emph{Computers, Environment and Urban Systems}, 65:\penalty0
+  126--139, 2017.
+\newblock URL \url{https://github.com/gboeing/osmnx}.
+
+\bibitem[Cook et~al.(2025)Cook, Espinoza, Goycoolea, and
+  Helsgaun]{cook2025korea}
+William Cook, Daniel Espinoza, Marcos Goycoolea, and Keld Helsgaun.
+\newblock Korea {TSPs}: Optimal tour of 81,998 bars in {South Korea}, 2025.
+\newblock URL \url{https://www.math.uwaterloo.ca/tsp/korea/index.html}.
+\newblock University of Waterloo TSP page.
+
+\bibitem[Coupey et~al.(2018)Coupey, Nicola, and Vidal]{coupey2018vroom}
+Julien Coupey, Gr{\'e}goire Nicola, and Thibaut Vidal.
+\newblock Solving vehicle routing problems with {OpenStreetMap} and {VROOM}.
+\newblock In \emph{State of the Map}, 2018.
+\newblock URL \url{https://github.com/VROOM-Project/vroom}.
+
+\bibitem[Helsgaun(2000)]{helsgaun2000effective}
+Keld Helsgaun.
+\newblock An effective implementation of the {Lin-Kernighan} traveling salesman
+  heuristic.
+\newblock \emph{European Journal of Operational Research}, 126\penalty0
+  (1):\penalty0 106--130, 2000.
+\newblock URL \url{http://webhotel4.ruc.dk/~keld/research/LKH/}.
+
+\bibitem[Helsgaun(2009)]{helsgaun2009general}
+Keld Helsgaun.
+\newblock General k-opt submoves for the {Lin-Kernighan} {TSP} heuristic.
+\newblock \emph{Mathematical Programming Computation}, 1\penalty0
+  (2--3):\penalty0 119--163, 2009.
+
+\bibitem[Helsgaun(2017)]{helsgaun2017extension}
+Keld Helsgaun.
+\newblock An extension of the {Lin-Kernighan-Helsgaun} {TSP} solver for
+  constrained traveling salesman and vehicle routing problems.
+\newblock Technical report, Roskilde University, 2017.
+\newblock URL
+  \url{http://webhotel4.ruc.dk/~keld/research/LKH-3/LKH-3_REPORT.pdf}.
+
+\bibitem[Kool et~al.(2019)Kool, van Hoof, and Welling]{kool2019attention}
+Wouter Kool, Herke van Hoof, and Max Welling.
+\newblock Attention, learn to solve routing problems!
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2019.
+\newblock URL \url{https://arxiv.org/abs/1803.08475}.
+
+\bibitem[Kwon et~al.(2020)Kwon, Choo, Kim, Yoon, Gwon, and Min]{kwon2020pomo}
+Yeong-Dae Kwon, Jinho Choo, Byoungjip Kim, Iljoo Yoon, Youngjune Gwon, and
+  Seungjai Min.
+\newblock {POMO}: Policy optimization with multiple optima for reinforcement
+  learning.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2020.
+\newblock URL \url{https://arxiv.org/abs/2010.16011}.
+
+\bibitem[Lischka et~al.(2024)Lischka, Wu, Chehreghani, and
+  Kulcs{\'a}r]{lischka2024great}
+Attila Lischka, Jiaming Wu, Morteza~Haghir Chehreghani, and Bal{\'a}zs
+  Kulcs{\'a}r.
+\newblock A {GREAT} architecture for edge-based graph problems like {TSP}.
+\newblock \emph{arXiv preprint arXiv:2408.16717}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2408.16717}.
+
+\bibitem[Liu et~al.(2025)]{liu2025unics}
+Shengcai Liu et~al.
+\newblock Cascaded large-scale {TSP} solving with unified neural guidance:
+  Bridging local and population-based search.
+\newblock \emph{arXiv preprint arXiv:2501.14285}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2501.14285}.
+
+\bibitem[Luxen and Vetter(2011)]{luxen2011realtime}
+Dennis Luxen and Christian Vetter.
+\newblock Real-time routing with {OpenStreetMap} data.
+\newblock In \emph{Proceedings of the 19th ACM SIGSPATIAL International
+  Conference on Advances in Geographic Information Systems}, pages 513--516,
+  2011.
+\newblock URL \url{https://github.com/Project-OSRM/osrm-backend}.
+
+\bibitem[Pan et~al.(2023)Pan, Jin, Ding, Feng, Zhao, Song, and
+  Bian]{pan2023htsp}
+Xuanhao Pan, Yan Jin, Yuandong Ding, Mingxiao Feng, Li~Zhao, Lei Song, and
+  Jiang Bian.
+\newblock {H-TSP}: Hierarchically solving the large-scale traveling salesman
+  problem.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2304.09395}.
+
+\bibitem[Pan et~al.(2025)Pan, Jin, Ding, Feng, Zhao, Song, and
+  Bian]{pan2025dualopt}
+Xuanhao Pan, Yan Jin, Yuandong Ding, Mingxiao Feng, Li~Zhao, Lei Song, and
+  Jiang Bian.
+\newblock {DualOpt}: A dual divide-and-optimize algorithm for the large-scale
+  traveling salesman problem.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2501.08565}.
+
+\bibitem[Perron and Furnon(2023)]{perron2023ortools}
+Laurent Perron and Vincent Furnon.
+\newblock {OR-Tools'} vehicle routing solver: a generic constraint-programming
+  solver with heuristic search for routing problems.
+\newblock In \emph{Google Research}, 2023.
+\newblock URL \url{https://research.google/pubs/pub52024/}.
+
+\bibitem[Reinelt(1991)]{reinelt1991tsplib}
+Gerhard Reinelt.
+\newblock {TSPLIB} -- a traveling salesman problem library.
+\newblock \emph{ORSA Journal on Computing}, 3\penalty0 (4):\penalty0 376--384,
+  1991.
+\newblock URL \url{http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/}.
+
+\bibitem[Wang et~al.(2025)Wang, Zheng, Xiong, and He]{wang2025mabb}
+Long Wang, Jiongzhi Zheng, Zhengda Xiong, and Kun He.
+\newblock Multi-armed bandit and backbone boost {Lin-Kernighan-Helsgaun}
+  algorithm for the traveling salesman problem and its variants.
+\newblock \emph{Journal of Heuristics}, 32\penalty0 (1), 2025.
+\newblock URL \url{https://doi.org/10.1007/s10732-025-09578-x}.
+
+\bibitem[Xin et~al.(2021)Xin, Song, Cao, and Zhang]{xin2021neurolkh}
+Liang Xin, Wen Song, Zhiguang Cao, and Jie Zhang.
+\newblock {NeuroLKH}: Combining deep learning model with
+  {Lin-Kernighan-Helsgaun} heuristic for solving the traveling salesman
+  problem.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2110.07983}.
+
+\bibitem[Zheng et~al.(2021)Zheng, He, Zhou, Jin, and Li]{zheng2021vsrlkh}
+Jiongzhi Zheng, Kun He, Jianrong Zhou, Yan Jin, and Chu-Min Li.
+\newblock Combining reinforcement learning with {Lin-Kernighan-Helsgaun}
+  algorithm for the traveling salesman problem.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, pages 12445--12452, 2021.
+\newblock URL \url{https://arxiv.org/abs/2012.04461}.
+
+\bibitem[Zheng et~al.(2022)Zheng, He, Zhou, Jin, and Li]{zheng2022reinforced}
+Jiongzhi Zheng, Kun He, Jianrong Zhou, Yan Jin, and Chu-Min Li.
+\newblock Reinforced {Lin-Kernighan-Helsgaun} algorithms for the traveling
+  salesman problems.
+\newblock \emph{Knowledge-Based Systems}, 260:\penalty0 110144, 2022.
+\newblock URL \url{https://doi.org/10.1016/j.knosys.2022.110144}.
+
+\end{thebibliography}
