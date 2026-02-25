@@ -102,8 +102,8 @@
           "id": "item_008",
           "description": "Generate benchmark instance suite from real road networks",
           "acceptance_criteria": "Create at least 15 benchmark instances across 3 scales: small (50 stops), medium (200 stops), large (1000 stops), drawn from at least 3 distinct metro areas (e.g., Manhattan NYC, central London, downtown Tokyo or Berlin). Each instance stored in benchmarks/ directory with: coordinates, OSRM asymmetric duration matrix, and metadata (city, date generated, OSRM version). Include a benchmarks/README.md describing each instance.",
-          "status": "pending",
-          "notes": null,
+          "status": "completed",
+          "notes": "21 benchmark instances: 3 small (50), 15 medium (200), 3 large (1000) across Manhattan, London, Berlin. All asymmetric. Stored as .npz + .json with README.",
           "error": null
         },
         {
@@ -284,9 +284,9 @@
   ],
   "summary": {
     "total_items": 27,
-    "completed": 7,
+    "completed": 8,
     "in_progress": 0,
     "failed": 0,
-    "pending": 20
+    "pending": 19
   }
 }
